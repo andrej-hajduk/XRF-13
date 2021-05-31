@@ -26,22 +26,21 @@
 #define TICKET_ADMIN 2
 
 //Admin Permissions
-#define R_BUILDMODE		(1<<0)
-#define R_ADMIN 		(1<<1)
-#define R_MENTOR		(1<<2)
-#define R_BAN			(1<<3)
-#define R_ASAY			(1<<4)
-#define R_ADMINTICKET	(1<<5)
-#define R_FUN			(1<<6)
-#define R_SERVER		(1<<7)
-#define R_DEBUG			(1<<8)
-#define R_PERMISSIONS	(1<<9)
-#define R_COLOR			(1<<10)
-#define R_VAREDIT		(1<<11)
-#define R_SOUND			(1<<12)
-#define R_SPAWN			(1<<13)
-#define R_DBRANKS		(1<<14)
-#define R_RUNTIME		(1<<15)
+#define R_ADMIN 		(1<<0)
+#define R_MENTOR		(1<<1)
+#define R_BAN			(1<<2)
+#define R_ASAY			(1<<3)
+#define R_ADMINTICKET	(1<<4)
+#define R_FUN			(1<<5)
+#define R_SERVER		(1<<6)
+#define R_DEBUG			(1<<7)
+#define R_PERMISSIONS	(1<<8)
+#define R_COLOR			(1<<9)
+#define R_VAREDIT		(1<<10)
+#define R_SOUND			(1<<11)
+#define R_SPAWN			(1<<12)
+#define R_DBRANKS		(1<<13)
+#define R_RUNTIME		(1<<14)
 
 #define R_EVERYTHING 	(1<<15)-1 //the sum of all other rank permissions, used for +EVERYTHING
 
