@@ -391,3 +391,6 @@
 #define ITEM_NOT_EQUIPPED 0
 #define ITEM_EQUIPPED_CARRIED 1 //To hands, a storage or the likes.
 #define ITEM_EQUIPPED_WORN 2 //Actually worn on the body.
+
+//Slots that won't trigger humans' update_genitals() on equip().
+GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_HANDCUFFED, SLOT_GLOVES))

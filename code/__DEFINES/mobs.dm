@@ -202,6 +202,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define ORGAN_BRAIN 5
 #define ORGAN_EYES 6
 #define ORGAN_APPENDIX 7
+#define ORGAN_PENIS 8
+#define ORGAN_WOMB 9
+#define ORGAN_VAGINA 10
+#define ORGAN_TESTICLES 11
+#define ORGAN_BREASTS 12
 
 ///////////////SURGERY DEFINES///////////////
 #define SPECIAL_SURGERY_INVALID	"special_surgery_invalid"

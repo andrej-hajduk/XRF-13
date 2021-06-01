@@ -66,6 +66,7 @@
 
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
+			H.internal_organs_by_name[name] = src
 			var/datum/limb/E = H.get_limb(parent_limb)
 			if(E.internal_organs == null)
 				E.internal_organs = list()

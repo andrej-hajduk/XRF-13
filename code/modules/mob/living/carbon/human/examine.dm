@@ -211,6 +211,12 @@
 	if(holo_card_color)
 		msg += "[t_He] has a [holo_card_color] holo card on [t_his] chest.\n"
 
+	//CIT CHANGES START HERE - adds genital details to examine text
+	if(LAZYLEN(internal_organs))
+		for(var/datum/internal_organ/genital/dicc in internal_organs)
+			if(dicc.is_exposed())
+				msg += "[dicc.genital_examine(user)]\n"
+
 	if(suiciding)
 		msg += "<span class='warning'>[t_He] appears to have commited suicide... there is no hope of recovery.</span>\n"
 
