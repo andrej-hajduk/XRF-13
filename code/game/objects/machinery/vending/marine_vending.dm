@@ -580,6 +580,7 @@
 					/obj/item/reagent_containers/food/snacks/mre_pack/xmas3 = 25)*/
 	contraband = list(
 		/obj/item/reagent_containers/food/drinks/flask/marine = 10,
+		/obj/item/reagent_containers/food/drinks/cans/cola_milk = -1, //yes
 					/obj/item/reagent_containers/food/snacks/mre_pack/meal5 = 15)
 	vend_delay = 15
 	//product_slogans = "Standard Issue Marine food!;It's good for you, and not the worst thing in the world.;Just fucking eat it.;"
