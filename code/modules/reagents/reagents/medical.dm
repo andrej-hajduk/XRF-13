@@ -1173,10 +1173,10 @@ Pope_Wreckoning:
 			to_chat(L, "<span class='userlove'>[aroused_message]</span>")
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
-			var/list/genits = /*H.adjust_arousal(current_cycle, aphro = TRUE) /redundant but should still be here || Pope_Wreckoning(June/03/2021): H.adjust_arousal is supposed to adjust a variable on mobs, and players to inscrease arousal, but its saying Undefined var */
+			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]!"*/"</span>") //Pope_Wreckoning(June/03/2021): G.arousal_verb is supposted to be a message from a specific Genital[ex. Breast, penis, vagina, womb], but code says its an undefined var
+				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]!"*/,"</span>") //Pope_Wreckoning(June/03/2021): G.arousal_verb is supposted to be a message from a specific Genital[ex. Breast, penis, vagina, womb], but code says its an undefined var
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -1210,7 +1210,7 @@ Pope_Wreckoning:
 			var/list/genits = H.adjust_arousal(100, aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]"*/"!</span>")
+				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]"*/,"!</span>")
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/L)
@@ -1246,7 +1246,7 @@ Pope_Wreckoning:
 	can_synth = FALSE
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/L)
-	if(L /*&& M.client?.prefs.arousable && */ prob(16))
+	if(L /*&& M.client?.prefs.arousable*/ && prob(16))
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
 			var/list/genits = H.adjust_arousal(-100, aphro = TRUE)
