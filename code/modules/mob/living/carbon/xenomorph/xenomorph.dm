@@ -16,7 +16,6 @@
 	add_abilities()
 
 	create_reagents(1000)
-	gender = NEUTER
 
 	switch(stat)
 		if(CONSCIOUS)

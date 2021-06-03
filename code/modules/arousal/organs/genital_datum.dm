@@ -20,22 +20,21 @@
 	var/datum/internal_organ/genital/linked_organ
 	var/linked_organ_slot //used for linking an apparatus' organ to its other half on update_link().
 	var/layer_index = GENITAL_LAYER_INDEX //Order should be very important. FIRST vagina, THEN testicles, THEN penis, as this affects the order they are rendered in.
-	var/datum/reagents/reagents
+	var/datum/reagents/produced_reagents
 
 /datum/internal_organ/genital/New(mob/living/carbon/M, do_update = TRUE)
 	..()
 	if(fluid_id)
 		START_PROCESSING(SSobj, src)
-		reagents = new(fluid_max_volume)
+		produced_reagents = new(fluid_max_volume)
 		if(genital_flags & GENITAL_FLUID_PRODUCTION)
-			reagents.add_reagent(fluid_id, fluid_max_volume)
+			produced_reagents.add_reagent(fluid_id, fluid_max_volume)
 	if(do_update)
 		update()
 
 /datum/internal_organ/genital/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	QDEL_NULL(reagents)
-	QDEL_NULL(linked_organ)
+	QDEL_NULL(produced_reagents)
 	return ..()
 
 /datum/internal_organ/genital/proc/set_aroused_state(new_state)
@@ -54,6 +53,15 @@
 		owner.update_genitals()
 	if(linked_organ_slot || (linked_organ && !owner))
 		update_link()
+
+/datum/internal_organ/genital/proc/climaxable(mob/living/carbon/human/H, silent = FALSE) //returns the fluid source (ergo reagents holder) if found.aroused_state
+	if(genital_flags & GENITAL_FLUID_PRODUCTION)
+		. = produced_reagents
+	else
+		if(linked_organ)
+			. = linked_organ.produced_reagents
+	if(!. && !silent)
+		to_chat(H, "<span class='warning'>Your [name] is unable to produce it's own fluids, it's missing the organs for it.</span>")
 
 /datum/internal_organ/genital/proc/genital_examine(mob/user)
 	return
@@ -138,8 +146,8 @@
 /datum/internal_organ/genital/proc/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	fluid_max_volume += modifier * 2.5
 	fluid_rate += modifier / 10
-	if(reagents)
-		reagents.maximum_volume = fluid_max_volume
+	if(produced_reagents)
+		produced_reagents.maximum_volume = fluid_max_volume
 
 /datum/internal_organ/genital/proc/update_size()
 	return
@@ -149,9 +157,9 @@
 		aroused_state = FALSE
 
 /datum/internal_organ/genital/process()
-	..()
-	if(!reagents)
+	if(!produced_reagents)
 		return
+	produced_reagents.maximum_volume = fluid_max_volume
 	if(fluid_id && (genital_flags & GENITAL_FLUID_PRODUCTION))
 		time_since_last_orgasm++
 
@@ -190,6 +198,15 @@
 /datum/internal_organ/genital/proc/get_features(mob/living/carbon/human/H)
 	return
 
+/datum/internal_organ/genital/remove(mob/user)
+	. = ..()
+	update()
+	if(!QDELETED(owner))
+		if(genital_flags & UPDATE_OWNER_APPEARANCE)
+			owner.update_genitals()
+		owner.exposed_genitals -= src
+
+
 //proc to give a player their genitals and stuff when they log in
 /mob/living/carbon/human/proc/give_genitals(clean = FALSE)//clean will remove all pre-existing genitals. proc will then give them any genitals that are enabled in their DNA
 	if(clean)
@@ -200,15 +217,14 @@
 		give_genital(/datum/internal_organ/genital/penis)
 		give_genital(/datum/internal_organ/genital/testicles)
 	else
-		give_genital(/datum/internal_organ/genital/vagina)
-		give_genital(/datum/internal_organ/genital/womb)
 		give_genital(/datum/internal_organ/genital/breasts)
-
+		give_genital(/datum/internal_organ/genital/womb)
+		give_genital(/datum/internal_organ/genital/vagina)
 
 /mob/living/carbon/human/proc/give_genital(datum/internal_organ/genital/G)
 	if(internal_organs_by_name[initial(G.name)])
 		return FALSE
-	G = new G(src, FALSE)
+	G = new G(src)
 	G.get_features(src)
 	return G
 

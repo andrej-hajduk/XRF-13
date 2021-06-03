@@ -12,6 +12,7 @@
 	arousal_verb = "You feel wetness on your crotch"
 	unarousal_verb = "You no longer feel wet"
 	organ_id = ORGAN_VAGINA
+	linked_organ_slot = "womb"
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|GENITAL_UNDIES_HIDDEN
 	fluid_transfer_factor = 0.1 //Yes, some amount is exposed to you, go get your AIDS
 	shape = DEF_VAGINA_SHAPE

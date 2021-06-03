@@ -27,6 +27,8 @@
 		return 0
 
 /datum/internal_organ/Destroy()
+	owner.internal_organs -= src
+	owner.internal_organs_by_name -= name
 	owner = null
 	organ_holder = null
 	return ..()

@@ -42,5 +42,9 @@
 #define MOVESPEED_ID_CHEM_CONNECT						"CHEM_CONNECT"
 #define MOVESPEED_ID_VALI_BOOST							"VALI_BOOST"
 
+
+#define MOVESPEED_ID_BREAST_HYPERTROPHY					"BIG_BOBS"
+#define MOVESPEED_ID_PENIS_HYPERTROPHY					"BIG_PENS"
+
 //Specific slowdown bitfield
 #define SLOWDOWN_IMPEDE_JETPACK (1<<0) //Reduce the range of jetpack

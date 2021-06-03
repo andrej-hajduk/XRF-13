@@ -11,13 +11,18 @@
 	arousal_verb = "Your balls ache a little"
 	unarousal_verb = "Your balls finally stop aching, again"
 	organ_id = ORGAN_TESTICLES
-	linked_organ_slot = ORGAN_PENIS
+	linked_organ_slot = "penis"
 	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
 	size = BALLS_SIZE_MIN
 	shape = DEF_BALLS_SHAPE
-	//fluid_id = /datum/reagent/consumable/semen
+	fluid_id = /datum/reagent/consumable/semen
 
 	var/size_name = "average"
+
+/datum/internal_organ/genital/testicles/upon_link()
+	size = linked_organ.size
+	update_size()
+	update_appearance()
 
 /datum/internal_organ/genital/testicles/update_size()
 	switch(size)

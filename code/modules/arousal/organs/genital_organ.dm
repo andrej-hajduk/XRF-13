@@ -7,4 +7,4 @@
 	. = ..()
 	if(organ_data)
 		var/datum/internal_organ/genital/G = organ_data
-		G.genital_examine(user)
+		to_chat(user, G.genital_examine(user))

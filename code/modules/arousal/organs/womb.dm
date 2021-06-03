@@ -9,7 +9,7 @@
 /datum/internal_organ/genital/womb
 	name = "womb"
 	organ_id = ORGAN_WOMB
-	linked_organ_slot = ORGAN_VAGINA
+	linked_organ_slot = "vagina"
 	genital_flags = GENITAL_INTERNAL|GENITAL_FLUID_PRODUCTION
-	//fluid_id = /datum/reagent/consumable/femcum
+	fluid_id = /datum/reagent/consumable/femcum
 	removed_type = /obj/item/organ/genital/womb

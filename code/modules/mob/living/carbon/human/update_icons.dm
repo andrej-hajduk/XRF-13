@@ -291,11 +291,13 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	if(species.species_flags & HAS_UNDERWEAR)
 
 		//Underwear
-		if(underwear >0 && underwear < 3)
+		if(underwear == 1)
+			stand_icon.Blend(new /icon('icons/mob/human.dmi', "blank"), ICON_OVERLAY)
+		else if(underwear == 2 || underwear == 3)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryo[underwear]_[g]_s"), ICON_OVERLAY)
 
 		if(ismarinejob(job)) //undoing override
-			if(undershirt>0 && undershirt < 5)
+			if(undershirt > 0 && undershirt < 5)
 				stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
 		else if(undershirt > 0 && undershirt < 7)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
