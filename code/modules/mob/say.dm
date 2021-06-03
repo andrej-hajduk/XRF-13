@@ -8,7 +8,7 @@
 	say(message)
 
 
-/mob/verb/me_verb(message as text)
+/mob/verb/me_verb(message as message)
 	set name = "Me"
 	set category = "IC"
 
