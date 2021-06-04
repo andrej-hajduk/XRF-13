@@ -1,7 +1,32 @@
-Name = Admin
+Name = Host
 Include = EVERYTHING
 Exclude =
 Edit = EVERYTHING
+
+Name = Head Admin
+Include = EVERYTHING
+Exclude =
+Edit = EVERYTHING
+
+Name = Game Admin
+Include = EVERYTHING
+Exclude =
+Edit =
+
+Name = Head Coder
+Include = EVERYTHING
+Exclude =
+Edit =
+
+Name = Coder
+Include = DEBUG VAREDIT SERVER SPAWN POLL
+Exclude =
+Edit =
+
+Name = Moderator
+Include = Admin
+Exclude =
+Edit =
 
 Name = Mentor
 Include = MENTOR COLOR
