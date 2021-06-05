@@ -7,6 +7,9 @@ $include resources.txt
 ## Server name: This appears at the top of the screen in-game.
 SERVER_NAME Something
 
+## Server desc: This appears on the hub entry for the server.
+SERVER_DESC Something else
+
 ## Hosted by name for unix platforms.
 HOSTEDBY yournamehere
 
