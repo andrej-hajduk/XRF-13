@@ -1,6 +1,8 @@
 /datum/game_mode/extended
 	name = "Extended"
 	config_tag = "Extended"
+	flags_round_type = MODE_XENO_RULER
+	flags_landmarks = MODE_LANDMARK_SPAWN_XENO_TUNNELS|MODE_LANDMARK_SPAWN_MAP_ITEM
 	flags_xeno_abilities = ABILITY_DISTRESS
 
 	valid_job_types = list(
@@ -21,7 +23,9 @@
 		/datum/job/terragov/squad/corpsman = 8,
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
-		/datum/job/terragov/squad/standard = -1
+		/datum/job/terragov/squad/standard = -1,
+		/datum/job/xenomorph = 2,
+		/datum/job/xenomorph/queen = 1
 	)
 
 /datum/game_mode/extended/announce()

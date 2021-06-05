@@ -218,6 +218,16 @@ Voting
 	integer = TRUE
 	min_val = 0
 
+/datum/config_entry/number/vote_autotransfer_initial
+	config_entry_value = 72000
+	integer = FALSE
+	min_val = 0
+
+/datum/config_entry/number/vote_autotransfer_interval
+	config_entry_value = 18000
+	integer = FALSE
+	min_val = 0
+
 /*
 Master controller and performance related.
 */

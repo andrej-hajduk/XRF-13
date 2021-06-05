@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/time_left							//Pre-game timer
 	var/start_at
+	var/next_autotransfer = 0 // End of round vote timer
 
 	var/roundend_check_paused = FALSE
 
@@ -102,6 +103,10 @@ SUBSYSTEM_DEF(ticker)
 			mode.process(wait * 0.1)
 			check_queue()
 
+			if(world.time > next_autotransfer)
+				SSvote.autotransfer()
+				next_autotransfer = world.time + CONFIG_GET(number/vote_autotransfer_interval)
+
 			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
 				current_state = GAME_STATE_FINISHED
 				GLOB.ooc_allowed = TRUE
@@ -160,6 +165,9 @@ SUBSYSTEM_DEF(ticker)
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
+
+	// Sets the auto transfer vote to happen after the config duration
+	next_autotransfer = world.time + CONFIG_GET(number/vote_autotransfer_initial)
 
 	CHECK_TICK
 	PostSetup()

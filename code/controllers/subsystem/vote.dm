@@ -37,6 +37,9 @@ SUBSYSTEM_DEF(vote)
 		SStgui.close_uis(src)
 		reset()
 
+/datum/controller/subsystem/vote/proc/autotransfer()
+	initiate_vote("restart", "the server")
+
 /// Stop the current vote and reset everything
 /datum/controller/subsystem/vote/proc/reset()
 	choices.Cut()
@@ -197,6 +200,7 @@ SUBSYSTEM_DEF(vote)
 		reset()
 		switch(vote_type)
 			if("restart")
+				question = "End the round?"
 				choices.Add("Restart Round", "Continue Playing")
 			if("gamemode")
 				for(var/datum/game_mode/mode AS in config.votable_modes)

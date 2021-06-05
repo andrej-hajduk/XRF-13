@@ -197,6 +197,12 @@ CHECK_RANDOMIZER
 ##Set this number to the maximum number of players you want, after which game mode votes cannot be started
 MAXIMUM_CLIENTS_FOR_GAMEMODE_VOTE 40
 
+## autovote initial delay (deciseconds) before first automatic transfer vote call (default 60 minutes)
+VOTE_AUTOTRANSFER_INITIAL 18000
+
+##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
+VOTE_AUTOTRANSFER_INTERVAL 18000
+
 ## Uncomment these to set a custom respawn timer; the delay is in ticks.
 #MARINE_RESPAWN 18000
 #XENO_RESPAWN 1200
