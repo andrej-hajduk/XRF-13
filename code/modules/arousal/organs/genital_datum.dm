@@ -211,6 +211,8 @@
 /mob/living/carbon/human/proc/give_genitals(clean = FALSE)//clean will remove all pre-existing genitals. proc will then give them any genitals that are enabled in their DNA
 	if(clean)
 		for(var/datum/internal_organ/genital/G in internal_organs)
+			internal_organs -= G
+			internal_organs_by_name -= G.name
 			qdel(G)
 
 	if(gender == MALE)

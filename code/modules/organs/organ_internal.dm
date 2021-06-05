@@ -27,6 +27,9 @@
 		return 0
 
 /datum/internal_organ/Destroy()
+	var/datum/limb/L = owner.get_limb(parent_limb)
+	if(L)
+		L.internal_organs -= src
 	owner.internal_organs -= src
 	owner.internal_organs_by_name -= name
 	owner = null

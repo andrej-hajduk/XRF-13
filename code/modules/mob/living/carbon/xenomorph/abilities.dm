@@ -51,10 +51,6 @@
 		if(!silent)
 			to_chat(X, "<span class='warning'>This creature has already been headbitten.</span>")
 		return FALSE
-	if(victim.chestburst)
-		if(!silent)
-			to_chat(X, "<span class='warning'>This creature has already served its purpose.</span>")
-		return FALSE
 	if(X.issamexenohive(victim)) //checks if target and victim are in the same hive
 		if(!silent)
 			to_chat(X, "<span class='warning'>We can't bring ourselves to harm a fellow sister to this magnitude.</span>")
@@ -1015,7 +1011,7 @@
 		if(!ishuman(thing))
 			continue
 		var/mob/living/turf_mob = thing
-		if(turf_mob.stat == DEAD && turf_mob.chestburst == 0)
+		if(turf_mob.stat == DEAD)
 			valid_mobs += turf_mob
 
 	if(length(valid_mobs) < required_mobs)
@@ -1031,8 +1027,6 @@
 	for(var/mob/living/to_use AS in valid_mobs)
 		if(moved_human_number >= required_mobs)
 			break
-		to_use.chestburst = 2
-		to_use.update_burst()
 		to_use.forceMove(hivesilo)
 		moved_human_number++
 
