@@ -1164,7 +1164,7 @@
 /*HORNYCODE
 Pope_Wreckoning:
 */
-/datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/L)
+/datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/L, metabolize)
 	if(L/*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/) //Pope_Wreckonging(June/3/2021)"No prefs for clients yet"
 		if((prob(min(current_cycle/2,5))))
 			L.emote(pick("moan","blush"))
@@ -1175,8 +1175,8 @@ Pope_Wreckoning:
 			var/mob/living/carbon/human/H = L
 			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
 			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]!"*/,"</span>") //Pope_Wreckoning(June/03/2021): G.arousal_verb is supposted to be a message from a specific Genital[ex. Breast, penis, vagina, womb], but code says its an undefined var
+				var/datum/internal_organ/genital/G = g
+				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -1186,11 +1186,11 @@ Pope_Wreckoning:
 					permanent increase in libido (commonly referred to as 'bimbofication')."
 	taste_description = "liquid desire"
 	color = "#FF2BFF"//dark pink
-	addiction_threshold = 20
+	addiction_threshold = 15
 	overdose_threshold = 20
 	can_synth = FALSE
 
-/datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/L)
+/datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/)
 		if(prob(5))
 			if(prob(current_cycle))
@@ -1209,8 +1209,8 @@ Pope_Wreckoning:
 			var/mob/living/carbon/human/H = L
 			var/list/genits = H.adjust_arousal(100, aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(L, "<span class='userlove'>"/*"[G.arousal_verb]"*/,"!</span>")
+				var/datum/internal_organ/genital/G = g
+				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/L)
@@ -1227,7 +1227,7 @@ Pope_Wreckoning:
 		L.adjustBrainLoss(4)
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/L)
+/datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO) && prob(33)*/)
 		if(prob(5) && ishuman(L) /*&& M.has_dna() && (M.client?.prefs.cit_toggles & BIMBOFICATION)*/)
 			if(!HAS_TRAIT(L,TRAIT_PERMABONER))
@@ -1245,7 +1245,7 @@ Pope_Wreckoning:
 	reagent_state = SOLID
 	can_synth = FALSE
 
-/datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/L)
+/datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable*/ && prob(16))
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
@@ -1263,7 +1263,7 @@ Pope_Wreckoning:
 	overdose_threshold = 20
 	can_synth = FALSE
 
-/datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/L)
+/datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/L, metabolism)
 	if(L /* && M.client?.prefs.arousable*/)
 		REMOVE_TRAIT(L,TRAIT_PERMABONER,APHRO_TRAIT)
 		if(ishuman(L))
@@ -1274,7 +1274,7 @@ Pope_Wreckoning:
 
 	..()
 
-/datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/L)
+/datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/L, metabolism)
 	if(L /* && M.client?.prefs.arousable && prob(5)*/)
 		to_chat(L, "<span class='userlove'>You feel like you'll never feel aroused again...</span>")
 		ADD_TRAIT(L,TRAIT_NEVERBONER,APHRO_TRAIT)

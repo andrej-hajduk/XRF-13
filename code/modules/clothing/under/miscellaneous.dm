@@ -391,3 +391,68 @@
 	item_state = "tp_bodyrobes"
 	flags_armor_protection = CHEST|GROIN|LEGS|ARMS
 
+/obj/item/clothing/under/chaps
+	name = "black chaps"
+	flags_inventory = LEGS
+	desc = "Yeehaw"
+	icon_state = "chaps"
+
+/obj/item/clothing/under/maid
+	name = "maid costume"
+	desc = "Maid in China."
+	icon_state = "maid"
+	item_state = "maid"
+	flags_inventory = CHEST|GROIN
+/*	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/A = new (src)
+	attach_accessory(A)
+*/
+
+/obj/item/clothing/under/misc/poly_bottomless
+	name = "polychromic bottomless shirt"
+	desc = "Great for showing off your underwear in dubious style."
+	icon_state = "polybottomless"
+	item_state = "rainbow"
+	flags_inventory = CHEST|ARMS	//Because there's no bottom included
+/*	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/misc/poly_bottomless/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, list("#808080", "#FF3535"), 2)
+*/
+/obj/item/clothing/under/misc/poly_tanktop
+	name = "polychromic tank top"
+	desc = "For those lazy summer days."
+	icon_state = "polyshimatank"
+	item_state = "rainbow"
+	flags_inventory = CHEST|GROIN
+/*	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON */
+	var/list/poly_states = 3
+	var/list/poly_colors = list("#808080", "#FFFFFF", "#8CC6FF")
+/*
+/obj/item/clothing/under/misc/poly_tanktop/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, poly_colors, poly_states)
+*/
+/obj/item/clothing/under/misc/poly_tanktop/female
+	name = "polychromic feminine tank top"
+	desc = "Great for showing off your chest in style. Not recommended for males."
+	icon_state = "polyfemtankpantsu"
+	poly_states = 2
+	poly_colors = list("#808080", "#FF3535")
+
+/obj/item/clothing/under/dress/corset
+	name = "black corset"
+	desc = "Nanotrasen is not resposible for any organ damage."
+	icon_state = "corset"
+	flags_inventory = CHEST|GROIN
+/*	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE */
+
