@@ -3,6 +3,8 @@ Basics, the most important.
 */
 /datum/config_entry/string/server_name	// The name used for the server almost universally.
 
+/datum/config_entry/string/server_desc // The description on the hub
+
 /datum/config_entry/string/serversqlname	// Short form of the previous used for the DB.
 
 /datum/config_entry/string/server // If you set this location, it sends you there instead of trying to reconnect.
