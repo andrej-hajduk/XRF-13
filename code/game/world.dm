@@ -205,7 +205,7 @@ GLOBAL_VAR(restart_counter)
 	sleep(0)	//yes, 0, this'll let Reboot finish and prevent byond memes
 	qdel(src)	//shut it down
 
-/world/Reboot(ping)
+/world/Reboot(ping, force_dd_kill = FALSE)
 	if(ping)
 		// TODO: Replace the second arguments of send2chat with custom config tags. See __HELPERS/chat.dm
 		send2chat(CONFIG_GET(string/restart_message), "")
@@ -265,7 +265,7 @@ GLOBAL_VAR(restart_counter)
 					text2file("[++GLOB.restart_counter]", RESTART_COUNTER_PATH)
 					do_hard_reboot = FALSE
 
-		if(do_hard_reboot)
+		if(do_hard_reboot || force_dd_kill )
 			log_world("World rebooted at [time_stamp()]")
 			shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
 			TgsEndProcess()

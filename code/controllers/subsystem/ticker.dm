@@ -271,6 +271,17 @@ SUBSYSTEM_DEF(ticker)
 	if(usr && !check_rights(R_SERVER))
 		return
 
+	if(world.TgsAvailable())
+		var/resp = tgui_input_list(usr, "Restart Type","Reboot World", list("Hardest (Kill DD)", "Hard", "Normal"), 1 MINUTES)
+		if(resp == "Hard")
+			to_chat(world, "<span class='boldnotice'>Killing World Hard</span>")
+			world.Reboot(FALSE)
+			return
+		if(resp == "Hardest (Kill DD)")
+			to_chat(world, "<span class='boldnotice'>Killing Dream Daemon</span>")
+			world.Reboot(FALSE, force_dd_kill = TRUE)
+			return
+
 	if(istype(GLOB.tgs, /datum/tgs_api/v3210))
 		var/datum/tgs_api/v3210/API = GLOB.tgs
 		if(API.reboot_mode == 2)
