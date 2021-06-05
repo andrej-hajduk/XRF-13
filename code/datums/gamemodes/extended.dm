@@ -1,7 +1,7 @@
 /datum/game_mode/extended
 	name = "Extended"
 	config_tag = "Extended"
-	flags_round_type = MODE_XENO_RULER
+	flags_round_type = MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED
 	flags_landmarks = MODE_LANDMARK_SPAWN_XENO_TUNNELS|MODE_LANDMARK_SPAWN_MAP_ITEM
 	flags_xeno_abilities = ABILITY_DISTRESS
 

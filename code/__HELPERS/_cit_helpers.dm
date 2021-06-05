@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 //DANGER | DEBUG PROCS//
 ////////////////////////
 
-/client/verb/give_genitals()
+/*client/verb/give_genitals()
 	set name = "Give Genitals"
 	set category = "Debug"
 	if(mob && ishuman(mob))
@@ -81,6 +81,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 			to_chat(src, "<span class='notice'>Genitals given!</span>")
 		else
 			to_chat(src, "<span class='warning'>You've already got genitals!</span>")
+*/
 
 /client/proc/give_humans_genitals()
 	set name = "Mass Give Genitals"
