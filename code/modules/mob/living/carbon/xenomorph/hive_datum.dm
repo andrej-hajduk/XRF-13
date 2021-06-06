@@ -58,9 +58,11 @@
 
 /datum/hive_status/proc/post_add(mob/living/carbon/xenomorph/X)
 	X.color = color
+	X.grant_language(/datum/language/common)
 
 /datum/hive_status/proc/post_removal(mob/living/carbon/xenomorph/X)
 	X.color = null
+	X.remove_language(/datum/language/common)
 
 // for clean transfers between hives
 /mob/living/carbon/xenomorph/proc/transfer_to_hive(hivenumber)
@@ -485,7 +487,8 @@
 // *********** Xeno messaging
 // ***************************************
 /datum/hive_status/proc/can_xeno_message() // This is defined for per-hive overrides
-	return living_xeno_ruler
+	//return living_xeno_ruler
+	return TRUE
 
 /*
 
@@ -759,11 +762,11 @@ to_chat will check for valid clients itself already so no need to double check f
 // Make sure they can understand english
 /datum/hive_status/corrupted/post_add(mob/living/carbon/xenomorph/X)
 	. = ..()
-	X.grant_language(/datum/language/common)
+	//X.grant_language(/datum/language/common)
 
 /datum/hive_status/corrupted/post_removal(mob/living/carbon/xenomorph/X)
 	. = ..()
-	X.remove_language(/datum/language/common)
+	//X.remove_language(/datum/language/common)
 
 /datum/hive_status/corrupted/can_xeno_message()
 	return TRUE // can always talk in hivemind
