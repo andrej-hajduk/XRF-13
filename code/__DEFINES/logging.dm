@@ -15,6 +15,8 @@
 #define LOG_ASAY			(1<<13)
 #define LOG_HIVEMIND		(1<<14)
 #define LOG_LOOC			(1<<15)
+#define LOG_XOOC			(1<<16)
+#define LOG_MOOC			(1<<17)
 
 
 //Individual logging panel pages

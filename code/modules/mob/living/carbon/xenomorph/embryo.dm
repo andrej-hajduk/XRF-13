@@ -115,7 +115,7 @@
 					affected_mob.jitter(105)
 					affected_mob.take_limb_damage(1)
 			if(prob(2))
-				to_chat(affected_mob, "<span class='warning'>[pick("Your chest hurts badly", "It becomes difficult to breathe", "Your heart starts beating rapidly")].</span>")
+				to_chat(affected_mob, "<span class='warning'>[pick("You feel a lump in your throat", "It becomes difficult to breathe", "Your heart starts beating rapidly")].</span>")
 		if(5)
 			become_larva()
 		if(6)
@@ -137,10 +137,10 @@
 	var/mob/picked
 
 	//If the bursted person themselves has Xeno enabled, they get the honor of first dibs on the new larva.
-	if(affected_mob.client?.prefs && (affected_mob.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) && !is_banned_from(affected_mob.ckey, ROLE_XENOMORPH))
-		picked = affected_mob
-	else //Get a candidate from observers.
-		picked = get_alien_candidate()
+	//if(affected_mob.client?.prefs && (affected_mob.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) && !is_banned_from(affected_mob.ckey, ROLE_XENOMORPH))
+	//	picked = affected_mob
+	//else //Get a candidate from observers.
+	picked = get_alien_candidate()
 
 	//Spawn the larva.
 	var/mob/living/carbon/xenomorph/larva/new_xeno
@@ -190,6 +190,7 @@
 	else
 		forceMove(get_turf(victim)) //moved to the turf directly so we don't get stuck inside a cryopod or another mob container.
 	playsound(src, pick('sound/voice/alien_chestburst.ogg', 'sound/voice/alien_chestburst2.ogg'), 25)
+	victim.visible_message("<span class='danger'>The Larva forces its way out of [victim]'s mouth!</span>")
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
 	var/obj/item/alien_embryo/AE = locate() in victim

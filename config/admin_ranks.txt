@@ -18,13 +18,8 @@ Include = EVERYTHING
 Exclude =
 Edit =
 
-Name = Coder
-Include = DEBUG VAREDIT SERVER SPAWN POLL
-Exclude =
-Edit =
-
 Name = Moderator
-Include = Admin
+Include = ASAY ADMINTICKET ADMIN BAN COLOR
 Exclude =
 Edit =
 
