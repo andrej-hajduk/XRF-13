@@ -196,11 +196,8 @@
 	<BR><A href='?src=[REF(src)];pockets=1'>Empty Pockets</A>
 	<BR>
 	<BR><A href='?src=[REF(user)];refresh=1'>Refresh</A>
-<<<<<<< Updated upstream
-=======
 	<BR>
 	<BR><A href='?src=[REF(src)];forbidden=1'>Forbidden Fruits</A>
->>>>>>> Stashed changes
 	<BR>"}
 
 	var/datum/browser/browser = new(user, "mob[name]", "<div align='center'>[name]</div>", 380, 540)
