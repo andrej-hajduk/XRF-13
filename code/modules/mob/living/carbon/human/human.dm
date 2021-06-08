@@ -196,6 +196,11 @@
 	<BR><A href='?src=[REF(src)];pockets=1'>Empty Pockets</A>
 	<BR>
 	<BR><A href='?src=[REF(user)];refresh=1'>Refresh</A>
+<<<<<<< Updated upstream
+=======
+	<BR>
+	<BR><A href='?src=[REF(src)];forbidden=1'>Forbidden Fruits</A>
+>>>>>>> Stashed changes
 	<BR>"}
 
 	var/datum/browser/browser = new(user, "mob[name]", "<div align='center'>[name]</div>", 380, 540)
@@ -320,7 +325,15 @@
 	if (href_list["refresh"])
 		if(interactee&&(in_range(src, usr)))
 			show_inv(interactee)
-
+	if (href_list["forbidden"])
+		if(interactee&&(in_range(src, usr)))
+			erp_menu(interactee)
+	if (href_list["slapass"])
+		if(interactee&&(in_range(src, usr)))
+			erp_menu(interactee)
+			visible_message("[usr] slaps [src]'s ass!")
+			playsound(loc, 'sound/weapons/slap.ogg', 50, 1, 1)
+			usr.changeNext_move(CLICK_CD_MELEE) //no spammerinos plz
 	if (href_list["item"])
 		var/slot = text2num(href_list["item"])
 		if(!usr.incapacitated() && Adjacent(usr))
@@ -1268,3 +1281,15 @@
 	if(buckled)
 		return
 	return ..()
+
+/mob/living/carbon/human/erp_menu(mob/living/user) //this is the menu that pops up for forbidden fruits. Make edits here.
+	user.set_interaction(src)
+	var/dat = {"
+	<BR><A href='?src=[REF(src)];slapass=1'>Slap Ass</A>
+	<BR>"}
+
+
+
+	var/datum/browser/browser = new(user, "mob[name]", "<div align='center'>[name]</div>", 380, 540)
+	browser.set_content(dat)
+	browser.open(FALSE)

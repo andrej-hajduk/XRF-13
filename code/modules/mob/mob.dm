@@ -390,6 +390,14 @@
 	popup.set_content(dat)
 	popup.open()
 
+/mob/proc/erp_menu(mob/user)
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
 
 /mob/vv_get_dropdown()
 	. = ..()
