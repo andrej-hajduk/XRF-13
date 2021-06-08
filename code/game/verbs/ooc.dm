@@ -191,8 +191,11 @@
 	if(holder?.fakekey)
 		display_name = holder.fakekey
 
-	for(var/I in GLOB.xeno_mob_list)
-		to_chat(I, "<font color='red'><b>XOOC:</b> <i>[display_name]:</i> [msg]</font>")
+	for(var/mob/M in GLOB.player_list)
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='event_announcement'>Xeno OOC: [key_name_admin(key)]: [msg]</span>")
+		else if(istype(M, /mob/living/carbon/xenomorph) || istype(M, /mob/dead/observer))
+			to_chat(M, "<span class='event_announcement'>Xeno OOC: [display_name]: [msg]</span>")
 
 	mob.log_talk(msg, LOG_XOOC)
 
@@ -212,8 +215,11 @@
 	if(holder?.fakekey)
 		display_name = holder.fakekey
 
-	for(var/I in GLOB.human_mob_list)
-		to_chat(I, "<font color='red'><b>MOOC:</b> <i>[display_name]:</i> [msg]</font>")
+	for(var/mob/M in GLOB.player_list)
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='event_announcement'>Marine OOC: [key_name_admin(key)]: [msg]</span>")
+		else if(istype(M, /mob/living/carbon/human) || istype(M, /mob/dead/observer))
+			to_chat(M, "<span class='event_announcement'>Marine OOC: [display_name]: [msg]</span>")
 
 	mob.log_talk(msg, LOG_MOOC)
 

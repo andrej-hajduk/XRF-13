@@ -951,6 +951,24 @@
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic whisper")
 	to_chat(L, "<span class='alien'>You hear a strange, alien voice in your head. <i>\"[msg]\"</i></span>")
 	to_chat(X, "<span class='xenonotice'>We said: \"[msg]\" to [L]</span>")
+	for(var/_M in GLOB.player_list) // it's the xeno's main method of communication, so it should be visible
+		var/mob/M = _M
+		if(M == L || M == X)
+			continue
+		if(M.stat != DEAD) //not dead, not important
+			continue
+		if(!M.client)
+			continue
+		if(get_dist(M, X) > 7 || M.z != X.z) //they're out of range of normal hearing
+			if(!(M.client.prefs.toggles_chat & CHAT_GHOSTEARS))
+				continue
+		if((istype(M.remote_control, /mob/camera/aiEye) || isAI(M))) // Not sure why this is here really, but better safe than sorry
+			continue
+
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i></span>")
+		else
+			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[X] > [L]:</b> <i>\"[msg]\"</i></span>")
 
 
 // ***************************************
@@ -1333,7 +1351,6 @@
 	use_state_flags = XACT_USE_STAGGERED|XACT_USE_FORTIFIED|XACT_USE_CRESTED //can't use while staggered, defender fortified or crest down
 	keybind_signal = COMSIG_XENOABILITY_REGURGITATE
 	plasma_cost = 100
-	gamemode_flags = ABILITY_HUNT
 
 /datum/action/xeno_action/activable/devour/can_use_ability(atom/A, silent, override_flags)
 	. = ..()
@@ -1341,7 +1358,8 @@
 		return
 	var/mob/living/carbon/xenomorph/X = owner
 	if(LAZYLEN(X.stomach_contents)) //Only one thing in the stomach at a time, please
-		succeed_activate()
+		to_chat(owner, "<span class='warning'>Our stomach is already full!</span>")
+		return FALSE
 	if(!ishuman(A) || issynth(A))
 		to_chat(owner, "<span class='warning'>That wouldn't taste very good.</span>")
 		return FALSE
@@ -1350,10 +1368,10 @@
 		return FALSE
 	if(!owner.Adjacent(victim)) //checks if owner next to target
 		return FALSE
-	if(victim.stat != DEAD)
-		if(!silent)
-			to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
-		return FALSE
+	//if(victim.stat != DEAD)
+	//	if(!silent)
+	//		to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
+	//	return FALSE
 	if(victim.buckled)
 		if(!silent)
 			to_chat(owner, "<span class='warning'>[victim] is buckled to something.</span>")

@@ -240,7 +240,8 @@
 	return ..()
 
 /mob/living/carbon/xenomorph/pull_response(mob/puller)
-	if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
+	return TRUE
+	/*if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
 		return TRUE
 	if(!ishuman(puller))
 		return TRUE
@@ -249,7 +250,7 @@
 	playsound(H.loc, 'sound/weapons/pierce.ogg', 25, 1)
 	H.visible_message("<span class='warning'>[H] tried to pull [src] but instead gets a tail swipe to the head!</span>")
 	H.stop_pulling()
-	return FALSE
+	return FALSE*/
 
 /mob/living/carbon/xenomorph/resist_grab()
 	if(pulledby.grab_state)
