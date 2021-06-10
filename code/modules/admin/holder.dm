@@ -346,6 +346,7 @@ GLOBAL_PROTECT(admin_verbs_asay)
 
 /world/proc/AVdebug()
 	return list(
+	/datum/admins/proc/reload_configuration, //SKYRAT EDIT - RELOAD CONFIG
 	/datum/admins/proc/proccall_advanced,
 	/datum/admins/proc/proccall_atom,
 	/datum/admins/proc/delete_all,
@@ -508,7 +509,7 @@ GLOBAL_PROTECT(admin_verbs_spawn)
 			verbs += GLOB.admin_verbs_server
 		if(rights & R_DEBUG)
 			verbs += GLOB.admin_verbs_debug
-		if(rights & R_RUNTIME) 
+		if(rights & R_RUNTIME)
 			verbs += GLOB.admin_verbs_runtimes
 		if(rights & R_PERMISSIONS)
 			verbs += GLOB.admin_verbs_permissions

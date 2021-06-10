@@ -1,7 +1,7 @@
 /datum/admins/proc/restart()
 	set category = "Server"
 	set name = "Restart"
-	set desc = "Restarts the server after a short pause."
+	set desc = "Restarts the server."
 
 	if(!check_rights(R_SERVER))
 		return
@@ -9,24 +9,7 @@
 	if(SSticker.admin_delay_notice && alert(usr, "Are you sure? An admin has already delayed the round end for the following reason: [SSticker.admin_delay_notice]", "Confirmation", "Yes", "No") != "Yes")
 		return
 
-	if(alert("Restart the game world?", "Restart", "Yes", "No") != "Yes")
-		return
-
-	var/message = FALSE
-	if(CONFIG_GET(string/restart_message))
-		switch(alert("Send the new round message?", "Message", "Yes", "No", "Cancel"))
-			if("Yes")
-				message = TRUE
-			if("Cancel")
-				return
-
-	to_chat(world, "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by: [usr.key]</span>")
-
-	log_admin("[key_name(usr)] initiated a restart.")
-	message_admins("[ADMIN_TPMONTY(usr)] initiated a restart.")
-
-	spawn(50)
-		world.Reboot(message)
+	SSticker.Reboot("AdminIntervention", 1)
 
 
 /datum/admins/proc/shutdown_server()

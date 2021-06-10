@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
-	
+
 	GLOB.respawntime = CONFIG_GET(number/marine_respawn)
 	GLOB.xenorespawntime = CONFIG_GET(number/xeno_respawn)
 
@@ -279,16 +279,21 @@ SUBSYSTEM_DEF(ticker)
 	if(usr && !check_rights(R_SERVER))
 		return
 
-	if(world.TgsAvailable())
-		var/resp = tgui_input_list(usr, "Restart Type","Reboot World", list("Hardest (Kill DD)", "Hard", "Normal"), 1 MINUTES)
-		if(resp == "Hard")
-			to_chat(world, "<span class='boldnotice'>Killing World Hard</span>")
-			world.Reboot(FALSE)
+	#ifndef UNIT_TESTS
+	if(usr)
+		if(world.TgsAvailable())
+			switch(tgui_input_list(usr, "Restart Type","Reboot World", list("Hardest (Kill DD)", "Hard", "Normal"), 1 MINUTES))
+				if("Hard")
+					to_chat(world, "<span class='boldnotice'>Killing World Hard</span>")
+					world.Reboot(FALSE)
+				if("Hardest (Kill DD)")
+					to_chat(world, "<span class='boldnotice'>Killing Dream Daemon</span>")
+					world.Reboot(FALSE, force_dd_kill = TRUE)
+				if("Cancel")
+					return
+		else if(tgui_alert(usr, "Are you sure?", "Restart", list("Yes", "Cancel"), 1 MINUTES) != "Yes")
 			return
-		if(resp == "Hardest (Kill DD)")
-			to_chat(world, "<span class='boldnotice'>Killing Dream Daemon</span>")
-			world.Reboot(FALSE, force_dd_kill = TRUE)
-			return
+	#endif
 
 	if(istype(GLOB.tgs, /datum/tgs_api/v3210))
 		var/datum/tgs_api/v3210/API = GLOB.tgs
