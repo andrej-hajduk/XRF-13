@@ -322,15 +322,38 @@
 	if (href_list["refresh"])
 		if(interactee&&(in_range(src, usr)))
 			show_inv(interactee)
-	if (href_list["forbidden"])
+	if (href_list["forbidden"]) //Below this is attached to the menu in striperp.dm
 		if(interactee&&(in_range(src, usr)))
 			erp_menu(interactee)
 	if (href_list["slapass"])
 		if(interactee&&(in_range(src, usr)))
 			erp_menu(interactee)
-			visible_message("[usr] slaps [src]'s ass!")
+			visible_message("<span class='notice'>[usr] slaps [src]'s ass!</span>")
 			playsound(loc, 'sound/weapons/slap.ogg', 50, 1, 1)
+			src.lust += rand(1,3) //adds lust to the slapee so one can coom from spanking
+			src.handle_moans() //rng moans for sound/IMMERSION
+			src.auto_coom() //runs the auto-coom check
 			usr.changeNext_move(CLICK_CD_MELEE) //no spammerinos plz
+	if (href_list["fondlechest"])
+		if(interactee&&(in_range(src, usr)))
+			erp_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s breasts through their clothes!</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+				else
+					visible_message("<span class='notice'>[usr] fondles [src]'s chest through their clothes!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s nude breasts with their hands.</span>")
+					src.lust += rand(2,3)
+				else
+					visible_message("<span class='notice'>[usr] gently rubs [src]'s bare chest and pecs.</span>")
+					src.lust += rand(2,3)
+			src.handle_moans() //rng moans for sound/IMMERSION
+			src.auto_coom() //runs the auto-coom check
+
+
 	if (href_list["item"])
 		var/slot = text2num(href_list["item"])
 		if(!usr.incapacitated() && Adjacent(usr))
@@ -1279,14 +1302,4 @@
 		return
 	return ..()
 
-/mob/living/carbon/human/erp_menu(mob/living/user) //this is the menu that pops up for forbidden fruits. Make edits here.
-	user.set_interaction(src)
-	var/dat = {"
-	<BR><A href='?src=[REF(src)];slapass=1'>Slap Ass</A>
-	<BR>"}
 
-
-
-	var/datum/browser/browser = new(user, "mob[name]", "<div align='center'>[name]</div>", 380, 540)
-	browser.set_content(dat)
-	browser.open(FALSE)

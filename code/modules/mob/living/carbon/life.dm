@@ -17,6 +17,14 @@
 
 	handle_fire() //Check if we're on fire
 
+	var/decay = 1.5 //This handles arousal decay. For striperp.dm, somewhat slow. Life procs every tick so feels right
+	if(max_lust > 0)
+		lust = max(0, min(lust - decay, max_lust))
+
+	var/refractory = 0.5 //This handles the male orgasm refractory period. Can lead the way to some infinite coom items later on but for now we follow science
+	if(male_cd_max > 0)
+		male_cd = max(0, min(male_cd - refractory, male_cd_max))
+
 /mob/living/carbon/handle_regular_hud_updates()
 	. = ..()
 	if(.)
