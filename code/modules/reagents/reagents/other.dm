@@ -695,7 +695,7 @@
 		//S.add_blood_DNA(list("color" = data["blood_DNA"], data["blood_DNA"] = data["blood_type"]))
 
 /obj/effect/decal/cleanable/semen
-	name = "semen"
+	name = "\proper semen"
 	desc = null
 	icon = 'modular_skyrat/icons/obj/genitals/effects.dmi'
 	icon_state = "semen1"
@@ -718,7 +718,7 @@
 	nutriment_factor = 0.5 * REAGENTS_METABOLISM
 
 /obj/effect/decal/cleanable/femcum
-	name = "female ejaculate"
+	name = "\proper female ejaculate"
 	desc = null
 	gender = PLURAL
 	density = 0

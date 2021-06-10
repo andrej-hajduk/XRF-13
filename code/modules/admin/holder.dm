@@ -366,8 +366,7 @@ GLOBAL_PROTECT(admin_verbs_asay)
 	/datum/admins/proc/view_refs,
 	/datum/admins/proc/view_del_failures,
 #endif
-	/datum/admins/proc/check_bomb_impacts,
-	/client/proc/toggle_cdn
+	/datum/admins/proc/check_bomb_impacts
 	)
 GLOBAL_LIST_INIT(admin_verbs_debug, world.AVdebug())
 GLOBAL_PROTECT(admin_verbs_debug)

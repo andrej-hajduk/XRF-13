@@ -86,13 +86,9 @@
 #define BUCKLE_TRAIT "buckle"
 #define THROW_TRAIT "throw"
 #define FORTIFY_TRAIT "fortify" //Defender fortify ability.
-<<<<<<< HEAD
 #define TRAIT_STASIS	"stasis"//Subject to the stasis effect
-#define APHRO_TRAIT		"Aphro"
-=======
-#define TRAIT_STASIS "stasis"//Subject to the stasis effect
 #define ENDURE_TRAIT "endure" //Ravager Endure ability.
->>>>>>> master
+#define APHRO_TRAIT		"aphro"
 
 //mob traits
 #define TRAIT_KNOCKEDOUT "knockedout" //Forces the user to stay unconscious.

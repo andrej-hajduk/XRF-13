@@ -951,12 +951,8 @@
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic whisper")
 	to_chat(L, "<span class='alien'>You hear a strange, alien voice in your head. <i>\"[msg]\"</i></span>")
 	to_chat(X, "<span class='xenonotice'>We said: \"[msg]\" to [L]</span>")
-	for(var/_M in GLOB.player_list) // it's the xeno's main method of communication, so it should be visible
+	for(var/_M in GLOB.observer_list) // it's the xeno's main method of communication, so it should be visible
 		var/mob/M = _M
-		if(M == L || M == X)
-			continue
-		if(M.stat != DEAD) //not dead, not important
-			continue
 		if(!M.client)
 			continue
 		if(get_dist(M, X) > 7 || M.z != X.z) //they're out of range of normal hearing
