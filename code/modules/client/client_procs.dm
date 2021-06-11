@@ -130,6 +130,8 @@
 	if(connection != "seeker" && connection != "web")	//Invalid connection type.
 		return null
 
+	check_age_verification()
+
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
@@ -621,6 +623,32 @@
 	if(new_player)
 		player_age = -1
 	. = player_age
+
+
+/client/proc/check_age_verification()
+	// If theres no DB, assume yes
+	if(!SSdbcore.IsConnected())
+		age_verification = TRUE
+		return TRUE
+
+	var/datum/db_query/query = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("age_verification")] WHERE ckey=:ckey AND consent=1", list(
+		"ckey" = ckey
+	))
+	if(!query.warn_execute())
+		qdel(query)
+		// If our query failed, just assume yes
+		age_verification = TRUE
+		return TRUE
+
+	// If we returned a row, they accepted
+	while(query.NextRow())
+		qdel(query)
+		age_verification = TRUE
+		return TRUE
+
+	qdel(query)
+	// If we are here, they have not accepted
+	return FALSE
 
 
 /client/proc/findJoinDate()

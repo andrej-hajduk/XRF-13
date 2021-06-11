@@ -56,6 +56,7 @@
 	var/related_accounts_cid = "Requires database"	//So admins know why it isn't working - Used to determine what other accounts previously logged in from this computer id
 	var/account_join_date = null	//Date of byond account creation in ISO 8601 format
 	var/account_age = -1	//Age of byond account in days
+	var/age_verification = FALSE //Has the client passed the 18+ warning
 
 	// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
 	var/list/sent_assets = list()

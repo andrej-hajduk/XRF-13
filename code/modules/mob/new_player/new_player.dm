@@ -173,6 +173,29 @@
 		var/datum/poll_question/poll = locate(href_list["votepollref"]) in GLOB.polls
 		vote_on_poll_handler(poll, href_list)
 
+
+/mob/new_player/proc/verify_age()
+	var/adult = alert(src, "	  This is an 18+ ERP server. \n Please confirm that you are 18 or over to enter.", "Age Verification", "I am NOT over 18", "I am over 18")
+	if(adult == "I am over 18")
+		var/datum/db_query/query = SSdbcore.NewQuery("REPLACE INTO [format_table_name("age_verification")] (ckey, datetime, consent) VALUES (:ckey, Now(), 1)", list(
+			"ckey" = ckey
+		))
+		query.warn_execute()
+		qdel(query)
+		client.age_verification = TRUE
+		return TRUE
+
+	else
+		to_chat_immediate(src, "<span class='danger'>You must be 18 or over to join this server.</span>")
+		message_admins("[key_name(src)] said they were under 18 in the age verification, and have been kicked.")
+		var/datum/db_query/query = SSdbcore.NewQuery("REPLACE INTO [format_table_name("age_verification")] (ckey, datetime, consent) VALUES (:ckey, Now(), 0)", list(
+			"ckey" = ckey
+		))
+		query.warn_execute()
+		qdel(query)
+		qdel(client)
+		return FALSE
+
 /datum/game_mode/proc/observe_respawn_message()
 	return "\nYou might have to wait a certain time to respawn or be unable to, depending on the game mode!"
 
