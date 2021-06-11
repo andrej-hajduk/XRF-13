@@ -217,7 +217,7 @@
 				. = "Jeri"
 		to_chat(prefs.parent, "<span class='warning'>You forgot to set your synthetic name in your preferences. Please do so next time.</span>")
 
-/datum/species/proc/on_species_gain(mob/living/carbon/human/H, /datum/species/old_species)
+/datum/species/proc/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	return
 
 //special things to change after we're no longer that species
