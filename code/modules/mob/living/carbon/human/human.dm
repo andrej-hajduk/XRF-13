@@ -315,8 +315,10 @@
 	return ..(shock_damage, source, siemens_coeff, def_zone)
 
 
-/mob/living/carbon/human/Topic(href, href_list)
+/mob/living/carbon/human/Topic(href, href_list,)
 	. = ..()
+	var/mob/living/carbon/M //lets the usr actually gain arousal from actions
+	M = usr
 	if(.)
 		return
 	if (href_list["refresh"])
@@ -325,18 +327,42 @@
 	if (href_list["forbidden"]) //Below this is attached to the menu in striperp.dm
 		if(interactee&&(in_range(src, usr)))
 			erp_menu(interactee)
+	if (href_list["fondlemenu"]) //Below this is attached to the menu in striperp.dm
+		if(interactee&&(in_range(src, usr)))
+			fondle_menu(interactee)
+	if (href_list["fingeringmenu"]) //Below this is attached to the menu in striperp.dm
+		if(interactee&&(in_range(src, usr)))
+			fingering_menu(interactee)
+	if (href_list["oralmenu"]) //Below this is attached to the menu in striperp.dm
+		if(interactee&&(in_range(src, usr)))
+			oral_menu(interactee)
+	if (href_list["thrustmenu"]) //Below this is attached to the menu in striperp.dm
+		if(interactee&&(in_range(src, usr)))
+			thrust_menu(interactee)
+	if (href_list["mainmenu"]) //serves as the return button
+		if(interactee&&(in_range(src, usr)))
+			erp_menu(interactee)
 	if (href_list["slapass"])
 		if(interactee&&(in_range(src, usr)))
-			erp_menu(interactee)
-			visible_message("<span class='notice'>[usr] slaps [src]'s ass!</span>")
-			playsound(loc, 'sound/weapons/slap.ogg', 50, 1, 1)
-			src.lust += rand(1,3) //adds lust to the slapee so one can coom from spanking
-			src.handle_moans() //rng moans for sound/IMMERSION
-			src.auto_coom() //runs the auto-coom check
-			usr.changeNext_move(CLICK_CD_MELEE) //no spammerinos plz
+			if(M.a_intent == INTENT_HARM)
+				erp_menu(interactee)
+				visible_message("<span class='notice'>[usr] slaps [src]'s ass hard, leaving it glowing a shade of red!</span>")
+				playsound(loc, 'sound/weapons/slap.ogg', 50, 1, 1)
+				src.lust += rand(1,3) //adds lust to the slapee so one can coom from spanking
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				usr.changeNext_move(CLICK_CD_MELEE) //no spammerinos plz
+			else
+				erp_menu(interactee)
+				visible_message("<span class='notice'>[usr] slaps [src]'s ass!</span>")
+				playsound(loc, 'sound/weapons/slap.ogg', 50, 1, 1)
+				src.lust += rand(1,3) //adds lust to the slapee so one can coom from spanking
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				usr.changeNext_move(CLICK_CD_MELEE) //no spammerinos plz
 	if (href_list["fondlechest"])
 		if(interactee&&(in_range(src, usr)))
-			erp_menu(interactee)
+			fondle_menu(interactee)
 			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
 				if(src.gender == FEMALE)
 					visible_message("<span class='notice'>[usr] fondles [src]'s breasts through their clothes!</span>")
@@ -345,13 +371,289 @@
 					visible_message("<span class='notice'>[usr] fondles [src]'s chest through their clothes!</span>")
 			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
 				if(src.gender == FEMALE)
-					visible_message("<span class='notice'>[usr] fondles [src]'s nude breasts with their hands.</span>")
+					visible_message("<span class='notice'>[usr] fondles [src]'s nude breasts.</span>")
 					src.lust += rand(2,3)
 				else
 					visible_message("<span class='notice'>[usr] gently rubs [src]'s bare chest and pecs.</span>")
 					src.lust += rand(2,3)
-			src.handle_moans() //rng moans for sound/IMMERSION
-			src.auto_coom() //runs the auto-coom check
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+	if (href_list["fondlegenitals"])
+		if(interactee&&(in_range(src, usr)))
+			fondle_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s vulva through their clothes!</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+				else
+					visible_message("<span class='notice'>[usr] fondles [src]'s penis and testicles through their clothes!</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s bare vulva.</span>")
+					src.lust += rand(2,3)
+				else
+					visible_message("<span class='notice'>[usr] gently rubs [src]'s nude penis and testicles.</span>")
+					src.lust += rand(2,3)
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+	if (href_list["fondleass"])
+		if(interactee&&(in_range(src, usr)))
+			fondle_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s ass through their clothes!</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+				else
+					visible_message("<span class='notice'>[usr] fondles [src]'s ass through their clothes!</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] fondles [src]'s nude ass.</span>")
+					src.lust += rand(2,3)
+				else
+					visible_message("<span class='notice'>[usr] gently fondles [src]'s bare ass.</span>")
+					src.lust += rand(2,3)
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+	if (href_list["fingervagina"])
+		if(interactee&&(in_range(src, usr)))
+			fingering_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] tries to finger [src]'s vagina, but they're wearing clothes! [usr] simply settles for rubbing instead.</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+				else
+					visible_message("<span class='notice'>[src] doesn't have a vagina to finger!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their fingers into [src]'s vagina. Roughly fingering her!</span>")
+						src.lust += rand(3,8)
+						src.handle_fingering_sounds()
+					else
+						visible_message("<span class='notice'>[usr] fingers [src]'s vagina.</span>")
+						src.lust += rand(3,8)
+						src.handle_fingering_sounds()
+				else
+					visible_message("<span class='notice'>[src] doesn't have a vagina to finger!</span>")
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+	if (href_list["fingerass"])
+		if(interactee&&(in_range(src, usr)))
+			fingering_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] tries to finger [src]'s ass, but they're wearing clothes! [usr] simply settles for rubbing instead.</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+				else
+					visible_message("<span class='notice'>[usr] tries to finger [src]'s ass, but they're wearing clothes! [usr] simply settles for rubbing instead.</span>")
+					src.lust += rand(1) //adds lust from being fondled, not much cuz clothes
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their fingers into [src]'s ass, roughly fingering her.</span>")
+						src.lust += rand(3,6)
+						src.handle_fingering_sounds()
+					else
+						visible_message("<span class='notice'>[usr] fingers [src]'s ass.</span>")
+						src.lust += rand(3,6)
+						src.handle_fingering_sounds()
+				else
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their fingers into [src]'s ass, roughly fingering him.</span>")
+						src.lust += rand(3,6)
+						src.handle_fingering_sounds()
+					else
+						visible_message("<span class='notice'>[usr] fingers [src]'s ass.</span>")
+						src.lust += rand(3,6)
+						src.handle_fingering_sounds()
+					src.handle_moans() //rng moans for sound/IMMERSION
+					src.auto_coom() //runs the auto-coom check
+	if (href_list["sucknipples"])
+		if(interactee&&(in_range(src, usr)))
+			oral_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] tries to suck [src]'s nipples, but they're wearing clothes! Strip them first!</span>")
+				else
+					visible_message("<span class='notice'>[usr] tries to suck [src]'s nipples, but they're wearing clothes! Strip them first!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] lovingly sucks on [src]'s nipples.</span>")
+					src.lust += rand(2,4)
+				else
+					visible_message("<span class='notice'>[usr] lovingly licks [src]'s nipples.</span>")
+					src.lust += rand(2,4)
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				src.handle_blowjob_sounds()
+	if (href_list["suckdick"])
+		if(interactee&&(in_range(src, usr)))
+			oral_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[src] doesn't have a dick to suck!</span>")
+				else
+					visible_message("<span class='notice'>[usr] tries to suck [src]'s dick, but they're wearing clothes! Strip them first!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[src] doesn't have a dick to suck!</span>")
+				else
+					visible_message("<span class='notice'>[usr] eagerly sucks [src]'s cock!</span>")
+					src.lust += rand(5,8)
+					M.lust += 1
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				M.auto_coom() //runs the auto-coom check
+				M.handle_moans() //rng moans for sound/IMMERSION
+				src.handle_blowjob_sounds()
+	if (href_list["suckpussy"])
+		if(interactee&&(in_range(src, usr)))
+			oral_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] tries to lick [src]'s pussy, but they're wearing clothes! Strip them first!</span>")
+				else
+					visible_message("<span class='notice'>[src] doesn't have a pussy to lick!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(src.gender == FEMALE)
+					visible_message("<span class='notice'>[usr] eagerly licks [src]'s pussy!</span>")
+					src.lust += rand(5,8)
+					M.lust += 1
+				else
+					visible_message("<span class='notice'>[src] doesn't have a pussy to lick!</span>")
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				M.auto_coom() //runs the auto-coom check
+				M.handle_moans() //rng moans for sound/IMMERSION
+				src.handle_blowjob_sounds()
+	if (href_list["forceoral"])
+		if(interactee&&(in_range(src, usr)))
+			oral_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE)
+					visible_message("<span class='notice'>[src] tries to lick [usr]'s pussy, but they're wearing clothes! Strip them first!</span>")
+				else
+					visible_message("<span class='notice'>[src] tries to suck [usr]'s dick, but they're wearing clothes! Strip them first!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their pussy towards [src]'s mouth. [src] is forced to lick her pussy! </span>")
+						M.lust += rand(5,8)
+						src.lust += 1
+					else
+						visible_message("<span class='notice'>[usr] positions their pussy towards [src]'s mouth. [src] eagerly licks their pussy. </span>")
+						M.lust += rand(5,8)
+						src.lust += 1
+				else
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their cock into [src]'s mouth. [src] chokes and gags as they are forced to suck. </span>")
+						M.lust += rand(5,8)
+						src.lust += 1
+					else
+						visible_message("<span class='notice'>[usr] puts their cock into [src]'s mouth. [src] happily sucks away. </span>")
+						M.lust += rand(5,8)
+						src.lust += 1
+					src.handle_blowjob_sounds()
+					src.handle_moans() //rng moans for sound/IMMERSION
+					src.auto_coom() //runs the auto-coom check
+					M.auto_coom() //runs the auto-coom check
+					M.handle_moans() //rng moans for sound/IMMERSION
+	if (href_list["vaginal"])
+		if(interactee&&(in_range(src, usr)))
+			thrust_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE && src.gender == FEMALE)
+					visible_message("<span class='notice'>[src] tries to rub her pussy on [usr]'s, but they're wearing clothes! Strip them first!</span>")
+				else if(M.gender == FEMALE && src.gender == MALE)
+					visible_message("<span class='notice'>[usr] tries to insert [src]'s penis into her vagina but they're wearing clothes! Strip them first!</span>")
+				else if(M.gender == MALE && src.gender == MALE)
+					visible_message("<span class='notice'>[src] doesn't have a vagina!</span>")
+				else
+					visible_message("<span class='notice'>[usr] tries to insert his penis into [src]'s vagina but they're wearing clothes! Strip them first!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE && src.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their pussy towards onto [src]'s. [usr] forces them to rub together! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] places her pussy onto [src]'s. The pair happily rub together causing immense pleasure. </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				else if(M.gender == FEMALE && src.gender == MALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their pussy onto [src]'s penis. [usr] forces [src] to fuck them! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] climbs onto [src]'s cock. [usr] bounces up and down happily.</span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				else if(M.gender == MALE && src.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their cock into [src]'s pussy. [usr] forces [src] to fuck them! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] allows [src] to climb onto his cock. [src] bounces up and down happily.</span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				else if(M.gender == MALE && src.gender == MALE)
+					visible_message("<span class='notice'>[src] doesn't have a vagina!</span>")
+				src.handle_sex_sounds()
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				M.auto_coom() //runs the auto-coom check
+				M.handle_moans() //rng moans for sound/IMMERSION
+	if (href_list["anal"])
+		if(interactee&&(in_range(src, usr)))
+			thrust_menu(interactee)
+			if(istype(wear_suit, /obj/item/clothing/suit) || istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE && src.gender == FEMALE)
+					visible_message("<span class='notice'>You have no way of fucking [src]'s ass or her you!</span>")
+				else if(M.gender == FEMALE && src.gender == MALE)
+					visible_message("<span class='notice'>[usr] tries to insert [src]'s penis into her ass but they're wearing clothes! Strip them first!</span>")
+				else if(M.gender == MALE && src.gender == MALE)
+					visible_message("<span class='notice'>[usr] tries to insert  his penis into [src]'s ass but they're wearing clothes! Strip them first!</span>")
+				else
+					visible_message("<span class='notice'>[usr] tries to insert his penis into [src]'s ass but they're wearing clothes! Strip them first!</span>")
+			else if(!istype(wear_suit, /obj/item/clothing/suit) && !istype(w_uniform, /obj/item/clothing/under))
+				if(M.gender == FEMALE && src.gender == MALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces [src]'s cock into their ass. [usr] forces [src] to fuck them! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] climbs onto [src]'s cock and inserts it into her ass. [usr] bounces up and down happily.</span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				else if(M.gender == MALE && src.gender == FEMALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their cock into [src]'s ass. [usr] forces [src] to fuck them! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] inserts their cock into [src]'s ass. [src] bounces back and forth happily.</span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				else if(M.gender == MALE && src.gender == MALE)
+					if(M.a_intent == INTENT_HARM)
+						visible_message("<span class='notice'>[usr] forces their cock into [src]'s ass. [usr] forces [src] to fuck them! </span>")
+						M.lust += rand(8,12)
+						src.lust += rand(4,8)
+					else
+						visible_message("<span class='notice'>[usr] inserts their cock into [src]'s ass. [src] bounces back and forth happily.</span>")
+						M.lust += rand(8,12)
+						src.lust += rand(8,12)
+				src.handle_sex_sounds()
+				src.handle_moans() //rng moans for sound/IMMERSION
+				src.auto_coom() //runs the auto-coom check
+				M.auto_coom() //runs the auto-coom check
+				M.handle_moans() //rng moans for sound/IMMERSION
+
 
 
 	if (href_list["item"])

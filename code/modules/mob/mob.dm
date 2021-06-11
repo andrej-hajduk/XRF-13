@@ -390,7 +390,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/mob/proc/erp_menu(mob/user)
+/mob/proc/erp_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
 	user.set_interaction(src)
 	var/dat = {"
 	<BR> Test!
@@ -399,6 +399,41 @@
 	popup.set_content(dat)
 	popup.open()
 
+/mob/proc/fondle_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/fingering_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/oral_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/thrust_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
 /mob/vv_get_dropdown()
 	. = ..()
 	. += "---"
