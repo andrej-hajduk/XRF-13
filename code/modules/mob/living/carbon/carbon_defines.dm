@@ -45,3 +45,11 @@
 
 	/// % Chance of exploding on death, incremented by total damage taken if not initially zero.
 	var/gib_chance = 0
+
+	//Starting my new erp system below. We're doing this here because both humans and ayylmaos are children of carbon so it'll pass to both - Wel Ard
+	var/lust = 0 //the coom thing.
+	var/max_lust = 100
+	var/male_moan
+	var/female_moan
+	var/male_cd = 0 //Men have refractory periods between orgasms that women do not, these handle that. I have autism btw
+	var/male_cd_max = 100
