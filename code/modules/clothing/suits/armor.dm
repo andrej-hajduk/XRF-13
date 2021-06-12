@@ -228,7 +228,7 @@
 	flags_armor_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	flags_item = SYNTH_RESTRICTED
 	slowdown = 0
-	soft_armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 40, "rad" = 0, "fire" = 50, "acid" = 50)
+	soft_armor = list("melee" = 20, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 20, "acid" = 30)
 	siemens_coefficient = 0.7
 
 

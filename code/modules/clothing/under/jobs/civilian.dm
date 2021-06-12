@@ -133,3 +133,14 @@
 	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
 	name = "shaft miner's jumpsuit"
 	icon_state = "miner"
+
+/obj/item/clothing/under/rank/civilian/janitor/maid
+	name = "maid uniform"
+	desc = "A simple maid uniform for housekeeping."
+	icon_state = "janimaid"
+	item_state = "janimaid"
+	flags_inventory = CHEST|GROIN
+/*	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+*/

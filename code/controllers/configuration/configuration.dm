@@ -19,6 +19,7 @@
 
 	var/motd
 	var/policy
+	var/rules
 
 	var/static/regex/ic_filter_regex
 
@@ -53,6 +54,7 @@
 	LoadMOTD()
 	LoadPolicy()
 	LoadChatFilter()
+	LoadRules()
 
 	if(Master)
 		Master.OnConfigLoad()
@@ -333,6 +335,8 @@ Example config:
 		else
 			policy = parsed
 
+/datum/controller/configuration/proc/LoadRules()
+	rules = file2text("[directory]/rules.txt")
 
 /datum/controller/configuration/proc/loadmaplist(filename, maptype)
 	log_config("Loading config file [filename]...")

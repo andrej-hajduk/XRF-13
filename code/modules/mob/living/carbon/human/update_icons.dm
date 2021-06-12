@@ -291,11 +291,13 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	if(species.species_flags & HAS_UNDERWEAR)
 
 		//Underwear
-		if(underwear >0 && underwear < 3)
+		if(underwear == 1)
+			stand_icon.Blend(new /icon('icons/mob/human.dmi', "blank"), ICON_OVERLAY)
+		else if(underwear == 2 || underwear == 3)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryo[underwear]_[g]_s"), ICON_OVERLAY)
 
 		if(ismarinejob(job)) //undoing override
-			if(undershirt>0 && undershirt < 5)
+			if(undershirt > 0 && undershirt < 5)
 				stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
 		else if(undershirt > 0 && undershirt < 7)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
@@ -684,17 +686,6 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	var/image/face_lying_image = new /image(icon = face_lying)
 	return face_lying_image
-
-/mob/living/carbon/human/update_burst()
-	remove_overlay(BURST_LAYER)
-	var/image/standing
-	if(chestburst == 1)
-		standing = image("icon" = 'icons/Xeno/Effects.dmi',"icon_state" = "burst_stand", "layer" =-BURST_LAYER)
-	else if(chestburst == 2)
-		standing = image("icon" = 'icons/Xeno/Effects.dmi',"icon_state" = "bursted_stand", "layer" =-BURST_LAYER)
-
-	overlays_standing[BURST_LAYER]	= standing
-	apply_overlay(BURST_LAYER)
 
 /mob/living/carbon/human/update_headbite()
 	remove_overlay(HEADBITE_LAYER)

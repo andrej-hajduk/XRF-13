@@ -301,6 +301,7 @@
 	update_names_joined_list(real_name)
 	overlay_fullscreen_timer(0.5 SECONDS, 10, "roundstart1", /obj/screen/fullscreen/black)
 	overlay_fullscreen_timer(2 SECONDS, 20, "roundstart2", /obj/screen/fullscreen/spawning_in)
+	give_genitals(TRUE) // this is very hacky, but we're not aiming for flawless code here
 
 /mob/living/silicon/ai/on_spawn(mob/new_player/summoner)
 	if(!is_banned_from(summoner.ckey, "Appearance") && summoner.client?.prefs?.ai_name)

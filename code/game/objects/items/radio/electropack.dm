@@ -13,6 +13,8 @@
 	var/on = TRUE
 	var/code = 2
 	var/frequency = FREQ_ELECTROPACK
+	var/shock_cooldown = FALSE
+	var/tagname = null
 
 /obj/item/electropack/Initialize()
 	. = ..()
@@ -112,3 +114,65 @@ Code:
 	var/datum/browser/popup = new(user, "electropack")
 	popup.set_content(dat)
 	popup.open()
+
+/obj/item/electropack/tie/shockcollar
+	name = "shock collar"
+	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange.."
+	icon = 'icons/obj/clothing/cit_neck.dmi'
+	icon_state = "shockcollar"
+	item_state = "shockcollar"
+	flags_equip_slot = NONE   //no more pocket shockers
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/electropack/shockcollar/attack_hand(mob/user)
+	if(loc == user /*&& user.get_item_by_slot(SLOT_NECK)*/)
+		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
+		return
+	return ..()
+
+/obj/item/electropack/shockcollar/receive_signal(datum/signal/signal)
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc) && on)
+		if(shock_cooldown == TRUE)
+			return
+		shock_cooldown = TRUE
+		addtimer(VARSET_CALLBACK(src, shock_cooldown, FALSE), 100)
+		var/mob/living/L = loc
+		step(L, pick(GLOB.cardinals))
+
+		to_chat(L, "<span class='danger'>You feel a sharp shock from the collar!</span>")
+		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+		s.set_up(3, 1, L)
+		s.start()
+
+		L.Paralyze(20 SECONDS)
+
+	if(master)
+		master.receive_signal()
+	return
+
+/obj/item/electropack/shockcollar/attackby(obj/item/W, mob/user, params) //moves it here because on_click is being bad
+	if(istype(W, /obj/item/tool/hand_labeler))
+		var/t = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", tagname ? tagname : "Spot", MAX_NAME_LEN)
+		if(t)
+			tagname = t
+			name = "[initial(name)] - [t]"
+	else
+		return ..()
+
+/obj/item/electropack/shockcollar/ui_interact(mob/user) //on_click calls this
+	var/dat = {"
+<TT>
+<B>Frequency/Code</B> for shock collar:<BR>
+Frequency:
+[format_frequency(src.frequency)]
+<A href='byond://?src=[REF(src)];set=freq'>Set</A><BR>
+Code:
+[src.code]
+<A href='byond://?src=[REF(src)];set=code'>Set</A><BR>
+</TT>"}
+	user << browse(dat, "window=radio")
+	onclose(user, "radio")
+	return

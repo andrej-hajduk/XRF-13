@@ -303,7 +303,9 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/private_message_panel,
 	/client/proc/private_message_context,
 	/client/proc/msay,
-	/client/proc/dsay
+	/client/proc/dsay,
+	/client/proc/marine_ooc,
+	/client/proc/xeno_ooc
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVadmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -359,6 +361,7 @@ GLOBAL_PROTECT(admin_verbs_asay)
 	/datum/admins/proc/reestablish_db_connection,
 	/datum/admins/proc/view_runtimes,
 	/datum/admins/proc/spatial_agent,
+	/client/proc/give_humans_genitals,
 #ifdef REFERENCE_TRACKING
 	/datum/admins/proc/view_refs,
 	/datum/admins/proc/view_del_failures,

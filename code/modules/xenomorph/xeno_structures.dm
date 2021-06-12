@@ -193,10 +193,6 @@
 		to_chat(user, "<span class='notice'>[victim] is not dead!</span>")
 		return
 
-	if(victim.chestburst)
-		to_chat(user, "<span class='notice'>[victim] has already been exhausted to incubate a sister!</span>")
-		return
-
 	if(issynth(victim))
 		to_chat(user, "<span class='notice'>[victim] has no useful biomass for us.</span>")
 		return
@@ -206,8 +202,6 @@
 	if(!do_after(user, 20, FALSE, victim, BUSY_ICON_DANGER) || QDELETED(src))
 		return
 
-	victim.chestburst = 2 //So you can't reuse corpses if the silo is destroyed
-	victim.update_burst()
 	victim.forceMove(src)
 
 	shake(4 SECONDS)

@@ -31,14 +31,17 @@
 	set name = "rules"
 	set hidden = TRUE
 
-	if(!CONFIG_GET(string/rulesurl))
-		to_chat(src, "<span class='warning'>The rules URL is not set in the server configuration.</span>")
+	if(!config.rules)
+		to_chat(src, "<span class='warning'>The rules have not been set in the server configuration.</span>")
 		return
 
-	if(alert("This will open the rules in your browser. Are you sure?", "Rules", "Yes", "No") != "Yes")
-		return
+	var/output = "<div align='center'>"
+	output += config.rules
+	output += "</div>"
 
-	DIRECT_OUTPUT(src, link(CONFIG_GET(string/rulesurl)))
+	var/datum/browser/popup = new(src, "rules", "<div align='center'>Server Rules</div>", 480, 800)
+	popup.set_content(output)
+	popup.open(FALSE)
 
 
 /client/verb/discord()

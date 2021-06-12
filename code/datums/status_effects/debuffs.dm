@@ -341,3 +341,104 @@
 	name = "Healing Infusion"
 	desc = "You have accelerated natural healing."
 	icon_state = "healing_infusion"
+
+
+//naughty stuff (still buggy)
+/datum/status_effect/breast_enlarger
+	id = "breast_enlarger"
+	alert_type = null
+	var/moveCalc = 1
+	var/cachedmoveCalc = 1
+	var/last_checked_size //used to prevent potential cpu waste from happening every tick.
+
+/datum/status_effect/breast_enlarger/on_apply()
+	. = ..()
+	if(!.)
+		return
+	owner.add_movespeed_modifier(MOVESPEED_ID_BREAST_HYPERTROPHY, TRUE, 0, NONE, TRUE, moveCalc)
+
+/datum/status_effect/breast_enlarger/tick()
+	var/mob/living/carbon/human/H = owner
+	var/datum/internal_organ/genital/breasts/B = H.internal_organs_by_name["breasts"]
+	if(!B)
+		H.remove_status_effect(src)
+		return
+	moveCalc = 1 + ((round(B.cached_size) - 9) / 3) //Afffects how fast you move, and how often you can click.
+
+	if(last_checked_size != B.cached_size)
+		H.add_movespeed_modifier(MOVESPEED_ID_BREAST_HYPERTROPHY, TRUE, multiplicative_slowdown = moveCalc)
+		sizeMoveMod(moveCalc)
+
+	if(B.cached_size > 11)
+		var/message = FALSE
+		if(H.w_uniform)
+			H.dropItemToGround(H.w_uniform, TRUE)
+			message = TRUE
+		if(H.wear_suit)
+			H.dropItemToGround(H.wear_suit, TRUE)
+			message = TRUE
+		if(message)
+			playsound(H.loc, 'sound/items/poster_ripped.ogg', 25, TRUE)
+			to_chat(H, "<span class='danger'>Your enormous breasts are way too large to fit anything over them!</span>")
+
+	if(B.size == "huge")
+		if(prob(1))
+			to_chat(H, "<span class='warning'>Your back feels painfully sore.</span>")
+			H.apply_damage(0.1, BRUTE, BODY_ZONE_CHEST)
+
+	else if(prob(1))
+		to_chat(H, "<span class='warning'>Your back feels very sore.</span>")
+	last_checked_size = B.cached_size
+
+	return ..()
+
+/datum/status_effect/breast_enlarger/proc/sizeMoveMod(value)
+	if(cachedmoveCalc == value)
+		return
+	owner.next_move_modifier /= cachedmoveCalc
+	owner.next_move_modifier *= value
+	cachedmoveCalc = value
+
+/datum/status_effect/breast_enlarger/on_remove()
+	to_chat(owner, "<span class='notice'>Your expansive chest has become a more managable size, liberating your movements.</span>")
+	owner.remove_movespeed_modifier(MOVESPEED_ID_BREAST_HYPERTROPHY)
+	sizeMoveMod(1)
+	return ..()
+
+/datum/status_effect/penis_enlarger
+	id = "penis_enlarger"
+	alert_type = null
+	var/bloodCalc
+	var/moveCalc
+	var/last_checked_size //used to prevent potential cpu waste, just like the above.
+
+/datum/status_effect/penis_enlarger/on_apply()
+	. = ..()
+	if(!.)
+		return
+	owner.add_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY, TRUE, 0, NONE, TRUE, moveCalc)
+
+/datum/status_effect/penis_enlarger/tick()
+	var/mob/living/carbon/human/H = owner
+	var/datum/internal_organ/genital/penis/P = H.internal_organs_by_name["penis"]
+	if(!P)
+		owner.remove_status_effect(src)
+		return
+	moveCalc = 1 + ((round(P.length) - 21) / 3) //effects how fast you can move
+	bloodCalc = 1 + ((round(P.length) - 21) / 15) //effects how much blood you need (I didn' bother adding an arousal check because I'm spending too much time on this organ already.)
+
+	var/modifier = H.has_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY)
+	if(P.length < 22 && modifier)
+		to_chat(owner, "<span class='notice'>Your [pick(GLOB.dick_nouns)] has become a more managable size, liberating your movements.</span>")
+		H.remove_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY)
+	else if(P.length >= 22 && !modifier)
+		to_chat(H, "<span class='warning'>Your [pick(GLOB.dick_nouns)] is so substantial, it's taking all your blood and affecting your movements!</span>")
+		H.add_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY, TRUE, 0, NONE, TRUE, moveCalc)
+	H.blood_volume -= bloodCalc
+
+	return ..()
+
+/datum/status_effect/chem/penis_enlarger/on_remove()
+	owner.remove_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY)
+	owner.restore_blood()
+	return ..()
