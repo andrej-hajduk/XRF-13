@@ -59,17 +59,17 @@
 				display_class = "hostooc"
 			if("Project Lead")
 				display_class = "projleadooc"
-			if("Headcoder")
+			if("Head Coder")
 				display_class = "headcoderooc"
-			if("Headmin")
+			if("Head Admin")
 				display_class = "headminooc"
-			if("Headmentor")
+			if("Head Mentor")
 				display_class = "headmentorooc"
-			if("Admin")
+			if("Game Admin")
 				display_class = "adminooc"
-			if("Trial Admin")
+			if("Moderator")
 				display_class = "trialminooc"
-			if("Admin Candidate", "Admin Observer")
+			if("Trial Moderator")
 				display_class = "candiminooc"
 			if("Mentor")
 				display_class = "mentorooc"
@@ -175,6 +175,53 @@
 		if(C.prefs.toggles_chat & CHAT_LOOC)
 			to_chat(C, "<font color='#6699CC'><span class='ooc'><span class='prefix'>LOOC: [ADMIN_TPMONTY(mob)]</span>: <span class='message'>[msg]</span></span></font>")
 
+/client/proc/xeno_ooc(msg as text)
+	set name = "XOOC"
+	set category = "OOC"
+	set desc = "Xenomorph OOC"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	msg = sanitize(msg)
+	if(!msg)
+		return
+
+	var/display_name = key
+	if(holder?.fakekey)
+		display_name = holder.fakekey
+
+	for(var/mob/M in GLOB.player_list)
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='event_announcement'>Xeno OOC: [key_name_admin(key)]: [msg]</span>")
+		else if(istype(M, /mob/living/carbon/xenomorph) || istype(M, /mob/dead/observer))
+			to_chat(M, "<span class='event_announcement'>Xeno OOC: [display_name]: [msg]</span>")
+
+	mob.log_talk(msg, LOG_XOOC)
+
+/client/proc/marine_ooc(msg as text)
+	set name = "MOOC"
+	set category = "OOC"
+	set desc = "Marine OOC"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	msg = sanitize(msg)
+	if(!msg)
+		return
+
+	var/display_name = key
+	if(holder?.fakekey)
+		display_name = holder.fakekey
+
+	for(var/mob/M in GLOB.player_list)
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='event_announcement'>Marine OOC: [key_name_admin(key)]: [msg]</span>")
+		else if(istype(M, /mob/living/carbon/human) || istype(M, /mob/dead/observer))
+			to_chat(M, "<span class='event_announcement'>Marine OOC: [display_name]: [msg]</span>")
+
+	mob.log_talk(msg, LOG_MOOC)
 
 /client/verb/motd()
 	set name = "MOTD"

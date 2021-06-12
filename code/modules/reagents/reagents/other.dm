@@ -669,3 +669,99 @@
 	overdose_threshold = REAGENTS_OVERDOSE
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL
 	scannable = TRUE
+
+//body bluids
+/datum/reagent/consumable/semen
+	name = "Semen"
+	description = "Sperm from some animal. Useless for anything but insemination, really."
+	taste_description = "something salty"
+	taste_multi = 2 //Not very overpowering flavor
+	//data = list("donor"=null,"viruses"=null,"donor_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null)
+	reagent_state = LIQUID
+	color = "#FFFFFF"
+	can_synth = FALSE
+	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/consumable/semen/reaction_turf(turf/T, volume)
+	if(!istype(T))
+		return
+	if(volume < 10)
+		return
+
+	var/obj/effect/decal/cleanable/semen/S = locate() in T
+	if(!S)
+		S = new(T)
+	//if(data["blood_DNA"])
+		//S.add_blood_DNA(list("color" = data["blood_DNA"], data["blood_DNA"] = data["blood_type"]))
+
+/obj/effect/decal/cleanable/semen
+	name = "\proper semen"
+	desc = null
+	icon = 'modular_skyrat/icons/obj/genitals/effects.dmi'
+	icon_state = "semen1"
+	random_icon_states = list("semen1", "semen2", "semen3", "semen4")
+
+/obj/effect/decal/cleanable/semen/Initialize()
+	. = ..()
+	dir = GLOB.cardinals
+	//add_blood_DNA(list("color" = bloodtype_to_color("A+"), "Non-human DNA" = "A+"))
+
+/datum/reagent/consumable/femcum
+	name = "Female Ejaculate"
+	description = "Vaginal lubricant found in most mammals and other animals of similar nature. Where you found this is your own business."
+	taste_description = "something with a tang" // wew coders who haven't eaten out a girl.
+	taste_multi = 2
+	//data = list("donor"=null,"viruses"=null,"donor_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null)
+	reagent_state = LIQUID
+	color = "#AAAAAA77"
+	can_synth = FALSE
+	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+
+/obj/effect/decal/cleanable/femcum
+	name = "\proper female ejaculate"
+	desc = null
+	gender = PLURAL
+	density = 0
+	layer = ABOVE_NORMAL_TURF_LAYER
+	icon = 'modular_skyrat/icons/obj/genitals/effects.dmi'
+	icon_state = "fem1"
+	random_icon_states = list("fem1", "fem2", "fem3", "fem4")
+
+/obj/effect/decal/cleanable/femcum/Initialize(mapload)
+	. = ..()
+	dir = GLOB.cardinals
+	//add_blood_DNA(list("color" = bloodtype_to_color("A+"), "Non-human DNA" = "A+"))
+
+/datum/reagent/consumable/femcum/reaction_turf(turf/T, reac_volume)
+	if(!istype(T))
+		return
+	if(reac_volume < 10)
+		return
+
+	var/obj/effect/decal/cleanable/femcum/S = locate() in T
+	if(!S)
+		S = new(T)
+	//if(data["blood_DNA"])
+		//S.add_blood_DNA(list("color" = data["bloodcolor"], data["blood_DNA"] = data["blood_type"]))
+
+/datum/reagent/phenol
+	name = "Phenol"
+	description = "An aromatic ring of carbon with a hydroxyl group. A useful precursor to some medicines, but has no healing properties on its own."
+	reagent_state = LIQUID
+	taste_description = "sweet and tarry" //Again, not a strong acid.
+	//pH = 5.5
+	color = "#e6e8ff"
+
+/datum/reagent/acetone
+	name = "Acetone"
+	description = "A slick, slightly carcinogenic liquid. Has a multitude of mundane uses in everyday life."
+	reagent_state = LIQUID
+	taste_description = "solvent"//It's neutral though..?
+	color = "#e6e6e6"
+
+/datum/reagent/oil
+	name = "Oil"
+	description = "Burns in a small smoky fire, mostly used to get Ash."
+	reagent_state = LIQUID
+	color = "#292929"
+	taste_description = "oil"

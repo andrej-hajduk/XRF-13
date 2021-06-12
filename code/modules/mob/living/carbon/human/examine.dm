@@ -10,8 +10,6 @@
 			msg += "<span style='font-weight: bold; color: purple;'>You sense this creature is not organic.</span>\n"
 		if(status_flags & XENO_HOST)
 			msg += "This creature is impregnated and [reagents.get_reagent_amount(/datum/reagent/toxin/xeno_growthtoxin) > 0 ? "" : "not"] inoculated with Larval Accelerant. \n"
-		else if(chestburst == 2)
-			msg += "A larva escaped from this creature.\n"
 		if (headbitten)
 			msg += "This creature has been purged of vital organs in the head.\n"
 		if(istype(wear_mask, /obj/item/clothing/mask/facehugger))
@@ -210,6 +208,12 @@
 
 	if(holo_card_color)
 		msg += "[t_He] has a [holo_card_color] holo card on [t_his] chest.\n"
+
+	//CIT CHANGES START HERE - adds genital details to examine text
+	if(LAZYLEN(internal_organs))
+		for(var/datum/internal_organ/genital/dicc in internal_organs)
+			if(dicc.is_exposed())
+				msg += "[dicc.genital_examine(user)]\n"
 
 	if(suiciding)
 		msg += "<span class='warning'>[t_He] appears to have commited suicide... there is no hope of recovery.</span>\n"
@@ -449,9 +453,6 @@
 						msg += "<span class='warning'>[t_He] has blood pooling around [t_his] <b>left boot</b>!</span>\n"
 					if (display_foot_right)
 						msg += "<span class='warning'>[t_He] has blood pooling around [t_his] <b>right boot</b>!</span>\n"
-
-	if(chestburst == 2)
-		msg += "<span class='warning'><b>[t_He] has a giant hole in [t_his] chest!</b></span>\n"
 
 	if(headbitten)
 		msg += "<span class='warning'><b>[t_He] has a giant hole in [t_his] head!</b></span>\n"

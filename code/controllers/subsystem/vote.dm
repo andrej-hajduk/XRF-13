@@ -37,6 +37,9 @@ SUBSYSTEM_DEF(vote)
 		SStgui.close_uis(src)
 		reset()
 
+/datum/controller/subsystem/vote/proc/autotransfer()
+	initiate_vote("restart", "the server")
+
 /// Stop the current vote and reset everything
 /datum/controller/subsystem/vote/proc/reset()
 	choices.Cut()
@@ -146,13 +149,16 @@ SUBSYSTEM_DEF(vote)
 			if(!C.is_afk() && check_rights_for(C, R_SERVER))
 				active_admins = TRUE
 				break
-		if(!active_admins)
-			// No delay in case the restart is due to lag
-			SSticker.Reboot("Restart vote successful.", "restart vote", 1)
-		else
-			to_chat(world, "<span style='boltnotice'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +SERVER, so it has been canceled. If you wish, you may restart the server.")
 
+		if(!active_admins) // No admins
+			// No delay in case the restart is due to lag
+			SSticker.Reboot("Restart vote successful.", 5 SECONDS)
+
+		else if(admin_approval("Restart the round?", admin_sound = 'sound/effects/adminhelp.ogg'))
+			SSticker.Reboot("Restart vote successful.", 5 SECONDS) // Admins online, and they approve
+
+		else // Admins disapprove
+			to_chat(world, "<span style='boldnotice'>Reboot was cancelled by an admin.</span>")
 
 
 /// Register the vote of one player
@@ -197,6 +203,7 @@ SUBSYSTEM_DEF(vote)
 		reset()
 		switch(vote_type)
 			if("restart")
+				question = "End the round?"
 				choices.Add("Restart Round", "Continue Playing")
 			if("gamemode")
 				for(var/datum/game_mode/mode AS in config.votable_modes)

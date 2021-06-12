@@ -34,32 +34,30 @@
 
 	switch(SSmapping.configs[GROUND_MAP].map_name)
 		if(MAP_PRISON_STATION)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on Fiorina Orbital Penitentiary. You worked or lived on the prison station, and managed to avoid the alien attacks... until now.</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator on Fiorina Orbital Penitentiary. You infiltrated on the prison station, and managed to avoid the chaos... until now.</span>")
 		if(MAP_ICE_COLONY)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the ice habitat. You worked or lived on the colony, and managed to avoid the alien attacks... until now.</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator on the ice habitat. You infiltrated on the colony, and managed to avoid the anarchy... until now.</span>")
 		if(MAP_BIG_RED)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the colony. You worked or lived in the archaeology colony, and managed to avoid the alien attacks... until now.</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator the colony. You infiltrated in the archaeology colony, and managed to avoid the downfall... until now.</span>")
 		if(MAP_LV_624)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the colony. You suspected something was wrong and tried to warn others, but it was too late...</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator  on the colony. You suspected something was wrong and tried to call for help, but it was too late...</span>")
 		if(MAP_ICY_CAVES)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the icy cave system. You worked or lived on the site, and managed to avoid the alien attacks... until now.</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator on the icy cave system. You infiltrated on the site, and managed to avoid the chaoss... until now.</span>")
 		if(MAP_BARRENQUILLA_MINING)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the facility. The site manager's greed caught up to him, and you're caught in the crossfire...</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator  on the facility. The site manager's greed caught up to him, and you're caught in the crossfire...</span>")
 		if(MAP_RESEARCH_OUTPOST)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the outpost. But you question yourself: are you truely safe now?</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator  on the outpost. But you question yourself: are you truely safe now?</span>")
 		if(MAP_MAGMOOR_DIGSITE)
-			to_chat(M, "<span class='notice'>You are a survivor of the attack on the Magmoor Digsite IV. You worked or lived on the digsite, and managed to avoid the alien attacks... until now.</span>")
+			to_chat(M, "<span class='notice'>You are a CLF Infiltrator on the Magmoor Digsite IV. infiltrated on the digsite, and managed to avoid the anarchy... until now.</span>")
 		else
-			to_chat(M, "<span class='notice'>Through a miracle you managed to survive the attack. But are you truly safe now?</span>")
+			to_chat(M, "<span class='notice'>Through a miracle you managed to survive the chaos. But are you truly safe now?</span>")
 
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"In whatever case you have been through, you are here to survive and get yourself rescued.
-You appreciate the support of TerraGov and Nanotrasen should you be rescued.
-You are not hostile to TGMC, nor you should oppose or disrupt their objective, unless an admin says otherwise.
-If you find any other survivors in the area, cooperate with them to increase your chances of survival.
-Depending on the job you've undertook, you may have additional skills to help others when needed.
-Good luck, but do not expect to survive."})
+	to_chat(M, {"As the CLF Infiltrator your loyalty is to the colonial liberation front. You were a colonist, but not in this one, your colony was destroyed by the war and that pushed you to join the war against those who destroyed your home.
+You were sent to this colony with one job: get the secret documents and every piece of intel of what is happening down here. As you can see, the plan was stopped by a chaotic rise up who took over the colony in anarchy.
+You are alone, in the dark. Your objective now is survive whatever is down here, and perhaps.. Contact the Colonial Liberation Front for reinforcements.
+Good luck infilitrator."})
 
 
 //Assistant
@@ -285,7 +283,7 @@ Good luck, but do not expect to survive."})
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN
 
 /datum/outfit/job/survivor/rambo
-	name = "Survivor"
+	name = "CLF Infiltrator"
 	jobtype = /datum/job/survivor/rambo
 	w_uniform = /obj/item/clothing/under/color/grey
 	wear_suit = /obj/item/clothing/suit/armor/rugged

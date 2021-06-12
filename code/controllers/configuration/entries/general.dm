@@ -3,6 +3,8 @@ Basics, the most important.
 */
 /datum/config_entry/string/server_name	// The name used for the server almost universally.
 
+/datum/config_entry/string/server_desc // The description on the hub
+
 /datum/config_entry/string/serversqlname	// Short form of the previous used for the DB.
 
 /datum/config_entry/string/server // If you set this location, it sends you there instead of trying to reconnect.
@@ -72,6 +74,10 @@ Administrative related.
 /datum/config_entry/flag/log_ooc
 
 /datum/config_entry/flag/log_looc
+
+/datum/config_entry/flag/log_xooc
+
+/datum/config_entry/flag/log_mooc
 
 /datum/config_entry/flag/log_access
 
@@ -214,6 +220,16 @@ Voting
 /datum/config_entry/number/maximum_clients_for_gamemode_vote
 	config_entry_value = 40
 	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/vote_autotransfer_initial
+	config_entry_value = 72000
+	integer = FALSE
+	min_val = 0
+
+/datum/config_entry/number/vote_autotransfer_interval
+	config_entry_value = 18000
+	integer = FALSE
 	min_val = 0
 
 /*

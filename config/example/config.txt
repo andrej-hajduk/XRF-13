@@ -7,6 +7,9 @@ $include resources.txt
 ## Server name: This appears at the top of the screen in-game.
 SERVER_NAME Something
 
+## Server desc: This appears on the hub entry for the server.
+SERVER_DESC Something else
+
 ## Hosted by name for unix platforms.
 HOSTEDBY yournamehere
 
@@ -39,7 +42,7 @@ LOCALHOST_RANK
 
 SEE_OWN_NOTES
 
-AUTOMUTE_ON
+#AUTOMUTE_ON
 
 PROTECT_LEGACY_ADMINS
 
@@ -48,7 +51,7 @@ PROTECT_LEGACY_RANKS
 ## Add your own URLs here.
 #FORUMURL
 #WIKIURL
-#RULESURL
+#RULESURL NOT CURRENTLY USED
 #DISCORDURL
 #DONATIONURL
 #GITHUBURL
@@ -62,6 +65,8 @@ CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
 ## Logging. Recommended you keep all of these on.
 LOG_OOC
 LOG_LOOC
+LOG_XOOC
+LOG_MOOC
 LOG_SAY
 LOG_TELECOMMS
 LOG_HIVEMIND
@@ -193,6 +198,12 @@ CHECK_RANDOMIZER
 
 ##Set this number to the maximum number of players you want, after which game mode votes cannot be started
 MAXIMUM_CLIENTS_FOR_GAMEMODE_VOTE 40
+
+## autovote initial delay (deciseconds) before first automatic transfer vote call (default 60 minutes)
+VOTE_AUTOTRANSFER_INITIAL 18000
+
+##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
+VOTE_AUTOTRANSFER_INTERVAL 18000
 
 ## Uncomment these to set a custom respawn timer; the delay is in ticks.
 #MARINE_RESPAWN 18000

@@ -225,6 +225,12 @@
 		update_inv_s_store()
 		. = ITEM_UNEQUIP_UNEQUIPPED
 
+	var/update = TRUE
+	if(!I || I == l_store || I == r_store || I == s_store || I == handcuffed) //stops storages, cuffs and held items from triggering it.
+		update = FALSE
+	if(update)
+		update_genitals()
+
 
 /mob/living/carbon/human/wear_mask_update(obj/item/I, equipping)
 	name = get_visible_name() // doing this without a check, still cheaper than doing it every Life() tick -spookydonut
@@ -410,6 +416,8 @@
 		else
 			CRASH("[src] tried to equip [W] to [slot] in equip_to_slot().")
 
+	if(!(slot in GLOB.no_genitals_update_slots))
+		update_genitals()
 	return TRUE
 
 

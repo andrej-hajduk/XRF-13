@@ -50,6 +50,7 @@
 	// *** Abilities *** //
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
+		/datum/action/xeno_action/psychic_whisper,
 		/datum/action/xeno_action/activable/psydrain,
 		/datum/action/xeno_action/activable/headbite,
 		/datum/action/xeno_action/activable/devour,
@@ -65,7 +66,6 @@
 		/datum/action/xeno_action/place_acidwell,
 		/datum/action/xeno_action/activable/corrosive_acid,
 		/datum/action/xeno_action/activable/psychic_cure,
-		/datum/action/xeno_action/psychic_whisper,
 		/datum/action/xeno_action/activable/psychic_fling,
 		/datum/action/xeno_action/activable/unrelenting_force,
 		/datum/action/xeno_action/toggle_pheromones,

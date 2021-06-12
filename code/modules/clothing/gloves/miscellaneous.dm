@@ -106,3 +106,49 @@
 	desc = "Praise the Omnissiah!"
 	icon_state = "tp_gloves"
 	item_state = "tp_gloves"
+
+/obj/item/clothing/gloves/evening
+	name = "evening gloves"
+	desc = "Thin, pretty gloves intended for use in regal feminine attire, but knowing Space China these are just for some maid fetish."
+	icon_state = "evening"
+	item_state = "evening"
+/*	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	strip_mod = 0.9
+	custom_price = PRICE_ALMOST_CHEAP*/
+
+/obj/item/clothing/under/misc/stripper
+	name = "pink stripper outfit"
+	icon_state = "stripper_p"
+	item_state = "stripper_p"
+	flags_inventory = CHEST|GROIN
+/*	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+*/
+/obj/item/clothing/under/misc/stripper/green
+	name = "green stripper outfit"
+	icon_state = "stripper_g"
+	item_state = "stripper_g"
+
+/obj/item/clothing/under/misc/gear_harness
+	name = "gear harness"
+	desc = "A simple, inconspicuous harness replacement for a jumpsuit."
+	icon_state = "gear_harness"
+	item_state = "gear_harness"
+	flags_inventory = CHEST|GROIN
+//	can_adjust = FALSE
+
+/obj/item/clothing/under/misc/keyholesweater
+	name = "keyhole sweater"
+	desc = "What is the point of this, anyway?"
+	icon_state = "keyholesweater"
+	item_state = "keyholesweater"
+/*	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+*/
+/obj/item/clothing/under/misc/stripper/mankini
+	name = "pink mankini"
+	icon_state = "mankini"
+	item_state = "mankini"

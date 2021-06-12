@@ -130,6 +130,15 @@
 	if(CONFIG_GET(flag/log_looc))
 		WRITE_LOG(GLOB.world_game_log, "LOOC: [text]")
 
+/proc/log_xooc(text)
+	LAZYADD(GLOB.say_log, "\[[stationTimestamp()]\] XOOC: [text]")
+	if(CONFIG_GET(flag/log_xooc))
+		WRITE_LOG(GLOB.world_game_log, "XOOC: [text]")
+
+/proc/log_mooc(text)
+	LAZYADD(GLOB.say_log, "\[[stationTimestamp()]\] MOOC: [text]")
+	if(CONFIG_GET(flag/log_mooc))
+		WRITE_LOG(GLOB.world_game_log, "MOOC: [text]")
 
 /proc/log_hivemind(text)
 	LAZYADD(GLOB.telecomms_log, "\[[stationTimestamp()]\] HIVEMIND: [text]")
