@@ -122,6 +122,16 @@
 
 	return ..()	//redirect to hsrc.Topic()
 
+// SKYRAT ADDITION - CKEY AGE
+/client/proc/get_ckey_creation()
+	var/list/http = world.Export("http://www.byond.com/members/[ckey]?format=text")
+	if("CONTENT" in http)
+		var/resp = file2text(http["CONTENT"])
+		var/j_pos = findtext(resp, "joined")
+		var/joined = splittext(copytext(resp, j_pos + 10, j_pos + 20), "-")
+		return convert_to_epoch(text2num(joined[3]), text2num(joined[2]), text2num(joined[1]))
+	else return -1
+// SKYRAT ADDITION END
 
 /client/New(TopicData)
 	var/tdata = TopicData //save this for later use
@@ -213,6 +223,29 @@
 	// Initialize tgui panel
 	tgui_panel.initialize()
 
+	// SKYRAT EDIT ADDITION - ACCOUNT AGE RESTRICTION
+	if(CONFIG_GET(flag/account_age_restriction))
+		var/account_epoch = get_ckey_creation(ckey) // Epoch of account creation
+		var/today_epoch = (world.realtime / 10) + (30 * EPOCH_YEAR) // Epoch of today
+		var/diff_epoch = today_epoch - account_epoch // Epoch between creation and today
+		var/want_days = CONFIG_GET(number/account_age_restriction_days)
+		var/want_months = CONFIG_GET(number/account_age_restriction_months)
+		var/want_years = CONFIG_GET(number/account_age_restriction_years)
+		var/needed_epoch = convert_to_epoch(want_days, want_months, want_years, TRUE) // Epoch we need to clear the age requirement
+		if(diff_epoch - needed_epoch < 0)
+			var/want_string = ""
+			if(want_years)
+				want_string += "[want_years] years"
+			if(want_months)
+				want_string += ", [want_months] months"
+			if(want_days)
+				want_string += ", [want_days] days"
+			if(findtext(want_string, ",") == 1)
+				want_string = copytext(want_string, 2)
+			to_chat(src, "<span class='userdanger'>The server is only accepting accounts older than [want_string].</span>")
+			addtimer(CALLBACK(src, qdel(src), 2 SECONDS))
+			return
+	// SKYRAT EDIT END
 	if(byond_version < REQUIRED_CLIENT_MAJOR || (byond_build && byond_build < REQUIRED_CLIENT_MINOR))
 		//to_chat(src, "<span class='userdanger'>Your version of byond is severely out of date.</span>")
 		to_chat(src, "<span class='userdanger'>TGMC now requires the first stable [REQUIRED_CLIENT_MAJOR] build, please update your client to [REQUIRED_CLIENT_MAJOR].[MIN_RECOMMENDED_CLIENT].</span>")

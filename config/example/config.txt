@@ -208,3 +208,10 @@ VOTE_AUTOTRANSFER_INTERVAL 18000
 ## Uncomment these to set a custom respawn timer; the delay is in ticks.
 #MARINE_RESPAWN 18000
 #XENO_RESPAWN 1200
+
+## Account Age Requirements
+## If the flag is un-commented clients will not be allowed to connect if they do not meet the age requirements
+ACCOUNT_AGE_RESTRICTION
+ACCOUNT_AGE_RESTRICTION_DAYS 0
+ACCOUNT_AGE_RESTRICTION_MONTHS 0
+ACCOUNT_AGE_RESTRICTION_YEARS 0
