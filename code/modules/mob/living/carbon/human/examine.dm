@@ -24,6 +24,7 @@
 			msg += "Transvitox: 40% brute/burn injuries received are converted to toxin\n"
 		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_hemodile))
 			msg += "Hemodile: 20% stamina damage received, when damaged, and slowed by 25% (inject neurotoxin for 50% slow)\n"
+		msg += "[flavor_text]\n"
 		msg += "*---------*</span>"
 		to_chat(user, msg)
 		return

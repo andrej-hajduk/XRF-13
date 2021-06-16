@@ -59,6 +59,7 @@
 		"gen_record" = gen_record,
 		"sec_record" = sec_record,
 		"exploit_record" = exploit_record,
+		"xeno_desc" = xeno_desc,
 
 		// Clothing
 		"undershirt" = undershirt,
@@ -522,6 +523,12 @@
 			if(!new_record)
 				return
 			flavor_text = new_record
+
+		if("xeno_desc")
+			var/new_record = trim(html_encode(params["xenoDesc"]), MAX_MESSAGE_LEN)
+			if(!new_record)
+				return
+			xeno_desc = new_record
 
 		if("windowflashing")
 			windowflashing = !windowflashing
