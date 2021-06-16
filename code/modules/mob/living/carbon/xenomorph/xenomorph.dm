@@ -193,7 +193,8 @@
 	if(hivenumber != XENO_HIVE_NORMAL)
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 		to_chat(user, "It appears to belong to the [hive.prefix]hive")
-	return
+
+	to_chat(user, "<span class='info'>[xeno_desc]</span>")
 
 /mob/living/carbon/xenomorph/Destroy()
 	if(mind) mind.name = name //Grabs the name when the xeno is getting deleted, to reference through hive status later.
