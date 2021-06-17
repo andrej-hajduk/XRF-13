@@ -1,5 +1,5 @@
 /mob/dead/observer/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
-	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	message = trim(sanitize(copytext_char(message, 1, MAX_MESSAGE_LEN)))
 	if(!message)
 		return
 
