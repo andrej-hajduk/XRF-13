@@ -160,7 +160,7 @@
 
 
 /mob/camera/imaginary_friend/proc/friend_talk(message)
-	message = capitalize(trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN)))
+	message = capitalize(trim(sanitize(copytext_char(message, 1, MAX_MESSAGE_LEN))))
 
 	if(!message)
 		return

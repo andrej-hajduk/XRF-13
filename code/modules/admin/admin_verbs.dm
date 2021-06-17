@@ -464,7 +464,7 @@
 	if(!check_rights(R_ASAY))
 		return
 
-	msg = emoji_parse(copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN))
+	msg = emoji_parse(sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN)))
 
 	if(!msg)
 		return
@@ -496,7 +496,7 @@
 	if(!check_rights(R_ADMIN|R_MENTOR))
 		return
 
-	msg = emoji_parse(copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN))
+	msg = emoji_parse(sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN)))
 
 	if(!msg)
 		return
@@ -537,7 +537,7 @@
 	if(!check_rights(R_ADMIN|R_MENTOR))
 		return
 
-	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
+	msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
 
 	if(!msg)
 		return
