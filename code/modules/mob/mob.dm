@@ -108,7 +108,7 @@
 	if(!client)
 		return
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, 1, MAX_EMOTE_MESSAGE_LEN)
 
 	to_chat(src, msg)
 
@@ -117,7 +117,7 @@
 	if(!client)
 		return
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, 1, MAX_EMOTE_MESSAGE_LEN)
 
 	if(type)
 		if(type == EMOTE_VISIBLE && eye_blind) //Vision related
