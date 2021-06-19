@@ -509,12 +509,12 @@
 	L.jitter(1) //So unga know to get treated
 	return ..()
 
-/datum/reagent/toxin/xeno_growthtoxin/overdose_process(mob/living/L, metabolism)
+/*datum/reagent/toxin/xeno_growthtoxin/overdose_process(mob/living/L, metabolism)
 	L.adjustOxyLoss(2)
 	L.jitter(4)
 
 /datum/reagent/toxin/xeno_growthtoxin/overdose_crit_process(mob/living/L, metabolism)
-	L.Losebreath(2)
+	L.Losebreath(2)*/
 
 /datum/reagent/toxin/xeno_hemodile //slows by 25% and 50% based on base movement speed of marine with shoes on and deals an additional 20% of damage received as stamina damage
 	name = "Hemodile"
