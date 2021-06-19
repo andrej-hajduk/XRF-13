@@ -1213,20 +1213,6 @@ Pope_Wreckoning:
 				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/L)
-	if(prob(30))
-		L.adjustBrainLoss(2)
-	..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/L)
-	if(prob(30))
-		L.adjustBrainLoss(3)
-
-		..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage4(mob/living/L)
-	if(prob(30))
-		L.adjustBrainLoss(4)
-	..()
-
 /datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO) && prob(33)*/)
 		if(prob(5) && ishuman(L) /*&& M.has_dna() && (M.client?.prefs.cit_toggles & BIMBOFICATION)*/)
