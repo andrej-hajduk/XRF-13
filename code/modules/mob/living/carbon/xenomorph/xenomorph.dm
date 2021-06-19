@@ -57,7 +57,7 @@
 	if(!job) //It might be setup on spawn.
 		setup_job()
 
-	AddComponent(/datum/component/bump_attack)
+	//AddComponent(/datum/component/bump_attack)
 
 	ADD_TRAIT(src, TRAIT_BATONIMMUNE, TRAIT_XENO)
 	ADD_TRAIT(src, TRAIT_FLASHBANGIMMUNE, TRAIT_XENO)

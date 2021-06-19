@@ -15,7 +15,7 @@
 	if(!message)
 		return
 
-	message = sanitize(message)
+	message = trim(sanitize(copytext_char(message, 1, MAX_EMOTE_MESSAGE_LEN)))
 
 	emote("me", EMOTE_VISIBLE, message, TRUE)
 

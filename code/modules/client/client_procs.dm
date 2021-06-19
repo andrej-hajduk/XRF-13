@@ -907,13 +907,15 @@ GLOBAL_VAR_INIT(automute_on, null)
 	var/warning = message_cache >= SPAM_TRIGGER_WARNING || (weight_cache > SPAM_TRIGGER_WEIGHT_WARNING && message_cache != 1)
 
 	if(mute)
-		if(GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
+		if(!GLOB.automute_on || check_rights(R_ADMIN, FALSE))
+			to_chat(src, "<span class='danger'>You have exceeded the spam filter.</span>")
+		else
 			to_chat(src, "<span class='danger'>You have exceeded the spam filter. An auto-mute was applied.</span>")
 			create_message("note", ckey(key), "SYSTEM", "Automuted due to spam. Last message: '[last_message]'", null, null, FALSE, TRUE, null, FALSE, "Minor")
 			mute(src, mute_type, TRUE)
 		return TRUE
 
-	if(warning && GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
+	if(warning && GLOB.automute_on)
 		to_chat(src, "<span class='danger'>You are nearing the spam filter limit.</span>")
 
 /client/vv_edit_var(var_name, var_value)
