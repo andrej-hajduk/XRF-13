@@ -24,6 +24,7 @@ map pillar_of_spring
 endmap
 
 map risingstar
+	disabled
 endmap
 
 map sulaco
