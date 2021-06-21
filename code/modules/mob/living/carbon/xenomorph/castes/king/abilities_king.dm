@@ -115,7 +115,7 @@
 				if(mob_crushed.stat == DEAD)//No abuse of that mechanic for some permadeath
 					continue
 				var/armor_block = mob_crushed.run_armor_check(BODY_ZONE_CHEST, "melee")
-				var/damage = rand(20,50) //Decently high, with the chance to be lethal (hitting your head hard)
+				var/damage = rand(10,40) //Decently high, with the chance to be lethal (hitting your head hard)
 				mob_crushed.apply_damage(2*damage, BRUTE, "head", armor_block) //Head takes much more damage, you're falling flat
 				mob_crushed.apply_damage(1*damage, BRUTE, "chest", armor_block)
 				mob_crushed.apply_damage(1.5*damage, BRUTE, "l_leg", armor_block) // Ankles = broken
