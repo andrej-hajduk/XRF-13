@@ -13,9 +13,10 @@
 	var/range = 15 //Buffed range
 	/// How long till the lights go on again
 	var/duration = 13 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
+	var/cooldowntext = "<span class='notice'>We gather enough mental strength to shut down lights again.</span>"
 
 /datum/action/xeno_action/activable/nightfall/on_cooldown_finish()
-	to_chat(owner, "<span class='notice'>We gather enough mental strength to shut down lights again.</span>")
+	to_chat(owner, cooldowntext)
 	return ..()
 
 /datum/action/xeno_action/activable/nightfall/use_ability()
@@ -39,12 +40,7 @@
 	range = 8 //Buffed range
 	/// How long till the lights go on again
 	duration = 2 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
-
-/datum/action/xeno_action/activable/nightfall/lesser/on_cooldown_finish()
-	to_chat(owner, "<span class='notice'>We gather enough mental strength to flicker lights again.</span>")
-	return ..()
-
-
+	cooldowntext = "<span class='notice'>We gather enough mental strength to flicker lights again.</span>"
 
 // ***************************************
 // *********** Gravity Crush
@@ -63,9 +59,10 @@
 	var/king_crush_dist = 5
 	/// A list of all things that had a fliter applied
 	var/list/filters_applied = list()
+	var/cooldowntext = "<span class='warning'>Our psychic aura restores itself. We are ready to gravity crush again.</span>"
 
 /datum/action/xeno_action/activable/gravity_crush/on_cooldown_finish()
-	to_chat(owner, "<span class='warning'>Our psychic aura restores itself. We are ready to gravity crush again.</span>")
+	to_chat(owner, cooldowntext)
 	return ..()
 
 /datum/action/xeno_action/activable/gravity_crush/can_use_ability(atom/A, silent, override_flags)
@@ -155,15 +152,13 @@
 	king_crush_dist = 8 //Further range, smaller crush
 	/// A list of all things that had a fliter applied
 	filters_applied = list()
-
-/datum/action/xeno_action/activable/gravity_crush/lesser/on_cooldown_finish()
-	to_chat(owner, "<span class='warning'>Our psychic aura restores itself. We are ready to lesser gravity crush again.</span>")
-	return ..()
+	cooldowntext = "<span class='warning'>Our psychic aura restores itself. We are ready to lesser gravity crush again.</span>"
 
 /datum/action/xeno_action/activable/gravity_crush/lesser/use_ability(atom/A)
 	owner.face_atom(A) //Face towards the target so we don't look silly
 	var/list/turfs = RANGE_TURFS(0, A) //If for some reason this is ever occurring, run.
 	playsound(A, 'sound/effects/bomb_fall.ogg', 75, FALSE)
+	apply_filters(turfs)
 	if(!do_after(owner, WINDUP_GRAV, FALSE, owner, BUSY_ICON_DANGER))
 		remove_all_filters()
 		return fail_activate()
