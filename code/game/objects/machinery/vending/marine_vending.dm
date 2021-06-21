@@ -196,7 +196,6 @@
 		/obj/item/ammo_magazine/box10x26mm = 100,
 		/obj/item/ammo_magazine/box10x27mm = 100,
 		/obj/item/storage/box/visual/magazine = 30,
-
 		),
 	)
 
@@ -275,7 +274,6 @@
 			/obj/item/attachable/stock/t35stock = -1,
 			/obj/item/attachable/attached_gun/flamer = -1,
 			/obj/item/attachable/attached_gun/shotgun = -1,
-
 		),
 		"Boxes" = list(
 		/obj/item/ammo_magazine/box9mm = 100,
