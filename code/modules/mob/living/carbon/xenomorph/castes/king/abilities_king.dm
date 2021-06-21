@@ -44,15 +44,6 @@
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to flicker lights again.</span>")
 	return ..()
 
-/datum/action/xeno_action/activable/nightfall/lesser/use_ability()
-	playsound(owner, 'sound/magic/nightfall.ogg', 50, 1)
-	succeed_activate()
-	add_cooldown()
-	for(var/atom/light AS in GLOB.nightfall_toggleable_lights)
-		if(isnull(light.loc) || (owner.loc.z != light.loc.z) || (get_dist(owner, light) >= range))
-			continue
-		light.turn_light(null, FALSE, duration, TRUE, TRUE)
-
 
 
 // ***************************************
@@ -150,6 +141,61 @@
 	if(!can_use_ability(target, override_flags = XACT_IGNORE_SELECTED_ABILITY))
 		return ..()
 	return TRUE
+
+
+/datum/action/xeno_action/activable/gravity_crush/lesser
+	name = "Lesser Gravity Crush"
+	action_icon_state = "fortify"
+	mechanics_text = "Increases the localized gravity in an area; weakening targets"
+	ability_name = "Lesser Gravity crush"
+	plasma_cost = 50
+	cooldown_timer = 5 SECONDS //Much lower
+	keybind_signal = COMSIG_XENOABILITY_GRAVITY_CRUSH
+	/// How far can we use gravity crush
+	king_crush_dist = 8 //Further range, smaller crush
+	/// A list of all things that had a fliter applied
+	filters_applied = list()
+
+/datum/action/xeno_action/activable/gravity_crush/lesser/on_cooldown_finish()
+	to_chat(owner, "<span class='warning'>Our psychic aura restores itself. We are ready to lesser gravity crush again.</span>")
+	return ..()
+
+/datum/action/xeno_action/activable/gravity_crush/lesser/use_ability(atom/A)
+	owner.face_atom(A) //Face towards the target so we don't look silly
+	var/list/turfs = RANGE_TURFS(0, A) //If for some reason this is ever occurring, run.
+	playsound(A, 'sound/effects/bomb_fall.ogg', 75, FALSE)
+	if(!do_after(owner, WINDUP_GRAV, FALSE, owner, BUSY_ICON_DANGER))
+		remove_all_filters()
+		return fail_activate()
+	remove_all_filters()
+	do_grav_crush_lesser(turfs)
+	succeed_activate()
+	add_cooldown()
+	A.visible_message("<span class='warning'>[A] crumples as its gravity unexpectedly fluxes!</span>")
+
+///Will crush every item on the turfs (unless they are a friendly xeno or dead)
+/datum/action/xeno_action/activable/gravity_crush/lesser/proc/do_grav_crush_lesser(list/turfs)
+	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	for(var/turf/targetted AS in turfs)
+		for(var/atom/movable/item AS in targetted.contents)
+			if(isliving(item))
+				var/mob/living/mob_crushed = item
+				if(mob_crushed.stat == DEAD)//No abuse of that mechanic for some permadeath
+					continue
+				var/armor_block = mob_crushed.run_armor_check(BODY_ZONE_CHEST, "melee")
+				var/damage = rand(5,10) //This is a very minor crush
+				mob_crushed.apply_damage(0.5*damage, BRUTE, "head", armor_block) //Head takes much more damage, you're falling flat
+				mob_crushed.apply_damage(0.2*damage, BRUTE, "chest", armor_block)
+				mob_crushed.apply_damage(1*damage, BRUTE, "l_leg", armor_block) // Ankles = broken
+				mob_crushed.apply_damage(1*damage, BRUTE, "r_leg", armor_block) // Same here
+				mob_crushed.apply_damage(0.2*damage, BRUTE, "l_arm", armor_block) // Arms are pretty safe
+				mob_crushed.apply_damage(0.2*damage, BRUTE, "r_arm", armor_block)// Arms are pretty safe
+				mob_crushed.apply_damage(60, STAMINA, BODY_ZONE_CHEST, armor_block) //REALLY winds a target.
+				if(isxeno(mob_crushed))
+					var/mob/living/carbon/xenomorph/xeno = mob_crushed
+					xeno.apply_damage(20, BRUTE)  //Xeno = btfo
+					if(xeno.hive == xeno_owner.hive)
+						continue
 
 // ***************************************
 // *********** Psychic Summon

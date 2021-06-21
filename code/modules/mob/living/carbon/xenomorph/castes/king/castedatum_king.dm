@@ -25,7 +25,7 @@
 	max_health = 400 //Bumped down to T3 crusher levels, though rises up
 
 	// *** Evolution *** //
-	upgrade_threshold = 250 //Bumped down so they're more useful
+	upgrade_threshold = 350 //Thematic
 
 	// *** Flags *** //
 	caste_flags = CASTE_DECAY_PROOF
@@ -46,6 +46,7 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/toggle_pheromones,
@@ -76,7 +77,7 @@
 	max_health = 650
 
 	// *** Evolution *** //
-	upgrade_threshold = 400 //Bumped down
+	upgrade_threshold = 850 //Thematic
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 55, "bomb" = XENO_BOMB_RESIST_3, "bio" = 50, "rad" = 50, "fire" = 100, "acid" = 50)
@@ -88,6 +89,7 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush/lesser,
 		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
@@ -119,13 +121,13 @@
 	max_health = 750
 
 	// *** Evolution *** //
-	upgrade_threshold = 600 //Bumped down
+	upgrade_threshold = 1850 //Thematic
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = XENO_BOMB_RESIST_3, "bio" = 55, "rad" = 55, "fire" = 100, "acid" = 55)
 
 	// *** Pheromones *** //
-	aura_strength = 4 //Weaker.
+	aura_strength = 5 //Weaker.
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
@@ -134,6 +136,7 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush/lesser,
 		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
@@ -174,7 +177,7 @@
 	spit_delay = 1.1 SECONDS
 
 	// *** Pheromones *** //
-	aura_strength = 8 //Primordial king.
+	aura_strength = 6.5 //Primordial king.
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
@@ -183,6 +186,7 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush/lesser,
 		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
