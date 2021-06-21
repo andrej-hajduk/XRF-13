@@ -7,12 +7,12 @@
 	action_icon_state = "nightfall"
 	ability_name = "Nightfall"
 	mechanics_text = "Shut down all electrical lights for five seconds."
-	cooldown_timer = 1 MINUTES
-	plasma_cost = 100
+	cooldown_timer = 30 SECONDS //Nightfall buff
+	plasma_cost = 200 //Doubled. Expensive.
 	/// How far nightfall will have an effect
-	var/range = 10
+	var/range = 15 //Buffed range
 	/// How long till the lights go on again
-	var/duration = 10 SECONDS
+	var/duration = 25 SECONDS // 5 Seconds of downtime, enough to make lights consistently flicker
 
 /datum/action/xeno_action/activable/nightfall/on_cooldown_finish()
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to shut down lights again.</span>")
@@ -99,11 +99,20 @@
 				var/mob/living/mob_crushed = item
 				if(mob_crushed.stat == DEAD)//No abuse of that mechanic for some permadeath
 					continue
+				var/armor_block = mob_crushed.run_armor_check(BODY_ZONE_CHEST, "melee")
+				var/damage = rand(20,50) //Decently high, with the chance to be lethal (hitting your head hard)
+				mob_crushed.apply_damage(2*damage, BRUTE, "head", armor_block) //Head takes much more damage, you're falling flat
+				mob_crushed.apply_damage(1*damage, BRUTE, "chest", armor_block)
+				mob_crushed.apply_damage(1.5*damage, BRUTE, "l_leg", armor_block) // Ankles = broken
+				mob_crushed.apply_damage(1.5*damage, BRUTE, "r_leg", armor_block) // Same here
+				mob_crushed.apply_damage(0.5*damage, BRUTE, "l_arm", armor_block) // Arms are pretty safe
+				mob_crushed.apply_damage(0.5*damage, BRUTE, "r_arm", armor_block)// Arms are pretty safe
 				if(isxeno(mob_crushed))
 					var/mob/living/carbon/xenomorph/xeno = mob_crushed
 					if(xeno.hive == xeno_owner.hive)
 						continue
-			item.ex_act(EXPLODE_HEAVY)	//crushing without damaging the nearby area
+			if(!isliving(item))
+				item.ex_act(EXPLODE_HEAVY)	//crushing without damaging the nearby area
 
 /datum/action/xeno_action/activable/gravity_crush/ai_should_start_consider()
 	return TRUE
