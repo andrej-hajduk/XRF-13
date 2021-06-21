@@ -538,7 +538,8 @@
 	set category = "Server"
 	set name = "Toggle Panic Bunker"
 
-	if(!check_rights(R_SERVER))
+	//if(!check_rights(R_SERVER))
+	if(!check_rights(R_ADMIN))
 		return
 
 	if(!CONFIG_GET(flag/sql_enabled))
