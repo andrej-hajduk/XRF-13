@@ -1146,3 +1146,30 @@ GLOBAL_LIST_EMPTY(transformation_animation_objects)
 	GLOB.transformation_animation_objects -= src
 	if(filters && length(filters) >= filter_index)
 		filters -= filters[filter_index]
+
+/proc/center_image(image/I, x_dimension = 0, y_dimension = 0)
+	if(!I)
+		return
+
+	if(!x_dimension || !y_dimension)
+		return
+
+	if((x_dimension == world.icon_size) && (y_dimension == world.icon_size))
+		return I
+
+	//Offset the image so that it's bottom left corner is shifted this many pixels
+	//This makes it infinitely easier to draw larger inhands/images larger than world.iconsize
+	//but still use them in game
+	var/x_offset = -((x_dimension/world.icon_size)-1)*(world.icon_size*0.5)
+	var/y_offset = -((y_dimension/world.icon_size)-1)*(world.icon_size*0.5)
+
+	//Correct values under world.icon_size
+	if(x_dimension < world.icon_size)
+		x_offset *= -1
+	if(y_dimension < world.icon_size)
+		y_offset *= -1
+
+	I.pixel_x = x_offset
+	I.pixel_y = y_offset
+
+	return I

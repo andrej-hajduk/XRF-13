@@ -139,3 +139,5 @@
 	"End of Round Deathmatch" = BE_DEATHMATCH,\
 	"Prefer Squad over Role" = BE_SQUAD_STRICT\
 	)
+
+#define MANDATORY_FEATURE_LIST list("mcolor" = "FFFFBB","mcolor2" = "FFFFBB","mcolor3" = "FFFFBB", "skin_color" = "FFEEDD")

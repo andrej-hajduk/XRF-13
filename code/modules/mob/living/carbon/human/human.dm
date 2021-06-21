@@ -3,6 +3,7 @@
 	b_type = pick(7;"O-", 38;"O+", 6;"A-", 34;"A+", 2;"B-", 9;"B+", 1;"AB-", 3;"AB+")
 	blood_type = b_type
 
+	dna = new()
 	if(!species)
 		set_species()
 
@@ -79,6 +80,8 @@
 	GLOB.alive_human_list -= src
 	LAZYREMOVE(GLOB.humans_by_zlevel["[z]"], src)
 	GLOB.dead_human_list -= src
+	QDEL_NULL(dna)
+
 	return ..()
 
 /mob/living/carbon/human/Stat()
@@ -1242,21 +1245,17 @@
 /mob/living/carbon/human/species
 	var/race = null
 
-/mob/living/carbon/human/species/set_species(new_species, default_colour)
+/mob/living/carbon/human/species/set_species(new_species, default_colour, datum/preferences/pref_load)
 	if(!new_species)
 		new_species = race
 	return ..()
 
-/mob/living/carbon/human/proc/set_species(new_species, default_colour)
+/mob/living/carbon/human/proc/set_species(new_species, default_colour, datum/preferences/pref_load)
 
 	if(!new_species)
 		new_species = "Human"
 
 	if(species)
-
-		if(species.name && species.name == new_species) //we're already that species.
-			return
-
 		// Clear out their species abilities.
 		species.remove_inherent_verbs(src)
 
@@ -1272,23 +1271,7 @@
 
 	dextrous = species.has_fine_manipulation
 
-	if(species.default_language_holder)
-		language_holder = new species.default_language_holder(src)
-
-	if(species.base_color && default_colour)
-		//Apply colour.
-		r_skin = hex2num(copytext(species.base_color,2,4))
-		g_skin = hex2num(copytext(species.base_color,4,6))
-		b_skin = hex2num(copytext(species.base_color,6,8))
-	else
-		r_skin = 0
-		g_skin = 0
-		b_skin = 0
-
-	if(species.hair_color)
-		r_hair = hex2num(copytext(species.hair_color, 2, 4))
-		g_hair = hex2num(copytext(species.hair_color, 4, 6))
-		b_hair = hex2num(copytext(species.hair_color, 6, 8))
+	set_appearances(default_colour, pref_load)
 
 	species.handle_post_spawn(src)
 
@@ -1305,6 +1288,132 @@
 	species.on_species_gain(src, oldspecies) //todo move most of the stuff in this proc to here
 	return TRUE
 
+/mob/living/carbon/human/proc/make_synth_fake()
+	var/datum/species/new_spec = new species.type()
+	for(var/nvar in species.vars)
+		if(nvar in list("type", "parent_type", "vars"))
+			continue
+		new_spec.vars[nvar] = species.vars[nvar]
+	new_spec.name = "Synthetic [species.name]"
+	new_spec.name_plural = "synthetic [species.name_plural]"
+	new_spec.special_death_message = "You have been shut down.<br><small>But it is not the end of you yet... if you still have your body, wait until somebody can resurrect you...</small>"
+	new_spec.default_language_holder = /datum/language_holder/synthetic
+	new_spec.unarmed_type = /datum/unarmed_attack/punch
+	new_spec.rarity_value = 2
+	new_spec.total_health = 125
+	new_spec.brute_mod = 0.70
+	new_spec.burn_mod = 0.70
+	new_spec.cold_level_1 = -1
+	new_spec.cold_level_2 = -1
+	new_spec.cold_level_3 = -1
+	new_spec.heat_level_1 = 500
+	new_spec.heat_level_2 = 1000
+	new_spec.heat_level_3 = 2000
+	new_spec.body_temperature = 350
+	new_spec.species_flags = NO_BREATHE|NO_SCAN|NO_BLOOD|NO_POISON|NO_PAIN|IS_SYNTHETIC|NO_CHEM_METABOLIZATION|NO_STAMINA|DETACHABLE_HEAD|HAS_UNDERWEAR
+	new_spec.blood_color = "#EEEEEE"
+	new_spec.has_organ = list("heart" = /datum/internal_organ/heart/prosthetic, "brain" = /datum/internal_organ/brain/prosthetic )
+	new_spec.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	new_spec.see_in_dark = 8
+	species.remove_inherent_verbs(src)
+	species.post_species_loss(src)
+	new_spec.create_organs(src)
+	dextrous = new_spec.has_fine_manipulation
+	INVOKE_ASYNC(src, .proc/regenerate_icons)
+	INVOKE_ASYNC(src, .proc/update_body)
+	INVOKE_ASYNC(src, .proc/restore_blood)
+	new_spec.handle_post_spawn(src)
+	var/datum/atom_hud/synth_hud = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED_SYNTH]
+	synth_hud.add_hud_to(src)
+	if(!(new_spec.species_flags & NO_STAMINA))
+		AddComponent(/datum/component/stamina_behavior)
+		max_stamina_buffer = new_spec.max_stamina_buffer
+		setStaminaLoss(-max_stamina_buffer)
+	add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 0, NONE, TRUE, new_spec.slowdown)
+	new_spec.on_species_gain(src)
+	species = new_spec
+	return TRUE
+
+/mob/living/carbon/human/proc/set_appearances(default_colour, datum/preferences/pref_load)
+	if(pref_load)
+		real_name = pref_load.real_name
+		name = real_name
+
+		flavor_text = pref_load.flavor_text
+
+		med_record = pref_load.med_record
+		sec_record = pref_load.sec_record
+		gen_record = pref_load.gen_record
+		exploit_record = pref_load.exploit_record
+
+		age = pref_load.age
+		gender = pref_load.gender
+		ethnicity = pref_load.ethnicity
+		body_type = pref_load.body_type
+
+		r_eyes = pref_load.r_eyes
+		g_eyes = pref_load.g_eyes
+		b_eyes = pref_load.b_eyes
+
+		r_hair = pref_load.r_hair
+		g_hair = pref_load.g_hair
+		b_hair = pref_load.b_hair
+
+		r_grad	= pref_load.r_grad
+		g_grad	= pref_load.g_grad
+		b_grad	= pref_load.b_grad
+
+		r_facial = pref_load.r_facial
+		g_facial = pref_load.g_facial
+		b_facial = pref_load.b_facial
+
+		h_style = pref_load.h_style
+		grad_style= pref_load.grad_style
+		f_style = pref_load.f_style
+
+		citizenship = pref_load.citizenship
+		religion = pref_load.religion
+
+		underwear = pref_load.underwear
+		undershirt = pref_load.undershirt
+		backpack = pref_load.backpack
+
+		dna.features = pref_load.features.Copy()
+		dna.mutant_bodyparts = pref_load.mutant_bodyparts.Copy()
+		dna.body_markings = pref_load.body_markings.Copy()
+		selected_scream = pref_load.pref_scream
+	else
+		if(species.default_language_holder)
+			language_holder = new species.default_language_holder(src)
+
+		if(species.base_color && default_colour)
+			//Apply colour.
+			r_skin = hex2num(copytext(species.base_color,2,4))
+			g_skin = hex2num(copytext(species.base_color,4,6))
+			b_skin = hex2num(copytext(species.base_color,6,8))
+		else
+			r_skin = 0
+			g_skin = 0
+			b_skin = 0
+
+		if(species.hair_color)
+			r_hair = hex2num(copytext(species.hair_color, 2, 4))
+			g_hair = hex2num(copytext(species.hair_color, 4, 6))
+			b_hair = hex2num(copytext(species.hair_color, 6, 8))
+
+		dna.features = species.get_random_features()
+		dna.mutant_bodyparts = species.get_random_mutant_bodyparts(features)
+		dna.body_markings = species.get_random_body_markings(features)
+
+	features = dna.features.Copy()
+	var/list/finalized_mutantparts = list()
+	for(var/key in dna.mutant_bodyparts)
+		var/datum/mutant_accessory/MA = GLOB.mutant_accessories[key][dna.mutant_bodyparts[key][MUTANT_INDEX_NAME]]
+		if(!MA.factual)
+			continue
+		finalized_mutantparts[key] = dna.mutant_bodyparts[key].Copy()
+	mutant_bodyparts = finalized_mutantparts
+	body_markings = dna.body_markings.Copy()
 
 /mob/living/carbon/human/reagent_check(datum/reagent/R)
 	return species.handle_chemicals(R,src) // if it returns 0, it will run the usual on_mob_life for that reagent. otherwise, it will stop after running handle_chemicals for the species.
@@ -1483,7 +1592,7 @@
 	ethnicity = random_ethnicity()
 	body_type = random_body_type()
 
-	age = rand(17, 55)
+	age = rand(18, 55)
 
 	update_hair()
 	update_body()

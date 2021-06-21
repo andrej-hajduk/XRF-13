@@ -432,10 +432,6 @@
 		if("grad_style")
 			var/list/valid_grads = list()
 			for(var/grad in GLOB.hair_gradients_list)
-				var/datum/sprite_accessory/S = GLOB.hair_gradients_list[grad]
-				if(!(species in S.species_allowed))
-					continue
-
 				valid_grads[grad] = GLOB.hair_gradients_list[grad]
 
 			var/choice = tgui_input_list(ui.user, "What hair grad style do you want?", "Hair grad style choice", valid_grads)
