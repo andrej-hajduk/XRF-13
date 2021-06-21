@@ -7,12 +7,12 @@
 	action_icon_state = "nightfall"
 	ability_name = "Nightfall"
 	mechanics_text = "Shut down all electrical lights for five seconds."
-	cooldown_timer = 30 SECONDS //Nightfall buff
-	plasma_cost = 200 //Doubled. Expensive.
+	cooldown_timer = 15 SECONDS //Nightfall buff
+	plasma_cost = 150 //Doubled. Expensive.
 	/// How far nightfall will have an effect
-	var/range = 15 //Buffed range
+	range = 15 //Buffed range
 	/// How long till the lights go on again
-	var/duration = 25 SECONDS // 5 Seconds of downtime, enough to make lights consistently flicker
+	duration = 13 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
 
 /datum/action/xeno_action/activable/nightfall/on_cooldown_finish()
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to shut down lights again.</span>")
@@ -26,6 +26,33 @@
 		if(isnull(light.loc) || (owner.loc.z != light.loc.z) || (get_dist(owner, light) >= range))
 			continue
 		light.turn_light(null, FALSE, duration, TRUE, TRUE)
+
+
+/datum/action/xeno_action/activable/nightfall/lesser //Less griefy lightfall.
+	name = "Lesser Nightfall"
+	action_icon_state = "nightfall"
+	ability_name = "Lesser Nightfall"
+	mechanics_text = "Shut down all electrical lights for five seconds."
+	cooldown_timer = 5 SECONDS //Nightfall buff
+	plasma_cost = 50 // Cheap
+	/// How far nightfall will have an effect
+	var/range = 8 //Buffed range
+	/// How long till the lights go on again
+	var/duration = 3 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
+
+/datum/action/xeno_action/activable/nightfall/lesser/on_cooldown_finish()
+	to_chat(owner, "<span class='notice'>We gather enough mental strength to flicker lights again.</span>")
+	return ..()
+
+/datum/action/xeno_action/activable/nightfall/lesser/use_ability()
+	playsound(owner, 'sound/magic/nightfall.ogg', 50, 1)
+	succeed_activate()
+	add_cooldown()
+	for(var/atom/light AS in GLOB.nightfall_toggleable_lights)
+		if(isnull(light.loc) || (owner.loc.z != light.loc.z) || (get_dist(owner, light) >= range))
+			continue
+		light.turn_light(null, FALSE, duration, TRUE, TRUE)
+
 
 
 // ***************************************
