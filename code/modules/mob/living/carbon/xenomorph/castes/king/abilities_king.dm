@@ -178,14 +178,14 @@
 				if(mob_crushed.stat == DEAD)//No abuse of that mechanic for some permadeath
 					continue
 				var/armor_block = mob_crushed.run_armor_check(BODY_ZONE_CHEST, "melee")
-				var/damage = rand(5,10) //This is a very minor crush
+				var/damage = rand(2,7) //This is a very minor crush
 				mob_crushed.apply_damage(0.5*damage, BRUTE, "head", armor_block) //Head takes much more damage, you're falling flat
 				mob_crushed.apply_damage(0.2*damage, BRUTE, "chest", armor_block)
 				mob_crushed.apply_damage(1*damage, BRUTE, "l_leg", armor_block) // Ankles = broken
 				mob_crushed.apply_damage(1*damage, BRUTE, "r_leg", armor_block) // Same here
 				mob_crushed.apply_damage(0.2*damage, BRUTE, "l_arm", armor_block) // Arms are pretty safe
 				mob_crushed.apply_damage(0.2*damage, BRUTE, "r_arm", armor_block)// Arms are pretty safe
-				mob_crushed.apply_damage(60, STAMINA, BODY_ZONE_CHEST, armor_block) //REALLY winds a target.
+				mob_crushed.apply_damage(80, STAMINA, BODY_ZONE_CHEST, armor_block) //REALLY winds a target.
 				if(isxeno(mob_crushed))
 					var/mob/living/carbon/xenomorph/xeno = mob_crushed
 					xeno.apply_damage(20, BRUTE)  //Xeno = btfo
