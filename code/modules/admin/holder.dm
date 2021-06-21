@@ -300,6 +300,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/datum/admins/proc/toggle_prayers,
 	/datum/admins/proc/mcdb,
 	/datum/admins/proc/check_fingerprints,
+	/datum/admins/proc/panic_bunker,
 	/client/proc/private_message_panel,
 	/client/proc/private_message_context,
 	/client/proc/msay,
@@ -352,7 +353,6 @@ GLOBAL_PROTECT(admin_verbs_asay)
 	/datum/admins/proc/delete_all,
 	/datum/admins/proc/generate_powernets,
 	/datum/admins/proc/debug_mob_lists,
-	/datum/admins/proc/delete_atom,
 	/datum/admins/proc/restart_controller,
 	/datum/admins/proc/check_contents,
 	/datum/admins/proc/SDQL2_query,
@@ -380,7 +380,8 @@ GLOBAL_PROTECT(admin_verbs_runtimes)
 
 /world/proc/AVvaredit()
 	return list(
-	/client/proc/debug_variables
+	/datum/admins/proc/delete_atom,
+	/client/proc/debug_variables,
 	)
 GLOBAL_LIST_INIT(admin_verbs_varedit, world.AVvaredit())
 GLOBAL_PROTECT(admin_verbs_varedit)
@@ -449,7 +450,6 @@ GLOBAL_PROTECT(admin_verbs_fun)
 	/datum/admins/proc/reload_admins,
 	/datum/admins/proc/change_ground_map,
 	/datum/admins/proc/change_ship_map,
-	/datum/admins/proc/panic_bunker,
 	/datum/admins/proc/mode_check,
 	/client/proc/toggle_cdn
 	)
