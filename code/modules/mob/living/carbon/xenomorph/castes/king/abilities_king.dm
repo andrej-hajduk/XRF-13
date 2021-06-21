@@ -126,7 +126,7 @@
 					var/mob/living/carbon/xenomorph/xeno = mob_crushed
 					if(xeno.hive == xeno_owner.hive)
 						continue
-			else
+			if(!isliving(item))
 				item.ex_act(EXPLODE_HEAVY)	//crushing without damaging the nearby area
 
 /datum/action/xeno_action/activable/gravity_crush/ai_should_start_consider()
