@@ -10,9 +10,9 @@
 	cooldown_timer = 15 SECONDS //Nightfall buff
 	plasma_cost = 150 //Doubled. Expensive.
 	/// How far nightfall will have an effect
-	range = 15 //Buffed range
+	var/range = 15 //Buffed range
 	/// How long till the lights go on again
-	duration = 13 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
+	var/duration = 13 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
 
 /datum/action/xeno_action/activable/nightfall/on_cooldown_finish()
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to shut down lights again.</span>")
@@ -36,9 +36,9 @@
 	cooldown_timer = 5 SECONDS //Nightfall buff
 	plasma_cost = 50 // Cheap
 	/// How far nightfall will have an effect
-	var/range = 8 //Buffed range
+	range = 8 //Buffed range
 	/// How long till the lights go on again
-	var/duration = 3 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
+	duration = 3 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
 
 /datum/action/xeno_action/activable/nightfall/lesser/on_cooldown_finish()
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to flicker lights again.</span>")
