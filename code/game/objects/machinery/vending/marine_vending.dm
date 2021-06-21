@@ -53,12 +53,10 @@
 		/obj/item/ammo_magazine/rifle/tx15_flechette = 25,
 		/obj/item/weapon/gun/launcher/m92/standardmarine = 10,
 		/obj/item/weapon/gun/launcher/m81 = 15,
-		/obj/item/explosive/grenade/frag = 30,
 		/obj/item/attachable/bayonetknife = 20,
 		/obj/item/weapon/throwing_knife = 5,
 		/obj/item/storage/box/m94 = 5,
 		/obj/item/attachable/flashlight = 10,
-		/obj/item/explosive/grenade/mirage = 5,
 		/obj/item/weapon/powerfist = 3,
 	)
 	prices = list()
@@ -166,16 +164,6 @@
 			/obj/item/weapon/combat_knife = -1,
 			/obj/item/ammo_magazine/standard_smartmachinegun = 4,
 		),
-		"Grenades" = list(
-			/obj/item/explosive/grenade/frag = 600,
-			/obj/item/explosive/grenade/frag/m15 = 30,
-			/obj/item/explosive/grenade/incendiary = 50,
-			/obj/item/explosive/grenade/cloakbomb = 25,
-			/obj/item/explosive/grenade/drainbomb = 10,
-			/obj/item/explosive/grenade/mirage = 100,
-			/obj/item/storage/box/m94 = 200,
-			/obj/item/storage/box/m94/cas = 30,
-		),
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
 			/obj/item/attachable/compensator = -1,
@@ -198,7 +186,6 @@
 			/obj/item/attachable/stock/t35stock = -1,
 			/obj/item/attachable/attached_gun/flamer = -1,
 			/obj/item/attachable/attached_gun/shotgun = -1,
-			/obj/item/attachable/attached_gun/grenade = -1,
 			/obj/item/attachable/standard_revolver_longbarrel = -1
 		),
 		"Boxes" = list(
@@ -209,7 +196,7 @@
 		/obj/item/ammo_magazine/box10x26mm = 100,
 		/obj/item/ammo_magazine/box10x27mm = 100,
 		/obj/item/storage/box/visual/magazine = 30,
-		/obj/item/storage/box/visual/grenade = 10,
+
 		),
 	)
 
@@ -269,16 +256,6 @@
 			/obj/item/weapon/throwing_knife = -1,
 			/obj/item/ammo_magazine/standard_smartmachinegun = 4,
 		),
-		"Grenades" = list(
-			/obj/item/explosive/grenade/frag = 600,
-			/obj/item/explosive/grenade/frag/m15 = 50,
-			/obj/item/explosive/grenade/incendiary = 50,
-			/obj/item/explosive/grenade/cloakbomb = 50,
-			/obj/item/explosive/grenade/drainbomb = 10,
-			/obj/item/explosive/grenade/mirage = 100,
-			/obj/item/storage/box/m94 = 200,
-			/obj/item/storage/box/m94/cas = 30,
-		),
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
 			/obj/item/attachable/compensator = -1,
@@ -298,7 +275,7 @@
 			/obj/item/attachable/stock/t35stock = -1,
 			/obj/item/attachable/attached_gun/flamer = -1,
 			/obj/item/attachable/attached_gun/shotgun = -1,
-			/obj/item/attachable/attached_gun/grenade = -1,
+
 		),
 		"Boxes" = list(
 		/obj/item/ammo_magazine/box9mm = 100,
@@ -308,7 +285,6 @@
 		/obj/item/ammo_magazine/box10x26mm = 100,
 		/obj/item/ammo_magazine/box10x27mm = 100,
 		/obj/item/storage/box/visual/magazine = 30,
-		/obj/item/storage/box/visual/grenade = 10,
 		),
 	)
 
@@ -731,8 +707,6 @@
 		/obj/item/coin/marine/specialist = 1,
 		/obj/item/clothing/tie/storage/webbing = 1,
 		/obj/item/explosive/plastique = 2,
-		/obj/item/explosive/grenade/frag = 2,
-		/obj/item/explosive/grenade/incendiary = 2,
 		/obj/item/storage/pouch/magazine/large = 1,
 		/obj/item/storage/pouch/general/medium = 1,
 		/obj/item/clothing/mask/gas = 1,
@@ -957,7 +931,6 @@
 			/obj/item/storage/belt/marine = -1,
 			/obj/item/storage/belt/shotgun = -1,
 			/obj/item/storage/belt/shotgun/martini = -1,
-			/obj/item/storage/belt/grenade = -1,
 			/obj/item/storage/belt/knifepouch = -1,
 			/obj/item/belt_harness/marine = -1,
 			/obj/item/storage/belt/sparepouch = -1,
@@ -972,7 +945,6 @@
 			/obj/item/storage/pouch/magazine/pistol/large = -1,
 			/obj/item/storage/pouch/shotgun = -1,
 			/obj/item/storage/pouch/flare/full = -1,
-			/obj/item/storage/pouch/grenade = -1,
 			/obj/item/storage/pouch/explosive = -1,
 			/obj/item/storage/pouch/firstaid = -1,
 			/obj/item/storage/pouch/syringe = -1,
