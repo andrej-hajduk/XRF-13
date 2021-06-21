@@ -46,12 +46,13 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/rally_hive,
-		/datum/action/xeno_action/activable/gravity_crush/lesser,
 	)
 
 
@@ -93,7 +94,7 @@
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
-		/datum/action/xeno_action/activable/gravity_crush/lesser,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,
 	)
@@ -140,7 +141,7 @@
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
-		/datum/action/xeno_action/activable/gravity_crush/lesser,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/psychic_summon,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,
@@ -190,7 +191,7 @@
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
-		/datum/action/xeno_action/activable/gravity_crush/lesser,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/psychic_summon,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,
