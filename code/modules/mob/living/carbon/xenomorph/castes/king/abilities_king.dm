@@ -51,7 +51,7 @@
 	name = "Gravity Crush"
 	action_icon_state = "fortify"
 	mechanics_text = "Increases the localized gravity in an area and crushes structures."
-	ability_name = "Gravity crush"
+	ability_name = "Gravity Crush"
 	plasma_cost = 100
 	cooldown_timer = 30 SECONDS
 	keybind_signal = COMSIG_XENOABILITY_GRAVITY_CRUSH
@@ -144,7 +144,7 @@
 	name = "Lesser Gravity Crush"
 	action_icon_state = "fortify"
 	mechanics_text = "Increases the localized gravity in an area; weakening targets"
-	ability_name = "Lesser Gravity crush"
+	ability_name = "Lesser Gravity Crush"
 	plasma_cost = 50
 	cooldown_timer = 5 SECONDS //Much lower
 	keybind_signal = COMSIG_XENOABILITY_GRAVITY_CRUSH
