@@ -33,12 +33,12 @@
 	action_icon_state = "nightfall"
 	ability_name = "Lesser Nightfall"
 	mechanics_text = "Shut down all electrical lights for five seconds."
-	cooldown_timer = 5 SECONDS //Nightfall buff
+	cooldown_timer = 4 SECONDS //Nightfall buff
 	plasma_cost = 50 // Cheap
 	/// How far nightfall will have an effect
 	range = 8 //Buffed range
 	/// How long till the lights go on again
-	duration = 3 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
+	duration = 2 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
 
 /datum/action/xeno_action/activable/nightfall/lesser/on_cooldown_finish()
 	to_chat(owner, "<span class='notice'>We gather enough mental strength to flicker lights again.</span>")
