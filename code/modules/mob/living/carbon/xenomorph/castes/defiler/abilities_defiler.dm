@@ -103,6 +103,9 @@
 	if(X.selected_reagent == /datum/reagent/toxin/xeno_hemodile)
 		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/hemodile
 		smoke_range = 3
+	if(X.selected_reagent == /datum/reagent/drug/aphrodisiac)
+		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/crocin
+		smoke_range = 3
 	else if(X.selected_reagent == /datum/reagent/toxin/xeno_transvitox)
 		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/transvitox
 		N.strength = 0.75
