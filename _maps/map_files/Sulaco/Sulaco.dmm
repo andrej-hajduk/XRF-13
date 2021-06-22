@@ -6551,8 +6551,7 @@
 /area/sulaco/command/eva)
 "aFW" = (
 /obj/machinery/door/airlock/mainship/research/pen{
-	dir = 8;
-	req_access = list(14)
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
 	dir = 4
@@ -8472,7 +8471,6 @@
 	desc = "It opens and closes. This particular door appears hardended against Acid substances.";
 	dir = 1;
 	max_integrity = 1000;
-	req_access = list(14);
 	resistance_flags = 2
 	},
 /obj/machinery/door/poddoor/shutters/mainship/cell/cell1{
@@ -8482,9 +8480,7 @@
 /area/sulaco/research)
 "aSa" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/mainship/research{
-	req_access = list(14)
-	},
+/obj/machinery/door/airlock/mainship/research,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
 	dir = 4
 	},
@@ -8580,8 +8576,7 @@
 "aSE" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/mainship/research{
-	dir = 2;
-	req_access = list(14)
+	dir = 2
 	},
 /obj/machinery/door/poddoor/shutters/opened/medbay{
 	dir = 2;
