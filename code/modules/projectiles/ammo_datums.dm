@@ -1931,6 +1931,41 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/xeno/boiler_gas/corrosive/set_smoke()
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/acid()
 
+/datum/ammo/xeno/larvae_jelly
+	name = "blob of larvae jelly"
+	icon_state = "larvajelly"
+	ping = "ping_x"
+	flags_ammo_behavior = AMMO_XENO|AMMO_SKIPS_ALIENS|AMMO_EXPLOSIVE
+	var/danger_message = "<span class='danger'>A blob of larvae jelly lands with a splat!</span>"
+	armor_type = "bio"
+	accuracy_var_high = 10
+	max_range = 10
+	damage = 1
+	damage_type = STAMINA
+	penetration = 40
+	bullet_color = BOILER_LUMINOSITY_AMMO_NEUROTOXIN_COLOR
+	reagent_transfer_amount = 5
+
+///Set up the list of reagents the spit transfers upon impact
+/datum/ammo/xeno/larvae_jelly/proc/set_reagents()
+	spit_reagents = list(/datum/reagent/consumable/larvajelly = reagent_transfer_amount)
+
+/datum/ammo/xeno/larvae_jelly/on_hit_mob(mob/living/victim, obj/projectile/proj)
+
+	if(!istype(victim) || victim.stat == DEAD || victim.issamexenohive(proj.firer))
+		return
+
+	if(!iscarbon(victim))
+		return
+
+	var/mob/living/carbon/carbon_victim = victim
+	set_reagents()
+	var/armor_block = (1 - carbon_victim.run_armor_check(BODY_ZONE_CHEST, armor_type) * 0.01) //Check the target's armor mod; default to chest
+	for(var/reagent_id in spit_reagents) //modify by armor
+		spit_reagents[reagent_id] *= armor_block
+
+	carbon_victim.reagents.add_reagent_list(spit_reagents) //transfer reagents
+
 /*
 //================================================
 					Misc Ammo
