@@ -941,9 +941,6 @@
 	if(!L)
 		return
 
-	if(!X.check_state())
-		return
-
 	var/msg = stripped_input("Message:", "Psychic Whisper")
 	if(!msg)
 		return
