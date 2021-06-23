@@ -459,7 +459,7 @@
 
 /obj/structure/xeno/resin/xeno_turret_jel
 	icon = 'icons/Xeno/jelturret.dmi'
-	icon_state = "acid_turret"
+	icon_state = "jel_turret"
 	name = "Growth jelly turret"
 	desc = "A menacing looking construct of resin, it seems to be alive. It fires larvae growth jelly, useful for breeding dens."
 	bound_width = 32
