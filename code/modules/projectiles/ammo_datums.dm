@@ -1943,7 +1943,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	damage = 1
 	damage_type = STAMINA
 	penetration = 40
-	bullet_color = BOILER_LUMINOSITY_AMMO_NEUROTOXIN_COLOR
+	bullet_color = LIGHT_COLOR_PURPLE
 	reagent_transfer_amount = 5
 
 ///Set up the list of reagents the spit transfers upon impact
