@@ -1,2 +1,6 @@
 #ckey = Rank
+<<<<<<< HEAD
 
+=======
+Kamati = Host
+>>>>>>> parent of b1d0743ab (making myself admin)
