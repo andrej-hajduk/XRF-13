@@ -406,28 +406,36 @@
 
 /datum/reagent/consumable/larvajelly
 	name = "Larva Jelly"
-	description = "The blood and guts of a xenomorph larva blended into a paste. Drinking this is bad for you."
-	reagent_state = LIQUID
-	nutriment_factor = 0
-	color = "#66801e"
-	taste_description = "burning"
-
-/datum/reagent/consumable/larvajelly/on_mob_life(mob/living/L, metabolism)
-	L.adjustBruteLoss(-0.5*effect_str)
-	L.adjustFireLoss(effect_str)
-	L.adjustToxLoss(effect_str)
-	return ..()
-
-/datum/reagent/consumable/larvajellyprepared
-	name = "Prepared Larva Jelly"
-	description = "A delicious blend of xenomorphic entrails and acid, denatured by exposure to high-frequency radiation. Probably has some uses."
+	description = "A hormonal, sticky, slick jelly made inside xeno's reproductory organs, containing nutrients and pheromones to make the host's body nurish and nurture the larva inside."
 	reagent_state = LIQUID
 	nutriment_factor = 1
-	color = "#66801e"
-	taste_description = "victory"
+	color = "#952CF4"
+	taste_description = "slimy"
+
+/datum/reagent/consumable/larvajelly/on_mob_life(mob/living/L, metabolism)
+	if(L/*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/) //Pope_Wreckonging(June/3/2021)"No prefs for clients yet"
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
+			for(var/g in genits)
+				var/datum/internal_organ/genital/G = g
+				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
+
+/datum/reagent/consumable/larvajellyprepared
+	name = "Condensed Larva Jelly"
+	description = "A more potent, less slimy, but much more slippery version of Larva Jelly. The hormones are lost after cooking, leaving only the pheromones. This slipper, sticky liquid probably has some uses."
+	reagent_state = LIQUID
+	nutriment_factor = 5
+	color = "#5c1d94"
+	taste_description = "sweet"
 
 /datum/reagent/consumable/larvajellyprepared/on_mob_life(mob/living/L, metabolism)
-	L.adjustBruteLoss(-0.5*effect_str)
-	return ..()
+	if(L/*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/) //Pope_Wreckonging(June/3/2021)"No prefs for clients yet"
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
+			for(var/g in genits)
+				var/datum/internal_organ/genital/G = g
+				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
 
 
