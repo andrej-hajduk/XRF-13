@@ -202,7 +202,7 @@
 	new /obj/item/tool/lighter(src)
 
 /obj/item/storage/fancy/chemrettes/update_icon_state()
-	icon_state = "[initial(icon_state)][contents.len]"
+	icon_state = "[initial(icon_state)]box[contents.len]"
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
 	name = "\improper Nanotrasen Gold packet"
