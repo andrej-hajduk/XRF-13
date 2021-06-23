@@ -550,7 +550,7 @@
 	icon = 'icons/obj/doors/mainship/medidoor.dmi'
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
-/obj/machinery/door/airlock/mainship/rebel/research
+/obj/machinery/door/airlock/mainship/research/rebel
 	req_access = list(ACCESS_MARINE_RESEARCH_REBEL)
 
 /obj/machinery/door/airlock/mainship/research/free_access
