@@ -410,7 +410,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 1
 	color = "#952CF4"
-	taste_description = "slimy"
+	taste_description = "slime"
 
 /datum/reagent/consumable/larvajelly/on_mob_life(mob/living/L, metabolism)
 	if(L/*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/) //Pope_Wreckonging(June/3/2021)"No prefs for clients yet"
