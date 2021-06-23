@@ -443,7 +443,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 2
 	purge_list = list(/datum/reagent/medicine)
 	purge_rate = 1
-	overdose_threshold = 10000 //Overdosing for neuro is what happens when you run out of stamina to avoid its oxy and toxin damage
+	overdose_threshold = 40 //40U OD. Xenos cannot stamcrit you forever.
 	scannable = TRUE
 	toxpwr = 0
 
@@ -453,6 +453,11 @@
 	purge_list = null
 	purge_rate = 0
 
+/datum/reagent/toxin/xeno_neurotoxin/overdose_process()
+	custom_metabolism = REAGENTS_METABOLISM * 4 //Double on OD
+
+/datum/reagent/toxin/xeno_neurotoxin/overdose_crit_process()
+	custom_metabolism = REAGENTS_METABOLISM * 8 //Double OD effects. Get crit marines back up faster; afterall - their system is slowing down to fight it
 
 /datum/reagent/toxin/xeno_neurotoxin/on_mob_life(mob/living/L, metabolism)
 	var/power
@@ -473,6 +478,7 @@
 	var/stamina_loss_limit = L.maxHealth * 2
 	L.adjustStaminaLoss(min(power, max(0, stamina_loss_limit - L.staminaloss))) //If we're under our stamina_loss limit, apply the difference between our limit and current stamina damage or power, whichever's less
 
+/* Commented out because... this ended up being insane. Instant death on hug regardless past 2 stings unless they took combat stim
 	var/stamina_excess_damage = (L.staminaloss + power) - stamina_loss_limit
 	if(stamina_excess_damage > 0) //If we exceed maxHealth * 2 stamina damage, apply any excess as toxloss and oxyloss
 		L.adjustToxLoss(stamina_excess_damage * 0.5)
@@ -480,7 +486,7 @@
 		L.Losebreath(2) //So the oxy loss actually means something.
 
 	L.stuttering = max(L.stuttering, 1)
-
+*/
 	if(current_cycle < 21) //Additional effects at higher cycles
 		return ..()
 
