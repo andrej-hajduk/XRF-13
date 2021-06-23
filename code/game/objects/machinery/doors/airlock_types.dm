@@ -543,15 +543,15 @@
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
 /obj/machinery/door/airlock/mainship/medical/rebel/glass/research
-	req_access = list(ACCESS_MARINE_RESEARCH)
+	req_access = list(ACCESS_MARINE_RESEARCH_REBEL)
 
 /obj/machinery/door/airlock/mainship/research
 	name = "\improper Research Airlock"
 	icon = 'icons/obj/doors/mainship/medidoor.dmi'
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
-/obj/machinery/door/airlock/mainship/research
-	req_access = list(ACCESS_MARINE_RESEARCH)
+/obj/machinery/door/airlock/mainship/rebel/research
+	req_access = list(ACCESS_MARINE_RESEARCH_REBEL)
 
 /obj/machinery/door/airlock/mainship/research/free_access
 	req_access = null
