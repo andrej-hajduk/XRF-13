@@ -412,12 +412,6 @@
 	color = "#66801e"
 	taste_description = "burning"
 
-/datum/reagent/consumable/larvajelly/on_mob_life(mob/living/L, metabolism)
-	L.adjustBruteLoss(-0.5*effect_str)
-	L.adjustFireLoss(effect_str)
-	L.adjustToxLoss(effect_str)
-	return ..()
-
 /datum/reagent/consumable/larvajellyprepared
 	name = "Prepared Larva Jelly"
 	description = "A delicious blend of xenomorphic entrails and acid, denatured by exposure to high-frequency radiation. Probably has some uses."
@@ -425,9 +419,5 @@
 	nutriment_factor = 1
 	color = "#66801e"
 	taste_description = "victory"
-
-/datum/reagent/consumable/larvajellyprepared/on_mob_life(mob/living/L, metabolism)
-	L.adjustBruteLoss(-0.5*effect_str)
-	return ..()
 
 
