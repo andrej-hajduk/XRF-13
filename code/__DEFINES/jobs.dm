@@ -62,8 +62,10 @@
 #define SQUAD_MARINE "Squad Marine"
 #define SQUAD_VATGROWN "Squad VatGrown"
 #define SILICON_AI "AI"
+#define JANITOR "Janitor"
 
 #define JOB_CAT_COMMAND "Command"
+#define JOB_CAT_SERVICE "Service"
 #define JOB_CAT_SILICON "Silicon"
 #define JOB_CAT_REQUISITIONS "Requisitions"
 #define JOB_CAT_MEDICAL "Medical"
@@ -97,6 +99,7 @@ MEDICAL_OFFICER, MEDICAL_RESEARCHER, SQUAD_LEADER, SQUAD_SPECIALIST, SQUAD_SMART
 #define EXP_TYPE_ENGINEERING "Engineering"
 #define EXP_TYPE_MEDICAL "Medical"
 #define EXP_TYPE_MARINES "Marines"
+#define EXP_TYPE_SERVICE "Service"
 #define EXP_TYPE_REQUISITIONS "Requisitions"
 #define EXP_TYPE_SILICON "Silicon"
 #define EXP_TYPE_SPECIAL "Special"

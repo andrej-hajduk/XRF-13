@@ -24,6 +24,11 @@
 	icon_state = "med_cypherkey"
 	channels = list(RADIO_CHANNEL_MEDICAL = TRUE)
 
+/obj/item/encryptionkey/serv
+	name = "Service radio encryption key"
+	icon_state = "med_cypherkey"
+	channels = list(RADIO_CHANNEL_SERVICE = TRUE)
+
 /obj/item/encryptionkey/req
 	name = "Supply Radio Encryption Key"
 	icon_state = "cargo_cypherkey"

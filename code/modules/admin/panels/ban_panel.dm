@@ -449,7 +449,7 @@
 			if("server")
 				roles_to_ban += "Server"
 			if("role")
-				href_list.Remove("Command", "Police", "Engineering", "Medical", "Marines", "Requisitions", "Silicon", "Abstract", "Antagonist Positions") //remove the role banner hidden input values
+				href_list.Remove("Command", "Police", "Engineering", "Medical", "Marines", "Requisitions", "Silicon", "Abstract", "Service", "Antagonist Positions") //remove the role banner hidden input values
 				if(href_list[length(href_list)] == "roleban_delimiter")
 					error_state += "Role ban was selected but no roles to ban were selected."
 				else

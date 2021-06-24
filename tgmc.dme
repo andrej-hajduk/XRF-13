@@ -375,6 +375,7 @@
 #include "code\datums\jobs\job\deathsquad.dm"
 #include "code\datums\jobs\job\freelancers.dm"
 #include "code\datums\jobs\job\imperium.dm"
+#include "code\datums\jobs\job\Janitor.dm"
 #include "code\datums\jobs\job\job.dm"
 #include "code\datums\jobs\job\job_exp.dm"
 #include "code\datums\jobs\job\marines.dm"
