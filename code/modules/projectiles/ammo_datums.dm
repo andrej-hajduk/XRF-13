@@ -1544,12 +1544,10 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 */
 /datum/ammo/xeno
 	icon_state = "neurotoxin"
-	ping = "ping_x"
 	damage_type = TOX
 	flags_ammo_behavior = AMMO_XENO
 	var/added_spit_delay = 0 //used to make cooldown of the different spits vary.
 	var/spit_cost = 5
-	armor_type = "bio"
 	shell_speed = 1
 	accuracy = 40
 	accurate_range = 15
@@ -1811,7 +1809,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 
 	drop_nade(T)
 
-
 /datum/ammo/xeno/acid/heavy/on_hit_turf(turf/T,obj/projectile/P)
 	if(!T)
 		T = get_turf(P)
@@ -1824,13 +1821,11 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/xeno/acid/heavy/do_at_max_range(obj/projectile/P)
 	drop_nade(get_turf(P))
 
-
 /datum/ammo/xeno/acid/drop_nade(turf/T) //Leaves behind an acid pool; defaults to 1-3 seconds.
 	if(T.density)
 		return
 
 	new /obj/effect/xenomorph/spray(T, puddle_duration, puddle_acid_damage)
-
 
 ///For the Spitter's Scatterspit ability
 /datum/ammo/xeno/acid/heavy/scatter
@@ -1860,7 +1855,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 ///Set up the list of reagents the spit transfers upon impact
 /datum/ammo/xeno/boiler_gas/proc/set_reagents()
 	spit_reagents = list(/datum/reagent/toxin/xeno_neurotoxin = reagent_transfer_amount)
-
 
 /datum/ammo/xeno/boiler_gas/on_hit_mob(mob/living/victim, obj/projectile/proj)
 	drop_nade(get_turf(proj), proj.firer)
@@ -1951,19 +1945,15 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	spit_reagents = list(/datum/reagent/consumable/larvajelly = reagent_transfer_amount)
 
 /datum/ammo/xeno/larvae_jelly/on_hit_mob(mob/living/victim, obj/projectile/proj)
-
 	if(!istype(victim) || victim.stat == DEAD || victim.issamexenohive(proj.firer))
 		return
-
 	if(!iscarbon(victim))
 		return
-
 	var/mob/living/carbon/carbon_victim = victim
 	set_reagents()
 	var/armor_block = (1 - carbon_victim.run_armor_check(BODY_ZONE_CHEST, armor_type) * 0.01) //Check the target's armor mod; default to chest
 	for(var/reagent_id in spit_reagents) //modify by armor
 		spit_reagents[reagent_id] *= armor_block
-
 	carbon_victim.reagents.add_reagent_list(spit_reagents) //transfer reagents
 
 /*
