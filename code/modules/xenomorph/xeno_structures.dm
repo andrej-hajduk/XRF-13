@@ -470,7 +470,7 @@
 
 /obj/structure/xeno/resin/xeno_turret/jelly/Initialize(mapload, hivenumber = XENO_HIVE_NORMAL)
 	.=..()
-	ammo = GLOB.ammo_list[/datum/ammo/xeno/larvae_jelly]
+	ammo = GLOB.ammo_list[/datum/ammo/xeno/larva_jelly]
 	set_light(2, 2, LIGHT_COLOR_PURPLE)
 
 /obj/structure/xeno/resin/xeno_turret/jelly/process()

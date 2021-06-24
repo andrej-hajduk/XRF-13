@@ -1925,7 +1925,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/xeno/boiler_gas/corrosive/set_smoke()
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/acid()
 
-/datum/ammo/xeno/larvae_jelly
+/datum/ammo/xeno/larva_jelly
 	name = "blob of larvae jelly"
 	icon_state = "sticky"
 	ping = "ping_x"
@@ -1941,10 +1941,10 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	reagent_transfer_amount = 5
 
 ///Set up the list of reagents the spit transfers upon impact
-/datum/ammo/xeno/larvae_jelly/proc/set_reagents()
+/datum/ammo/xeno/larva_jelly/proc/set_reagents()
 	spit_reagents = list(/datum/reagent/consumable/larvajelly = reagent_transfer_amount)
 
-/datum/ammo/xeno/larvae_jelly/on_hit_mob(mob/living/victim, obj/projectile/proj)
+/datum/ammo/xeno/larva_jelly/on_hit_mob(mob/living/victim, obj/projectile/proj)
 	if(!istype(victim) || victim.stat == DEAD || victim.issamexenohive(proj.firer))
 		return
 	if(!iscarbon(victim))
