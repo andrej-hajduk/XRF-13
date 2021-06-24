@@ -1252,7 +1252,7 @@
 		to_chat(X, "<span class='warning'>We can only shape on weeds. We must find some resin before we start building!</span>")
 		return FALSE
 
-	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret_jel) || !T.check_disallow_alien_fortification(X))
+	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly) || !T.check_disallow_alien_fortification(X))
 		return FALSE
 
 	if(SSpoints.xeno_points_by_hive[X.hivenumber] < psych_cost)
@@ -1270,7 +1270,7 @@
 		return fail_activate()
 
 	to_chat(owner, "<span class='xenowarning'>We build a new jel turret, spending 100 psychic points in the process</span>")
-	new /obj/structure/xeno/resin/xeno_turret_jel(get_turf(A), X.hivenumber)
+	new /obj/structure/xeno/resin/xeno_turret/jelly(get_turf(A), X.hivenumber)
 
 	SSpoints.xeno_points_by_hive[X.hivenumber] -= psych_cost
 	log_game("[owner] built a jel turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
