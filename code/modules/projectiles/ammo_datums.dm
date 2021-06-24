@@ -1933,7 +1933,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 
 /datum/ammo/xeno/larvae_jelly
 	name = "blob of larvae jelly"
-	icon_state = "larvajelly"
+	icon_state = "sticky"
 	ping = "ping_x"
 	flags_ammo_behavior = AMMO_XENO|AMMO_SKIPS_ALIENS|AMMO_EXPLOSIVE
 	var/danger_message = "<span class='danger'>A blob of larvae jelly lands with a splat!</span>"
