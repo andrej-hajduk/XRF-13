@@ -301,6 +301,16 @@
 	if(account_age >= 0 && account_age < nnpa)
 		message_admins("[key_name_admin(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age == 1 ? "" : "s")] old, created on [account_join_date].")
 
+	//SKYRAT CHANGE - account age lock, don't confuse with player age, admins and bunker passthrough allowed
+	var/connecting_admin = (GLOB.admin_datums[ckey] || GLOB.deadmins[ckey])
+	if(!connecting_admin && CONFIG_GET(flag/age_lock) && account_age >= 0 && account_age < CONFIG_GET(number/age_lock_days) && !(ckey in GLOB.bunker_passthrough))
+		to_chat_immediate(src, "<span class='userdanger'>Hey! We have currently enabled safety measures and your connection has been dropped due to your account being [account_age] days old.</span>")
+		to_chat_immediate(src, "<span class='userdanger'>Contact staff on our discord server if you wish to play.</span>")
+		message_admins("<span class='adminnotice'>[key_name(src)] logged in with their account being [account_age] days old. Connection rejected.</span>")
+		qdel(src)
+		return
+	//END OF SKYRAT CHANGE
+
 
 	get_message_output("watchlist entry", ckey)
 	validate_key_in_db()
@@ -569,7 +579,7 @@
 		return
 
 	//If we aren't an admin, and the flag is set
-	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey])
+	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey] && !(ckey in GLOB.bunker_passthrough))
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
@@ -606,6 +616,8 @@
 		if(!account_join_date)
 			account_join_date = "Error"
 			account_age = -1
+		else if(ckey in GLOB.bunker_passthrough)
+			GLOB.bunker_passthrough -= ckey
 	qdel(query_client_in_db)
 	var/datum/db_query/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",

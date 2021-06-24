@@ -977,6 +977,7 @@
 #include "code\modules\admin\verbs\faxes.dm"
 #include "code\modules\admin\verbs\legacy.dm"
 #include "code\modules\admin\verbs\map_template.dm"
+#include "code\modules\admin\verbs\panicbunker.dm"
 #include "code\modules\admin\verbs\poll_managment.dm"
 #include "code\modules\admin\verbs\pray.dm"
 #include "code\modules\admin\verbs\shuttlepanel.dm"
@@ -1669,4 +1670,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular_skyrat\code\controllers\configuration\entries\skyrat_config.dm"
 // END_INCLUDE
