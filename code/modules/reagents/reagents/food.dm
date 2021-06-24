@@ -406,9 +406,8 @@
 
 /datum/reagent/consumable/larvajelly
 	name = "Larva Jelly"
-	description = "A hormonal, sticky, slick jelly made inside xeno's reproductory organs, containing nutrients and pheromones to make the host's body nurish and nurture the larva inside."
+	description = "A hormonal, sticky, slick jelly made inside a xeno's reproductory organs, containing nutrients and pheromones to make the host's body nourish and nurture the larva inside."
 	reagent_state = LIQUID
-	nutriment_factor = 1
 	color = "#952CF4"
 	taste_description = "slime"
 
@@ -423,7 +422,7 @@
 
 /datum/reagent/consumable/larvajellyprepared
 	name = "Condensed Larva Jelly"
-	description = "A more potent, less slimy, but much more slippery version of Larva Jelly. The hormones are lost after cooking, leaving only the pheromones. This slipper, sticky liquid probably has some uses."
+	description = "A more potent, less slimy, but much more slippery version of Larva Jelly. The hormones are lost after cooking, leaving only the pheromones. Probably has some uses."
 	reagent_state = LIQUID
 	nutriment_factor = 5
 	color = "#5c1d94"
