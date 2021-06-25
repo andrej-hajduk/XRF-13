@@ -1,7 +1,7 @@
 /datum/job/service
 	job_category = JOB_CAT_SERVICE
 	supervisors = "the captain"
-	selection_color = "#ffeeee"
+	selection_color = "#D1FFD4"
 	exp_type_department = EXP_TYPE_SERVICE
 
 
@@ -18,6 +18,7 @@
 	comm_title = "Jan"
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
+	display_order = JOB_DISPLAY_ORDER_JANITOR
 	outfit = /datum/outfit/job/janitor
 	total_positions = 1
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
@@ -59,9 +60,9 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	jobtype = /datum/outfit/job/janitor
 
 	id = /obj/item/card/id/dogtag
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack
 
-/datum/outfit/job/marine/standard/equipped
+/datum/outfit/job/janitor/standard/equipped
 	name = "Janitor (Equipped)"
 
 	ears = /obj/item/radio/headset/mainship/serv
