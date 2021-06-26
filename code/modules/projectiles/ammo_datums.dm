@@ -236,8 +236,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	handful_icon_state = "bullet_pgr"
 	hud_state = "pistol_pgr"
 	flags_ammo_behavior = AMMO_BALLISTIC
-	damage = 20
-	penetration = 5
 	damage_type = STAMINA
 	shrapnel_chance = 0
 	sundering = 0
