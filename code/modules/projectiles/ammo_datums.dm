@@ -560,8 +560,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state = "rifle_pgr"
 	hud_state_empty = "rifle_empty"
 	flags_ammo_behavior = AMMO_BALLISTIC
-	accurate_range = 15
-	damage = 25
 	damage_type = STAMINA
 	penetration = 10
 	sundering = 0
