@@ -52,6 +52,18 @@
 	gun_type = /obj/item/weapon/gun/smg/standard_smg
 	icon_state_mini = "mag_t90"
 
+/obj/item/ammo_magazine/smg/standard_smg/polymer
+	name = "\improper T-90 submachine gun PGR magazine (10x20mm)"
+	desc = "A 10x20mm caseless submachine gun magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10X20_CASELESS
+	icon_state = "t90_polymer"
+	max_rounds = 50
+	default_ammo = /datum/ammo/bullet/smg/polymer
+	w_class = WEIGHT_CLASS_SMALL
+	gun_type = /obj/item/weapon/gun/smg/standard_smg
+	icon_state_mini = "mag_t90"
+	bonus_overlay = "t90_polymer_ex"
+
 //-------------------------------------------------------
 //MP27, based on the MP27, based on the M7.
 

@@ -83,10 +83,13 @@
 	products = list(
 		"Rifles" = list(
 			/obj/item/weapon/gun/rifle/standard_assaultrifle = -1,
+			/obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_assaultrifle = -1,
 			/obj/item/weapon/gun/rifle/standard_carbine = -1,
+			/obj/item/ammo_magazine/rifle/standard_carbine/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_carbine = -1,
 			/obj/item/weapon/gun/rifle/tx11 = -1,
+			/obj/item/ammo_magazine/rifle/tx11/polymer = -1,
 			/obj/item/ammo_magazine/rifle/tx11 = -1,
 		),
 		"Energy Weapons" = list(
@@ -99,6 +102,7 @@
 		),
 		"SMGs" = list(
 			/obj/item/weapon/gun/smg/standard_smg = -1,
+			/obj/item/ammo_magazine/smg/standard_smg/polymer = -1,
 			/obj/item/ammo_magazine/smg/standard_smg = -1,
 			/obj/item/weapon/gun/smg/standard_machinepistol = -1,
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
@@ -108,6 +112,7 @@
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
+			/obj/item/ammo_magazine/rifle/standard_dmr/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_dmr = -1,
 			/obj/item/weapon/gun/rifle/standard_br = -1,
 			/obj/item/ammo_magazine/rifle/standard_br = -1,
@@ -122,7 +127,9 @@
 			/obj/item/weapon/gun/shotgun/pump/t35 = -1,
 			/obj/item/weapon/gun/shotgun/combat/standardmarine = -1,
 			/obj/item/weapon/gun/shotgun/pump/cmb = -1,
+			/obj/item/ammo_magazine/shotgun/beanbag/large = -1,
 			/obj/item/storage/belt/gun/ts34/full = -1,
+			/obj/item/ammo_magazine/shotgun/beanbag = -1,
 			/obj/item/ammo_magazine/shotgun = -1,
 			/obj/item/ammo_magazine/shotgun/buckshot = -1,
 			/obj/item/ammo_magazine/shotgun/flechette = -1,
@@ -134,14 +141,18 @@
 			/obj/item/weapon/gun/rifle/standard_lmg = -1,
 			/obj/item/ammo_magazine/standard_lmg = -1,
 			/obj/item/weapon/gun/rifle/standard_gpmg = -1,
+			/obj/item/ammo_magazine/standard_gpmg/polymer = -1,
 			/obj/item/ammo_magazine/standard_gpmg = -1,
 		),
 		"Sidearm" = list(
 			/obj/item/weapon/gun/pistol/standard_pistol = -1,
+			/obj/item/ammo_magazine/pistol/standard_pistol/polymer = -1,
 			/obj/item/ammo_magazine/pistol/standard_pistol = -1,
 			/obj/item/weapon/gun/pistol/standard_heavypistol = -1,
+			/obj/item/ammo_magazine/pistol/standard_heavypistol/polymer = -1,
 			/obj/item/ammo_magazine/pistol/standard_heavypistol = -1,
 			/obj/item/weapon/gun/revolver/standard_revolver = -1,
+			/obj/item/ammo_magazine/revolver/standard_revolver/polymer = -1,
 			/obj/item/ammo_magazine/revolver/standard_revolver = -1,
 			/obj/item/weapon/gun/pistol/standard_pocketpistol = -1,
 			/obj/item/ammo_magazine/pistol/standard_pocketpistol = -1,
@@ -191,17 +202,22 @@
 		"Boxes" = list(
 		/obj/item/ammo_magazine/box9mm = 100,
 		/obj/item/ammo_magazine/acp = 100,
+		/obj/item/ammo_magazine/acp/polymer = 100,
 		/obj/item/ammo_magazine/magnum = 100,
+		/obj/item/ammo_magazine/magnum/polymer = 100,
 		/obj/item/ammo_magazine/box10x24mm = 100,
+		/obj/item/ammo_magazine/box10x24mm/polymer = 100,
 		/obj/item/ammo_magazine/box10x26mm = 100,
+		/obj/item/ammo_magazine/box10x26mm/polymer = 100,
 		/obj/item/ammo_magazine/box10x27mm = 100,
+		/obj/item/ammo_magazine/box10x27mm/polymer = 100,
 		/obj/item/storage/box/visual/magazine = 30,
 		),
-	)
 
 	seasonal_items = list(
-		SEASONAL_GUNS = "Seasonal",
+		SEASONAL_GUNS = "seasonal_guns",
 	)
+)
 
 /obj/machinery/vending/marine/shared/hvh
 
@@ -307,16 +323,12 @@
 			/obj/item/ammo_magazine/shotgun/mbx900 = 2,
 			/obj/item/bodybag/tarp = 2,
 			/obj/item/explosive/plastique = 2,
-			/obj/item/clothing/suit/storage/marine/harness/boomvest = 20,
 			/obj/item/radio/headset/mainship/marine/alpha = -1,
 			/obj/item/radio/headset/mainship/marine/bravo = -1,
 			/obj/item/radio/headset/mainship/marine/charlie = -1,
 			/obj/item/radio/headset/mainship/marine/delta = -1,
 		),
 		"Grenade Boxes" = list(
-			/obj/item/storage/box/visual/grenade/frag = 2,
-			/obj/item/storage/box/visual/grenade/incendiary = 2,
-			/obj/item/storage/box/visual/grenade/M15 = 2,
 			/obj/item/storage/box/visual/grenade/drain = 1,
 			/obj/item/storage/box/visual/grenade/cloak = 1,
 		),
@@ -326,24 +338,33 @@
 			/obj/item/shotgunbox/buckshot = 1,
 			/obj/item/shotgunbox/flechette = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_pistol/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_pistol/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_heavypistol/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_heavypistol/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_revolver/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_revolver/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_pocketpistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/vp70/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/plasma_pistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_smg/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_smg/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_machinepistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_carbine/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_carbine/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx11/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/tx11/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/lasrifle/marine/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx15/flechette/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx15/slug/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_dmr/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_dmr/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_br/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/chamberedrifle/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_lmg/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_gpmg/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_gpmg/polymer/full = 1,
 		)
 	)
 

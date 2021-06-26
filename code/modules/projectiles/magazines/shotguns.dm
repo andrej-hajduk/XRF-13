@@ -44,6 +44,7 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	desc = "A box filled with beanbag shotgun shells used for non-lethal crowd control. 12 Gauge."
 	icon_state = "beanbag"
 	default_ammo = /datum/ammo/bullet/shotgun/beanbag
+	caliber = CALIBER_12G
 	icon_state_mini = "beanbag"
 
 /obj/item/ammo_magazine/shotgun/tracker
@@ -99,6 +100,14 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	default_ammo = /datum/ammo/bullet/shotgun/mbx900_tracker
 	icon_state_mini = "mbx900_tracker"
 
+/obj/item/ammo_magazine/shotgun/beanbag/large
+	name = "box of 8 gauge beanbag shells"
+	desc = "A box filled with beanbag shotgun shells used for non-lethal riot control. 8 gauge."
+	icon_state = "beanbag"
+	default_ammo = /datum/ammo/bullet/shotgun/beanbag/large
+	caliber = CALIBER_8G
+	icon_state_mini = "beanbag"
+
 //-------------------------------------------------------
 
 /*
@@ -121,6 +130,8 @@ also doesn't really matter. You can only reload them with handfuls.
 
 /obj/item/ammo_magazine/internal/shotgun/pump/CMB
 	max_rounds = 8
+	caliber = CALIBER_8G
+	default_ammo = /datum/ammo/bullet/shotgun/beanbag/large
 
 /obj/item/ammo_magazine/internal/shotgun/pump/bolt
 	name = "internal magazine"

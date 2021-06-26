@@ -570,11 +570,12 @@ can cause issues with ammo types getting mixed up during the burst.
 //-------------------------------------------------------
 //A shotgun, how quaint.
 /obj/item/weapon/gun/shotgun/pump/cmb
-	name = "\improper Paladin-12 pump shotgun"
-	desc = "A nine-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone."
+	name = "\improper Paladin-8 pump shotgun"
+	desc = "A nine-round pump action shotgun. It loads only a specialized beanbag round for riot control."
 	icon = 'icons/Marine/gun64.dmi'
 	icon_state = "pal12"
 	item_state = "pal12"
+	pump_animation = "pal12_pump"
 	fire_sound = 'sound/weapons/guns/fire/shotgun_cmb.ogg'
 	reload_sound = 'sound/weapons/guns/interact/shotgun_cmb_insert.ogg'
 	pump_sound = 'sound/weapons/guns/interact/shotgun_cmb_pump.ogg'
@@ -594,7 +595,6 @@ can cause issues with ammo types getting mixed up during the burst.
 	)
 
 	fire_delay = 15
-	damage_mult = 0.75
 	accuracy_mult = 1.25
 	accuracy_mult_unwielded = 1
 	scatter = 5
@@ -639,8 +639,6 @@ can cause issues with ammo types getting mixed up during the burst.
 		/obj/item/attachable/scope/mosin,
 		/obj/item/attachable/stock/mosin,
 	)
-	actions_types = list(/datum/action/item_action/aim_mode)
-	aim_fire_delay = 1
 
 	fire_delay = 17.5
 	accuracy_mult = 1.45

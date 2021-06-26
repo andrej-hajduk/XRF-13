@@ -12,6 +12,17 @@
 	default_ammo = /datum/ammo/bullet/pistol
 	gun_type = /obj/item/weapon/gun/pistol/standard_pistol
 
+/obj/item/ammo_magazine/pistol/standard_pistol/polymer
+	name = "\improper TP-14 PGR magazine (9mm)"
+	desc = "A pistol magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_9X19
+	icon_state = "tp14_polymer"
+	max_rounds = 21
+	w_class = WEIGHT_CLASS_SMALL
+	default_ammo = /datum/ammo/bullet/pistol/polymer
+	gun_type = /obj/item/weapon/gun/pistol/standard_pistol
+	bonus_overlay = "tp14_polymer_ex"
+
 /obj/item/ammo_magazine/box9mm
 	name = "packet of 9mm"
 	desc = "A packet containing 70 rounds of 9mm."
@@ -23,6 +34,16 @@
 	default_ammo = /datum/ammo/bullet/pistol
 	icon_state_mini = "ammo_packet"
 
+/obj/item/ammo_magazine/box9mm/polymer
+	name = "packet of 9mm PGR"
+	desc = "A packet containing 70 rounds of 9mm polymer gel rounds."
+	caliber = CALIBER_9X19
+	icon_state = "box_9mm_polymer"
+	current_rounds = 70
+	max_rounds = 70
+	w_class = WEIGHT_CLASS_SMALL
+	default_ammo = /datum/ammo/bullet/pistol/polymer
+	icon_state_mini = "ammo_packet"
 //-------------------------------------------------------
 //TX-7 Plasma Pistol
 /obj/item/ammo_magazine/pistol/plasma_pistol
@@ -86,6 +107,14 @@
 	max_rounds = 10
 	gun_type = /obj/item/weapon/gun/pistol/m1911
 
+/obj/item/ammo_magazine/pistol/m1911/polymer
+	name = "\improper M1911 PGR magazine (.45)"
+	default_ammo = /datum/ammo/bullet/pistol/heavy/polymer
+	caliber = CALIBER_45ACP
+	icon_state = "1911_polymer"
+	max_rounds = 10
+	gun_type = /obj/item/weapon/gun/pistol/m1911
+
 /obj/item/ammo_magazine/acp
 	name = "packet of .45 ACP"
 	icon_state = "box_45acp"
@@ -95,7 +124,14 @@
 	max_rounds = 50
 	icon_state_mini = "ammo_packet"
 
-
+/obj/item/ammo_magazine/acp/polymer
+	name = "packet of heavy polymer gel rounds"
+	icon_state = "box_45acp_polymer"
+	default_ammo = /datum/ammo/bullet/pistol/heavy/polymer
+	caliber = CALIBER_45ACP
+	current_rounds = 50
+	max_rounds = 50
+	icon_state_mini = "ammo_packet"
 //-------------------------------------------------------
 //TP-23
 
@@ -107,6 +143,14 @@
 	max_rounds = 14
 	gun_type = /obj/item/weapon/gun/pistol/standard_heavypistol
 
+/obj/item/ammo_magazine/pistol/standard_heavypistol/polymer
+	name = "\improper TP-23 polymer gel magazine (.45)"
+	default_ammo = /datum/ammo/bullet/pistol/heavy/polymer
+	caliber = CALIBER_45ACP
+	icon_state = ".45_polymer"
+	max_rounds = 14
+	gun_type = /obj/item/weapon/gun/pistol/standard_heavypistol
+	bonus_overlay = ".45_polymer_ex"
 
 //-------------------------------------------------------
 //Beretta 92FS, the gun McClane carries around in Die Hard. Very similar to the service pistol, all around.

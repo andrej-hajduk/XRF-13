@@ -849,6 +849,17 @@
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 	new_gun.on_enter_storage(src)
 
+/obj/item/storage/belt/gun/mateba/polymer/full/Initialize()
+	. = ..()
+	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new_gun.on_enter_storage(src)
+
 /obj/item/storage/belt/gun/mateba/captain
 	icon_state = "c_mateba_holster"
 	item_state = "c_mateba_holster"

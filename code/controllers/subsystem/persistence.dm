@@ -119,6 +119,7 @@ SUBSYSTEM_DEF(persistence)
 		/datum/supply_packs/imports/rev357 = -1,
 		/obj/item/ammo_magazine/revolver/small = -1,
 		/obj/item/weapon/gun/revolver/m44 = -1,
+		/obj/item/ammo_magazine/revolver/polymer = -1,
 		/obj/item/ammo_magazine/revolver = -1,
 		)
 

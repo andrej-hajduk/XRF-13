@@ -263,6 +263,13 @@ WEAPONS
 	cost = 15
 	available_against_xeno_only = TRUE
 
+/datum/supply_packs/weapons/mateba/polymer
+	name = "Mateba PGR Autorevolver belt"
+	contains = list(/obj/item/storage/belt/gun/mateba/polymer/full)
+	notes = "Contains 6 speedloaders"
+	cost = 15
+	available_against_xeno_only = TRUE
+
 /datum/supply_packs/weapons/explosives_mines
 	name = "claymore mines"
 	notes = "Contains 5 mines"
@@ -454,8 +461,14 @@ AMMO
 	cost = 20
 
 /datum/supply_packs/ammo/mateba
-	name = "Mateba magazine"
+	name = "Mateba speedloader"
 	contains = list(/obj/item/ammo_magazine/revolver/mateba)
+	cost = 3
+	available_against_xeno_only = TRUE
+
+/datum/supply_packs/ammo/mateba/polymer
+	name = "Mateba PGR speedloader"
+	contains = list(/obj/item/ammo_magazine/revolver/mateba/polymer)
 	cost = 3
 	available_against_xeno_only = TRUE
 
@@ -1280,6 +1293,11 @@ Imports
 	contains = list(/obj/item/ammo_magazine/m412l1_hpr)
 	cost = 5
 
+/datum/supply_packs/imports/m412l1/ammo/polymer
+	name = "M412L1 Heavy Pulse Rifle PGR Ammo"
+	contains = list(/obj/item/ammo_magazine/m412l1_hpr/polymer)
+	cost = 5
+
 /datum/supply_packs/imports/type71	//Moff gun
 	name = "Type 71 Pulse Rifle"
 	contains = list(/obj/item/weapon/gun/rifle/type71)
@@ -1433,7 +1451,7 @@ Imports
 	cost = 7
 
 /datum/supply_packs/imports/rev357/ammo
-	name = "Smith and Wesson 357 Revolver Ammo"
+	name = "Smith and Wesson 357 Revolver Speedloader"
 	contains = list(/obj/item/ammo_magazine/revolver/small)
 	cost = 3
 
@@ -1442,9 +1460,14 @@ Imports
 	contains = list(/obj/item/weapon/gun/revolver/m44)
 	cost = 7
 
-/datum/supply_packs/imports/rev357/ammo
-	name = "M-44 SAA Revolver Ammo"
+/datum/supply_packs/imports/rev44/ammo
+	name = "M-44 SAA Revolver Speedloader"
 	contains = list(/obj/item/ammo_magazine/revolver)
+	cost = 3
+
+/datum/supply_packs/imports/rev44/ammo/polymer
+	name = "M-44 SAA Revolver PGR Speedloader"
+	contains = list(/obj/item/ammo_magazine/revolver/polymer)
 	cost = 3
 
 /datum/supply_packs/imports/g22

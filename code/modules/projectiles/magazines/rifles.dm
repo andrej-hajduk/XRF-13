@@ -15,6 +15,18 @@
 	gun_type = /obj/item/weapon/gun/rifle/m412
 	icon_state_mini = "mag_rifle"
 
+/obj/item/ammo_magazine/rifle/polymer
+	name = "\improper M412 PGR magazine (10x24mm)"
+	desc = "A 10mm assault rifle magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10X24_CASELESS
+	icon_state = "m412_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/polymer
+	max_rounds = 40
+	gun_type = /obj/item/weapon/gun/rifle/m412
+	icon_state_mini = "mag_rifle"
+	// bonus_overlay = "m412_polymer_ex"// Commented out due to sprite issues with M412 Elite
+
 /obj/item/ammo_magazine/rifle/extended
 	name = "\improper M412 extended magazine (10x24mm)"
 	desc = "A 10mm assault extended rifle magazine."
@@ -53,6 +65,18 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_carbine
 	icon_state_mini = "mag_rifle_big"
 
+/obj/item/ammo_magazine/rifle/standard_carbine/polymer
+	name = "\improper T-18 PGR magazine (10x24mm)"
+	desc = "A 10mm carbine magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10X24_CASELESS
+	icon_state = "t18_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/polymer
+	max_rounds = 36
+	gun_type = /obj/item/weapon/gun/rifle/standard_carbine
+	icon_state_mini = "mag_rifle_big"
+	bonus_overlay = "t18_polymer_ex"
+
 //-------------------------------------------------------
 //T12 Assault Rifle
 
@@ -67,13 +91,36 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_assaultrifle
 	icon_state_mini = "mag_rifle_big"
 
+/obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer
+	name = "\improper T-12 PGR magazine (10x24mm)"
+	desc = "A 10mm assault rifle magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10X24_CASELESS
+	icon_state = "t12_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/polymer
+	max_rounds = 50
+	gun_type = /obj/item/weapon/gun/rifle/standard_assaultrifle
+	icon_state_mini = "mag_rifle_big"
+	bonus_overlay = "t12_polymer_ex"
+
 /obj/item/ammo_magazine/box10x24mm
 	name = "box of 10x24mm"
-	desc = "A box containing 150 rounds of 10x24mm caseless.."
+	desc = "A box containing 150 rounds of 10x24mm caseless."
 	caliber = CALIBER_10X24_CASELESS
 	icon_state = "box_10x24mm"
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo = /datum/ammo/bullet/rifle
+	current_rounds = 150
+	max_rounds = 150
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/box10x24mm/polymer
+	name = "box of 10x24mm PGR"
+	desc = "A box containing 150 10x24mm caseless polymer gel rounds."
+	caliber = CALIBER_10X24_CASELESS
+	icon_state = "box_10x24mm_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/polymer
 	current_rounds = 150
 	max_rounds = 150
 	icon_state_mini = "ammo_packet"
@@ -91,6 +138,18 @@
 	max_rounds = 20
 	gun_type = /obj/item/weapon/gun/rifle/standard_dmr
 	icon_state_mini = "mag_dmr"
+
+/obj/item/ammo_magazine/rifle/standard_dmr/polymer
+	name = "\improper T-37 PGR magazine (10x27mm)"
+	desc = "A 10mm DMR magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10x27_CASELESS
+	icon_state = "t37_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/standard_dmr/polymer
+	max_rounds = 20
+	gun_type = /obj/item/weapon/gun/rifle/standard_dmr
+	icon_state_mini = "mag_dmr"
+	bonus_overlay = "t37_polymer_ex"
 
 /obj/item/ammo_magazine/rifle/standard_dmr/incendiary
 	name = "\improper T-64 incendiary magazine (10x27mm)"
@@ -117,6 +176,18 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_br
 	icon_state_mini = "mag_rifle_big"
 
+/obj/item/ammo_magazine/rifle/standard_br/polymer
+	name = "\improper T-64 PGR magazine (10x27mm)"
+	desc = "A 10mm battle rifle magazine loaded with nonlethal polymer gel rounds."
+	caliber = CALIBER_10x27_CASELESS
+	icon_state = "t64_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/standard_dmr/polymer
+	max_rounds = 35
+	gun_type = /obj/item/weapon/gun/rifle/standard_br
+	icon_state_mini = "mag_rifle_big"
+	bonus_overlay = "t64_polymer_ex"
+
 /obj/item/ammo_magazine/rifle/standard_br/incendiary
 	name = "\improper T-64 BR incendiary magazine (10x27mm)"
 	desc = "A 10mm incendiary battle rifle magazine, carries less rounds however."
@@ -130,11 +201,22 @@
 
 /obj/item/ammo_magazine/box10x27mm
 	name = "box of 10x27mm"
-	desc = "A box containing 100 rounds of 10x27mm caseless.."
+	desc = "A box containing 100 rounds of 10x27mm caseless."
 	caliber = CALIBER_10x27_CASELESS
 	icon_state = "box_10x27mm"
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo = /datum/ammo/bullet/rifle/standard_dmr
+	current_rounds = 100
+	max_rounds = 100
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/box10x27mm/polymer
+	name = "box of 10x27mm PGR"
+	desc = "A box containing 100 10x27mm caseless polymer gel rounds."
+	caliber = CALIBER_10x27_CASELESS
+	icon_state = "box_10x27mm_polymer"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/rifle/standard_dmr/polymer
 	current_rounds = 100
 	max_rounds = 100
 	icon_state_mini = "ammo_packet"
@@ -225,12 +307,36 @@
 	reload_delay = 3 SECONDS
 	icon_state_mini = "mag_gpmg"
 
+/obj/item/ammo_magazine/standard_gpmg/polymer
+	name = "\improper T-60 GPMG PGR box magazine (10x26mm)"
+	desc = "A nonlethal polymer gel round drum magazine for the T-60 general purpose machinegun."
+	icon_state = "t60_polymer"
+	caliber = CALIBER_10x26_CASELESS
+	default_ammo = /datum/ammo/bullet/rifle/machinegun/polymer
+	w_class = WEIGHT_CLASS_NORMAL
+	max_rounds = 250
+	gun_type = /obj/item/weapon/gun/rifle/standard_gpmg
+	reload_delay = 3 SECONDS
+	icon_state_mini = "mag_gpmg"
+	bonus_overlay = "t60_polymer_ex"
+
 /obj/item/ammo_magazine/box10x26mm
 	name = "packet of 10x26mm"
-	desc = "A packet containing 100 rounds of 10x26mm caseless.."
+	desc = "A packet containing 100 rounds of 10x26mm caseless."
 	icon_state = "box_10x26mm"
 	caliber = CALIBER_10x26_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle/machinegun
+	w_class = WEIGHT_CLASS_SMALL
+	current_rounds = 100
+	max_rounds = 100
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/box10x26mm/polymer
+	name = "packet of 10x26mm PGR"
+	desc = "A packet containing 100 10x26mm caseless polymer gel rounds."
+	icon_state = "box_10x26mm_polymer"
+	caliber = CALIBER_10x26_CASELESS
+	default_ammo = /datum/ammo/bullet/rifle/machinegun/polymer
 	w_class = WEIGHT_CLASS_SMALL
 	current_rounds = 100
 	max_rounds = 100
@@ -249,6 +355,18 @@
 	max_rounds = 200
 	gun_type = /obj/item/weapon/gun/rifle/m412l1_hpr
 	icon_state_mini = "mag_gpmg"
+
+/obj/item/ammo_magazine/m412l1_hpr/polymer
+	name = "\improper M412L1 PGR box magazine (10x24mm)"
+	desc = "A semi-rectangular box of nonlethal polymer gel rounds for the M412L1 heavy pulse rifle."
+	icon_state = "m412l1_polymer"
+	caliber = CALIBER_10X24_CASELESS
+	default_ammo = /datum/ammo/bullet/rifle/polymer
+	w_class = WEIGHT_CLASS_NORMAL
+	max_rounds = 200
+	gun_type = /obj/item/weapon/gun/rifle/m412l1_hpr
+	icon_state_mini = "mag_gpmg"
+	bonus_overlay = "m412l1_polymer_ex"
 
 //-------------------------------------------------------
 //UPP TYPE 71 RIFLE
@@ -347,3 +465,14 @@
 	max_rounds = 70
 	gun_type = /obj/item/weapon/gun/rifle/tx11
 	icon_state_mini = "mag_tx11"
+
+/obj/item/ammo_magazine/rifle/tx11/polymer
+	name = "\improper TX-11 combat rifle PGR magazine"
+	desc = "A magazine filled with 4.92×34mm nonlethal polymer gel rounds for the TX-11."
+	caliber = CALIBER_492X34_CASELESS
+	icon_state = "tx11_polymer"
+	default_ammo = /datum/ammo/bullet/rifle/hv/polymer
+	max_rounds = 70
+	gun_type = /obj/item/weapon/gun/rifle/tx11
+	icon_state_mini = "mag_tx11"
+	bonus_overlay = "tx11_polymer_ex"

@@ -14,6 +14,8 @@
 	var/health_threshold_dead = -100
 	/// Health at which a mob goes into crit
 	var/health_threshold_crit = 0
+	/// Stamina amount a mob has
+	var/stamina_limit = 200
 
 	/// %-reduction-based armor.
 	var/datum/armor/soft_armor

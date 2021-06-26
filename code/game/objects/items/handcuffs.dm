@@ -3,6 +3,7 @@
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items/items.dmi'
+	default_worn_icon = "handcuff"
 	icon_state = "handcuff"
 	flags_atom = CONDUCT
 	flags_equip_slot = ITEM_SLOT_BELT
