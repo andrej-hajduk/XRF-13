@@ -252,7 +252,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	flags_ammo_behavior = AMMO_BALLISTIC
 	damage = 30
 	damage_type = STAMINA
-	penetration = 5
 	sundering = 0
 	bullet_color = COLOR_DISABLER_BLUE
 
