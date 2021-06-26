@@ -520,12 +520,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state = "smg_pgr"
 	hud_state_empty = "smg_empty"
 	flags_ammo_behavior = AMMO_BALLISTIC
-	accuracy_var_low = 7
-	accuracy_var_high = 7
-	damage = 20
 	damage_type = STAMINA
-	accurate_range = 5
-	damage_falloff = 1
 	sundering = 0
 	penetration = 10
 	bullet_color = COLOR_DISABLER_BLUE
