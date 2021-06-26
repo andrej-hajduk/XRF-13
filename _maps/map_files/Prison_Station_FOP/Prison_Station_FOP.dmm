@@ -24400,12 +24400,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/se)
-"bxR" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/red{
-	dir = 8
-	},
-/area/prison/cellblock/highsec/north/south)
 "bxS" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/prison/darkred,
@@ -30610,10 +30604,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/prison,
 /area/prison/intake)
-"bRS" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/bright_clean,
-/area/prison/hallway/central)
 "bRT" = (
 /obj/machinery/light{
 	dir = 8
@@ -42573,12 +42563,6 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/open/floor/plating,
 /area/prison/maintenance/hangar_barracks)
-"lGC" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/yellow/corner{
-	dir = 1
-	},
-/area/prison/cellblock/mediumsec/south)
 "lOX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -42804,10 +42788,6 @@
 	dir = 6
 	},
 /area/prison/security/checkpoint/highsec/s)
-"mYx" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/bright_clean/two,
-/area/prison/residential/south)
 "mYC" = (
 /obj/machinery/power/apc/drained{
 	dir = 8
@@ -43693,12 +43673,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/research/secret/biolab)
-"sgC" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/yellow{
-	dir = 4
-	},
-/area/prison/cellblock/mediumsec/east)
 "shF" = (
 /turf/open/ground/desertdam/river/clean/shallow_edge,
 /area/prison/hallway/central)
@@ -44266,10 +44240,6 @@
 	dir = 4
 	},
 /area/prison/security/monitoring/maxsec/panopticon)
-"vSz" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/prison/bright_clean/two,
-/area/prison/hallway/central)
 "vSO" = (
 /obj/structure/window/framed/prison/reinforced,
 /obj/effect/landmark/lv624/fog_blocker,
@@ -51487,7 +51457,7 @@ bCb
 bCb
 bCb
 bCb
-mYx
+bCb
 bWC
 klX
 bLL
@@ -64278,7 +64248,7 @@ aCg
 aCg
 aCg
 aCg
-bxR
+aCg
 aCg
 aCg
 aCg
@@ -75587,7 +75557,7 @@ aIS
 aKO
 aCe
 aKP
-bRS
+aKP
 aKP
 aKP
 aKP
@@ -81293,7 +81263,7 @@ aKS
 aKS
 aKS
 aMe
-vSz
+aKN
 bPL
 bPO
 bRo
@@ -82370,7 +82340,7 @@ cvc
 cvc
 cvc
 cvW
-lGC
+cxQ
 cvA
 ctb
 cvA
@@ -85187,7 +85157,7 @@ ctz
 cqR
 cqR
 cqR
-sgC
+cqR
 tqX
 cqR
 cqR

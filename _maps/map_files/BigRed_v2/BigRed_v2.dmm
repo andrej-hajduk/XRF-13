@@ -21079,10 +21079,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/closed/mineral/bigred,
 /area/bigredv2/caves/north)
-"qqG" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/bigredv2/caves/southwest)
 "qtI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	on = 1
@@ -21183,10 +21179,6 @@
 /obj/effect/landmark/corpsespawner/chef,
 /turf/open/floor/grimy,
 /area/bigredv2/outside/dorms)
-"qRX" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/bigredv2/caves/north)
 "qUm" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -21378,10 +21370,6 @@
 	},
 /turf/open/floor,
 /area/bigredv2/outside/general_offices)
-"sQi" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/bigredv2/caves/south)
 "sUd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -21449,10 +21437,6 @@
 	dir = 8
 	},
 /area/shuttle/drop2/lz2)
-"ttW" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave/rock,
-/area/bigredv2/caves/east)
 "ttZ" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/closed/mineral/bigred,
@@ -21718,10 +21702,6 @@
 "vwf" = (
 /turf/closed/mineral/bigred,
 /area/bigredv2/outside/space_port)
-"vyZ" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/bigredv2/caves/northeast)
 "vAP" = (
 /obj/docking_port/stationary/crashmode,
 /obj/structure/cable,
@@ -21798,10 +21778,6 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
 /turf/closed/mineral/bigred,
 /area/bigredv2/caves/northwest)
-"whf" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/bigredv2/caves/east)
 "wmv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -25927,7 +25903,7 @@ tvk
 tvk
 liu
 dSm
-qqG
+puQ
 puQ
 puQ
 puQ
@@ -39840,7 +39816,7 @@ hqP
 hqP
 dGX
 xEN
-sQi
+xEN
 xEN
 xEN
 xEN
@@ -50324,7 +50300,7 @@ xpB
 xpB
 xpB
 uLz
-qRX
+xpB
 xpB
 abq
 qVr
@@ -51546,7 +51522,7 @@ xEN
 iyn
 xWD
 xEN
-sQi
+xEN
 xEN
 xEN
 xEN
@@ -56284,7 +56260,7 @@ tzo
 tzo
 kPf
 tzo
-whf
+tzo
 tzo
 yfA
 tzo
@@ -60416,7 +60392,7 @@ tzo
 tzo
 tzo
 tzo
-ttW
+uMP
 oOR
 uMP
 uMP
@@ -62810,7 +62786,7 @@ oOR
 oOR
 oOR
 tzo
-whf
+tzo
 eve
 eve
 eve
@@ -67314,7 +67290,7 @@ adZ
 ptP
 dnl
 vCh
-whf
+tzo
 tzo
 tzo
 xJh
@@ -67502,7 +67478,7 @@ uLR
 vCh
 vCh
 vCh
-vyZ
+vCh
 vCh
 dnl
 dnl
@@ -67540,7 +67516,7 @@ tzo
 tzo
 tzo
 uMP
-whf
+tzo
 oOR
 oOR
 oOR
@@ -67692,7 +67668,7 @@ vCh
 kKe
 vCh
 vCh
-vyZ
+vCh
 vCh
 dnl
 dnl

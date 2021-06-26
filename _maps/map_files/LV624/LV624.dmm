@@ -12669,10 +12669,6 @@
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor,
 /area/lv624/ground/river2)
-"bQV" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/east1)
 "bRK" = (
 /turf/open/ground/coast/corner2{
 	dir = 4
@@ -13800,11 +13796,6 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/closed/wall/indestructible/mineral,
 /area/lv624/ground/sand1)
-"gyP" = (
-/obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/central3)
 "gzj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 8;
@@ -16741,10 +16732,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
-"ujY" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/west1)
 "unj" = (
 /obj/effect/spawner/modularmap/lv624/domes,
 /turf/open/space/basic,
@@ -20166,7 +20153,7 @@ ozL
 aej
 aej
 aej
-etu
+aej
 aej
 aej
 aej
@@ -21101,7 +21088,7 @@ abb
 abb
 abb
 abc
-ujY
+abc
 abc
 udq
 udq
@@ -21966,7 +21953,7 @@ aej
 abc
 abc
 abc
-ujY
+abc
 abb
 abb
 abb
@@ -23948,7 +23935,7 @@ abd
 abc
 abc
 abd
-ujY
+abc
 abc
 abc
 abc
@@ -30557,7 +30544,7 @@ acO
 acO
 aeu
 acO
-gyP
+adh
 acO
 aeK
 acN
@@ -44180,7 +44167,7 @@ cRa
 afr
 afn
 abi
-bQV
+abi
 abo
 afg
 afg

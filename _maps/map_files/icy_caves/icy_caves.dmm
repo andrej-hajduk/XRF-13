@@ -4032,10 +4032,6 @@
 	dir = 1
 	},
 /area/icy_caves/outpost/office)
-"ym" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/ice,
-/area/icy_caves/caves/south)
 "yn" = (
 /turf/open/floor/tile/dark/purple2/corner{
 	dir = 4
@@ -7185,10 +7181,6 @@
 	},
 /turf/closed/ice/thin/end,
 /area/icy_caves/outpost/outside)
-"WC" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/ice,
-/area/icy_caves/caves/northern)
 "WD" = (
 /turf/open/floor/plating/ground/snow,
 /area/icy_caves/outpost/LZ1)
@@ -19973,7 +19965,7 @@ ZT
 ZT
 ZT
 ZT
-ym
+ZT
 ST
 YW
 YW
@@ -23694,7 +23686,7 @@ by
 Lm
 Ho
 SR
-WC
+SR
 SR
 SR
 SR
@@ -25399,7 +25391,7 @@ Tu
 Tu
 Tu
 eB
-WC
+SR
 SR
 Lm
 VI
