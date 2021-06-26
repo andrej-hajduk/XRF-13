@@ -22,7 +22,7 @@
 	set category = "Server"
 	set name = "Allow PB Bypass"
 	set desc = "Allows a given ckey to connect despite the panic bunker for a given round."
-	if(!check_rights(R_SERVER))
+	if(!check_rights(R_ADMIN))
 		return
 
 	if(!CONFIG_GET(flag/sql_enabled))
@@ -39,7 +39,7 @@
 	set category = "Server"
 	set name = "Revoke PB Bypass"
 	set desc = "Revokes a ckey's permission to bypass the panic bunker for a given round."
-	if(!check_rights(R_SERVER))
+	if(!check_rights(R_ADMIN))
 		return
 
 	if(!CONFIG_GET(flag/sql_enabled))
