@@ -677,14 +677,8 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	handful_icon_state = "bullet_pgr"
 	hud_state = "hivelo_pgr"
 	hud_state_empty = "hivelo_empty"
-	damage_falloff = 0.5
-	flags_ammo_behavior = AMMO_BALLISTIC
-	accurate_range_min = 0
-	accurate_range = 30
-	max_range = 40
 	damage = 65
 	damage_type = STAMINA
-	scatter = -15
 	penetration = 20
 	sundering = 0
 	bullet_color = COLOR_DISABLER_BLUE
