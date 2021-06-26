@@ -419,6 +419,7 @@
 			for(var/g in genits)
 				var/datum/internal_organ/genital/G = g
 				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
+	return ..()
 
 /datum/reagent/consumable/larvajellyprepared
 	name = "Condensed Larva Jelly"
@@ -436,5 +437,6 @@
 			for(var/g in genits)
 				var/datum/internal_organ/genital/G = g
 				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
+	return ..()
 
 

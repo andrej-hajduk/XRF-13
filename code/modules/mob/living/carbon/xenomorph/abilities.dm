@@ -1205,9 +1205,9 @@
 	log_game("[owner] built a turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
 	xeno_message("[X.name] has built a new turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
-//////////////////////////
-/// Build xeno jel turret
-//////////////////////////
+/////////////////////////////////
+/// Build xeno larva jelly turret
+/////////////////////////////////
 
 /datum/action/xeno_action/activable/build_turret/jelly
 	name = "Secrete larva jelly turret"
@@ -1223,10 +1223,10 @@
 		return FALSE
 
 /datum/action/xeno_action/activable/build_turret/jelly/building_turret(atom/A, mob/living/carbon/xenomorph/X)
-	to_chat(owner, "<span class='xenowarning'>We build a new jel turret, spending 100 psychic points in the process</span>")
+	to_chat(owner, "<span class='xenowarning'>We build a new larva jelly turret, spending 100 psychic points in the process</span>")
 	new /obj/structure/xeno/resin/xeno_turret/jelly(get_turf(A), X.hivenumber)
-	log_game("[owner] built a jel turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
-	xeno_message("[X.name] has built a new jel turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
+	log_game("[owner] built a larva jelly turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
+	xeno_message("[X.name] has built a new larva jelly turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
