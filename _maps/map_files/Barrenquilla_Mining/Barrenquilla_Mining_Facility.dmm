@@ -321,11 +321,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"bE" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/corpsespawner/engineer,
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
 "bF" = (
 /obj/effect/decal/cleanable/cobweb{
 	dir = 1
@@ -553,10 +548,6 @@
 	},
 /turf/open/floor/wood,
 /area/bigredv2/outside/general_offices)
-"cQ" = (
-/obj/effect/landmark/corpsespawner/security,
-/turf/open/floor/tile/red,
-/area/barren/security)
 "cR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/vault{
@@ -1035,7 +1026,6 @@
 "eV" = (
 /obj/machinery/bodyscanner,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/pmc,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 10
 	},
@@ -1226,11 +1216,6 @@
 /obj/structure/closet/walllocker/hydrant/extinguisher,
 /turf/closed/wall,
 /area/barren/medical/research)
-"fZ" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/pmc,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "gb" = (
 /obj/structure/window/framed/colony,
 /turf/open/floor,
@@ -1375,11 +1360,6 @@
 "gC" = (
 /turf/closed/wall,
 /area/barren/cave/north)
-"gD" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/prison/sterilewhite,
-/area/barren/medical/research)
 "gE" = (
 /obj/machinery/door/airlock/mainship/generic,
 /turf/open/floor/plating/mainship,
@@ -1817,7 +1797,6 @@
 /area/barren/cave/northwest)
 "iH" = (
 /obj/item/storage/firstaid,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/marking,
 /area/barren/cave/central)
@@ -1871,10 +1850,6 @@
 /mob/living/simple_animal/hostile/construct/builder,
 /turf/open/lavaland/basalt,
 /area/barren/misc/clocknuke)
-"iU" = (
-/obj/effect/landmark/corpsespawner/pmc,
-/turf/open/floor/marking,
-/area/barren/cave/central)
 "iV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/freezer,
@@ -2007,10 +1982,6 @@
 "jH" = (
 /turf/closed/wall,
 /area/barren/medical)
-"jI" = (
-/obj/effect/landmark/corpsespawner/pmc,
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "jJ" = (
 /obj/structure/shuttle/engine/propulsion/burst/right,
 /turf/open/floor/podhatch/floor,
@@ -2089,11 +2060,6 @@
 /mob/living/simple_animal/hostile/construct/wraith,
 /turf/open/lavaland/basalt,
 /area/barren/misc/clocknuke)
-"kb" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "kc" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -2403,12 +2369,6 @@
 /obj/item/paper/xenoresearch2,
 /turf/open/floor/mainship/sterile/dark,
 /area/barren/misc/alienstorage)
-"ls" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "lt" = (
 /obj/structure/barricade/guardrail,
 /turf/open/lavaland/basalt/glowing,
@@ -2896,7 +2856,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
 	},
-/obj/effect/landmark/corpsespawner/engineer,
 /obj/structure/barricade/guardrail{
 	dir = 8
 	},
@@ -3496,11 +3455,6 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/tile/dark2,
 /area/bigredv2/outside/general_offices)
-"qP" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/obj/structure/cable,
-/turf/open/floor/prison/sterilewhite,
-/area/barren/medical/research)
 "qS" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 8
@@ -3580,11 +3534,6 @@
 	dir = 5
 	},
 /area/barren/security)
-"rj" = (
-/obj/item/tool/pickaxe,
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
 "rm" = (
 /obj/structure/closet/secure_closet/medical1/colony,
 /obj/effect/decal/cleanable/cobweb{
@@ -3611,10 +3560,6 @@
 /obj/structure/barricade/guardrail,
 /turf/open/lavaland/basalt/glowing,
 /area/barren/cave/north)
-"rs" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
 "rt" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/technology_scanner,
@@ -3634,12 +3579,6 @@
 /obj/machinery/computer/security/telescreen/entertainment,
 /turf/closed/wall,
 /area/barren/security)
-"ry" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "rA" = (
 /obj/machinery/door/airlock/mainship/security/glass/free_access,
 /turf/open/floor/tile/red,
@@ -3830,7 +3769,6 @@
 /area/barren/misc/clocknuke)
 "sG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/security,
 /obj/effect/decal/cleanable/blood/writing,
 /turf/open/floor/wood,
 /area/barren/security)
@@ -3870,12 +3808,6 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/barren/engie/engine)
-"sP" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/tile/blue/whitebluecorner{
-	dir = 1
-	},
-/area/barren/medical)
 "sQ" = (
 /obj/item/trash/pistachios,
 /turf/open/floor/wood,
@@ -4140,11 +4072,6 @@
 	},
 /turf/closed/brock,
 /area/barren/cave/northeast)
-"ua" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "ub" = (
 /obj/item/tool/pickaxe,
 /turf/open/lavaland/basalt,
@@ -4423,11 +4350,6 @@
 /obj/structure/sign/poster,
 /turf/closed/wall/indestructible,
 /area/barren/misc/clocknuke)
-"vC" = (
-/obj/effect/landmark/corpsespawner/miner,
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "vE" = (
 /obj/structure/table/reinforced,
 /turf/open/shuttle/blackfloor,
@@ -4451,7 +4373,6 @@
 "vK" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/miner/rig,
 /turf/open/floor/wood,
 /area/barren/civilian)
 "vL" = (
@@ -4841,10 +4762,6 @@
 	dir = 4
 	},
 /area/barren)
-"xU" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/northeast)
 "xV" = (
 /obj/machinery/door/airlock/mainship/secure/free_access{
 	name = "Cell"
@@ -5301,10 +5218,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/asteroidfloor,
 /area/barren/cave/lz1)
-"Az" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "AB" = (
 /obj/structure/fence,
 /turf/open/lavaland/basalt,
@@ -5433,11 +5346,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"Bo" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "Bq" = (
 /obj/structure/table,
 /obj/item/tool/kitchen/utensil/fork,
@@ -5731,10 +5639,6 @@
 /obj/machinery/door/airlock/mainship/generic,
 /turf/open/floor/tile/dark2,
 /area/barren/civilian)
-"CG" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/wood,
-/area/barren/civilian/cook)
 "CI" = (
 /turf/open/floor/tile/damaged/panel,
 /area/shuttle/drop2/lz2)
@@ -6418,11 +6322,6 @@
 /obj/structure/cable,
 /turf/open/lavaland/basalt,
 /area/barren/cave/west)
-"Gr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor,
-/area/barren/civilian)
 "Gs" = (
 /turf/open/lavaland/lava/lpiece,
 /area/barren)
@@ -6617,11 +6516,6 @@
 /obj/item/clothing/head/collectable/petehat,
 /turf/open/floor,
 /area/storage/testroom)
-"HD" = (
-/obj/structure/cable,
-/obj/effect/landmark/corpsespawner/pmc,
-/turf/open/floor/plating/mainship,
-/area/barren/misc/crashed)
 "HE" = (
 /obj/structure/barricade/guardrail,
 /obj/structure/barricade/guardrail{
@@ -6812,7 +6706,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 8
 	},
@@ -7052,11 +6945,6 @@
 /turf/open/floor/plating,
 /turf/open/floor/plating/dmg2,
 /area/barren/cave/central)
-"JP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/floor/wood,
-/area/barren/civilian/cook)
 "JQ" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
@@ -7109,7 +6997,6 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/landmark/corpsespawner/bridgeofficer,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark2,
@@ -7268,10 +7155,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"Lc" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "Le" = (
 /turf/closed/wall/mainship,
 /area/barren/cave/south)
@@ -7330,7 +7213,6 @@
 /area/barren/medical/research)
 "Lv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/security,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/prison/bright_clean/two,
 /area/barren/security)
@@ -7397,7 +7279,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/corpsespawner/pmc,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
@@ -7560,10 +7441,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dmg3,
 /area/barren/cave/central)
-"MV" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "MW" = (
 /obj/structure/sign/poster,
 /turf/closed/brock,
@@ -7705,7 +7582,6 @@
 /area/barren/civilian/cook)
 "NE" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/miner/rig,
 /turf/open/floor/grimy,
 /area/barren/civilian/workdorm)
 "NF" = (
@@ -8338,11 +8214,6 @@
 /obj/structure/cable,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"Rr" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/mainship/sterile/dark,
-/area/barren/misc/alienstorage)
 "Rs" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
@@ -8548,7 +8419,6 @@
 /area/bigredv2/outside/general_offices)
 "SE" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/chef,
 /turf/open/floor/prison/kitchen,
 /area/barren/civilian/cook)
 "SH" = (
@@ -8859,12 +8729,6 @@
 "UD" = (
 /turf/open/floor/tile/dark2,
 /area/barren/civilian)
-"UE" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/tile/vault,
-/area/barren/civilian)
 "UF" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/tile/blue/whiteblue,
@@ -9057,14 +8921,6 @@
 /obj/structure/cable,
 /turf/open/floor/vault,
 /area/prison/laundry)
-"VI" = (
-/obj/structure/bed/chair/dropship/pilot{
-	dir = 1
-	},
-/obj/effect/decal/remains/human,
-/obj/effect/landmark/corpsespawner/commander,
-/turf/open/floor/plating/mainship,
-/area/barren/misc/crashed)
 "VL" = (
 /turf/open/floor/plating/warning,
 /area/barren/cave/lz1)
@@ -9425,7 +9281,6 @@
 /obj/item/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/pmc,
 /turf/open/floor/wood,
 /area/barren/civilian/workdorm)
 "Yc" = (
@@ -17100,7 +16955,7 @@ ZN
 ZN
 ZN
 ZN
-Az
+ZN
 ZW
 ZW
 ZN
@@ -19168,7 +19023,7 @@ ZN
 HQ
 HQ
 HQ
-rs
+Vz
 Lh
 Cj
 HQ
@@ -20885,7 +20740,7 @@ tI
 VN
 av
 CW
-cQ
+CW
 jQ
 rq
 Bi
@@ -22242,7 +22097,7 @@ ZN
 ZN
 ZN
 ZN
-ua
+Lj
 ZN
 AE
 ZN
@@ -25372,7 +25227,7 @@ HQ
 Vz
 jh
 Lh
-rj
+ub
 HQ
 HQ
 HQ
@@ -27843,7 +27698,7 @@ aZ
 aZ
 aZ
 aZ
-Bo
+bL
 aZ
 aZ
 aZ
@@ -28452,7 +28307,7 @@ hj
 yv
 BG
 BG
-Rr
+fp
 uj
 uj
 ZK
@@ -29203,7 +29058,7 @@ jm
 dK
 dK
 WB
-qP
+jK
 dK
 dK
 YZ
@@ -31260,7 +31115,7 @@ YZ
 kN
 kN
 WW
-gD
+wm
 dK
 Lu
 YZ
@@ -31954,7 +31809,7 @@ yC
 nV
 kK
 Aj
-JP
+Ww
 qI
 rX
 om
@@ -32029,7 +31884,7 @@ Yy
 ZK
 ZK
 ZK
-vC
+oC
 Yy
 jP
 Yy
@@ -32500,7 +32355,7 @@ ZW
 fw
 fE
 hw
-bE
+mI
 bJ
 bJ
 mI
@@ -33213,7 +33068,7 @@ aZ
 aZ
 aZ
 bL
-Lc
+aZ
 aZ
 aZ
 BX
@@ -33490,7 +33345,7 @@ yw
 yw
 yw
 yw
-CG
+Aj
 Ej
 wy
 Ww
@@ -34859,7 +34714,7 @@ Yy
 Yy
 Yy
 Yy
-kb
+oC
 Yy
 Yy
 Yy
@@ -35037,7 +34892,7 @@ Cf
 Cf
 yd
 yd
-UE
+zb
 dX
 fu
 hH
@@ -36374,7 +36229,7 @@ GO
 qo
 NT
 qo
-iU
+qo
 MJ
 HA
 Qb
@@ -36602,7 +36457,7 @@ Qb
 Qb
 Eu
 Qb
-MV
+Qb
 Qb
 Qb
 Qb
@@ -37663,7 +37518,7 @@ qo
 qo
 wl
 xa
-jI
+Qb
 jx
 Qb
 Qb
@@ -37860,7 +37715,7 @@ yw
 yw
 yw
 eX
-Gr
+Dj
 Dj
 eX
 eX
@@ -38141,7 +37996,7 @@ Ew
 DU
 ki
 jH
-sP
+ZT
 MY
 BO
 jH
@@ -39499,7 +39354,7 @@ ZK
 ZK
 qM
 Vq
-VI
+cH
 FX
 Xc
 Dz
@@ -39759,7 +39614,7 @@ Dh
 cn
 Ht
 uW
-HD
+Ht
 Ht
 Ht
 Ht
@@ -39941,14 +39796,14 @@ VQ
 qb
 Gm
 MY
-ls
+DF
 DF
 DF
 DF
 DF
 oK
 MY
-ry
+DF
 DF
 DF
 DF
@@ -40027,7 +39882,7 @@ Xc
 Yy
 Yy
 Yy
-fZ
+oC
 Yy
 Yy
 ZK
@@ -42490,7 +42345,7 @@ OD
 OD
 OD
 OD
-xU
+OD
 DW
 DW
 OD
