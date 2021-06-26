@@ -394,7 +394,6 @@
 	var/distance = range + 0.5 //we add 0.5 so if a potential target is at range, it is accepted by the system
 	var/buffer_distance
 	var/list/turf/path = list()
-	var/blocked = FALSE
 	for (var/mob/living/nearby_hostile AS in potential_hostiles)
 		if(nearby_hostile.stat == DEAD)
 			continue
@@ -405,6 +404,7 @@
 		path -= get_turf(src)
 		if(!path.len) //Can't shoot if it's on the same turf
 			continue
+		var/blocked = FALSE
 		for(var/turf/T AS in path)
 			if(IS_OPAQUE_TURF(T) || T.density && T.throwpass == FALSE)
 				blocked = TRUE
@@ -493,13 +493,34 @@
 
 ///Look for the closest human in range and in light of sight. If no human is in range, will look for xenos of other hives
 /obj/structure/xeno/resin/xeno_turret/jelly/get_target()
-	.=..()
+	var/distance = range + 0.5 //we add 0.5 so if a potential target is at range, it is accepted by the system
+	var/buffer_distance
+	var/list/turf/path = list()
 	for (var/mob/living/nearby_hostile AS in potential_hostiles)
 		if(!nearby_hostile || nearby_hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in nearby_hostile)
 			continue
 		buffer_distance = get_dist(nearby_hostile, src)
 		if (distance <= buffer_distance) //If we already found a target that's closer
 			continue
+		path = getline(src, nearby_hostile)
+		path -= get_turf(src)
+		if(!path.len) //Can't shoot if it's on the same turf
+			continue
+		var/blocked = FALSE
+		for(var/turf/T AS in path)
+			if(IS_OPAQUE_TURF(T) || T.density && T.throwpass == FALSE)
+				blocked = TRUE
+				break //LoF Broken; stop checking; we can't proceed further.
+
+			for(var/obj/machinery/MA in T)
+				if(MA.opacity || MA.density && MA.throwpass == FALSE)
+					blocked = TRUE
+					break //LoF Broken; stop checking; we can't proceed further.
+
+			for(var/obj/structure/S in T)
+				if(S.opacity || S.density && S.throwpass == FALSE )
+					blocked = TRUE
+					break //LoF Broken; stop checking; we can't proceed further.
 		if(!blocked)
 			distance = buffer_distance
 			. = nearby_hostile
