@@ -381,9 +381,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state_empty = "revolver_empty"
 	flags_ammo_behavior = AMMO_BALLISTIC
 	handful_amount = 7
-	damage = 40
 	damage_type = STAMINA
-	penetration = 10
 	sundering = 0
 	bullet_color = COLOR_DISABLER_BLUE
 
