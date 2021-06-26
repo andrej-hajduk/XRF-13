@@ -605,7 +605,7 @@
 	use_sound = null
 	w_class = WEIGHT_CLASS_BULKY
 	storage_slots = 7
-	max_storage_space = 15
+	max_storage_space = 16
 	max_w_class = 3
 	///Generic variable to determine if the holster already holds a gun.
 	var/holds_guns_now = FALSE
