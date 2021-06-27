@@ -96,10 +96,6 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
 /area/magmoor/security/lobby)
-"agG" = (
-/obj/effect/landmark/corpsespawner/miner,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/magmoor/cave/north)
 "ahk" = (
 /obj/structure/flora/pottedplant,
 /obj/machinery/light{
@@ -168,10 +164,6 @@
 	},
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/east)
-"akX" = (
-/obj/effect/landmark/corpsespawner/security,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/magmoor/cave/north)
 "alu" = (
 /obj/effect/landmark/xeno_silo_spawn,
 /obj/effect/landmark/weed_node,
@@ -416,11 +408,6 @@
 /obj/item/tool/taperoll/police,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/security/infocenter)
-"axv" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/obj/effect/decal/cleanable/rune,
-/turf/open/floor/cult,
-/area/magmoor/cave/northeast)
 "axw" = (
 /obj/item/ore/phoron,
 /turf/closed/mineral,
@@ -1010,14 +997,6 @@
 	dir = 8
 	},
 /area/magmoor/research/containment)
-"baU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/concrete/lines{
-	dir = 8
-	},
-/area/magmoor/compound/east)
 "bbj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -1437,10 +1416,6 @@
 	dir = 8
 	},
 /area/magmoor/cave/northeast)
-"byj" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/magmoor/cave/east)
 "byE" = (
 /obj/item/shard/phoron{
 	icon_state = "phoronsmall"
@@ -1734,7 +1709,6 @@
 /obj/effect/decal/warning_stripes/thin{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/miner,
 /turf/open/floor/plating/mainship,
 /area/magmoor/mining/garage)
 "bHM" = (
@@ -2423,7 +2397,6 @@
 /turf/open/floor/plating/mainship,
 /area/magmoor/mining/garage)
 "ciW" = (
-/obj/effect/landmark/corpsespawner/miner,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/mono,
 /area/magmoor/mining)
@@ -2664,7 +2637,6 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/magmoor/research/decontamination)
 "csW" = (
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/research/decontamination)
@@ -2697,7 +2669,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
 	},
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 9
@@ -3140,7 +3111,6 @@
 	},
 /area/magmoor/security/infocenter)
 "cGp" = (
-/obj/effect/landmark/corpsespawner/miner,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 9
@@ -4083,7 +4053,6 @@
 /turf/open/floor/mainship/sterile/purple,
 /area/magmoor/research/lab)
 "djO" = (
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/research/lab)
@@ -5047,12 +5016,6 @@
 	dir = 8
 	},
 /area/magmoor/cave/central)
-"dOm" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
-/turf/open/floor/cult,
-/area/magmoor/cave/northwest)
 "dOp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -5384,7 +5347,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/floor,
 /area/magmoor/research/rnd)
@@ -5539,7 +5501,6 @@
 	dir = 9
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 1
@@ -5958,7 +5919,6 @@
 "exg" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
@@ -6298,7 +6258,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/treatment)
@@ -6358,7 +6317,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 8
@@ -6931,7 +6889,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/wood,
 /area/magmoor/medical/breakroom)
@@ -8045,7 +8002,6 @@
 	dir = 9
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/side{
 	dir = 8
@@ -8618,7 +8574,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 4
@@ -8744,7 +8699,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 4
@@ -9443,7 +9397,6 @@
 "hcc" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/side,
 /area/magmoor/medical/patient)
@@ -9679,7 +9632,6 @@
 	dir = 1;
 	on = 1
 	},
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/side,
 /area/magmoor/medical/lobby)
@@ -10070,7 +10022,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/patient)
@@ -10186,7 +10137,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/doctor,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/chemistry)
@@ -10360,7 +10310,6 @@
 	dir = 6
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/scientist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/wood,
 /area/magmoor/research/researchdirector)
@@ -10391,7 +10340,6 @@
 	},
 /area/magmoor/cargo/storage/south)
 "hQk" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
@@ -11191,7 +11139,6 @@
 /turf/open/floor/freezer,
 /area/magmoor/civilian/bar)
 "ivV" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 8
@@ -11445,7 +11392,6 @@
 /turf/open/floor/plating,
 /area/magmoor/mining/refinery)
 "iFZ" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/tile/yellow{
 	dir = 10
@@ -11872,7 +11818,6 @@
 	},
 /area/magmoor/mining/refinery)
 "iZV" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/magmoor/mining/refinery)
@@ -12194,7 +12139,6 @@
 	},
 /area/magmoor/engi/power)
 "jkm" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
@@ -12462,7 +12406,6 @@
 /turf/closed/glass/thin/straight,
 /area/magmoor/cave/west)
 "jru" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/lobby)
@@ -13468,7 +13411,6 @@
 	dir = 9
 	},
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 1
@@ -14531,7 +14473,6 @@
 /turf/open/lavaland/lava/single/middle,
 /area/magmoor/cave/east)
 "kYR" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/lavaland/catwalk,
 /area/magmoor/cave/west)
@@ -16696,7 +16637,6 @@
 /obj/effect/decal/warning_stripes/thin{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/floor,
 /area/magmoor/cargo/storage/secure)
@@ -16842,7 +16782,6 @@
 /turf/open/floor/plating,
 /area/magmoor/engi/power)
 "mOH" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 4
@@ -17088,11 +17027,6 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/magmoor/mining/storage)
-"mXv" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/obj/effect/decal/cleanable/rune,
-/turf/open/floor/cult,
-/area/magmoor/cave/north)
 "mXC" = (
 /turf/open/floor/plating/ground/dirtgrassborder2{
 	dir = 8
@@ -17405,7 +17339,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 8
@@ -17899,7 +17832,6 @@
 /turf/open/floor/mainship/orange,
 /area/magmoor/cargo/storage/south)
 "nFD" = (
-/obj/effect/landmark/corpsespawner/engineer,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/orange{
 	dir = 4
@@ -18512,7 +18444,6 @@
 	},
 /area/magmoor/compound/southwest)
 "oaJ" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mainship/orange{
 	dir = 8
@@ -18730,7 +18661,6 @@
 /area/magmoor/cave/southwest)
 "oiP" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/engineer,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating,
 /area/magmoor/engi/power)
@@ -20239,7 +20169,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/engineer,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 1
@@ -20530,7 +20459,6 @@
 /turf/open/floor/grass,
 /area/magmoor/hydroponics)
 "pue" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/magmoor/cave/southeast)
@@ -25115,7 +25043,6 @@
 /turf/open/floor/freezer,
 /area/magmoor/cargo/freezer)
 "sBS" = (
-/obj/effect/landmark/corpsespawner/colonist,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/freezer,
 /area/magmoor/cargo/freezer)
@@ -43150,7 +43077,7 @@ ryj
 afo
 afo
 afo
-dOm
+ryj
 aum
 nqC
 aLp
@@ -47113,7 +47040,7 @@ afe
 urr
 urr
 urr
-mXv
+afe
 aMD
 aMD
 qkn
@@ -47340,7 +47267,7 @@ qkn
 qkn
 qkn
 aMD
-akX
+aMD
 aMD
 aMD
 urr
@@ -51766,7 +51693,7 @@ fCk
 qkn
 qkn
 aMD
-agG
+aMD
 aih
 aMD
 aMD
@@ -56898,7 +56825,7 @@ idd
 idd
 idd
 idd
-axv
+aqg
 idd
 idd
 anJ
@@ -65562,7 +65489,7 @@ pwz
 mky
 eEq
 eEq
-byj
+eEq
 eEq
 eEq
 eEq
@@ -72631,7 +72558,7 @@ wqW
 fLG
 fLG
 fLG
-baU
+fLG
 tyL
 jlp
 oJl
