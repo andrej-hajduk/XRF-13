@@ -476,9 +476,6 @@
 /obj/structure/xeno/resin/xeno_turret/jelly/process()
 	//Turrets regen some HP, every 2 sec
 	.=..()
-	if(world.time > last_scan_time + TURRET_SCAN_FREQUENCY)
-		scanjel()
-		last_scan_time = world.time
 	if(!hostile || hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in hostile)
 		if(last_hostile)
 			set_last_hostile(null)
@@ -525,7 +522,7 @@
 			. = nearby_hostile
 
 ///Return TRUE if a possible target is near
-/obj/structure/xeno/resin/xeno_turret/jelly/proc/scanjel()
+/obj/structure/xeno/resin/xeno_turret/jelly/scan()
 	potential_hostiles.Cut()
 	for (var/mob/living/carbon/human/nearby_human AS in cheap_get_humans_near(src, TURRET_SCAN_RANGE))
 		if(nearby_human.stat == DEAD || nearby_human.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in nearby_human)
