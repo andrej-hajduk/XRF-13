@@ -1219,6 +1219,7 @@
 	. = ..()
 	if(!.)
 		return FALSE
+	var/turf/T = get_turf(A)
 	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly) || !T.check_disallow_alien_fortification(X))
 		return FALSE
 
