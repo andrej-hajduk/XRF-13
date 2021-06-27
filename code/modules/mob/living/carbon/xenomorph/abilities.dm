@@ -1220,7 +1220,7 @@
 	if(!.)
 		return FALSE
 	var/turf/T = get_turf(A)
-	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly) || !T.check_disallow_alien_fortification(X))
+	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly))
 		return FALSE
 
 /datum/action/xeno_action/activable/build_turret/jelly/building_turret(atom/A, mob/living/carbon/xenomorph/X)
