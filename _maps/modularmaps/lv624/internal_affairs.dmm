@@ -359,11 +359,6 @@
 /turf/open/floor/wood,
 /area/lv624/lazarus/internal_affairs)
 "Jr" = (
-/obj/effect/landmark/corpsespawner/bridgeofficer{
-	corpseidjob = "Bridge Officer";
-	corpseuniform = /obj/item/clothing/under/waiter;
-	name = "Mr. Johnson Telovin"
-	},
 /obj/item/tool/crowbar,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,

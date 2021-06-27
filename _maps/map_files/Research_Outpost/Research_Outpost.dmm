@@ -287,27 +287,10 @@
 "bD" = (
 /turf/open/floor/tile/dark,
 /area/outpost/science)
-"bE" = (
-/obj/effect/landmark/corpsespawner/miner{
-	corpseback = null;
-	corpseidjob = "Laborer";
-	name = "Colonist Bren Foras"
-	},
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/outpost/yard/west)
 "bF" = (
 /obj/structure/cable,
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/cargo)
-"bI" = (
-/obj/effect/landmark/corpsespawner/scientist{
-	corpseback = null;
-	corpseshoes = /obj/item/clothing/shoes/black;
-	corpseuniform = /obj/item/clothing/under/colonist;
-	name = "Colonist Chang Lin"
-	},
-/turf/open/floor/plating/ground/mars/random/dirt,
-/area/outpost/caves/south_east)
 "bL" = (
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/floor/tile/dark,
@@ -423,10 +406,6 @@
 "cq" = (
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/outpost/caves/north_west)
-"cs" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/outpost/caves/north_east)
 "cv" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
 /turf/closed/mineral/bigred,
@@ -1244,12 +1223,6 @@
 	},
 /turf/open/floor/tile/dark/brown2,
 /area/outpost/hallway/central)
-"gO" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/plating/asteroidwarning{
-	dir = 4
-	},
-/area/outpost/yard/central)
 "gP" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/closed/mineral/bigred,
@@ -1351,21 +1324,9 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
-"hr" = (
-/obj/effect/landmark/corpsespawner/chef,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/outpost/yard/south_east)
 "hs" = (
 /turf/open/floor/plating/dmg1,
 /area/outpost/arrivals)
-"hu" = (
-/obj/effect/landmark/corpsespawner/miner{
-	corpseback = /obj/item/storage/backpack;
-	corpseidjob = "Laborer";
-	name = "Colonist Roester Kalin"
-	},
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/outpost/lz1)
 "hv" = (
 /obj/machinery/light{
 	dir = 1
@@ -2011,18 +1972,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark/red2,
 /area/outpost/brig)
-"kG" = (
-/obj/effect/landmark/corpsespawner/doctor{
-	corpsebelt = /obj/item/storage/belt/medical;
-	corpsegloves = /obj/item/clothing/gloves/latex;
-	corpsepocket2 = /obj/item/storage/pouch/medkit/full;
-	corpseradio = /obj/item/radio/headset/survivor;
-	corpseshoes = /obj/item/clothing/shoes/snow;
-	corpsesuit = /obj/item/clothing/suit/storage/snow_suit/doctor;
-	name = "Colonist Doctor"
-	},
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/outpost/caves/north_east)
 "kH" = (
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/floor/tile/dark,
@@ -3823,12 +3772,6 @@
 	dir = 4
 	},
 /area/outpost/lz1)
-"uo" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/marking/asteroidwarning{
-	dir = 4
-	},
-/area/outpost/caves/east)
 "up" = (
 /obj/machinery/landinglight/ds2{
 	dir = 1
@@ -4808,16 +4751,6 @@
 	dir = 10
 	},
 /area/outpost/arrivals)
-"zY" = (
-/obj/effect/landmark/corpsespawner/engineer{
-	corpseback = /obj/item/storage/backpack;
-	corpsehelmet = /obj/item/clothing/head/welding;
-	corpseidjob = "Engineer";
-	corpseshoes = /obj/item/clothing/shoes/black;
-	name = "Colonist Ted Jarka"
-	},
-/turf/open/floor/plating/asteroidwarning,
-/area/outpost/yard/central)
 "zZ" = (
 /turf/closed/wall/r_wall,
 /area/outpost/science/research)
@@ -5500,16 +5433,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/outpost/medbay)
-"Ea" = (
-/obj/effect/landmark/corpsespawner/doctor{
-	corpseback = null;
-	corpsegloves = /obj/item/clothing/gloves/latex;
-	name = "Colonist Mio Linno"
-	},
-/turf/open/floor/marking/asteroidwarning{
-	dir = 1
-	},
-/area/outpost/yard/east)
 "Eb" = (
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/lz1)
@@ -6443,7 +6366,6 @@
 /turf/open/floor/tile/dark,
 /area/outpost/medbay)
 "Jk" = (
-/obj/effect/landmark/corpsespawner/doctor,
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 10
 	},
@@ -20599,7 +20521,7 @@ XE
 XE
 sv
 Hc
-hu
+Hc
 yc
 XS
 Ql
@@ -23944,7 +23866,7 @@ Jb
 Jb
 Jb
 Jb
-bE
+Jb
 Jb
 bx
 Jb
@@ -30132,7 +30054,7 @@ EA
 oM
 bP
 hB
-gO
+hB
 hB
 hB
 hB
@@ -31162,7 +31084,7 @@ ew
 Fc
 Fc
 bP
-zY
+CY
 EA
 fG
 HT
@@ -35306,7 +35228,7 @@ fG
 fG
 NF
 NF
-hr
+NF
 NF
 NF
 NF
@@ -36322,7 +36244,7 @@ ye
 GY
 rL
 QL
-Ea
+mH
 sK
 fG
 vd
@@ -37074,7 +36996,7 @@ mM
 Yx
 TP
 Yx
-kG
+Yx
 Yx
 Js
 hS
@@ -38397,7 +38319,7 @@ ZQ
 Ar
 xg
 xg
-uo
+xg
 xg
 xg
 xg
@@ -38610,7 +38532,7 @@ Cx
 Cx
 Cx
 Yo
-cs
+Yx
 WB
 WB
 Yx
@@ -38929,7 +38851,7 @@ eA
 uf
 fd
 UT
-bI
+UT
 UT
 EZ
 Hm
