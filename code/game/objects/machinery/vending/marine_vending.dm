@@ -215,7 +215,7 @@
 		),
 
 	seasonal_items = list(
-		SEASONAL_GUNS = "seasonal_guns",
+		SEASONAL_GUNS = "Seasonal",
 	)
 )
 
