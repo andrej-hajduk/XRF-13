@@ -1215,7 +1215,7 @@
 	mechanics_text = "Creates a new xeno larva jelly turret for 150 points"
 	ability_name = "secrete larva jelly turret"
 
-/datum/action/xeno_action/activable/build_turret/jelly/can_use_ability(atom/A, silent, override_flags, mob/living/carbon/xenomorph/X, turf/T)
+/datum/action/xeno_action/activable/build_turret/jelly/can_use_ability(atom/A, silent, override_flags, mob/living/carbon/xenomorph/X)
 	. = ..()
 	if(!.)
 		return FALSE

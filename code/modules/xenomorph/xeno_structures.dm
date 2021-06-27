@@ -469,13 +469,13 @@
 	firerate = 20
 
 /obj/structure/xeno/resin/xeno_turret/jelly/Initialize(mapload, hivenumber = XENO_HIVE_NORMAL)
-	.=..()
+	. = ..()
 	ammo = GLOB.ammo_list[/datum/ammo/xeno/larva_jelly]
 	set_light(2, 2, LIGHT_COLOR_PURPLE)
 
 /obj/structure/xeno/resin/xeno_turret/jelly/process()
 	//Turrets regen some HP, every 2 sec
-	.=..()
+	. = ..()
 	if(!hostile || hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in hostile)
 		if(last_hostile)
 			set_last_hostile(null)
