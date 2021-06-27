@@ -144,21 +144,7 @@ SUBSYSTEM_DEF(vote)
 				var/datum/map_config/VM = config.maplist[SHIP_MAP][.]
 				SSmapping.changemap(VM, SHIP_MAP)
 	if(restart)
-		var/active_admins = FALSE
-		for(var/client/C in GLOB.admins)
-			if(!C.is_afk() && check_rights_for(C, R_SERVER))
-				active_admins = TRUE
-				break
-
-		if(!active_admins) // No admins
-			// No delay in case the restart is due to lag
-			SSticker.Reboot("Restart vote successful.", 5 SECONDS)
-
-		else if(admin_approval("Restart the round?", admin_sound = 'sound/effects/adminhelp.ogg'))
-			SSticker.Reboot("Restart vote successful.", 5 SECONDS) // Admins online, and they approve
-
-		else // Admins disapprove
-			to_chat(world, "<span style='boldnotice'>Reboot was cancelled by an admin.</span>")
+		SSticker.force_ending = TRUE
 
 
 /// Register the vote of one player
@@ -295,9 +281,11 @@ SUBSYSTEM_DEF(vote)
 
 ///Starts the automatic map vote at the end of each round
 /datum/controller/subsystem/vote/proc/automatic_vote()
-	initiate_vote("gamemode", null, TRUE)
-	addtimer(CALLBACK(src, .proc/initiate_vote, "shipmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
-	addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) * 2 + 6 SECONDS)
+	//initiate_vote("gamemode", null, TRUE)
+	//addtimer(CALLBACK(src, .proc/initiate_vote, "shipmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
+	//addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) * 2 + 6 SECONDS)
+	initiate_vote("shipmap", null, TRUE)
+	addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
 
 /datum/controller/subsystem/vote/ui_state()
 	return GLOB.always_state

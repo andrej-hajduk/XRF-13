@@ -233,6 +233,8 @@ VOTE_AUTOTRANSFER_INITIAL 18000
 ## Autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
 VOTE_AUTOTRANSFER_INTERVAL 18000
 
+## Should there be an EORG deathmatch after the round ends (boolean)
+END_OF_ROUND_DEATHMATCH
 
 ## Skyrat Config
 
