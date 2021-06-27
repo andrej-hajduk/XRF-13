@@ -482,7 +482,6 @@
 	if(!hostile || hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in hostile)
 		if(last_hostile)
 			set_last_hostile(null)
-		return
 
 /obj/structure/xeno/resin/xeno_turret/jelly/update_overlays()
 	. = ..()
