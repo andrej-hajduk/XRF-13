@@ -387,6 +387,10 @@ The default value assumes youtube-dl is in your system PATH
 /datum/config_entry/string/panic_bunker_message
 	config_entry_value = "Sorry but the server is currently not accepting connections from never before seen players."
 
+/datum/config_entry/number/max_bunker_days
+	config_entry_value = 7
+	min_val = 1
+
 /datum/config_entry/flag/check_randomizer
 
 /datum/config_entry/string/default_view

@@ -301,6 +301,8 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/datum/admins/proc/mcdb,
 	/datum/admins/proc/check_fingerprints,
 	/datum/admins/proc/panic_bunker,
+	/client/proc/addbunkerbypass,
+	/client/proc/revokebunkerbypass,
 	/client/proc/private_message_panel,
 	/client/proc/private_message_context,
 	/client/proc/msay,
