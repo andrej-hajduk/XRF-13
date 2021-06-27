@@ -1545,9 +1545,11 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/xeno
 	icon_state = "neurotoxin"
 	damage_type = TOX
+	ping = "ping_x"
 	flags_ammo_behavior = AMMO_XENO
 	var/added_spit_delay = 0 //used to make cooldown of the different spits vary.
 	var/spit_cost = 5
+	armor_type = "bio"
 	shell_speed = 1
 	accuracy = 40
 	accurate_range = 15
@@ -1928,10 +1930,8 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/xeno/larva_jelly
 	name = "blob of larvae jelly"
 	icon_state = "sticky"
-	ping = "ping_x"
 	flags_ammo_behavior = AMMO_XENO|AMMO_SKIPS_ALIENS|AMMO_EXPLOSIVE
 	var/danger_message = "<span class='danger'>A blob of larvae jelly lands with a splat!</span>"
-	armor_type = "bio"
 	accuracy_var_high = 10
 	max_range = 10
 	damage = 1
