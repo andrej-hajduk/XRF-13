@@ -46,7 +46,7 @@
 	reagents?.metabolize(src, can_overdose = TRUE)
 
 /mob/living/brain/update_stat()
-	.=..()
+	. = ..()
 	if(status_flags & GODMODE)
 		return
 	if(stat != DEAD)
