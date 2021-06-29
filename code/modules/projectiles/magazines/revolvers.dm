@@ -13,6 +13,18 @@
 	gun_type = /obj/item/weapon/gun/revolver/m44
 	icon_state_mini = "mag_revolver"
 
+/obj/item/ammo_magazine/revolver/polymer
+	name = "\improper M-44 magnum PGR speed loader (.44)"
+	desc = "A .44 caliber speedloader designed to hold nonlethal polymer gel rounds. Do not consume."
+	default_ammo = /datum/ammo/bullet/revolver/polymer
+	flags_equip_slot = NONE
+	caliber = CALIBER_44
+	icon_state = "m44_polymer"
+	w_class = WEIGHT_CLASS_SMALL
+	max_rounds = 6
+	gun_type = /obj/item/weapon/gun/revolver/m44
+	icon_state_mini = "mag_revolver"
+
 /obj/item/ammo_magazine/revolver/marksman
 	name = "\improper M-44 marksman speed loader (.44)"
 	default_ammo = /datum/ammo/bullet/revolver/marksman
@@ -32,6 +44,17 @@
 	flags_equip_slot = NONE
 	caliber = CALIBER_44
 	icon_state = "tp44"
+	w_class = WEIGHT_CLASS_SMALL
+	max_rounds = 7
+	gun_type = /obj/item/weapon/gun/revolver/standard_revolver
+
+/obj/item/ammo_magazine/revolver/standard_revolver/polymer
+	name = "\improper TP-44 magnum PGR speed loader (.44)"
+	desc = "A .44 caliber speedloader designed to hold nonlethal polymer gel rounds. Do not consume."
+	default_ammo = /datum/ammo/bullet/revolver/polymer
+	flags_equip_slot = NONE
+	caliber = CALIBER_44
+	icon_state = "tp44_polymer"
 	w_class = WEIGHT_CLASS_SMALL
 	max_rounds = 7
 	gun_type = /obj/item/weapon/gun/revolver/standard_revolver
@@ -61,6 +84,14 @@
 	max_rounds = 6
 	gun_type = /obj/item/weapon/gun/revolver/mateba
 
+/obj/item/ammo_magazine/revolver/mateba/polymer
+	name = "\improper Mateba PGR speed loader (.454)"
+	desc = "A magazine loaded with heavy .454 caliber 'nonlethal' polymer gel revolver rounds."
+	default_ammo = /datum/ammo/bullet/revolver/highimpact/polymer
+	caliber = CALIBER_454
+	icon_state = "mateba_polymer"
+	max_rounds = 6
+	gun_type = /obj/item/weapon/gun/revolver/mateba
 
 /obj/item/ammo_magazine/revolver/cmb
 	name = "\improper CMB revolver speed loader (.357)"
@@ -76,8 +107,38 @@
 	icon_state = "box_44mag" //Maybe change this
 	default_ammo = /datum/ammo/bullet/revolver
 	caliber = CALIBER_44
-	current_rounds = 50
-	max_rounds = 50
+	current_rounds = 49
+	max_rounds = 49
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/magnum/polymer
+	name = "packet of .44 magnum PGR"
+	desc = "A box of .44 magnum nonlethal polymer gel rounds."
+	icon_state = "box_44mag_polymer"
+	default_ammo = /datum/ammo/bullet/revolver/polymer
+	caliber = CALIBER_44
+	current_rounds = 49
+	max_rounds = 49
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/mateba
+	name = "packet of .454 caliber bullets"
+	desc = "A box of .454 caliber revolver rounds. Lethal."
+	icon_state = "box_mateba"
+	default_ammo = /datum/ammo/bullet/revolver/highimpact
+	caliber = CALIBER_454
+	current_rounds = 42
+	max_rounds = 42
+	icon_state_mini = "ammo_packet"
+
+/obj/item/ammo_magazine/mateba/polymer
+	name = "packet of .454 caliber PGR"
+	desc = "A box of .454 caliber 'nonlethal' polymer gel rounds."
+	icon_state = "box_mateba_polymer"
+	default_ammo = /datum/ammo/bullet/revolver/highimpact/polymer
+	caliber = CALIBER_454
+	current_rounds = 42
+	max_rounds = 42
 	icon_state_mini = "ammo_packet"
 
 //INTERNAL MAGAZINES
@@ -128,6 +189,11 @@
 //BURST REVOLVER //
 /obj/item/ammo_magazine/internal/revolver/mateba
 	default_ammo = /datum/ammo/bullet/revolver/highimpact
+	caliber = CALIBER_454
+	gun_type = /obj/item/weapon/gun/revolver/mateba
+
+/obj/item/ammo_magazine/internal/revolver/mateba/polymer
+	default_ammo = /datum/ammo/bullet/revolver/highimpact/polymer
 	caliber = CALIBER_454
 	gun_type = /obj/item/weapon/gun/revolver/mateba
 
