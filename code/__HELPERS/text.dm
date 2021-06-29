@@ -287,7 +287,7 @@
 
 //Used in preferences' SetFlavorText and human's set_flavor verb
 //Previews a string of len or less length
-/proc/TextPreview(string, length = 40)
+/proc/TextPreview(string, length = 1024)
 	if(length_char(string) > length(string))
 		if(length_char(string) > length)
 			return "[copytext_char(string, 1, 37)]..."
