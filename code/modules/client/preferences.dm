@@ -1332,36 +1332,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 
 		if("med_record")
-			var/medmsg = stripped_input(user, "Set your medical notes here.", "Medical Records", sanitize(med_record))
+			var/medmsg = input(user, "Set your medical notes here.", "Medical Records") as message|null
 			if(!medmsg)
 				return
+			sanitize(med_record)
 
 			med_record = medmsg
 			SetRecords(user)
 			return
 
 		if("sec_record")
-			var/secmsg = stripped_input(user,"Set your security notes here.", "Security Records", sanitize(sec_record))
+			var/secmsg = input(user,"Set your security notes here.", "Security Records") as message|null
 			if(!secmsg)
 				return
+			sanitize(sec_record)
 
 			sec_record = secmsg
 			SetRecords(user)
 			return
 
 		if("gen_record")
-			var/genmsg = stripped_input(user, "Set your employment notes here.", "Employment Records", sanitize(gen_record))
+			var/genmsg = input(user, "Set your employment notes here.", "Employment Records") as message|null
 			if(!genmsg)
 				return
+			sanitize(gen_record)
 
 			gen_record = genmsg
 			SetRecords(user)
 			return
 
 		if("exploit_record")
-			var/exploit = stripped_input(user, "Enter information that others may want to use against you.", "Exploit Record", sanitize(exploit_record))
+			var/exploit = input(user, "Enter information that others may want to use against you.", "Exploit Record") as message|null
 			if(!exploit)
 				return
+			sanitize(exploit_record)
 
 			exploit_record = exploit
 			SetRecords(user)
@@ -1374,6 +1378,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/msg = input(user, "Give a physical description of your character.", "Flavor Text") as message|null
 			if(!msg)
 				return
+			sanitize(flavor_text)
 			if(NON_ASCII_CHECK(msg))
 				return
 			flavor_text = msg
@@ -1382,6 +1387,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/msg = input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text") as message|null
 			if(!msg)
 				return
+			sanitize(xeno_desc)
 			if(NON_ASCII_CHECK(msg))
 				return
 			xeno_desc = msg
