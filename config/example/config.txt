@@ -145,10 +145,6 @@ MINUTE_TOPIC_LIMIT 100
 ##	Requires database
 #PANIC_BUNKER
 
-## Uncomment to enable the interview system for players who are below the living hour requirement instead of explicitly blocking them from the server
-## Note this requires the PANIC_BUNKER to be enabled to do anything.
-#PANIC_BUNKER_INTERVIEW
-
 ## If a player connects during a bunker with less then or this amount of living time (Minutes), we deny the connection
 #PANIC_BUNKER_LIVING 90
 
@@ -162,6 +158,9 @@ MINUTE_TOPIC_LIMIT 100
 
 ##Name of the place to send people rejected by the bunker
 #PANIC_SERVER_NAME [Put the name here]
+
+## Number of days for an individual panic bunker passthrough entry to be wiped. Note that they're also wiped as soon as a player is in the database.
+#MAX_BUNKER_DAYS 7
 
 ## Notify admins when a new player connects for the first x days a player's been around. (0 for first connection only, -1 for never)
 ##	Requres database
@@ -233,3 +232,14 @@ VOTE_AUTOTRANSFER_INITIAL 18000
 
 ## Autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
 VOTE_AUTOTRANSFER_INTERVAL 18000
+
+## Should there be an EORG deathmatch after the round ends (boolean)
+END_OF_ROUND_DEATHMATCH
+
+## Skyrat Config
+
+## Uncomment to prevent young accounts from connecting unless they're admins or allowed through bunker
+#AGE_LOCK
+
+## Required age in days if you enabled above
+AGE_LOCK_DAYS 30

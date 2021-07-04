@@ -35,6 +35,7 @@
 		/mob/living/carbon/xenomorph/carrier,
 		/mob/living/carbon/xenomorph/hivelord,
 		/mob/living/carbon/xenomorph/hivemind,
+		//mob/living/carbon/xenomorph/king, // Disabled until balancing can be sorted out
 	)
 
 	// *** Flags *** //

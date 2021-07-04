@@ -349,7 +349,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	set category = null
 	set name = "Delete"
 
-	if(!check_rights(R_DEBUG))
+	if(!check_rights(R_VAREDIT))
 		return
 
 	if(alert(src, "Are you sure you want to delete: [A]?", "Delete", "Yes", "No") != "Yes")

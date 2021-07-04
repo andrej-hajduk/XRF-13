@@ -941,9 +941,6 @@
 	if(!L)
 		return
 
-	if(!X.check_state())
-		return
-
 	var/msg = stripped_input("Message:", "Psychic Whisper")
 	if(!msg)
 		return
@@ -1138,7 +1135,7 @@
 /datum/action/xeno_action/activable/build_turret
 	name = "Secrete acid turret"
 	action_icon_state = "xeno_turret"
-	mechanics_text = "Creates a new xeno acid turret for 100 points"
+	mechanics_text = "Creates a new xeno acid turret for 150 points"
 	ability_name = "secrete acid turret"
 	plasma_cost = 150
 	cooldown_timer = 60 SECONDS
@@ -1195,15 +1192,39 @@
 	if(SSpoints.xeno_points_by_hive[X.hivenumber] < psych_cost)
 		to_chat(owner, "<span class='xenowarning'>Someone used all the psych points while we were building!</span>")
 		return fail_activate()
-
-	to_chat(owner, "<span class='xenowarning'>We build a new acid turret, spending 100 psychic points in the process</span>")
-	new /obj/structure/xeno/resin/xeno_turret(get_turf(A), X.hivenumber)
-
+	building_turret(A, X)
 	SSpoints.xeno_points_by_hive[X.hivenumber] -= psych_cost
+	succeed_activate()
+
+/datum/action/xeno_action/activable/build_turret/proc/building_turret(atom/A, mob/living/carbon/xenomorph/X)
+	to_chat(owner, "<span class='xenowarning'>We build a new acid turret, spending [plasma_cost] psychic points in the process</span>")
+	new /obj/structure/xeno/resin/xeno_turret(get_turf(A), X.hivenumber)
 	log_game("[owner] built a turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
 	xeno_message("[X.name] has built a new turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
-	succeed_activate()
+/////////////////////////////////
+/// Build xeno larva jelly turret
+/////////////////////////////////
+
+/datum/action/xeno_action/activable/build_turret/jelly
+	name = "Secrete larva jelly turret"
+	action_icon_state = "xeno_turret"
+	mechanics_text = "Creates a new xeno larva jelly turret for 150 points"
+	ability_name = "secrete larva jelly turret"
+
+/datum/action/xeno_action/activable/build_turret/jelly/can_use_ability(atom/A, silent, override_flags, mob/living/carbon/xenomorph/X)
+	. = ..()
+	if(!.)
+		return FALSE
+	var/turf/T = get_turf(A)
+	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly))
+		return FALSE
+
+/datum/action/xeno_action/activable/build_turret/jelly/building_turret(atom/A, mob/living/carbon/xenomorph/X)
+	to_chat(owner, "<span class='xenowarning'>We build a new larva jelly turret, spending [plasma_cost] psychic points in the process</span>")
+	new /obj/structure/xeno/resin/xeno_turret/jelly(get_turf(A), X.hivenumber)
+	log_game("[owner] built a larva jelly turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
+	xeno_message("[X.name] has built a new larva jelly turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 

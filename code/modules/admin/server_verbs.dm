@@ -534,23 +534,6 @@
 	message_admins("[ADMIN_TPMONTY(usr)] changed the ship map to [VM.map_name].")
 
 
-/datum/admins/proc/panic_bunker()
-	set category = "Server"
-	set name = "Toggle Panic Bunker"
-
-	if(!check_rights(R_SERVER))
-		return
-
-	if(!CONFIG_GET(flag/sql_enabled))
-		to_chat(usr, "<span class='adminnotice'>The Database is not enabled!</span>")
-		return
-
-	CONFIG_SET(flag/panic_bunker, !CONFIG_GET(flag/panic_bunker))
-
-	log_admin("[key_name(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
-	message_admins("[ADMIN_TPMONTY(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
-
-
 /datum/admins/proc/mode_check()
 	set category = "Server"
 	set name = "Toggle Mode Check"

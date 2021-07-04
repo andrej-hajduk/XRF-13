@@ -63,6 +63,7 @@
 		/datum/action/xeno_action/activable/build_silo,
 		/datum/action/xeno_action/activable/build_hunt_den,
 		/datum/action/xeno_action/activable/build_turret,
+		/datum/action/xeno_action/activable/build_turret/jelly,
 		/datum/action/xeno_action/activable/transfer_plasma/improved,
 		/datum/action/xeno_action/activable/corrosive_acid,
 		/datum/action/xeno_action/build_tunnel,

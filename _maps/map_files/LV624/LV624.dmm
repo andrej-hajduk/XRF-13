@@ -286,10 +286,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west2)
-"acH" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/tile/dark,
-/area/lv624/lazarus/engineering)
 "acI" = (
 /turf/closed/mineral,
 /area/lv624/ground/sand6)
@@ -2264,17 +2260,6 @@
 	},
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/lv624/lazarus/medbay)
-"amS" = (
-/obj/effect/landmark/corpsespawner/scientist{
-	corpseback = null;
-	corpseshoes = /obj/item/clothing/shoes/black;
-	corpseuniform = /obj/item/clothing/under/colonist;
-	name = "Colonist Tevin Marks"
-	},
-/turf/open/floor/tile/purple/whitepurple{
-	dir = 5
-	},
-/area/lv624/lazarus/research)
 "amT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4;
@@ -4062,11 +4047,6 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/clothing/mask/facehugger/dead,
-/obj/effect/landmark/corpsespawner/scientist{
-	corpseshoes = /obj/item/clothing/shoes/black;
-	corpseuniform = /obj/item/clothing/under/colonist;
-	name = "Colonist Jan Horris"
-	},
 /turf/open/floor/freezer,
 /area/lv624/lazarus/research)
 "awJ" = (
@@ -12669,10 +12649,6 @@
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor,
 /area/lv624/ground/river2)
-"bQV" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/east1)
 "bRK" = (
 /turf/open/ground/coast/corner2{
 	dir = 4
@@ -12850,10 +12826,6 @@
 /obj/machinery/computer/shuttle/shuttle_control/dropship/two,
 /turf/open/ground/grass,
 /area/lv624/lazarus/console)
-"cKI" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle3)
 "cKV" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -13294,7 +13266,6 @@
 /turf/open/floor,
 /area/lv624/ground/jungle4)
 "eBP" = (
-/obj/effect/landmark/corpsespawner/scientist,
 /turf/open/floor/plating/warning{
 	dir = 4
 	},
@@ -13800,11 +13771,6 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/closed/wall/indestructible/mineral,
 /area/lv624/ground/sand1)
-"gyP" = (
-/obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/central3)
 "gzj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 8;
@@ -14199,14 +14165,6 @@
 /obj/structure/jungle/vines,
 /turf/closed/gm/dense,
 /area/lv624/ground/jungle6)
-"izp" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/river1)
-"iCK" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle9)
 "iEQ" = (
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/marking/bot,
@@ -14362,10 +14320,6 @@
 	},
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)
-"jqG" = (
-/obj/effect/landmark/corpsespawner/doctor,
-/turf/open/floor/tile/blue/whitebluecorner,
-/area/lv624/lazarus/medbay)
 "jqR" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -14998,11 +14952,6 @@
 /turf/open/floor/engine/cult,
 /area/lv624/ground/caves/west1)
 "mre" = (
-/obj/effect/landmark/corpsespawner/chef{
-	corpsesuit = null;
-	corpseuniform = /obj/item/clothing/under/colonist;
-	name = "Colonist Jed Willis"
-	},
 /obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/weapon/harpoon,
 /turf/open/floor/plating/ground/dirt,
@@ -15064,12 +15013,6 @@
 	dir = 1
 	},
 /area/lv624/ground/jungle4)
-"mAI" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/tile/green/greentaupe{
-	dir = 1
-	},
-/area/lv624/lazarus/hydroponics)
 "mAP" = (
 /obj/structure/sign/botany{
 	dir = 4
@@ -15143,10 +15086,6 @@
 /obj/structure/jungle/planttop1,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle7)
-"mNl" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle6)
 "mNK" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -16539,13 +16478,6 @@
 	},
 /turf/open/floor/plating/platebotc,
 /area/lv624/lazarus/quartstorage)
-"toh" = (
-/obj/machinery/light,
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/tile/purple/whitepurple{
-	dir = 5
-	},
-/area/lv624/lazarus/research)
 "tqg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4;
@@ -16741,10 +16673,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
-"ujY" = (
-/obj/effect/landmark/xeno_turret_spawn,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/west1)
 "unj" = (
 /obj/effect/spawner/modularmap/lv624/domes,
 /turf/open/space/basic,
@@ -20166,7 +20094,7 @@ ozL
 aej
 aej
 aej
-etu
+aej
 aej
 aej
 aej
@@ -20968,7 +20896,7 @@ aBM
 avL
 avO
 avL
-izp
+avL
 unC
 aug
 auk
@@ -21101,7 +21029,7 @@ abb
 abb
 abb
 abc
-ujY
+abc
 abc
 udq
 udq
@@ -21966,7 +21894,7 @@ aej
 abc
 abc
 abc
-ujY
+abc
 abb
 abb
 abb
@@ -22619,7 +22547,7 @@ bnE
 bnE
 hAe
 bnE
-cKI
+bnE
 biP
 biP
 hAe
@@ -23948,7 +23876,7 @@ abd
 abc
 abc
 abd
-ujY
+abc
 abc
 abc
 abc
@@ -26510,7 +26438,7 @@ aBg
 tal
 axR
 axR
-mNl
+axR
 aXH
 aXH
 aXH
@@ -28327,7 +28255,7 @@ aFB
 aJD
 aEx
 aEx
-iCK
+aEx
 aEx
 aEx
 jbc
@@ -29181,7 +29109,7 @@ auf
 avc
 avL
 avL
-mNl
+axR
 axR
 axR
 axR
@@ -30455,7 +30383,7 @@ axR
 aFo
 aFX
 juW
-amS
+aGd
 aHM
 aGd
 aJm
@@ -30557,7 +30485,7 @@ acO
 acO
 aeu
 acO
-gyP
+adh
 acO
 aeK
 acN
@@ -31338,7 +31266,7 @@ ayu
 awn
 awn
 awn
-jqG
+awn
 aBm
 awJ
 avV
@@ -31708,7 +31636,7 @@ aAb
 aFo
 inf
 aGB
-toh
+aHh
 aEN
 aeB
 aJq
@@ -32232,7 +32160,7 @@ axW
 ayx
 awn
 azE
-jqG
+awn
 awn
 aBq
 aBU
@@ -33628,7 +33556,7 @@ bnS
 boK
 bpM
 bqo
-acH
+bqo
 brB
 bjH
 bjH
@@ -34197,7 +34125,7 @@ awq
 awP
 awP
 awP
-mAI
+awa
 awa
 awa
 awR
@@ -35631,7 +35559,7 @@ awR
 awR
 awa
 awa
-mAI
+awa
 awP
 awP
 awP
@@ -44180,7 +44108,7 @@ cRa
 afr
 afn
 abi
-bQV
+abi
 abo
 afg
 afg
