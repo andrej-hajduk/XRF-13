@@ -418,6 +418,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<a href ='?_src_=prefs;preference=flavor_text'>Character Description</a><br>"
 
+					dat += "<a href ='?_src_=prefs;preference=xeno_desc'>Xenomorph Description</a><br>"
+
 				if(1) //Appearances
 					dat += "<table width='100%'><tr><td width='17%' valign='top'>"
 
@@ -1369,12 +1371,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			user << browse(null, "window=records")
 
 		if("flavor_text")
-			var/msg = stripped_input(user, "Give a physical description of your character.", "Flavor Text", sanitize(flavor_text))
+			var/msg = input(user, "Give a physical description of your character.", "Flavor Text") as message|null
 			if(!msg)
 				return
 			if(NON_ASCII_CHECK(msg))
 				return
 			flavor_text = msg
+
+		if("xeno_desc")
+			var/msg = input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text") as message|null
+			if(!msg)
+				return
+			if(NON_ASCII_CHECK(msg))
+				return
+			xeno_desc = msg
 
 		if("windowflashing")
 			windowflashing = !windowflashing
