@@ -1332,40 +1332,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 
 		if("med_record")
-			var/medmsg = input(user, "Set your medical notes here.", "Medical Records", sanitize(med_record)) as message|null
+			var/medmsg = input(user, "Set your medical notes here.", "Medical Records", sanitize(med_record))
 			if(!medmsg)
 				return
-			sanitize(medmsg)
 
 			med_record = medmsg
 			SetRecords(user)
 			return
 
 		if("sec_record")
-			var/secmsg = input(user,"Set your security notes here.", "Security Records", sanitize(sec_record)) as message|null
+			var/secmsg = stripped_multiline_input(user,"Set your security notes here.", "Security Records", sanitize(sec_record))
 			if(!secmsg)
 				return
-			sanitize(secmsg)
 
 			sec_record = secmsg
 			SetRecords(user)
 			return
 
 		if("gen_record")
-			var/genmsg = input(user, "Set your employment notes here.", "Employment Records", sanitize(gen_record)) as message|null
+			var/genmsg = stripped_multiline_input(user, "Set your employment notes here.", "Employment Records", sanitize(gen_record))
 			if(!genmsg)
 				return
-			sanitize(genmsg)
 
 			gen_record = genmsg
 			SetRecords(user)
 			return
 
 		if("exploit_record")
-			var/exploit = input(user, "Enter information that others may want to use against you.", "Exploit Record", sanitize(exploit_record)) as message|null
+			var/exploit = stripped_multiline_input(user, "Enter information that others may want to use against you.", "Exploit Record", sanitize(exploit_record))
 			if(!exploit)
 				return
-			sanitize(exploit)
 
 			exploit_record = exploit
 			SetRecords(user)
@@ -1375,19 +1371,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			user << browse(null, "window=records")
 
 		if("flavor_text")
-			var/msg = input(user, "Give a physical description of your character.", "Flavor Text", sanitize(flavor_text)) as message|null
+			var/msg = stripped_multiline_input(user, "Give a physical description of your character.", "Flavor Text", sanitize(flavor_text))
 			if(!msg)
 				return
-			sanitize(msg)
 			if(NON_ASCII_CHECK(msg))
 				return
 			flavor_text = msg
 
 		if("xeno_desc")
-			var/msg = input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text", sanitize(xeno_desc)) as message|null
+			var/msg = stripped_multiline_input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text", sanitize(xeno_desc))
 			if(!msg)
 				return
-			sanitize(msg)
 			if(NON_ASCII_CHECK(msg))
 				return
 			xeno_desc = msg
