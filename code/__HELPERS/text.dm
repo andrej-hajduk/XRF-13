@@ -290,14 +290,14 @@
 /proc/TextPreview(string, length = 1024)
 	if(length_char(string) > length(string))
 		if(length_char(string) > length)
-			return "[copytext_char(string, 1, 37)]..."
+			return "[copytext_char(string, 1, length-3)]..."
 		if(!length(string))
 			return "\[...\]"
 		return string
 	if(!length(string))
 		return "\[...\]"
 	if(length(string) > length)
-		return "[copytext(string, 1, 37)]..."
+		return "[copytext(string, 1, length-3)]..."
 	return string
 
 
