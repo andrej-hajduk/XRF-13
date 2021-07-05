@@ -45,6 +45,7 @@
 	var/exhale_type = "carbon_dioxide"      // Exhaled gas type.
 
 	var/total_health = 100  //new maxHealth
+	var/stamina_limit = 200
 	var/max_stamina_buffer = 50
 
 	var/cold_level_1 = BODYTEMP_COLD_DAMAGE_LIMIT_ONE  	// Cold damage level 1 below this point.

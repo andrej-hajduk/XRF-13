@@ -120,6 +120,10 @@ can cause issues with ammo types getting mixed up during the burst.
 	new_handful.generate_handful(selection, CALIBER_410, 1, /obj/item/weapon/gun/shotgun)
 	return new_handful
 
+/obj/item/weapon/gun/shotgun/pump/cmb/retrieve_shell(selection)
+	var/obj/item/ammo_magazine/handful/new_handful = new /obj/item/ammo_magazine/handful()
+	new_handful.generate_handful(selection, CALIBER_8G, 1, /obj/item/weapon/gun/shotgun)
+	return new_handful
 
 /obj/item/weapon/gun/shotgun/proc/check_chamber_position()
 	return 1
@@ -570,15 +574,17 @@ can cause issues with ammo types getting mixed up during the burst.
 //-------------------------------------------------------
 //A shotgun, how quaint.
 /obj/item/weapon/gun/shotgun/pump/cmb
-	name = "\improper Paladin-12 pump shotgun"
-	desc = "A nine-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone."
+	name = "\improper Paladin-8 pump shotgun"
+	desc = "A nine-round pump action shotgun. It loads only a specialized beanbag round for riot control."
 	icon = 'icons/Marine/gun64.dmi'
 	icon_state = "pal12"
 	item_state = "pal12"
+	pump_animation = "pal12_pump"
 	fire_sound = 'sound/weapons/guns/fire/shotgun_cmb.ogg'
 	reload_sound = 'sound/weapons/guns/interact/shotgun_cmb_insert.ogg'
 	pump_sound = 'sound/weapons/guns/interact/shotgun_cmb_pump.ogg'
 	current_mag = /obj/item/ammo_magazine/internal/shotgun/pump/CMB
+	caliber = CALIBER_8G
 	attachable_allowed = list(
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/gyro,
@@ -594,7 +600,6 @@ can cause issues with ammo types getting mixed up during the burst.
 	)
 
 	fire_delay = 15
-	damage_mult = 0.75
 	accuracy_mult = 1.25
 	accuracy_mult_unwielded = 1
 	scatter = 5
