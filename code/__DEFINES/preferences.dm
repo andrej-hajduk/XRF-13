@@ -73,6 +73,16 @@
 
 #define TOGGLES_GAMEPLAY_DEFAULT (RADIAL_MEDICAL|MIDDLESHIFTCLICKING)
 
+#define ALLOW_HUGGER_ASS_TARGET (1<<0)
+#define ALLOW_HUGGER_GROIN_TARGET (1<<1)
+
+#define TOGGLES_LEWD_DEFAULT (NONE)
+
+
+#define HUGGER_TARGET_CHEST "throat"
+#define HUGGER_TARGET_GROIN "groin"
+#define HUGGER_TARGET_ASS "ass"
+
 #define CITIZENSHIP_CHOICES list(\
 	"TerraGov",\
 	"Limited Service (Colony)",\

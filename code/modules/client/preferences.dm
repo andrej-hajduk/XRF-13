@@ -31,6 +31,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/toggles_sound = TOGGLES_SOUND_DEFAULT
 	var/toggles_gameplay = TOGGLES_GAMEPLAY_DEFAULT
 
+	var/toggles_lewd = TOGGLES_LEWD_DEFAULT
+	var/preferred_hugger_target_area = HUGGER_TARGET_GROIN
 	var/ghost_hud = TOGGLES_GHOSTHUD_DEFAULT
 	var/ghost_vision = TRUE
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
@@ -181,7 +183,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!IsGuestKey(C.key))
 		load_path(C.ckey)
 		if(!load_loadout_manager())
-			loadout_manager = new 
+			loadout_manager = new
 		if(load_preferences() && load_character())
 			return
 

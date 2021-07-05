@@ -24,7 +24,8 @@
 	flags_item = NOBLUDGEON
 	throw_range = 1
 	layer = FACEHUGGER_LAYER
-
+	item_state_slots = list(slot_w_uniform_str = "facehugger_crotch")
+	item_icons = list(slot_w_uniform_str = 'icons/Xeno/Effects.dmi')
 	///Whether the hugger is dead, active or inactive
 	var/stat = CONSCIOUS
 	///"Freezes" the hugger in for example, eggs
@@ -446,29 +447,33 @@
 			return TRUE
 
 	var/blocked = null //To determine if the hugger just rips off the protection or can infect.
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+	if(!ishuman(M))
+		return FALSE
+	var/mob/living/carbon/human/H = M
 
-		if(!H.has_limb(HEAD))
-			visible_message("<span class='warning'>[src] looks for a face to hug on [H], but finds none!</span>")
-			return FALSE
+	if(!H.has_limb(HEAD))
+		visible_message("<span class='warning'>[src] looks for a face to hug on [H], but finds none!</span>")
+		return FALSE
 
-		if(H.head)
-			var/obj/item/clothing/head/D = H.head
-			if(istype(D))
-				if(D.anti_hug > 0 || D.flags_item & NODROP)
-					blocked = D
-					D.anti_hug = max(0, --D.anti_hug)
-					H.visible_message("<span class='danger'>[src] smashes against [H]'s [D.name], damaging it!")
-					return FALSE
-				else
-					if(istype(D, /obj/item/clothing/head/helmet/marine)) //Marine helmets now get a fancy overlay.
-						var/obj/item/clothing/head/helmet/marine/m_helmet = D
-						m_helmet.add_hugger_damage()
-					H.update_inv_head()
+	if(!H.w_uniform && attempt_lewd_attach(H))
+		H.equip_to_slot(src, SLOT_W_UNIFORM)
+		return TRUE
 
-	if(M.wear_mask)
-		var/obj/item/clothing/mask/W = M.wear_mask
+	if(H.head)
+		var/obj/item/clothing/head/D = H.head
+		if(istype(D))
+			if(D.anti_hug > 0 || D.flags_item & NODROP)
+				blocked = D
+				D.anti_hug = max(0, --D.anti_hug)
+				H.visible_message("<span class='danger'>[src] smashes against [H]'s [D.name], damaging it!")
+				return FALSE
+			if(istype(D, /obj/item/clothing/head/helmet/marine)) //Marine helmets now get a fancy overlay.
+				var/obj/item/clothing/head/helmet/marine/m_helmet = D
+				m_helmet.add_hugger_damage()
+			H.update_inv_head()
+
+	if(H.wear_mask)
+		var/obj/item/clothing/mask/W = H.wear_mask
 		if(istype(W))
 			if(istype(W, /obj/item/clothing/mask/facehugger))
 				var/obj/item/clothing/mask/facehugger/hugger = W
@@ -485,13 +490,11 @@
 			if(!blocked)
 				M.visible_message("<span class='danger'>[src] smashes against [M]'s [W.name] and rips it off!</span>")
 				M.dropItemToGround(W)
-			if(ishuman(M)) //Check for camera; if we have one, turn it off.
-				var/mob/living/carbon/human/H = M
-				if(istype(H.wear_ear, /obj/item/radio/headset/mainship/marine))
-					var/obj/item/radio/headset/mainship/marine/R = H.wear_ear
-					if(R.camera.status)
-						R.camera.toggle_cam(null, FALSE) //Turn camera off.
-						to_chat(H, "<span class='danger'>Your headset camera flickers off; you'll need to reactivate it by rebooting your headset HUD!<span>")
+			if(istype(H.wear_ear, /obj/item/radio/headset/mainship/marine))
+				var/obj/item/radio/headset/mainship/marine/R = H.wear_ear
+				if(R.camera.status)
+					R.camera.toggle_cam(null, FALSE) //Turn camera off.
+					to_chat(H, "<span class='danger'>Your headset camera flickers off; you'll need to reactivate it by rebooting your headset HUD!<span>")
 
 	if(blocked)
 		M.visible_message("<span class='danger'>[src] smashes against [M]'s [blocked]!</span>")
@@ -500,9 +503,24 @@
 	M.equip_to_slot(src, SLOT_WEAR_MASK)
 	return TRUE
 
+/obj/item/clothing/mask/facehugger/proc/attempt_lewd_attach(mob/living/carbon/human/target)
+	. = FALSE
+	var/attach_target = FALSE
+	if(target.client.prefs.preferred_hugger_target_area == HUGGER_TARGET_CHEST && !target.wear_mask)
+		return FALSE
+	for(var/option in list(ALLOW_HUGGER_ASS_TARGET, ALLOW_HUGGER_GROIN_TARGET))
+		if(target.client.prefs.toggles_lewd & option)
+			attach_target = TRUE
+			break
+	if(!attach_target)
+		return FALSE
+	visible_message("<span class='warning'>[src] latches onto [target]'s pelvis!</span>")
+	return TRUE
+
+
 /obj/item/clothing/mask/facehugger/equipped(mob/living/user, slot)
 	. = ..()
-	if(slot != SLOT_WEAR_MASK || stat == DEAD)
+	if((slot != SLOT_WEAR_MASK && slot != SLOT_W_UNIFORM) || stat == DEAD)
 		reset_attach_status(FALSE)
 		return
 	if(ishuman(user))
@@ -518,11 +536,19 @@
 	go_idle(FALSE, TRUE)
 	addtimer(CALLBACK(src, .proc/Impregnate, user), IMPREGNATION_TIME)
 
-/obj/item/clothing/mask/facehugger/proc/Impregnate(mob/living/carbon/target)
-	var/as_planned = target?.wear_mask == src ? TRUE : FALSE
-	if(target.can_be_facehugged(src, FALSE, FALSE) && !sterile && as_planned) //is hugger still on face and can they still be impregnated
+/obj/item/clothing/mask/facehugger/proc/Impregnate(mob/living/carbon/human/target)
+	var/as_planned = target?.wear_mask == src || target?.w_uniform == src
+	var/emerge_target
+	if(target.can_be_facehugged(src, FALSE, FALSE) && !sterile) //is hugger still on face and can they still be impregnated
+		if(target?.wear_mask == src)
+			emerge_target = HUGGER_TARGET_CHEST
+		else// on groin
+			for(var/option in shuffle(list(ALLOW_HUGGER_ASS_TARGET, ALLOW_HUGGER_GROIN_TARGET)))
+				if(target.client.prefs.toggles_lewd & option)
+					emerge_target = (option == ALLOW_HUGGER_ASS_TARGET) ? HUGGER_TARGET_ASS : HUGGER_TARGET_GROIN
+					break
 		if(!(locate(/obj/item/alien_embryo) in target))
-			var/obj/item/alien_embryo/embryo = new(target)
+			var/obj/item/alien_embryo/embryo = new(target, emerge_target)
 			embryo.hivenumber = hivenumber
 			GLOB.round_statistics.now_pregnant++
 			SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
@@ -536,7 +562,7 @@
 
 	if(as_planned)
 		if(sterile || target.status_flags & XENO_HOST)
-			target.visible_message("<span class='danger'>[src] falls limp after violating [target]'s face!</span>")
+			target.visible_message("<span class='danger'>[src] falls limp after violating [target]'s [emerge_target ? emerge_target : "error"]!</span>")
 		else //Huggered but not impregnated, deal damage.
 			target.visible_message("<span class='danger'>[src] frantically claws at [target]'s face before falling down!</span>","<span class='danger'>[src] frantically claws at your face before falling down! Auugh!</span>")
 			target.apply_damage(15, BRUTE, "head", updating_health = TRUE)
