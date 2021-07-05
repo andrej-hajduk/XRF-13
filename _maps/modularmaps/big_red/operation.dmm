@@ -66,6 +66,7 @@
 /area/bigredv2/outside/admin_building)
 "dX" = (
 /obj/machinery/computer/communications,
+/obj/structure/table,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/admin_building)
 "ee" = (
@@ -170,12 +171,9 @@
 	},
 /area/bigredv2/outside/admin_building)
 "kg" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/spawner/random/toolbox,
-/turf/open/floor/tile/dark/red2{
-	dir = 4
+/obj/machinery/lapvend,
+/turf/open/floor/tile/dark/blue2{
+	dir = 1
 	},
 /area/bigredv2/outside/admin_building)
 "ks" = (
@@ -257,10 +255,11 @@
 	},
 /area/bigredv2/outside/admin_building)
 "oq" = (
-/obj/structure/barricade/wooden{
-	dir = 1
+/obj/machinery/door/airlock/mainship/command/free_access{
+	dir = 1;
+	name = "\improper Captains Quarters"
 	},
-/turf/open/floor/tile/white,
+/turf/open/floor/wood,
 /area/bigredv2/outside/admin_building)
 "oB" = (
 /turf/open/floor/freezer,
@@ -427,7 +426,7 @@
 /area/bigredv2/outside/admin_building)
 "wQ" = (
 /obj/effect/landmark/start/job/survivor,
-/turf/open/floor/plating,
+/turf/open/floor/grimy,
 /area/bigredv2/outside/admin_building)
 "wR" = (
 /obj/structure/cable,
@@ -508,6 +507,7 @@
 /area/bigredv2/outside/admin_building)
 "yG" = (
 /obj/machinery/computer/atmos_alert,
+/obj/structure/table,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/admin_building)
 "yN" = (
@@ -531,13 +531,6 @@
 "zq" = (
 /obj/structure/safe,
 /turf/open/floor/wood,
-/area/bigredv2/outside/admin_building)
-"zF" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
 /area/bigredv2/outside/admin_building)
 "zK" = (
 /obj/structure/bed/chair/comfy/black,
@@ -567,7 +560,6 @@
 	},
 /area/bigredv2/outside/admin_building)
 "AX" = (
-/obj/machinery/deployable/barrier,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor/free_access{
@@ -589,10 +581,10 @@
 /turf/closed/wall/r_wall,
 /area/bigredv2/outside/admin_building)
 "BQ" = (
-/obj/item/cell/hyper/empty,
-/turf/open/floor/tile/dark/red2{
-	dir = 4
+/obj/structure/bed/chair/office/dark{
+	dir = 8
 	},
+/turf/open/floor/carpet,
 /area/bigredv2/outside/admin_building)
 "BT" = (
 /obj/machinery/computer/security,
@@ -613,22 +605,12 @@
 	dir = 4
 	},
 /area/bigredv2/outside/admin_building)
-"Cs" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/bigredv2/outside/admin_building)
 "CD" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
-/area/bigredv2/outside/admin_building)
-"CQ" = (
-/obj/machinery/deployable/barrier,
-/turf/open/floor,
 /area/bigredv2/outside/admin_building)
 "CU" = (
 /obj/structure/window/framed/colony,
@@ -648,10 +630,6 @@
 /turf/open/floor/tile/dark/blue2{
 	dir = 5
 	},
-/area/bigredv2/outside/admin_building)
-"Ds" = (
-/obj/effect/spawner/random/toolbox,
-/turf/open/floor/tile/dark,
 /area/bigredv2/outside/admin_building)
 "DQ" = (
 /obj/structure/bed/chair,
@@ -744,12 +722,6 @@
 	dir = 9
 	},
 /area/bigredv2/outside/admin_building)
-"IS" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor,
-/area/bigredv2/outside/admin_building)
 "IT" = (
 /obj/machinery/computer/communications,
 /obj/structure/table,
@@ -763,7 +735,7 @@
 "JP" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/plating,
+/turf/open/floor/grimy,
 /area/bigredv2/outside/admin_building)
 "JZ" = (
 /obj/structure/table,
@@ -822,14 +794,6 @@
 	dir = 10
 	},
 /area/bigredv2/outside/admin_building)
-"Mm" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/cable,
-/obj/structure/barricade/wooden{
-	dir = 1
-	},
-/turf/open/floor/tile/white,
-/area/bigredv2/outside/admin_building)
 "MD" = (
 /obj/structure/cable,
 /turf/open/floor/tile/dark/red2/corner{
@@ -842,8 +806,7 @@
 /turf/open/floor/wood,
 /area/bigredv2/outside/admin_building)
 "Na" = (
-/obj/structure/rack,
-/obj/item/weapon/gun/smg/mp7,
+/obj/machinery/vending/marine/shared,
 /turf/open/floor/tile/red/redtaupecorner{
 	dir = 8
 	},
@@ -929,7 +892,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 10
 	},
-/turf/open/floor/plating,
+/turf/open/floor/grimy,
 /area/bigredv2/outside/admin_building)
 "Rk" = (
 /obj/machinery/light{
@@ -1042,7 +1005,7 @@
 	},
 /area/bigredv2/outside/admin_building)
 "Vc" = (
-/obj/machinery/lapvend,
+/obj/machinery/vending/security,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/admin_building)
 "Vr" = (
@@ -1228,11 +1191,11 @@ vW
 CU
 ZJ
 Qc
-Qc
 Wf
-Qc
 Wf
-Qc
+Wf
+Wf
+Wf
 ZJ
 vo
 BN
@@ -1265,7 +1228,7 @@ BN
 "}
 (5,1,1) = {"
 yN
-Mm
+ai
 ai
 ai
 gU
@@ -1280,18 +1243,18 @@ vW
 CU
 ZJ
 Qc
-Cs
-Qc
-Cs
-Qc
-Cs
+TV
+TV
+TV
+TV
+TV
 lY
 GT
 ml
 "}
 (6,1,1) = {"
 Bw
-oq
+Bw
 Bw
 Bw
 XE
@@ -1305,12 +1268,12 @@ wR
 vW
 CU
 ZJ
-ZJ
-ZJ
-ZJ
-ZJ
-ZJ
-ZJ
+Qc
+BQ
+BQ
+BQ
+BQ
+BQ
 OA
 GT
 ml
@@ -1330,14 +1293,14 @@ sT
 wR
 vW
 CU
-GT
-GT
-GT
-GT
-GT
-GT
-GT
-IS
+ZJ
+ZJ
+ZJ
+ZJ
+ZJ
+ZJ
+ZJ
+OA
 GT
 BN
 "}
@@ -1407,7 +1370,7 @@ ZX
 sT
 UY
 fO
-Ds
+fO
 dN
 fO
 ng
@@ -1438,7 +1401,7 @@ EV
 pA
 ZU
 Nv
-kg
+Xi
 Nv
 UF
 Nv
@@ -1485,7 +1448,7 @@ Nv
 Nv
 Xi
 Nv
-BQ
+Nv
 lt
 fO
 UW
@@ -1535,7 +1498,7 @@ vW
 sT
 Nd
 SH
-SH
+aO
 LW
 sT
 eL
@@ -1571,7 +1534,7 @@ sT
 Tx
 ZJ
 ZJ
-Jj
+oq
 Jj
 BN
 "}
@@ -1611,7 +1574,7 @@ sT
 eq
 eq
 sT
-wc
+kg
 fO
 Qq
 Xq
@@ -1830,7 +1793,7 @@ vW
 gR
 DQ
 wQ
-zF
+ce
 nT
 GT
 BN
@@ -1855,7 +1818,7 @@ YO
 vW
 sT
 tW
-eq
+rM
 QS
 JP
 ba
@@ -1883,9 +1846,9 @@ sT
 xG
 GT
 GT
-eq
 GT
-CQ
+GT
+GT
 "}
 (29,1,1) = {"
 BN
