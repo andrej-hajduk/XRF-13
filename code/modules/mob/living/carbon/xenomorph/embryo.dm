@@ -113,7 +113,7 @@
 				if(!affected_mob.IsUnconscious())
 					affected_mob.visible_message("<span class='danger'>\The [affected_mob] starts shaking uncontrollably!</span>", \
 												"<span class='danger'>You start shaking uncontrollably!</span>")
-					affected_mob.Unconscious(20 SECONDS)
+					affected_mob.Unconscious(10 SECONDS)
 					affected_mob.jitter(105)
 					affected_mob.take_limb_damage(1)
 			if(prob(2))
@@ -122,7 +122,7 @@
 			become_larva()
 		if(6)
 			larva_autoburst_countdown--
-			if(!larva_autoburst_countdown)
+			if(larva_autoburst_countdown <= 0)
 				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
 				L?.initiate_burst(affected_mob)
 
@@ -171,7 +171,6 @@
 
 	victim.visible_message("<span class='danger'>\The [victim] starts shaking uncontrollably!</span>", \
 								"<span class='danger'>You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!</span>")
-	victim.Unconscious(20 SECONDS)
 	victim.jitter(300)
 
 	playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 25, TRUE)

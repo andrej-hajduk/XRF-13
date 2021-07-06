@@ -362,7 +362,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 	to_chat(src, "<span class='interface'>TGUI compatibility mode is now [usr.client.prefs.tgui_fancy ? "dis" : "en"]abled.</span>")
 
 /client/verb/cycle_hugger_target()
-	set name = "Cycle preffered hugger target"
+	set name = "Cycle preferred hugger target"
 	set category = "Lewd"
 
 	switch(prefs.preferred_hugger_target_area)
@@ -377,7 +377,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 /client/verb/toggle_hugger_ass_target()
 	set category = "Lewd"
-	set name = "Toggle Hugger ass targetting"
+	set name = "Toggle hugger ass targetting"
 
 	TOGGLE_BITFIELD(prefs.toggles_lewd, ALLOW_HUGGER_ASS_TARGET)
 	prefs.save_preferences()
@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 /client/verb/toggle_hugger_groin_target()
 	set category = "Lewd"
-	set name = "Toggle Hugger groin targetting"
+	set name = "Toggle hugger groin targetting"
 
 	TOGGLE_BITFIELD(prefs.toggles_lewd, ALLOW_HUGGER_GROIN_TARGET)
 	prefs.save_preferences()
