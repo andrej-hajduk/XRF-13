@@ -385,7 +385,7 @@
 	if(F.combat_hugger) //Combat huggers will attack anything else
 		return TRUE
 
-	if((status_flags & (XENO_HOST|GODMODE)) || F.stat == DEAD)
+	if((status_flags & (GODMODE)) || F.stat == DEAD)
 		return FALSE
 
 	if(!provoked)
@@ -404,8 +404,6 @@
 				var/obj/item/clothing/mask/facehugger/hugger = W
 				if(hugger.stat != DEAD)
 					return FALSE
-	else if (wear_mask && wear_mask != F)
-		return FALSE
 
 	return TRUE
 
@@ -530,7 +528,6 @@
 		user.disable_lights(sparks = TRUE, silent = TRUE)
 		var/stamina_dmg = user.maxHealth * 2 + user.max_stamina_buffer
 		user.apply_damage(stamina_dmg, STAMINA) // complete winds the target
-		user.Unconscious(2 SECONDS)
 	addtimer(VARSET_CALLBACK(src, flags_item, flags_item|NODROP), IMPREGNATION_TIME) // becomes stuck after min-impreg time
 	attached = TRUE
 	go_idle(FALSE, TRUE)
@@ -547,12 +544,11 @@
 				if(target.client.prefs.toggles_lewd & option)
 					emerge_target = (option == ALLOW_HUGGER_ASS_TARGET) ? HUGGER_TARGET_ASS : HUGGER_TARGET_GROIN
 					break
-		if(!(locate(/obj/item/alien_embryo) in target))
-			var/obj/item/alien_embryo/embryo = new(target, emerge_target)
-			embryo.hivenumber = hivenumber
-			GLOB.round_statistics.now_pregnant++
-			SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
-			sterile = TRUE
+		var/obj/item/alien_embryo/embryo = new(target, emerge_target)
+		embryo.hivenumber = hivenumber
+		GLOB.round_statistics.now_pregnant++
+		SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
+		sterile = TRUE
 		kill_hugger()
 	else
 		reset_attach_status(as_planned)
@@ -562,10 +558,18 @@
 
 	if(as_planned)
 		if(sterile || target.status_flags & XENO_HOST)
-			target.visible_message("<span class='danger'>[src] falls limp after violating [target]'s [emerge_target ? emerge_target : "error"]!</span>")
+			var/flavor_text
+			switch(emerge_target)
+				if(HUGGER_TARGET_CHEST)
+					flavor_text = "<span class='danger'>[src] falls limp after violating [target]'s face with it's proboscis!</span>"
+				if(HUGGER_TARGET_ASS)
+					flavor_text = "<span class='danger'>[src] falls limp after ramming it's proboscis into [target]'s ass!</span>"
+				if(HUGGER_TARGET_GROIN)
+					flavor_text = "<span class='danger'>[src] falls limp after ramming it's proboscis into [target]'s [target.gender==MALE ? "cock" : "vagina"]!</span>"
+			target.visible_message(flavor_text)
 		else //Huggered but not impregnated, deal damage.
 			target.visible_message("<span class='danger'>[src] frantically claws at [target]'s face before falling down!</span>","<span class='danger'>[src] frantically claws at your face before falling down! Auugh!</span>")
-			target.apply_damage(15, BRUTE, "head", updating_health = TRUE)
+			target.apply_damage(10, BRUTE, "head", updating_health = TRUE)
 
 
 /obj/item/clothing/mask/facehugger/proc/kill_hugger(melt_timer = 1 MINUTES)

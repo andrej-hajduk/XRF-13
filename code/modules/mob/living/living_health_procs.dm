@@ -293,11 +293,9 @@
 	restore_all_organs()
 
 	//remove larva
-	var/obj/item/alien_embryo/A = locate() in src
-	var/mob/living/carbon/xenomorph/larva/L = locate() in src //the larva was fully grown, ready to burst.
-	if(A)
+	for(var/obj/item/alien_embryo/A in src)
 		qdel(A)
-	if(L)
+	for(var/mob/living/carbon/xenomorph/larva/L in src)
 		qdel(L)
 	DISABLE_BITFIELD(status_flags, XENO_HOST)
 
