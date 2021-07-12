@@ -290,3 +290,30 @@
 	icon_state = "suspenders"
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 	flags_armor_protection = NONE
+
+//Survivor
+/obj/item/clothing/suit/storage/rugged
+	name = "rugged armor"
+	desc = "A suit of armor used by workers in dangerous environments."
+	icon_state = "swatarmor"
+	item_state = "swatarmor"
+	var/obj/item/weapon/gun/holstered = null
+	flags_armor_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	flags_item = SYNTH_RESTRICTED
+	slowdown = 0
+	soft_armor = list("melee" = 20, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 20, "acid" = 30)
+	siemens_coefficient = 0.7
+
+	flags_inventory = BLOCKSHARPOBJ
+	flags_cold_protection = CHEST|GROIN
+	flags_heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	w_class = WEIGHT_CLASS_HUGE
+	allowed = list(
+		/obj/item/weapon/gun/,
+		/obj/item/flashlight,
+		/obj/item/storage/large_holster/machete,
+		/obj/item/storage/belt/gun/pistol/m4a3,
+		/obj/item/storage/belt/gun/m44,
+	)

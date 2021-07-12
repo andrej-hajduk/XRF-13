@@ -286,7 +286,7 @@ Good luck infilitrator."})
 	name = "CLF Infiltrator"
 	jobtype = /datum/job/survivor/rambo
 	w_uniform = /obj/item/clothing/under/color/grey
-	wear_suit = /obj/item/clothing/suit/armor/rugged
+	wear_suit = /obj/item/clothing/suit/storage/rugged
 	shoes = /obj/item/clothing/shoes/ruggedboot
 	back = /obj/item/storage/backpack/satchel/rugged
 	gloves = /obj/item/clothing/gloves/ruggedgloves
