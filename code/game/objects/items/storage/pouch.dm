@@ -91,8 +91,7 @@
 	name = "survival pouch"
 	desc = "It can contain flashlight, pills, a crowbar, metal sheets, food, and some bandages."
 	icon_state = "survival"
-	storage_slots = 8
-	max_storage_space = 18
+	storage_slots = 6
 	max_w_class = 3
 	can_hold = list(
 		/obj/item/flashlight,
@@ -110,8 +109,6 @@
 	. = ..()
 	new /obj/item/flashlight(src)
 	new /obj/item/storage/pill_bottle/packet/emergency(src)
-	new /obj/item/stack/medical/bruise_pack(src, 3)
-	new /obj/item/stack/medical/ointment(src, 3)
 	new /obj/item/stack/sheet/metal(src, 20)
 	new /obj/item/stack/sheet/plasteel(src, 5)
 	new /obj/item/reagent_containers/food/snacks/upp(src)
