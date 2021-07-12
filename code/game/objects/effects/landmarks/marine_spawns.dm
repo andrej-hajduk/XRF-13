@@ -142,7 +142,7 @@
 
 /obj/effect/landmark/start/job/survivor
 	icon_state = "Shaft Miner"
-	job = /datum/job/survivor/rambo
+	job = /datum/job/survivor
 
 /obj/effect/landmark/start/job/xenomorph
 	icon_state = "xeno_spawn"

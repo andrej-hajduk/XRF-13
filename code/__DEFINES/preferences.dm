@@ -98,6 +98,13 @@
 	"Opposed"\
 	)
 
+#define SURVIVOR_TYPE list(\
+	"Civilian",\
+	"Militia",\
+	"Medic",\
+	"Engineer",\
+	"Janitor"\
+	)
 
 #define RELIGION_CHOICES list(\
 	"Christianity (Protestant)",\

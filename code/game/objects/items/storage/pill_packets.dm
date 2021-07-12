@@ -28,8 +28,23 @@
 	name = "Russian Red pill packet"
 	desc = "This packet containts Russian Red pills. Used for field treatment of critical cases without a medic. Once you take them out they don't go back in.."
 	pill_type_to_fill = /obj/item/reagent_containers/pill/russian_red
-	
+
 /obj/item/storage/pill_bottle/packet/ryetalyn
 	name = "Ryetalyn pill packet"
 	desc = "This packet containts Ryetalyn pills. Used to provide a shield against bloodstream toxins. Once you take them out they don't go back in. No more than 2 pills at once."
 	pill_type_to_fill = /obj/item/reagent_containers/pill/ryetalyn
+
+/obj/item/storage/pill_bottle/packet/imidazoline
+	name = "Imidazoline pill packet"
+	desc = "This packet containts Imidazoline pills. Contains pills that heal eye damage. Once you take them out they don't go back in."
+	pill_type_to_fill = /obj/item/reagent_containers/pill/imidazoline
+
+/obj/item/storage/pill_bottle/packet/alkysine
+	name = "Alkysine pill packet"
+	desc = "This packet containts Alkysine pills. Contains pills that heal brain damage. Once you take them out they don't go back in."
+	pill_type_to_fill = /obj/item/reagent_containers/pill/alkysine
+
+/obj/item/storage/pill_bottle/packet/emergency
+	name = "Emergency pill packet"
+	desc = "This packet contains Emergency pills. Used to treat a huge number of injuries. Once you take them out they don't go back in. Do not use in combat."
+	pill_type_to_fill = /obj/item/reagent_containers/pill/emergency

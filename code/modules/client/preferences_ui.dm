@@ -136,6 +136,7 @@
 		"citizenships" = CITIZENSHIP_CHOICES,
 		"religions" = RELIGION_CHOICES,
 		"corporate_relations" = CORP_RELATIONS,
+		"survivor" = SURVIVOR_TYPE,
 		"squads" = SELECTABLE_SQUADS,
 		"clothing" = list(
 			"underwear" = list(
