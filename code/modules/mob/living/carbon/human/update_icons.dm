@@ -72,16 +72,26 @@ There are several things that need to be remembered:
 /mob/living/carbon/human/apply_overlay(cache_index)
 	var/list/to_add = list()
 	SEND_SIGNAL(src, COMSIG_HUMAN_APPLY_OVERLAY, cache_index, to_add)
-	var/image/I = overlays_standing[cache_index]
-	if(I)
-		to_add += I
+	if(islist(overlays_standing[cache_index]))
+		for(var/i in overlays_standing[cache_index])
+			var/image/I = i
+			to_add += I
+	else
+		var/image/I = overlays_standing[cache_index]
+		if(I)
+			to_add += I
 	overlays += to_add
 
 /mob/living/carbon/human/remove_overlay(cache_index)
 	var/list/to_remove = list()
 	SEND_SIGNAL(src, COMSIG_HUMAN_REMOVE_OVERLAY, cache_index, to_remove)
 	if(overlays_standing[cache_index])
-		to_remove += overlays_standing[cache_index]
+		if(islist(overlays_standing[cache_index]))
+			for(var/i in overlays_standing[cache_index])
+				var/image/I = i
+				to_remove += I
+		else
+			to_remove += overlays_standing[cache_index]
 		overlays_standing[cache_index] = null
 	overlays -= to_remove
 
@@ -168,12 +178,6 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	//CACHING: Generate an index key from visible bodyparts.
 	//0 = destroyed, 1 = normal, 2 = robotic, 3 = necrotic.
 
-	//Create a new, blank icon for our mob to use.
-	if(stand_icon)
-		qdel(stand_icon)
-
-	stand_icon = new(species.icon_template ? species.icon_template : 'icons/mob/human.dmi',"blank")
-
 	var/icon_key = "[species.race_key][g][ethnicity]"
 	for(var/datum/limb/part in limbs)
 
@@ -189,108 +193,129 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		else
 			icon_key = "[icon_key]1"
 
-	icon_key = "[icon_key][0][0][0][0][ethnicity]"
+	if(species.species_flags & HAS_SKIN_COLOR)
+		icon_key += "-[features["mcolor"]]"
 
-	var/icon/base_icon
-	if(!force_cache_update && GLOB.human_icon_cache[icon_key])
-		//Icon is cached, use existing icon.
-		base_icon = GLOB.human_icon_cache[icon_key]
+	icon_key = "[icon_key][ethnicity][species.name]"
 
-		//log_debug("Retrieved cached mob icon ([icon_key] \icon[GLOB.human_icon_cache[icon_key]]) for [src].")
+	if(bodyparts_render_key != icon_key)
+		var/icon/stand_icon = new(species.icon_template ? species.icon_template : 'icons/mob/human.dmi',"blank")
 
-	else
+		bodyparts_render_key = icon_key
 
-	//BEGIN CACHED ICON GENERATION.
+		remove_overlay(BODYPARTS_LAYER)
 
-		// Why don't we just make skeletons/shadows/golems a species? ~Z
-		var/race_icon =   species.icobase
-		var/deform_icon = species.icobase
+		var/icon/base_icon
+		if(!force_cache_update && GLOB.human_icon_cache[icon_key])
+			//Icon is cached, use existing icon.
+			base_icon = GLOB.human_icon_cache[icon_key]
 
-		//Robotic limbs are handled in get_icon() so all we worry about are missing or dead limbs.
-		//No icon stored, so we need to start with a basic one.
-		var/datum/limb/chest = get_limb("chest")
-		base_icon = chest.get_icon(race_icon,deform_icon,g)
+				//log_debug("Retrieved cached mob icon ([icon_key] \icon[GLOB.human_icon_cache[icon_key]]) for [src].")
 
-		if(chest.limb_status & LIMB_NECROTIZED)
-			base_icon.ColorTone(necrosis_color_mod)
-			base_icon.SetIntensity(0.7)
+		else
 
-		for(var/datum/limb/part in limbs)
+		//BEGIN CACHED ICON GENERATION.
 
-			var/icon/temp //Hold the bodypart icon for processing.
+			// Why don't we just make skeletons/shadows/golems a species? ~Z
+			var/race_icon =   species.icobase
+			var/deform_icon = species.icobase
 
-			if(part.limb_status & LIMB_DESTROYED)
-				continue
+			//Robotic limbs are handled in get_icon() so all we worry about are missing or dead limbs.
+			//No icon stored, so we need to start with a basic one.
+			var/datum/limb/chest = get_limb("chest")
+			base_icon = chest.get_icon(race_icon,deform_icon,g)
+			if(chest.limb_status & LIMB_NECROTIZED)
+				base_icon.ColorTone(necrosis_color_mod)
+				base_icon.SetIntensity(0.7)
 
-			if(istype(part, /datum/limb/chest)) //already done above
-				continue
+			for(var/datum/limb/part in limbs)
 
-			if (istype(part, /datum/limb/groin) || istype(part, /datum/limb/head))
-				temp = part.get_icon(race_icon,deform_icon,g)
-			else
-				temp = part.get_icon(race_icon,deform_icon)
-
-			if(part.limb_status & LIMB_NECROTIZED)
-				temp.ColorTone(necrosis_color_mod)
-				temp.SetIntensity(0.7)
+				var/icon/temp //Hold the bodypart icon for processing.
 
 			//That part makes left and right legs drawn topmost and lowermost when human looks WEST or EAST
 			//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
-			if(part.icon_position&(LEFT|RIGHT))
+				if(part.limb_status & LIMB_DESTROYED)
+					continue
 
-				var/icon/temp2 = new('icons/mob/human.dmi',"blank")
+				if(istype(part, /datum/limb/chest)) //already done above
+					continue
 
-				temp2.Insert(new/icon(temp,dir=NORTH),dir=NORTH)
-				temp2.Insert(new/icon(temp,dir=SOUTH),dir=SOUTH)
+				if (istype(part, /datum/limb/groin) || istype(part, /datum/limb/head))
+					temp = part.get_icon(race_icon,deform_icon,g)
+				else
+					temp = part.get_icon(race_icon,deform_icon)
 
-				if(!(part.icon_position & LEFT))
-					temp2.Insert(new/icon(temp,dir=EAST),dir=EAST)
+				if(part.limb_status & LIMB_NECROTIZED)
+					temp.ColorTone(necrosis_color_mod)
+					temp.SetIntensity(0.7)
 
-				if(!(part.icon_position & RIGHT))
-					temp2.Insert(new/icon(temp,dir=WEST),dir=WEST)
+				//That part makes left and right legs drawn topmost and lowermost when human looks WEST or EAST
+				//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
+				if(part.icon_position&(LEFT|RIGHT))
 
-				base_icon.Blend(temp2, ICON_OVERLAY)
+					var/icon/temp2 = new('icons/mob/human.dmi',"blank")
 
-				if(part.icon_position & LEFT)
-					temp2.Insert(new/icon(temp,dir=EAST),dir=EAST)
+					temp2.Insert(new/icon(temp,dir=NORTH),dir=NORTH)
+					temp2.Insert(new/icon(temp,dir=SOUTH),dir=SOUTH)
 
-				if(part.icon_position & RIGHT)
-					temp2.Insert(new/icon(temp,dir=WEST),dir=WEST)
+					if(!(part.icon_position & LEFT))
+						temp2.Insert(new/icon(temp,dir=EAST),dir=EAST)
 
-				base_icon.Blend(temp2, ICON_UNDERLAY)
+					if(!(part.icon_position & RIGHT))
+						temp2.Insert(new/icon(temp,dir=WEST),dir=WEST)
 
-			else
+					base_icon.Blend(temp2, ICON_OVERLAY)
 
-				base_icon.Blend(temp, ICON_OVERLAY)
+					if(part.icon_position & LEFT)
+						temp2.Insert(new/icon(temp,dir=EAST),dir=EAST)
 
-		GLOB.human_icon_cache[icon_key] = base_icon
+					if(part.icon_position & RIGHT)
+						temp2.Insert(new/icon(temp,dir=WEST),dir=WEST)
 
-		//log_debug("Generated new cached mob icon ([icon_key] \icon[GLOB.human_icon_cache[icon_key]]) for [src]. [GLOB.human_icon_cache.len] cached mob icons.")
+					base_icon.Blend(temp2, ICON_UNDERLAY)
+
+				else
+
+					base_icon.Blend(temp, ICON_OVERLAY)
 
 	//END CACHED ICON GENERATION.
 
-	stand_icon.Blend(base_icon,ICON_OVERLAY)
+			GLOB.human_icon_cache[icon_key] = base_icon
 
-	/*
-	//Skin colour. Not in cache because highly variable (and relatively benign).
-	if (species.species_flags & HAS_SKIN_COLOR)
-		stand_icon.Blend(rgb(r_skin, g_skin, b_skin), ICON_ADD)
-	*/
+			//log_debug("Generated new cached mob icon ([icon_key] \icon[GLOB.human_icon_cache[icon_key]]) for [src]. [GLOB.human_icon_cache.len] cached mob icons.")
 
-	if(has_head)
-		//Eyes
-		var/icon/eyes = new/icon('icons/mob/human_face.dmi', species.eyes)
-		eyes.Blend(rgb(r_eyes, g_eyes, b_eyes), ICON_ADD)
-		stand_icon.Blend(eyes, ICON_OVERLAY)
+		//END CACHED ICON GENERATION.
+		stand_icon.Blend(base_icon,ICON_OVERLAY)
 
-		//Mouth	(lipstick!)
-		if(lip_style && (species?.species_flags & HAS_LIPS))	//skeletons are allowed to wear lipstick no matter what you think, agouri.
-			stand_icon.Blend(new/icon('icons/mob/human_face.dmi', "camo_[lip_style]_s"), ICON_OVERLAY)
+		//Skin colour. Is in cache
+		if (species.species_flags & HAS_SKIN_COLOR)
+			stand_icon.Blend("#"+features["mcolor"], ICON_MULTIPLY)
 
+		if(has_head)
+			//Eyes
+			var/icon/eyes = new/icon('icons/mob/human_face.dmi', species.eyes)
+			eyes.Blend(rgb(r_eyes, g_eyes, b_eyes), ICON_ADD)
+			stand_icon.Blend(eyes, ICON_OVERLAY)
 
-	if(species.species_flags & HAS_UNDERWEAR)
+			//Mouth	(lipstick!)
+			if(lip_style && (species?.species_flags & HAS_LIPS))	//skeletons are allowed to wear lipstick no matter what you think, agouri.
+				stand_icon.Blend(new/icon('icons/mob/human_face.dmi', "camo_[lip_style]_s"), ICON_OVERLAY)
 
+		icon = null
+		overlays_standing[BODYPARTS_LAYER] = image(stand_icon, layer = -BODYPARTS_LAYER)
+		apply_overlay(BODYPARTS_LAYER)
+
+	species?.update_body(src)
+	update_body_markings()
+	update_mutant_bodyparts()
+	update_underwear()
+
+/mob/living/carbon/human/proc/update_underwear()
+	remove_overlay(UNDERWEAR_LAYER)
+	if(species.species_flags & HAS_UNDERWEAR && show_underwear)
 		//Underwear
+		var/g = (gender == FEMALE) ? "f" : "m"
+		var/icon/stand_icon = new('icons/mob/human.dmi',"blank")
 		if(underwear == 1)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "blank"), ICON_OVERLAY)
 		else if(underwear == 2 || underwear == 3)
@@ -301,11 +326,207 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 				stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
 		else if(undershirt > 0 && undershirt < 7)
 			stand_icon.Blend(new /icon('icons/mob/human.dmi', "cryoshirt[undershirt]_s"), ICON_OVERLAY)
+		overlays_standing[UNDERWEAR_LAYER] = image(stand_icon, layer = -UNDERWEAR_LAYER)
+		apply_overlay(UNDERWEAR_LAYER)
 
-	icon = stand_icon
+/mob/living/carbon/human/proc/update_body_markings(forced_colour)
+	if(!body_markings)
+		remove_overlay(BODY_MARKINGS_LAYER)
+		return
+	var/g = (gender == FEMALE) ? "f" : "m"
+	remove_overlay(BODY_MARKINGS_LAYER)
+	var/override_color
+	var/list/standing = list()
+	for(var/datum/limb/part in limbs)
+		var/body_zone = GLOB.bitflag_limb_to_string["[part.body_part]"]
+		if(!body_markings[body_zone])
+			continue
+		for(var/key in body_markings[body_zone])
+			var/datum/body_marking/BM = GLOB.body_markings[key]
+			var/render_limb_string = body_zone
+			switch(body_zone)
+				/*
+				if(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+					if(use_digitigrade)
+						render_limb_string = "digitigrade_[use_digitigrade]_[render_limb_string]"
+				*/
+				if(BODY_ZONE_CHEST)
+					if(BM.gendered)
+						render_limb_string = "[render_limb_string]_[g]"
+			var/mutable_appearance/accessory_overlay = mutable_appearance(BM.icon, "[BM.icon_state]_[render_limb_string]", -BODY_MARKINGS_LAYER)
+			if(override_color)
+				accessory_overlay.color = "#[override_color]"
+			else
+				accessory_overlay.color = "#[body_markings[body_zone][key]]"
+			standing += accessory_overlay
+	overlays_standing[BODY_MARKINGS_LAYER] = standing
+	apply_overlay(BODY_MARKINGS_LAYER)
 
-	species?.update_body(src)
-	update_tail_showing()
+/mob/living/carbon/human/proc/update_mutant_bodyparts(forced_colour)
+	if(!mutant_bodyparts)
+		remove_overlay(BODY_BEHIND_LAYER)
+		remove_overlay(BODY_ADJ_LAYER)
+		remove_overlay(BODY_FRONT_LAYER)
+		return
+	var/g = (gender == FEMALE) ? "f" : "m"
+
+	var/list/bodyparts_to_add = list()
+	var/new_renderkey = "[species.name]"
+
+	for(var/key in mutant_bodyparts)
+		var/datum/mutant_accessory/S = GLOB.mutant_accessories[key][mutant_bodyparts[key][MUTANT_INDEX_NAME]]
+		if(!S || S.icon_state == "none")
+			continue
+		if(S.is_hidden(src))
+			continue
+		var/render_state
+		if(S.special_render_case)
+			render_state = S.get_special_render_state(src)
+		else
+			render_state = S.icon_state
+		new_renderkey += "-[key]-[render_state]"
+		bodyparts_to_add[S] = render_state
+
+	if(new_renderkey == mutant_parts_render_key)
+		return
+
+	mutant_parts_render_key = new_renderkey
+
+	remove_overlay(BODY_BEHIND_LAYER)
+	remove_overlay(BODY_ADJ_LAYER)
+	remove_overlay(BODY_FRONT_LAYER)
+
+	var/list/standing	= list()
+
+	var/specific_alpha = species.specific_alpha
+
+	for(var/bodypart in bodyparts_to_add)
+		var/datum/mutant_accessory/S = bodypart
+		var/key = S.key
+
+		var/x_shift = S.dimension_x
+		var/render_state = bodyparts_to_add[S]
+
+		var/override_color = forced_colour
+		if(!override_color && S.special_colorize)
+			override_color = S.get_special_render_colour(src, render_state)
+
+		if(S.gender_specific)
+			render_state = "[g]_[key]_[render_state]"
+		else
+			render_state = "m_[key]_[render_state]"
+
+		for(var/layer in S.relevent_layers)
+			var/layertext = mutant_bodyparts_layertext(layer)
+
+			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+
+			accessory_overlay.icon_state = "[render_state]_[layertext]"
+
+			if(S.center)
+				accessory_overlay = center_image(accessory_overlay, x_shift, S.dimension_y)
+
+
+			if(!override_color)
+				/*
+				if(HAS_TRAIT(src, TRAIT_HUSK))
+					if(S.color_src == USE_MATRIXED_COLORS) //Matrixed+husk needs special care, otherwise we get sparkle dogs
+						accessory_overlay.color = HUSK_COLOR_LIST
+					else
+						accessory_overlay.color = "#AAA" //The gray husk color
+				else
+				*/
+				switch(S.color_src)
+					if(USE_ONE_COLOR)
+						accessory_overlay.color = "#"+mutant_bodyparts[key][MUTANT_INDEX_COLOR_LIST][1]
+					if(USE_MATRIXED_COLORS)
+						var/list/color_list = mutant_bodyparts[key][MUTANT_INDEX_COLOR_LIST]
+						var/alpha_value = specific_alpha //this is here and not with the alpha setting code below as setting the alpha on a matrix color mutable appearance breaks it (at least in this case)
+						var/list/finished_list = list()
+						finished_list += ReadRGB("[color_list[1]]00")
+						finished_list += ReadRGB("[color_list[2]]00")
+						finished_list += ReadRGB("[color_list[3]]00")
+						finished_list += list(0,0,0,alpha_value)
+						for(var/index in 1 to finished_list.len)
+							finished_list[index] /= 255
+						accessory_overlay.color = finished_list
+					if(MUTCOLORS)
+						accessory_overlay.color = "#[features["mcolor"]]"
+					if(HAIR)
+						accessory_overlay.color = "[rgb(r_hair, g_hair, b_hair)]"
+					if(FACEHAIR)
+						accessory_overlay.color = "[rgb(r_facial, g_facial, b_facial)]"
+					if(EYECOLOR)
+						accessory_overlay.color = "[rgb(r_eyes, g_eyes, b_eyes)]"
+			else
+				accessory_overlay.color = override_color
+			standing += accessory_overlay
+
+			//Here's EXTRA parts of accessories which I should get rid of sometime TODO i guess
+			if(S.extra) //apply the extra overlay, if there is one
+				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+				if(S.gender_specific)
+					extra_accessory_overlay.icon_state = "[g]_[key]_extra_[S.icon_state]_[layertext]"
+				else
+					extra_accessory_overlay.icon_state = "m_[key]_extra_[S.icon_state]_[layertext]"
+				if(S.center)
+					extra_accessory_overlay = center_image(extra_accessory_overlay, S.dimension_x, S.dimension_y)
+
+
+				switch(S.extra_color_src) //change the color of the extra overlay
+					if(MUTCOLORS)
+						extra_accessory_overlay.color = "#[features["mcolor"]]"
+					if(MUTCOLORS2)
+						extra_accessory_overlay.color = "#[features["mcolor2"]]"
+					if(MUTCOLORS3)
+						extra_accessory_overlay.color = "#[features["mcolor3"]]"
+					if(HAIR)
+						accessory_overlay.color = "[rgb(r_hair, g_hair, b_hair)]"
+					if(FACEHAIR)
+						accessory_overlay.color = "[rgb(r_facial, g_facial, b_facial)]"
+					if(EYECOLOR)
+						accessory_overlay.color = "[rgb(r_eyes, g_eyes, b_eyes)]"
+
+				standing += extra_accessory_overlay
+
+			if(S.extra2) //apply the extra overlay, if there is one
+				var/mutable_appearance/extra2_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+				if(S.gender_specific)
+					extra2_accessory_overlay.icon_state = "[g]_[key]_extra2_[S.icon_state]_[layertext]"
+				else
+					extra2_accessory_overlay.icon_state = "m_[key]_extra2_[S.icon_state]_[layertext]"
+				if(S.center)
+					extra2_accessory_overlay = center_image(extra2_accessory_overlay, S.dimension_x, S.dimension_y)
+
+				switch(S.extra2_color_src) //change the color of the extra overlay
+					if(MUTCOLORS)
+						extra2_accessory_overlay.color = "#[features["mcolor"]]"
+					if(MUTCOLORS2)
+						extra2_accessory_overlay.color = "#[features["mcolor2"]]"
+					if(MUTCOLORS3)
+						extra2_accessory_overlay.color = "#[features["mcolor3"]]"
+					if(HAIR)
+						accessory_overlay.color = "[rgb(r_hair, g_hair, b_hair)]"
+					if(FACEHAIR)
+						accessory_overlay.color = "[rgb(r_facial, g_facial, b_facial)]"
+					if(EYECOLOR)
+						accessory_overlay.color = "[rgb(r_eyes, g_eyes, b_eyes)]"
+
+				standing += extra2_accessory_overlay
+			if (specific_alpha != 255 && !override_color)
+				for (var/ov in standing)
+					var/image/overlay = ov
+					if (!istype(overlay.color,/list)) //check for a list because setting the alpha of the matrix colors breaks the color (the matrix alpha is set above inside the matrix)
+						overlay.alpha = specific_alpha
+
+			overlays_standing[layer] += standing
+			standing = list()
+
+	apply_overlay(BODY_BEHIND_LAYER)
+	apply_overlay(BODY_ADJ_LAYER)
+	apply_overlay(BODY_FRONT_LAYER)
+
+	return //
 
 //HAIR OVERLAY
 /mob/living/carbon/human/proc/update_hair()
@@ -395,13 +616,16 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	UpdateDamageIcon()
 	update_transform()
 	update_headbite()
-
+	update_underwear()
+	update_mutant_bodyparts()
+	update_body_markings()
 
 /* --------------------------------------- */
 //vvvvvv UPDATE_INV PROCS vvvvvv
 
 /mob/living/carbon/human/update_inv_w_uniform()
 	remove_overlay(UNIFORM_LAYER)
+	update_mutant_bodyparts()
 	if(!w_uniform)
 		return
 	if(client && hud_used?.hud_shown && hud_used.inventory_shown)
@@ -524,6 +748,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 /mob/living/carbon/human/update_inv_head()
 	remove_overlay(HEAD_LAYER)
+	update_mutant_bodyparts()
 	if(!head)
 		return
 
@@ -552,7 +777,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 /mob/living/carbon/human/update_inv_wear_suit()
 	remove_overlay(SUIT_LAYER)
-	update_tail_showing()
+	update_mutant_bodyparts()
 	species?.update_inv_wear_suit(src)
 	if(!wear_suit)
 		return
@@ -639,19 +864,6 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	overlays_standing[L_HAND_LAYER] = l_hand.make_worn_icon(body_type = species.name, inhands = TRUE, slot_name = slot_l_hand_str, default_icon = 'icons/mob/items_lefthand_0.dmi', default_layer = L_HAND_LAYER)
 	apply_overlay(L_HAND_LAYER)
 
-
-/mob/living/carbon/human/proc/update_tail_showing()
-	remove_overlay(TAIL_LAYER)
-	if(!species.tail)
-		return
-	if(istype(wear_suit, /obj/item/clothing/suit/space) || (wear_suit.flags_inv_hide & HIDETAIL))
-		return
-	var/icon/tail_s = new/icon("icon" = 'icons/effects/species.dmi', "icon_state" = "[species.tail]_s")
-	tail_s.Blend(rgb(r_skin, g_skin, b_skin), ICON_ADD)
-	overlays_standing[TAIL_LAYER]	= image(tail_s, layer = -TAIL_LAYER)
-	apply_overlay(TAIL_LAYER)
-
-
 // Used mostly for creating head items
 /mob/living/carbon/human/proc/generate_head_icon()
 //gender no longer matters for the mouth, although there should probably be seperate base head icons.
@@ -704,3 +916,14 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 			if(15 to 20) overlays_standing[FIRE_LAYER] = image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing_medium", "layer"=-FIRE_LAYER)
 
 		apply_overlay(FIRE_LAYER)
+
+//This exists so sprite accessories can still be per-layer without having to include that layer's
+//number in their sprite name, which causes issues when those numbers change.
+/proc/mutant_bodyparts_layertext(layer)
+	switch(layer)
+		if(BODY_BEHIND_LAYER)
+			return "BEHIND"
+		if(BODY_ADJ_LAYER)
+			return "ADJ"
+		if(BODY_FRONT_LAYER)
+			return "FRONT"

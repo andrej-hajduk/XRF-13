@@ -230,6 +230,20 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	accurate_range = 5
 	sundering = 1.65
 
+/datum/ammo/bullet/pistol/polymer
+	name = "pistol polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "pistol_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/pistol/polymer/on_hit_mob(mob/M, obj/projectile/P)
+	staggerstun(M, P, slowdown = 0.2)
+
 /datum/ammo/bullet/pistol/tiny
 	name = "light pistol bullet"
 	hud_state = "pistol_light"
@@ -286,6 +300,20 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	shrapnel_chance = 25
 	sundering = 2.15
 
+/datum/ammo/bullet/pistol/heavy/polymer
+	name = "heavy pistol polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "pistol_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/pistol/polymer/heavy/on_hit_mob(mob/M, obj/projectile/P)
+	staggerstun(M, P, slowdown = 0.4)
+
 /datum/ammo/bullet/pistol/incendiary
 	name = "incendiary pistol bullet"
 	hud_state = "pistol_fire"
@@ -332,6 +360,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state = "revolver"
 	hud_state_empty = "revolver_empty"
 	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	handful_amount = 7
 	damage = 40
 	penetration = 10
 	sundering = 3
@@ -341,6 +370,21 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 		staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1)
 	else
 		staggerstun(M, P, slowdown = 0.5)
+
+/datum/ammo/bullet/revolver/polymer
+	name = "revolver polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "revolver_pgr"
+	hud_state_empty = "revolver_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/revolver/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, stagger = 1, slowdown = 1)
 
 /datum/ammo/bullet/revolver/small
 	name = "small revolver bullet"
@@ -374,6 +418,20 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	sundering = 3
 
 /datum/ammo/bullet/revolver/highimpact/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
+
+/datum/ammo/bullet/revolver/highimpact/polymer
+	name = "high-impact polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "revolver_impact_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/revolver/highimpact/polymer/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
 
 
@@ -438,6 +496,19 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	sundering = 0.5
 	penetration = 5
 
+/datum/ammo/bullet/smg/polymer
+	name = "submachinegun polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "smg_pgr"
+	hud_state_empty = "smg_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	penetration = 10
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/smg/ap
 	name = "armor-piercing submachinegun bullet"
 	hud_state = "smg_ap"
@@ -461,6 +532,18 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	penetration = 5
 	sundering = 0.5
 
+/datum/ammo/bullet/rifle/polymer
+	name = "rifle polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "rifle_pgr"
+	hud_state_empty = "rifle_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/ap
 	name = "armor-piercing rifle bullet"
 	hud_state = "rifle_ap"
@@ -475,6 +558,17 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	penetration = 10
 	sundering = 1
 
+/datum/ammo/bullet/rifle/hv/polymer
+	name = "high-velocity polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "hivelo_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/incendiary
 	name = "incendiary rifle bullet"
 	hud_state = "rifle_fire"
@@ -488,6 +582,17 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state = "rifle_heavy"
 	damage = 20
 	penetration = 10
+
+/datum/ammo/bullet/rifle/machinegun/polymer
+	name = "machinegun polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "rifle_heavy_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
 
 /datum/ammo/bullet/rifle/tx8
 	name = "A19 high velocity bullet"
@@ -543,6 +648,17 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	penetration = 15
 	sundering = 2
 
+/datum/ammo/bullet/rifle/standard_dmr/polymer
+	name = "marksman polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "hivelo_pgr"
+	hud_state_empty = "hivelo_empty"
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/standard_dmr/incendiary
 	name = "incendiary marksman bullet"
 	hud_state = "hivelo_fire"
@@ -586,17 +702,25 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state = "shotgun_beanbag"
 	flags_ammo_behavior = AMMO_BALLISTIC
 	max_range = 15
+	damage = 80
+	damage_type = STAMINA
 	shrapnel_chance = 0
 	accuracy = 15
 
 /datum/ammo/bullet/shotgun/beanbag/on_hit_mob(mob/M, obj/projectile/P)
-	if(!M || M == P.firer)
-		return
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.species?.count_human) //no effect on synths
-			H.apply_effects(6,8)
-		shake_camera(H, 2, 1)
+		staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 2)
+
+/datum/ammo/bullet/shotgun/beanbag/large
+	name = "beanbag slug"
+	handful_icon_state = "beanbag slug"
+	icon_state = "beanbag"
+	hud_state = "shotgun_beanbag"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage = 130
+	accuracy = 20
+
+/datum/ammo/bullet/shotgun/beanbag/large/on_hit_mob(mob/M, obj/projectile/P)
+		staggerstun(M, P, weaken = 2, stagger = 2, knockback = 1, slowdown = 2)
 
 /datum/ammo/bullet/shotgun/incendiary
 	name = "incendiary slug"

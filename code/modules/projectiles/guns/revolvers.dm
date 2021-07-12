@@ -506,6 +506,10 @@
 	icon_state = "mateba"
 	item_state = "mateba"
 
+/obj/item/weapon/gun/revolver/mateba/polymer
+	caliber = CALIBER_454
+	current_mag = /obj/item/ammo_magazine/internal/revolver/mateba/polymer
+
 //-------------------------------------------------------
 //MARSHALS REVOLVER
 

@@ -158,6 +158,14 @@ GLOBAL_LIST_EMPTY(randomized_pill_icons)
 		var/datum/namepool/NP = new path
 		GLOB.namepool[path] = NP
 
+	//SKYRAT EDIT ADDITION BEGIN
+	//Scream types
+	for(var/spath in subtypesof(/datum/scream_type))
+		var/datum/scream_type/S = new spath()
+		GLOB.scream_types[S.name] = spath
+	sortList(GLOB.scream_types)
+	//SKYRAT EDIT END
+
 	return TRUE
 
 

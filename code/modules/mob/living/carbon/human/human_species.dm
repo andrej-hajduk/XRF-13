@@ -20,23 +20,11 @@
 /mob/living/carbon/human/species/skrell
 	race = "Skrell"
 
-/datum/species/skrell/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
-	H.h_style = "Skrell Male Tentacles"
-
 /mob/living/carbon/human/species/tajaran
 	race = "Tajara"
 
-/datum/species/tajaran/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
-	H.h_style = "Tajaran Ears"
-
 /mob/living/carbon/human/species/unathi
 	race = "Unathi"
-
-/datum/species/unathi/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
-	H.h_style = "Unathi Horns"
 
 /mob/living/carbon/human/species/vox
 	race = "Vox"
@@ -67,10 +55,6 @@
 
 /mob/living/carbon/human/species/moth
 	race = "Moth"
-
-/datum/species/moth/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
-	H.moth_wings = pick(GLOB.moth_wings_list - "Burnt Off")
 
 /mob/living/carbon/human/species/vatgrown
 	race = "Vat-Grown"

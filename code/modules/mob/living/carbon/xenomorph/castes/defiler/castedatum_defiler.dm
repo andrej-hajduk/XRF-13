@@ -59,6 +59,7 @@
 		/datum/reagent/toxin/xeno_hemodile,
 		/datum/reagent/toxin/xeno_transvitox,
 		/datum/reagent/toxin/xeno_neurotoxin,
+		/datum/reagent/drug/aphrodisiac,
 	)
 
 	// *** Pheromones *** //

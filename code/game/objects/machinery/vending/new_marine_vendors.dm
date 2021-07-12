@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 
 			use_power(active_power_usage)
 
-			if(bitf == MARINE_CAN_BUY_UNIFORM && ishumanbasic(usr))
+			if(bitf == MARINE_CAN_BUY_UNIFORM)
 				var/mob/living/carbon/human/H = usr
 				new /obj/item/radio/headset/mainship/marine(loc, H.assigned_squad, vendor_role)
 				if(!istype(H.job, /datum/job/terragov/squad/engineer))
@@ -263,7 +263,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 				if(SSmapping.configs[GROUND_MAP].environment_traits[MAP_COLD])
 					new /obj/item/clothing/mask/rebreather/scarf(loc)
 
-			if(bitf == MARINE_CAN_BUY_ESSENTIALS && vendor_role == /datum/job/terragov/squad/specialist && ishuman(usr))
+			if(bitf == MARINE_CAN_BUY_ESSENTIALS && vendor_role == /datum/job/terragov/squad/specialist)
 				var/mob/living/carbon/human/H = usr
 				if(ismarinespecjob(H.job))
 					var/p_name = L[2]

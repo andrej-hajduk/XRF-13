@@ -5788,6 +5788,7 @@
 /obj/machinery/power/monitor{
 	name = "Core Power Monitoring"
 	},
+/obj/structure/cable,
 /turf/open/floor/mainship/orange{
 	dir = 4
 	},
@@ -13300,6 +13301,7 @@
 /obj/machinery/power/monitor{
 	name = "Main Power Grid Monitoring"
 	},
+/obj/structure/cable,
 /turf/open/floor/mainship/orange{
 	dir = 8
 	},
@@ -13330,6 +13332,12 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
+"mJw" = (
+/obj/structure/table/mainship,
+/obj/item/fuelCell/full,
+/obj/structure/cable,
+/turf/open/floor/mainship/cargo,
+/area/mainship/engineering/engine_core)
 "mJN" = (
 /obj/machinery/light{
 	dir = 8
@@ -16408,6 +16416,12 @@
 	dir = 1
 	},
 /area/mainship/squads/delta)
+"tCt" = (
+/obj/structure/window/framed/mainship,
+/obj/machinery/door/firedoor/mainship,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/mainship/engineering/lower_engine_monitoring)
 "tDu" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/mainship,
@@ -71823,7 +71837,7 @@ bpX
 buZ
 bpX
 byy
-byy
+tCt
 byy
 bpX
 bIU
@@ -72080,7 +72094,7 @@ bxQ
 fCi
 qod
 foQ
-syT
+mJw
 foQ
 mJN
 bTG
@@ -72337,7 +72351,7 @@ bvd
 cKb
 bvd
 bvd
-bvd
+bBi
 bvd
 bBi
 loE

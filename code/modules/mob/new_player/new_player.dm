@@ -327,7 +327,7 @@
 
 /mob/living/carbon/human/on_spawn(mob/new_player/summoner)
 	if(!is_banned_from(summoner.ckey, "Appearance") && summoner.client)
-		summoner.client.prefs.copy_to(src)
+		summoner.client.prefs.copy_to(src, is_synth = summoner.assigned_role.title == SYNTHETIC)
 	update_names_joined_list(real_name)
 	overlay_fullscreen_timer(0.5 SECONDS, 10, "roundstart1", /obj/screen/fullscreen/black)
 	overlay_fullscreen_timer(2 SECONDS, 20, "roundstart2", /obj/screen/fullscreen/spawning_in)

@@ -14,9 +14,10 @@
 	var/larva_autoburst_countdown = 20
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/admin = FALSE
+	var/emerge_target
 
 
-/obj/item/alien_embryo/Initialize()
+/obj/item/alien_embryo/Initialize(mapload, emerging_target)
 	. = ..()
 	if(!isliving(loc))
 		return
@@ -27,6 +28,7 @@
 	if(iscarbon(affected_mob))
 		var/mob/living/carbon/C = affected_mob
 		C.med_hud_set_status()
+	emerge_target = emerging_target
 
 
 /obj/item/alien_embryo/Destroy()
@@ -56,7 +58,7 @@
 
 	if(affected_mob.stat == DEAD)//DEAD CODE TO BE REMOVED
 		if(ishuman(affected_mob))
-			if(!HAS_TRAIT(affected_mob, TRAIT_UNDEFIBBABLE)) 
+			if(!HAS_TRAIT(affected_mob, TRAIT_UNDEFIBBABLE))
 				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
 				L?.initiate_burst(affected_mob)
 				return PROCESS_KILL
@@ -111,7 +113,7 @@
 				if(!affected_mob.IsUnconscious())
 					affected_mob.visible_message("<span class='danger'>\The [affected_mob] starts shaking uncontrollably!</span>", \
 												"<span class='danger'>You start shaking uncontrollably!</span>")
-					affected_mob.Unconscious(20 SECONDS)
+					affected_mob.Unconscious(10 SECONDS)
 					affected_mob.jitter(105)
 					affected_mob.take_limb_damage(1)
 			if(prob(2))
@@ -120,7 +122,7 @@
 			become_larva()
 		if(6)
 			larva_autoburst_countdown--
-			if(!larva_autoburst_countdown)
+			if(larva_autoburst_countdown <= 0)
 				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
 				L?.initiate_burst(affected_mob)
 
@@ -164,11 +166,11 @@
 		return
 
 	victim.larva_birthing = TRUE
-	to_chat(src, "<span class='danger'>We start slithering up [victim]'s throat!</span>")
+	to_chat(src, "<span class='danger'>We start slithering out of [victim]!</span>")
+	var/obj/item/alien_embryo/birth_owner = locate() in victim
 
 	victim.visible_message("<span class='danger'>\The [victim] starts shaking uncontrollably!</span>", \
-								"<span class='danger'>You feel something climbing up your throat!</span>")
-	victim.Unconscious(20 SECONDS)
+								"<span class='danger'>You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!</span>")
 	victim.jitter(300)
 
 	playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 25, TRUE)
@@ -189,11 +191,11 @@
 		V.handle_player_exit(src)
 	else
 		forceMove(get_turf(victim)) //moved to the turf directly so we don't get stuck inside a cryopod or another mob container.
+	var/obj/item/alien_embryo/AE = locate() in victim
 	playsound(src, pick('sound/voice/alien_chestburst.ogg', 'sound/voice/alien_chestburst2.ogg'), 25)
-	victim.visible_message("<span class='danger'>The Larva forces its way out of [victim]'s mouth!</span>")
+	victim.visible_message("<span class='danger'>The Larva forces its way out of [victim]'s [AE.emerge_target]!</span>")
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
-	var/obj/item/alien_embryo/AE = locate() in victim
 
 	if(AE)
 		qdel(AE)

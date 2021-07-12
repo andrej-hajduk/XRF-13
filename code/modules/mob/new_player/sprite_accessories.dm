@@ -71,7 +71,7 @@
 */
 
 /datum/sprite_accessory/hair
-	species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Synthetic","Early Synthetic", "Vat-Grown", "Vatborn")
+	species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Synthetic","Early Synthetic", "Vat-Grown", "Vatborn", SKYRAT_HAIR_ELIGIBLE_SPECIES)
 	icon = 'icons/mob/Human_face.dmi'
 
 /datum/sprite_accessory/hair/bald
@@ -1207,7 +1207,7 @@
 	name = "Shaved"
 	icon_state = "bald"
 	gender = NEUTER
-	species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Synthetic", "Early Synthetic", "Vat-Grown", "Vatborn")
+	species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Synthetic", "Early Synthetic", "Vat-Grown", "Vatborn", SKYRAT_FACE_HAIR_ELIGIBLE_SPECIES)
 
 /datum/sprite_accessory/facial_hair/watson
 	name = "Watson Mustache"
@@ -1481,7 +1481,7 @@
 /datum/sprite_accessory/skin/tajaran
 	name = "Default tajaran skin"
 	icon_state = "default"
-	icon = 'icons/mob/human_races/r_tajaran.dmi'
+	icon = 'icons/mob/human_races/r_mammal.dmi'
 	species_allowed = list("Tajara")
 
 /datum/sprite_accessory/skin/unathi
