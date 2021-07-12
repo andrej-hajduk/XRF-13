@@ -393,8 +393,7 @@
 	deform = 'icons/mob/human_races/r_vatborn.dmi'
 
 	namepool = /datum/namepool/vatborn
-
-	joinable_roundstart = FALSE //Currently has some sprite issues
+	uses_ethnic_sprites = FALSE
 
 //Slightly tougher humans.
 /datum/species/human/hero
