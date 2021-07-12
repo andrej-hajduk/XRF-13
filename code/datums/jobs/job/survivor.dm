@@ -54,6 +54,8 @@
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/welding(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/stack/sheet/metal(C, 40), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel(C, 15), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/rugged(C), SLOT_HEAD)
 		if("Janitor")
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(C), SLOT_W_UNIFORM)

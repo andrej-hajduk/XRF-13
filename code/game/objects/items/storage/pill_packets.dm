@@ -46,5 +46,5 @@
 
 /obj/item/storage/pill_bottle/packet/emergency
 	name = "Emergency pill packet"
-	desc = "This packet contains Emergency pills. Used to treat a huge number of injuries. Once you take them out they don't go back in. Do not use in combat."
+	desc = "This packet contains Emergency pills. Used to treat external injuries and pain. Once you take them out they don't go back in."
 	pill_type_to_fill = /obj/item/reagent_containers/pill/emergency
