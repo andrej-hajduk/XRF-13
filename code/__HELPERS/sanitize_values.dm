@@ -122,8 +122,6 @@
 		else //not a supported hex color format.
 			return default ? default : crunch + repeat_string(desired_format, "0")
 
-	return crunch + .
-
 /**
  * Check if the value is of type loadout_manager, and with correct loadouts in its loadout list.
  * Also null out loadouts_data, seller and loadout vendor to make saving possible in a jatum
