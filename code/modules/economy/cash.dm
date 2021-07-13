@@ -49,7 +49,7 @@
 	overlays.Cut()
 	var/sum = worth
 	var/num = 0
-	for(var/i in list(1000,500,200,100,50,20,10,1))
+	for(var/i in list(500,200,100,50,20,10,1))
 		while(sum >= i && num < 50)
 			sum -= i
 			num++
@@ -79,7 +79,7 @@
 	src.update_icon()
 	if(!worth)
 		usr.temporarilyRemoveItemFromInventory(src)
-	if(amount in list(1000,500,200,100,50,20,1))
+	if(amount in list(500,200,100,50,20,1))
 		var/cashtype = text2path("/obj/item/spacecash/c[amount]")
 		var/obj/cash = new cashtype (usr.loc)
 		user.put_in_hands(cash)
@@ -135,7 +135,7 @@
 
 
 proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
-	if(sum in list(1000,500,200,100,50,20,10,1))
+	if(sum in list(500,200,100,50,20,10,1))
 		var/cash_type = text2path("/obj/item/spacecash/c[sum]")
 		var/obj/cash = new cash_type (usr.loc)
 		if(ishuman(human_user) && !human_user.get_active_held_item())
