@@ -357,6 +357,10 @@
 			update_icon()
 	return ..()
 
+/obj/item/storage/backpack/marine/corpsman/survivor
+	name = "\improper rugged paramedic backpack"
+	desc = "A special backpack issued to civilian paramedics. You can recharge defibrillators by plugging them in."
+	icon_state = "survivorpackm"
 
 /obj/item/storage/backpack/marine/tech
 	name = "\improper TGMC technician backpack"
