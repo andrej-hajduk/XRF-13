@@ -283,7 +283,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat(src)
 
 /obj/item/storage/syringe_case/autoinjector
-	storage_slots = 4
+	storage_slots = 5
 	icon = 'icons/Marine/marine-pouches.dmi'
 	icon_state = "syringe"
 	can_hold = list(
