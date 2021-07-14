@@ -77,7 +77,7 @@
 			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/beret/jan(C), SLOT_HEAD)
-		if("Merchant Captain") //Captain of a civilian merchant. Some unique skills and gear, but starts with mostly nothing
+		if("Merchant Captain") //Captain of a civilian merchant, inspired by Firefly. Some unique skills and gear, but starts with mostly nothing
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/master)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(C), SLOT_WEAR_SUIT)
@@ -85,6 +85,10 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/formalcaptain(C), SLOT_HEAD)
+			C.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/c99(C), SLOT_BELT)
+			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
 
 	C.equip_to_slot_or_del(new /obj/item/clothing/gloves/ruggedgloves(C), SLOT_GLOVES)
 	C.equip_to_slot_or_del(new /obj/item/storage/pouch/survival/full(C), SLOT_L_STORE)
