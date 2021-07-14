@@ -80,7 +80,7 @@
 		if("Merchant Captain") //Captain of a civilian merchant. Some unique skills and gear, but starts with mostly nothing
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/master)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit/black(C), SLOT_WEAR_SUIT)
+			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
