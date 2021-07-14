@@ -297,6 +297,12 @@
 	description = ""
 	keybind_signal = COMSIG_XENOABILITY_PSYCHIC_WHISPER
 
+/datum/keybinding/xeno/psychic_influence
+	name = "psychic_influence"
+	full_name = "Psychic Influence"
+	description = ""
+	keybind_signal = COMSIG_XENOABILITY_PSYCHIC_INFLUENCE
+
 /datum/keybinding/xeno/lay_egg
 	name = "lay_egg"
 	full_name = "Lay Egg"
