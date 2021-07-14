@@ -68,6 +68,10 @@
 			C.equip_to_slot_or_del(new /obj/item/storage/bag/trash(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/tool/wet_sign(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/tool/wet_sign(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/tool/soap/deluxe(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/tool/mop(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/beret/jan(C), SLOT_HEAD)
 
 	C.equip_to_slot_or_del(new /obj/item/clothing/gloves/ruggedgloves(C), SLOT_GLOVES)
