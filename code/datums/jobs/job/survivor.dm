@@ -4,7 +4,7 @@
 	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS)
 	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS)
 	display_order = JOB_DISPLAY_ORDER_SURVIVOR
-	skills_type = /datum/skills/civilian/survivor/master
+	skills_type = /datum/skills/civilian
 	outfit = /datum/outfit/job/survivor
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN
 	faction = FACTION_TERRAGOV
@@ -13,12 +13,13 @@
 	. = ..()
 
 	switch(M.client.prefs.survivor)
-		if("Civilian")
-			C.equip_to_slot_or_del(new /obj/item/clothing/under/pj/red(C), SLOT_W_UNIFORM)
+		if("Civilian") //Basically the damsel in distress role. Completely useless
+			C.equip_to_slot_or_del(new /obj/item/clothing/under/colonist(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
-		if("Militia")
+		if("Militia") //Closest to old survivor. Has armor, gun, and decent all-round skills
+			C.skills = getSkillsType(/datum/skills/civilian/survivor/marshal)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/corp(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rugged(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/ruggedboot(C), SLOT_SHOES)
@@ -33,7 +34,8 @@
 			C.equip_to_slot_or_del(new A(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(C), SLOT_HEAD)
-		if("Medic")
+		if("Medic") //Medical equipment, supplies, and skills to match
+			C.skills = getSkillsType(/datum/skills/civilian/survivor/doctor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/storage/backpack/marine/corpsman/survivor(C), SLOT_BACK)
@@ -46,7 +48,8 @@
 			C.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat(C), SLOT_IN_BACKPACK)
-		if("Engineer")
+		if("Engineer") //Engineer skills and additional equipment and supplies
+			C.skills = getSkillsType(/datum/skills/civilian/survivor/atmos)
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(C), SLOT_GLASSES)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/engineer(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
@@ -58,7 +61,8 @@
 			C.equip_to_slot_or_del(new /obj/item/stack/sheet/metal(C, 40), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel(C, 15), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/rugged(C), SLOT_HEAD)
-		if("Janitor")
+		if("Janitor") //A civilian role that still gets some okay skills and cleaning supplies
+			C.skills = getSkillsType(/datum/skills/civilian/survivor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
@@ -73,6 +77,14 @@
 			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/explosive/grenade/chem_grenade/cleaner(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/beret/jan(C), SLOT_HEAD)
+		if("Merchant Captain") //Captain of a civilian merchant. Some unique skills and gear, but starts with mostly nothing
+			C.skills = getSkillsType(/datum/skills/civilian/survivor/master)
+			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
+			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit/black(C), SLOT_WEAR_SUIT)
+			C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
+			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(C), SLOT_SHOES)
+			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
+			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/formalcaptain(C), SLOT_HEAD)
 
 	C.equip_to_slot_or_del(new /obj/item/clothing/gloves/ruggedgloves(C), SLOT_GLOVES)
 	C.equip_to_slot_or_del(new /obj/item/storage/pouch/survival/full(C), SLOT_L_STORE)

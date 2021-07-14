@@ -198,26 +198,25 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/civilian/survivor
 	name = "Survivor"
-	engineer = SKILL_ENGINEER_ENGI //to hack airlocks so they're never stuck in a room.
 	firearms = SKILL_FIREARMS_DEFAULT
-	construction = SKILL_CONSTRUCTION_METAL
-	medical = SKILL_MEDICAL_NOVICE
+	engineer = SKILL_ENGINEER_ENGI //to hack airlocks so they're never stuck in a room.
+	construction = SKILL_CONSTRUCTION_PLASTEEL
+	medical = SKILL_MEDICAL_PRACTICED
+	surgery = SKILL_SURGERY_AMATEUR
+	police = SKILL_POLICE_FLASH
 
 /datum/skills/civilian/survivor/master
-	name = "Survivor"
-	firearms = SKILL_FIREARMS_DEFAULT
-	medical = SKILL_MEDICAL_EXPERT
-	surgery = SKILL_SURGERY_EXPERT
-	construction = SKILL_CONSTRUCTION_MASTER
-	engineer = SKILL_ENGINEER_MASTER
-	powerloader = SKILL_POWERLOADER_MASTER
-	police = SKILL_POLICE_FLASH
+	name = "Survivor Captain"
+	leadership = SKILL_LEAD_TRAINED
+	pilot = SKILL_PILOT_TRAINED
+	powerloader = SKILL_POWERLOADER_TRAINED
+	large_vehicle = SKILL_LARGE_VEHICLE_TRAINED
 
 /datum/skills/civilian/survivor/doctor
 	name = "Survivor Doctor"
-	medical = SKILL_MEDICAL_COMPETENT
+	medical = SKILL_MEDICAL_EXPERT
 	surgery = SKILL_SURGERY_EXPERT
-	firearms = SKILL_FIREARMS_UNTRAINED
+	leadership = SKILL_LEAD_BEGINNER
 
 /datum/skills/civilian/survivor/scientist
 	name = "Survivor Scientist"
@@ -238,6 +237,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	name = "Survivor Atmos Tech"
 	engineer = SKILL_ENGINEER_MASTER
 	construction = SKILL_CONSTRUCTION_MASTER
+	leadership = SKILL_LEAD_BEGINNER
 
 /datum/skills/civilian/survivor/marshal
 	name = "Survivor Marshal"

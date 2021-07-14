@@ -103,7 +103,8 @@
 	"Militia",\
 	"Medic",\
 	"Engineer",\
-	"Janitor"\
+	"Janitor",\
+	"Merchant Captain"\
 	)
 
 #define RELIGION_CHOICES list(\

@@ -131,7 +131,7 @@
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 
-/obj/item/storage/backpack/captain
+/obj/item/storage/backpack/captain/civilian
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "captainpack"
@@ -790,7 +790,7 @@
 /obj/item/storage/backpack/captain
 	name = "marine captain backpack"
 	desc = "The contents of this backpack are top secret."
-	icon_state = "marinepack"
+	icon_state = "marinepackt"
 	storage_slots = null
 	max_storage_space = 30
 
