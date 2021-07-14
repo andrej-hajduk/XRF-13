@@ -139,6 +139,27 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 
+//Extremely rare drop, could also be an event reward
+/obj/item/storage/firstaid/combat
+	name = "combat first-aid kit"
+	desc = "A portable, multirole first aid kit. This contains a number of highly advanced treatments."
+	icon_state = "bezerk"
+	item_state = "firstaid-advanced"
+	storage_slots = 10
+	max_storage_space = 20
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/firstaid/combat/fill_firstaid_kit()
+	new /obj/item/healthanalyzer(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
+	new /obj/item/storage/pill_bottle/meralyne(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/storage/pill_bottle/dylovene(src)
+	new /obj/item/storage/pill_bottle/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/dexalin(src)
+	new /obj/item/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/storage/syringe_case/autoinjector/combat(src)
+	new /obj/item/storage/syringe_case/autoinjector/internal(src)
 
 	/*
 * Syringe Case
@@ -261,6 +282,39 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat(src)
 
+/obj/item/storage/syringe_case/autoinjector
+	storage_slots = 4
+	icon = 'icons/Marine/marine-pouches.dmi'
+	icon_state = "syringe"
+	can_hold = list(
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/hypospray/autoinjector,
+	)
+
+/obj/item/storage/syringe_case/autoinjector/combat
+	name = "autoinjector case (combat)"
+	desc = "It's a portable medical case for storing autoinjectors. This one contains autoinjectors for combat"
+
+/obj/item/storage/syringe_case/internal/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
+
+/obj/item/storage/syringe_case/autoinjector/internal
+	name = "autoinjector case (internal)"
+	desc = "It's a portable medical case for storing autoinjectors. This one contains autoinjectors for internal injury."
+
+/obj/item/storage/syringe_case/internal/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclotplus(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclotplus(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/peridaxon_plus(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/peridaxon_plus(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/isotonic(src)
+	
 
 /*
 * Pill Bottles
