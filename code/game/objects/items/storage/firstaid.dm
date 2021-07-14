@@ -139,27 +139,31 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 
-//Extremely rare drop, could also be an event reward
+//Extremely rare drop, could also be an event reward. VERY OP.
 /obj/item/storage/firstaid/combat
 	name = "combat first-aid kit"
-	desc = "A portable, multirole first aid kit. This contains a number of highly advanced treatments."
+	desc = "A portable, multirole first aid kit. This contains a number of highly advanced treatments. A medbay in a box."
 	icon_state = "bezerk"
 	item_state = "firstaid-advanced"
-	storage_slots = 10
-	max_storage_space = 20
+	storage_slots = 14
+	max_storage_space = 28
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/firstaid/combat/fill_firstaid_kit()
-	new /obj/item/healthanalyzer(src)
-	new /obj/item/storage/pill_bottle/dermaline(src)
 	new /obj/item/storage/pill_bottle/meralyne(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/dylovene(src)
 	new /obj/item/storage/pill_bottle/inaprovaline(src)
 	new /obj/item/storage/pill_bottle/dexalin(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/storage/pill_bottle/packet/leporazine(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/storage/syringe_case/autoinjector/combat(src)
 	new /obj/item/storage/syringe_case/autoinjector/internal(src)
+	new /obj/item/healthanalyzer(src)
 
 	/*
 * Syringe Case
