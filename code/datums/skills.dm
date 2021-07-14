@@ -198,7 +198,6 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/civilian/survivor
 	name = "Survivor"
-	firearms = SKILL_FIREARMS_DEFAULT
 	engineer = SKILL_ENGINEER_ENGI //to hack airlocks so they're never stuck in a room.
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	medical = SKILL_MEDICAL_PRACTICED

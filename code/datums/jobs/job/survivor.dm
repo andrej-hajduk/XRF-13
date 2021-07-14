@@ -82,7 +82,7 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit/black(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
-			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(C), SLOT_SHOES)
+			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/formalcaptain(C), SLOT_HEAD)
 
