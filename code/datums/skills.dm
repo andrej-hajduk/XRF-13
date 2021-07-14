@@ -204,12 +204,16 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_AMATEUR
 	police = SKILL_POLICE_FLASH
 
-/datum/skills/civilian/survivor/master
-	name = "Survivor Captain"
-	leadership = SKILL_LEAD_TRAINED
-	pilot = SKILL_PILOT_TRAINED
+/datum/skills/civilian/survivor/miner
+	name = "Survivor Miner"
 	powerloader = SKILL_POWERLOADER_TRAINED
-	large_vehicle = SKILL_LARGE_VEHICLE_TRAINED
+
+/datum/skills/civilian/survivor/militia
+	name = "Survivor Militia"
+	cqc = SKILL_CQC_MP
+	firearms = SKILL_FIREARMS_DEFAULT
+	melee_weapons = SKILL_MELEE_DEFAULT
+	police = SKILL_POLICE_MP
 
 /datum/skills/civilian/survivor/doctor
 	name = "Survivor Doctor"
@@ -217,47 +221,18 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_EXPERT
 	leadership = SKILL_LEAD_BEGINNER
 
-/datum/skills/civilian/survivor/scientist
-	name = "Survivor Scientist"
-	medical = SKILL_MEDICAL_PRACTICED
-	surgery = SKILL_SURGERY_PROFESSIONAL
-	firearms = SKILL_FIREARMS_UNTRAINED
-
-/datum/skills/civilian/survivor/chef
-	name = "Survivor Chef"
-	melee_weapons = SKILL_MELEE_TRAINED
-	firearms = SKILL_FIREARMS_UNTRAINED
-
-/datum/skills/civilian/survivor/miner
-	name = "Survivor Miner"
-	powerloader = SKILL_POWERLOADER_TRAINED
-
-/datum/skills/civilian/survivor/atmos
-	name = "Survivor Atmos Tech"
+/datum/skills/civilian/survivor/engineer
+	name = "Survivor Engineer"
 	engineer = SKILL_ENGINEER_MASTER
 	construction = SKILL_CONSTRUCTION_MASTER
 	leadership = SKILL_LEAD_BEGINNER
 
-/datum/skills/civilian/survivor/marshal
-	name = "Survivor Marshal"
-	cqc = SKILL_CQC_MP
-	firearms = SKILL_FIREARMS_DEFAULT
-	melee_weapons = SKILL_MELEE_DEFAULT
-	pistols = SKILL_PISTOLS_TRAINED
-	police = SKILL_POLICE_MP
-
-/datum/skills/civilian/survivor/prisoner
-	name = "Survivor Prisoner"
-	cqc = SKILL_CQC_DEFAULT
-	firearms = SKILL_FIREARMS_DEFAULT
-	melee_weapons = SKILL_MELEE_DEFAULT
-	pistols = SKILL_PISTOLS_DEFAULT
-
-/datum/skills/civilian/survivor/clown
-	name = "Survivor Clown"
-	cqc = SKILL_CQC_MP
-	melee_weapons = SKILL_MELEE_SUPER
-	firearms = SKILL_FIREARMS_UNTRAINED
+/datum/skills/civilian/survivor/captain
+	name = "Survivor Captain"
+	leadership = SKILL_LEAD_TRAINED
+	pilot = SKILL_PILOT_TRAINED
+	powerloader = SKILL_POWERLOADER_TRAINED
+	large_vehicle = SKILL_LARGE_VEHICLE_TRAINED
 
 /datum/skills/combat_engineer
 	name = "Combat Engineer"

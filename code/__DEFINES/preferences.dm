@@ -100,10 +100,12 @@
 
 #define SURVIVOR_TYPE list(\
 	"Civilian",\
-	"Militia",\
-	"Medic",\
-	"Engineer",\
+	"Salesman",\
 	"Janitor",\
+	"Miner",\
+	"Militia",\
+	"Doctor",\
+	"Engineer",\
 	"Merchant Captain"\
 	)
 
