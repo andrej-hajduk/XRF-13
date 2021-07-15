@@ -301,7 +301,7 @@
 	flags_armor_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	flags_item = SYNTH_RESTRICTED
 	slowdown = 0
-	soft_armor = list("melee" = 30, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 20, "acid" = 30)
+	soft_armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 20, "acid" = 30)
 	siemens_coefficient = 0.7
 
 	flags_inventory = BLOCKSHARPOBJ
@@ -311,9 +311,11 @@
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	w_class = WEIGHT_CLASS_HUGE
 	allowed = list(
-		/obj/item/weapon/gun/,
+		/obj/item/weapon/gun,
 		/obj/item/flashlight,
 		/obj/item/storage/large_holster/machete,
-		/obj/item/storage/belt/gun/pistol/m4a3,
-		/obj/item/storage/belt/gun/m44,
+		/obj/item/weapon/claymore,
+		/obj/item/storage/belt/gun,
+		/obj/item/weapon/twohanded,
 	)
+
