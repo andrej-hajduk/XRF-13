@@ -90,22 +90,6 @@
 /obj/structure/largecrate/random
 	name = "supply crate"
 	var/num_things = 0
-	var/list/stuff = list(
-						/obj/item/cell/high,
-						/obj/item/storage/belt/utility/full,
-						/obj/item/multitool,
-						/obj/item/tool/crowbar,
-						/obj/item/flashlight,
-						/obj/item/reagent_containers/food/snacks/donkpocket,
-						/obj/item/explosive/grenade/smokebomb,
-						/obj/item/circuitboard/airlock,
-						/obj/item/assembly/igniter,
-						/obj/item/tool/weldingtool,
-						/obj/item/tool/wirecutters,
-						/obj/item/analyzer,
-						/obj/item/clothing/under/marine/standard,
-						/obj/item/clothing/shoes/marine
-						)
 
 /obj/structure/largecrate/random/Initialize()
 	. = ..()
@@ -115,7 +99,71 @@
 		if(!num_things)
 			break
 		num_things--
-		var/obj/item/thing = pick(stuff)
+		var/thing = pick(prob(3);/obj/item/storage/belt/utility/full,
+						prob(2);/obj/item/storage/belt/medical,
+						prob(1);/obj/item/storage/belt/combatLifesaver,
+						prob(5);/obj/item/storage/firstaid/regular,
+						prob(2);/obj/item/storage/firstaid/fire,
+						prob(2);/obj/item/storage/firstaid/toxin,
+						prob(2);/obj/item/storage/firstaid/o2,
+						prob(2);/obj/item/storage/firstaid/adv,
+						prob(2);/obj/item/storage/firstaid/rad,
+						prob(1);/obj/item/storage/firstaid/combat,
+						prob(3);/obj/item/storage/toolbox/mechanical,
+						prob(3);/obj/item/storage/toolbox/electrical,
+						prob(3);/obj/item/storage/toolbox/emergency,
+						prob(20);/obj/item/storage/box/MRE,
+						prob(5);/obj/item/storage/box/m94,
+						prob(5);/obj/item/storage/box/donkpockets,
+						prob(20);/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+						prob(15);/obj/item/explosive/grenade/smokebomb,
+						prob(5);/obj/item/cell/apc,
+						prob(3);/obj/item/cell/high,
+						prob(2);/obj/item/cell/super,
+						prob(1);/obj/item/cell/hyper,
+						prob(8);/obj/item/flashlight,
+						prob(4);/obj/item/circuitboard/airlock,
+						prob(4);/obj/item/assembly/igniter,
+						prob(5);/obj/item/tool/weldingtool,
+						prob(3);/obj/item/tool/weldingtool/largetank,
+						prob(2);/obj/item/tool/weldingtool/hugetank,
+						prob(1);/obj/item/tool/weldingtool/experimental,
+						prob(3);/obj/item/tool/weldpack,
+						prob(5);/obj/item/tool/wirecutters,
+						prob(5);/obj/item/tool/wrench,
+						prob(5);/obj/item/tool/screwdriver,
+						prob(5);/obj/item/tool/crowbar,
+						prob(5);/obj/item/analyzer,
+						prob(5);/obj/item/multitool,
+						prob(1);/obj/item/storage/bible,
+						prob(1);/obj/item/storage/bible/koran,
+						prob(1);/obj/item/storage/bible/booze,
+						prob(3);/obj/item/clothing/glasses/hud/security,
+						prob(3);/obj/item/clothing/glasses/hud/health,
+						prob(2);/obj/item/clothing/glasses/hud/medgoggles,
+						prob(1);/obj/item/clothing/glasses/hud/xenohud,
+						prob(1);/obj/item/clothing/glasses/hud/painhud,
+						prob(3);/obj/item/clothing/glasses/meson,
+						prob(2);/obj/item/clothing/glasses/night/m56_goggles,
+						prob(1);/obj/item/clothing/glasses/night/tx8,
+						prob(1);/obj/item/clothing/glasses/night/m42_night_goggles,
+						prob(1);/obj/item/clothing/glasses/thermal/m64_thermal_goggles,
+						prob(5);/obj/item/clothing/head/welding,
+						prob(5);/obj/item/clothing/glasses/welding,
+						prob(1);/obj/item/clothing/glasses/welding/superior,
+						prob(5);/obj/item/clothing/glasses/mgoggles,
+						prob(5);/obj/item/radio/headset,
+						prob(5);/obj/item/clothing/tie/storage/webbing,
+						prob(2);/obj/item/clothing/tie/storage/black_vest,
+						prob(2);/obj/item/clothing/tie/storage/brown_vest,
+						prob(2);/obj/item/clothing/tie/storage/white_vest/medic,
+						prob(2);/obj/item/clothing/tie/storage/white_vest/surgery,
+						prob(2);/obj/item/motiondetector,
+						prob(1);/obj/item/motiondetector/scout,
+						prob(5);/obj/item/clothing/under/marine/standard,
+						prob(5);/obj/item/clothing/under/marine/corpsman,
+						prob(5);/obj/item/clothing/under/marine/engineer,
+						prob(10);/obj/item/clothing/shoes/marine)
 		new thing(src)
 
 /obj/structure/largecrate/random/case
