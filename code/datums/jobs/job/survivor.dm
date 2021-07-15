@@ -94,7 +94,7 @@
 			C.equip_to_slot_or_del(new /obj/item/stack/sheet/metal(C, 40), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel(C, 15), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/rugged(C), SLOT_HEAD)
-		if("Merchant Captain") //Captain of a civilian merchant, inspired by Firefly. Some unique skills and gear, but starts with mostly nothing
+		if("Merchant Captain") //Captain of a civilian merchant, inspired by Firefly. Some unique gear and a lot of skills, but starts with mostly nothing
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/captain)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(C), SLOT_WEAR_SUIT)

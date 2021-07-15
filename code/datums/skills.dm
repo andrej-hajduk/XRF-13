@@ -200,8 +200,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	name = "Survivor"
 	engineer = SKILL_ENGINEER_ENGI //to hack airlocks so they're never stuck in a room.
 	construction = SKILL_CONSTRUCTION_PLASTEEL
-	medical = SKILL_MEDICAL_PRACTICED
-	surgery = SKILL_SURGERY_AMATEUR
+	medical = SKILL_MEDICAL_NOVICE
 	police = SKILL_POLICE_FLASH
 
 /datum/skills/civilian/survivor/miner
@@ -217,7 +216,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/civilian/survivor/doctor
 	name = "Survivor Doctor"
-	medical = SKILL_MEDICAL_EXPERT
+	medical = SKILL_MEDICAL_COMPETENT
 	surgery = SKILL_SURGERY_EXPERT
 	leadership = SKILL_LEAD_BEGINNER
 
@@ -230,6 +229,9 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 /datum/skills/civilian/survivor/captain
 	name = "Survivor Captain"
 	leadership = SKILL_LEAD_EXPERT
+	firearms = SKILL_FIREARMS_DEFAULT
+	medical = SKILL_MEDICAL_PRACTICED
+	surgery = SKILL_SURGERY_AMATEUR
 	pilot = SKILL_PILOT_TRAINED
 	powerloader = SKILL_POWERLOADER_TRAINED
 	large_vehicle = SKILL_LARGE_VEHICLE_TRAINED
