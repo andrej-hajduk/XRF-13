@@ -318,3 +318,4 @@
 		/obj/item/storage/belt/gun,
 		/obj/item/weapon/twohanded,
 	)
+
