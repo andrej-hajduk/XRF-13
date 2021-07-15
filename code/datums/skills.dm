@@ -229,7 +229,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/civilian/survivor/captain
 	name = "Survivor Captain"
-	leadership = SKILL_LEAD_TRAINED
+	leadership = SKILL_LEAD_EXPERT
 	pilot = SKILL_PILOT_TRAINED
 	powerloader = SKILL_POWERLOADER_TRAINED
 	large_vehicle = SKILL_LARGE_VEHICLE_TRAINED
