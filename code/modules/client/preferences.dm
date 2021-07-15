@@ -110,6 +110,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/citizenship = "TerraGov"
 	var/religion = "None"
 	var/nanotrasen_relation = "Neutral"
+	var/survivor = "Militia"
 	var/flavor_text = ""
 	var/med_record = ""
 	var/sec_record = ""
@@ -414,6 +415,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Citizenship</b>: <a href ='?_src_=prefs;preference=citizenship'>[citizenship]</a><br/>"
 					dat += "<b>Religion</b>: <a href ='?_src_=prefs;preference=religion'>[religion]</a><br/>"
 					dat += "<b>Corporate Relation:</b> <a href ='?_src_=prefs;preference=corporation'>[nanotrasen_relation]</a><br>"
+					dat += "<b>Colonist Type:</b> <a href ='?_src_=prefs;preference=survivor'>[survivor]</a><br>"
 					dat += "<br>"
 
 					dat += "<a href ='?_src_=prefs;preference=records'>Character Records</a><br>"
@@ -1322,6 +1324,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!new_relation)
 				return
 			nanotrasen_relation = new_relation
+
+		if("survivor")
+			var/new_survivor = tgui_input_list(user, "Choose your colonists initial loadout:", "Colonist Loadout", SURVIVOR_TYPE)
+			if(!new_survivor)
+				return
+			survivor = new_survivor
 
 		if("squad")
 			var/new_squad = tgui_input_list(user, "Choose your preferred squad.", "Preferred Squad", SELECTABLE_SQUADS)

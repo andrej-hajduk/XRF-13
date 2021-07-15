@@ -14,7 +14,7 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-		/datum/job/survivor/rambo = 1,
+		/datum/job/survivor = 1,
 		/datum/job/xenomorph = 1
 	)
 

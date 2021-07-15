@@ -17,14 +17,15 @@
 		/datum/job/terragov/medical/medicalofficer = 6,
 		/datum/job/terragov/medical/researcher = 2,
 		/datum/job/terragov/civilian/liaison = 1,
-		/datum/job/terragov/silicon/synthetic = 1,
+		/datum/job/terragov/silicon/synthetic = 2,
 		/datum/job/terragov/silicon/ai = 1,
 		/datum/job/terragov/squad/engineer = 8,
 		/datum/job/terragov/squad/corpsman = 8,
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
 		/datum/job/terragov/squad/standard = -1,
-		/datum/job/xenomorph = 2,
+		/datum/job/survivor = 3,
+		/datum/job/xenomorph = 8,
 		/datum/job/xenomorph/queen = 1
 	)
 

@@ -12,6 +12,7 @@
 	citizenship = pick(CITIZENSHIP_CHOICES)
 	religion = pick(RELIGION_CHOICES)
 	nanotrasen_relation = pick(CORP_RELATIONS)
+	survivor = "Militia"
 	randomize_hair_color("hair")
 	randomize_hair_color("grad")
 	randomize_hair_color("facial")

@@ -1161,6 +1161,7 @@
 	taste_description = "strawberries"
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 	can_synth = FALSE
+	scannable = TRUE
 /*HORNYCODE
 Pope_Wreckoning:
 */
@@ -1189,6 +1190,7 @@ Pope_Wreckoning:
 	addiction_threshold = 15
 	overdose_threshold = 20
 	can_synth = FALSE
+	scannable = TRUE
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO)*/)
@@ -1230,6 +1232,7 @@ Pope_Wreckoning:
 	color = "#D9D9D9"//rgb(217, 217, 217)
 	reagent_state = SOLID
 	can_synth = FALSE
+	scannable = TRUE
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/L, metabolism)
 	if(L /*&& M.client?.prefs.arousable*/ && prob(16))
@@ -1248,6 +1251,7 @@ Pope_Wreckoning:
 	reagent_state = SOLID
 	overdose_threshold = 20
 	can_synth = FALSE
+	scannable = TRUE
 
 /datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/L, metabolism)
 	if(L /* && M.client?.prefs.arousable*/)

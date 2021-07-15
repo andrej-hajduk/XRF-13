@@ -219,19 +219,6 @@
 /obj/item/clothing/suit/armor/reactive/red
 	shield_state = "shield-red"
 
-/obj/item/clothing/suit/armor/rugged
-	name = "rugged armor"
-	desc = "A suit of armor used by workers in dangerous environments."
-	icon_state = "swatarmor"
-	item_state = "swatarmor"
-	var/obj/item/weapon/gun/holstered = null
-	flags_armor_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	flags_item = SYNTH_RESTRICTED
-	slowdown = 0
-	soft_armor = list("melee" = 20, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 20, "acid" = 30)
-	siemens_coefficient = 0.7
-
-
 /obj/item/clothing/suit/armor/sectoid
 	name = "psionic field"
 	desc = "A field of invisible energy, it protects the wearer but prevents any clothing from being worn."
