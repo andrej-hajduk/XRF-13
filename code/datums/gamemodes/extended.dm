@@ -24,7 +24,7 @@
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
 		/datum/job/terragov/squad/standard = -1,
-		/datum/job/survivor = 3,
+		/datum/job/survivor = 5,
 		/datum/job/xenomorph = 8,
 		/datum/job/xenomorph/queen = 1
 	)
