@@ -1342,7 +1342,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 
 		if("med_record")
-			var/medmsg = input(user, "Set your medical notes here.", "Medical Records", med_record, MAX_MESSAGE_LEN, TRUE)
+			var/medmsg = stripped_multiline_input(user, "Set your medical notes here.", "Medical Records", med_record, MAX_MESSAGE_LEN, TRUE)
 			if(!medmsg)
 				return
 
@@ -1624,3 +1624,4 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 #undef APPEARANCE_CATEGORY_COLUMN
 #undef MAX_MUTANT_ROWS
+
