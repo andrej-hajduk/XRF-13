@@ -210,7 +210,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return
 
 	update_preview_icon()
-	
+
 	var/dat
 
 	dat += {"
@@ -1381,7 +1381,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			user << browse(null, "window=records")
 
 		if("flavor_text")
-			var/msg = stripped_multiline_input(user, "Give a physical description of your character.", "Flavor Text", flavor_text, MAX_MESSAGE_LEN, TRUE)
+			var/msg = stripped_multiline_input(user, "Give a physical description of your character.", "Flavor Text", flavor_text, MAX_EMOTE_MESSAGE_LEN, TRUE)
 			if(!msg)
 				return
 			if(NON_ASCII_CHECK(msg))
@@ -1389,7 +1389,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			flavor_text = msg
 
 		if("xeno_desc")
-			var/msg = stripped_multiline_input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text", xeno_desc, MAX_MESSAGE_LEN, TRUE)
+			var/msg = stripped_multiline_input(user, "Give a physical description of your xenomorph.", "Xenomorph Flavor Text", xeno_desc, MAX_EMOTE_MESSAGE_LEN, TRUE)
 			if(!msg)
 				return
 			if(NON_ASCII_CHECK(msg))
