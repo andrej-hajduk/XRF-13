@@ -81,7 +81,7 @@
 #define SPAM_TRIGGER_WEIGHT_WARNING 5 //The weight required per the time period before the spam-prevention will warn you
 #define SPAM_TRIGGER_WEIGHT_AUTOMUTE 8 //The weight required per the time period before the spam-prevention will automute you
 
-#define MAX_LENGTH_REQ_REASON 250
+#define MAX_LENGTH_REQ_REASON 1000
 
 ///Max length of a keypress command before it's considered to be a forged packet/bogus command
 #define MAX_KEYPRESS_COMMANDLENGTH 16
