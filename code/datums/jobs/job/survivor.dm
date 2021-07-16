@@ -146,3 +146,4 @@ Good luck."})
 /datum/outfit/job/survivor
 	name = "Colonist"
 	jobtype = /datum/job/survivor
+
