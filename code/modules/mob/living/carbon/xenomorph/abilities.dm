@@ -999,7 +999,7 @@
 		return
 
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
-	to_chat(L, "<span class='alien'>You<i>\"[msg]\"</i></span>")
+	to_chat(L, "<span class='alien'><i>\[msg]\</i></span>")
 	to_chat(X, "<span class='xenonotice'>We influenced: \"[msg]\" to [L]</span>")
 	for(var/_M in GLOB.observer_list) // it's the xeno's main method of S M U T, so it should be visible
 		var/mob/M = _M
