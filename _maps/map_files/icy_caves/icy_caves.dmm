@@ -344,13 +344,6 @@
 /obj/item/ore/phoron,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
-"bv" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/cable,
-/turf/open/floor/tile/dark/red2/corner{
-	dir = 8
-	},
-/area/icy_caves/outpost/security)
 "bw" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating/mainship,
@@ -1554,6 +1547,16 @@
 	dir = 1
 	},
 /area/icy_caves/outpost/outside)
+"js" = (
+/obj/item/ammo_magazine/pistol/g22,
+/obj/item/ammo_magazine/pistol/g22,
+/obj/item/ammo_magazine/pistol/g22,
+/obj/item/ammo_magazine/pistol/g22,
+/obj/item/weapon/gun/pistol/g22,
+/obj/item/weapon/gun/pistol/g22,
+/obj/structure/closet/secure_closet/guncabinet/highpower,
+/turf/open/floor/tile/dark,
+/area/icy_caves/outpost/security)
 "jt" = (
 /obj/machinery/floodlight/landing,
 /obj/effect/decal/warning_stripes,
@@ -2534,14 +2537,9 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/icy_caves/outpost/outside)
 "pF" = (
-/obj/structure/rack,
-/obj/item/weapon/gun/smg/m25,
-/obj/item/weapon/gun/smg/m25,
-/obj/item/ammo_magazine/smg/m25,
-/obj/item/ammo_magazine/smg/m25,
-/obj/item/ammo_magazine/smg/m25,
-/obj/item/ammo_magazine/smg/m25,
-/turf/open/floor/tile/dark,
+/turf/open/floor/tile/dark/red2{
+	dir = 6
+	},
 /area/icy_caves/outpost/security)
 "pO" = (
 /obj/item/ammo_casing,
@@ -3164,7 +3162,7 @@
 /area/icy_caves/outpost/LZ1)
 "sN" = (
 /obj/structure/table/flipped,
-/obj/item/flashlight,
+/obj/item/flashlight/lamp,
 /turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
@@ -3174,12 +3172,13 @@
 /turf/open/floor/freezer,
 /area/icy_caves/outpost/dorms)
 "sV" = (
-/obj/structure/rack,
-/obj/item/ammo_magazine/rifle/ak47,
-/obj/item/ammo_magazine/rifle/ak47,
-/obj/item/ammo_magazine/rifle/ak47,
-/obj/item/ammo_magazine/rifle/ak47,
-/obj/item/weapon/gun/rifle/ak47,
+/obj/item/ammo_magazine/shotgun/buckshot,
+/obj/item/ammo_magazine/shotgun/buckshot,
+/obj/item/ammo_magazine/shotgun/beanbag,
+/obj/item/ammo_magazine/shotgun/beanbag,
+/obj/item/weapon/gun/shotgun/pump/cmb,
+/obj/item/weapon/gun/shotgun/pump/cmb,
+/obj/structure/closet/secure_closet/guncabinet/highpower,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "tb" = (
@@ -3950,7 +3949,18 @@
 /area/icy_caves/outpost/outside)
 "zm" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/drained,
+/obj/structure/rack,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/weapon/shield/riot,
+/obj/item/weapon/shield/riot,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "zo" = (
@@ -4071,7 +4081,7 @@
 /obj/item/explosive/plastique,
 /obj/item/explosive/plastique,
 /obj/structure/closet/crate/secure/explosives,
-/turf/open/floor/plating,
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/garage)
 "Ad" = (
 /obj/effect/decal/warning_stripes/thin{
@@ -4150,7 +4160,7 @@
 	},
 /area/icy_caves/outpost/LZ1)
 "AC" = (
-/obj/machinery/light/small,
+/obj/machinery/light,
 /turf/open/floor/tile/dark/red2,
 /area/icy_caves/outpost/security)
 "AD" = (
@@ -4219,15 +4229,9 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/engineering)
 "AV" = (
-/obj/item/explosive/plastique{
-	pixel_x = 3;
-	pixel_y = 7
-	},
-/obj/item/explosive/plastique{
-	pixel_y = 4
-	},
 /obj/structure/rack,
-/obj/machinery/light/small,
+/obj/item/megaphone,
+/obj/item/megaphone,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "AW" = (
@@ -4261,12 +4265,12 @@
 	},
 /area/icy_caves/caves)
 "Bd" = (
-/obj/machinery/door/airlock/multi_tile/mainship/secdoor,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
-/turf/open/floor/tile/dark/red2{
-	dir = 8
+/obj/machinery/door/airlock/mainship/security/free_access{
+	dir = 1
 	},
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Be" = (
 /obj/effect/landmark/weed_node,
@@ -4609,7 +4613,7 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/mining/east)
 "Et" = (
-/obj/machinery/computer/intel_computer,
+/obj/structure/rack,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Eu" = (
@@ -4704,11 +4708,13 @@
 /turf/closed/ice/thin/intersection,
 /area/icy_caves/caves/east)
 "Fh" = (
-/obj/structure/rack,
-/obj/item/weapon/gun/revolver/cmb,
-/obj/item/ammo_magazine/revolver/cmb,
-/obj/item/ammo_magazine/revolver/cmb,
-/obj/item/ammo_magazine/revolver/cmb,
+/obj/item/ammo_magazine/smg/m25,
+/obj/item/ammo_magazine/smg/m25,
+/obj/item/ammo_magazine/smg/m25,
+/obj/item/ammo_magazine/smg/m25,
+/obj/item/weapon/gun/smg/m25,
+/obj/item/weapon/gun/smg/m25,
+/obj/structure/closet/secure_closet/guncabinet/highpower,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Fm" = (
@@ -4865,7 +4871,8 @@
 /turf/closed/ice_rock/singleT,
 /area/icy_caves/caves)
 "GD" = (
-/turf/open/floor/tile/dark/red2/corner{
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
 /area/icy_caves/outpost/security)
@@ -4948,10 +4955,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/outside)
 "Hm" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/space_heater,
+/obj/structure/closet/bombclosetsecurity,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Ho" = (
@@ -5056,8 +5060,7 @@
 /area/icy_caves/outpost/garage)
 "Ik" = (
 /obj/structure/table,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/flashbangs,
+/obj/item/storage/donut_box,
 /turf/open/floor/tile/dark/red2{
 	dir = 8
 	},
@@ -5123,19 +5126,13 @@
 /turf/open/floor/prison/kitchen,
 /area/icy_caves/outpost/kitchen)
 "IH" = (
-/obj/item/flash,
-/obj/structure/table/reinforced,
-/obj/item/explosive/grenade/flashbang{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/structure/closet/secure_closet/security,
+/obj/item/weapon/classic_baton,
 /turf/open/floor/tile/dark/red2,
 /area/icy_caves/outpost/security)
 "IJ" = (
-/obj/machinery/vending/security,
+/obj/structure/table,
+/obj/item/phone,
 /turf/open/floor/tile/dark/red2{
 	dir = 9
 	},
@@ -5175,9 +5172,8 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Jl" = (
-/obj/structure/table/reinforced,
-/obj/item/restraints/handcuffs,
-/obj/item/storage/firstaid/adv,
+/obj/structure/closet/secure_closet/security,
+/obj/item/weapon/classic_baton,
 /turf/open/floor/tile/dark/red2{
 	dir = 6
 	},
@@ -5230,8 +5226,9 @@
 	},
 /area/icy_caves/outpost/medbay)
 "Jz" = (
-/turf/open/floor/tile/dark/red2/corner{
-	dir = 4
+/obj/machinery/space_heater,
+/turf/open/floor/tile/dark/red2{
+	dir = 5
 	},
 /area/icy_caves/outpost/security)
 "JA" = (
@@ -5253,12 +5250,9 @@
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/east)
 "JH" = (
-/obj/structure/table,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
+/obj/machinery/vending/security,
 /turf/open/floor/tile/dark/red2{
-	dir = 8
+	dir = 4
 	},
 /area/icy_caves/outpost/security)
 "JM" = (
@@ -5329,19 +5323,7 @@
 	},
 /area/icy_caves/outpost/garage)
 "Ku" = (
-/obj/effect/decal/cleanable/cobweb2,
-/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine,
-/obj/structure/rack,
-/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/reagent_containers/hypospray/autoinjector/quickclot{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine,
-/obj/item/belt_harness,
+/obj/structure/closet/l3closet/security,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Ky" = (
@@ -5367,10 +5349,10 @@
 	},
 /area/icy_caves/outpost/outside)
 "KH" = (
-/obj/structure/bed/chair{
+/obj/structure/cable,
+/obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
-/obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "KJ" = (
@@ -5431,7 +5413,11 @@
 /area/icy_caves/outpost/security)
 "Lh" = (
 /obj/structure/rack,
+/obj/machinery/light,
+/obj/item/storage/box/visual/grenade/teargas,
 /obj/item/storage/box/flashbangs,
+/obj/item/storage/box/flashbangs,
+/obj/item/weapon/gun/launcher/m81/riot,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Lj" = (
@@ -5552,17 +5538,16 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/east)
 "LR" = (
-/obj/structure/closet/secure_closet/guncabinet/highpower,
-/obj/item/weapon/gun/pistol/g22,
-/obj/item/weapon/gun/pistol/g22,
-/obj/item/ammo_magazine/pistol/g22,
-/obj/item/ammo_magazine/pistol/g22,
-/obj/item/ammo_magazine/pistol/g22,
-/obj/item/ammo_magazine/pistol/g22,
-/obj/item/ammo_magazine/pistol/g22,
-/turf/open/floor/tile/dark/red2{
-	dir = 10
-	},
+/obj/structure/rack,
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/weapon/shield/riot,
+/obj/item/weapon/shield/riot,
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "LT" = (
 /obj/effect/decal/warning_stripes/thin{
@@ -5721,6 +5706,9 @@
 	dir = 6
 	},
 /obj/structure/cable,
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "MZ" = (
@@ -6376,7 +6364,7 @@
 /turf/closed/ice_rock/single,
 /area/icy_caves/caves)
 "Sk" = (
-/obj/machinery/space_heater,
+/obj/machinery/vending/security,
 /turf/open/floor/tile/dark/red2{
 	dir = 6
 	},
@@ -6550,6 +6538,7 @@
 /area/icy_caves/outpost/outside)
 "TR" = (
 /obj/structure/table/flipped,
+/obj/item/folder/red,
 /turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
@@ -6669,8 +6658,9 @@
 /area/icy_caves/caves/east)
 "UG" = (
 /obj/structure/rack,
-/obj/item/ammo_magazine/shotgun,
-/obj/item/weapon/gun/shotgun/pump/cmb,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "UH" = (
@@ -6760,9 +6750,7 @@
 "Ve" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
-/turf/open/floor/tile/dark/red2/corner{
-	dir = 1
-	},
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Vf" = (
 /obj/effect/landmark/start/job/survivor,
@@ -6835,15 +6823,8 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/LZ1)
 "VK" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/table,
-/obj/item/explosive/grenade/smokebomb,
-/obj/item/explosive/grenade/smokebomb,
-/obj/item/explosive/grenade/smokebomb,
-/obj/item/explosive/grenade/smokebomb,
-/obj/item/explosive/grenade/smokebomb,
+/obj/item/taperecorder,
 /turf/open/floor/tile/dark/red2{
 	dir = 8
 	},
@@ -6852,10 +6833,10 @@
 /turf/closed/wall/r_wall,
 /area/icy_caves/outpost/security)
 "VN" = (
-/obj/machinery/door/airlock/multi_tile/mainship/secdoor,
-/turf/open/floor/tile/dark/red2{
-	dir = 8
+/obj/machinery/door/airlock/mainship/security/free_access{
+	dir = 1
 	},
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "VQ" = (
 /turf/open/floor/tile/dark/red2{
@@ -6863,11 +6844,11 @@
 	},
 /area/icy_caves/outpost/security)
 "VR" = (
-/obj/machinery/door/airlock/mainship/security/glass/free_access{
-	dir = 1;
-	name = "\improper Underground Security Armory"
-	},
 /obj/structure/cable,
+/obj/machinery/door/airlock/mainship/security/free_access{
+	dir = 1;
+	name = "\improper Security Armory"
+	},
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "VT" = (
@@ -6915,9 +6896,9 @@
 	},
 /area/icy_caves/caves/south)
 "Wt" = (
-/obj/structure/table/reinforced,
-/obj/item/restraints/handcuffs,
-/obj/item/storage/firstaid/adv,
+/obj/machinery/light,
+/obj/structure/closet/secure_closet/security,
+/obj/item/weapon/classic_baton,
 /turf/open/floor/tile/dark/red2,
 /area/icy_caves/outpost/security)
 "Wu" = (
@@ -7154,7 +7135,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/dorms)
 "Ye" = (
-/obj/structure/window/framed/colony/reinforced,
+/obj/structure/window/framed/colony,
 /turf/open/floor/plating,
 /area/icy_caves/outpost/security)
 "Yf" = (
@@ -7179,13 +7160,14 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/LZ1)
 "Ym" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/swat,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/head/helmet/riot,
-/turf/open/floor/tile/dark/red2{
-	dir = 8
-	},
+/obj/item/ammo_magazine/revolver/cmb,
+/obj/item/ammo_magazine/revolver/cmb,
+/obj/item/ammo_magazine/revolver/cmb,
+/obj/item/ammo_magazine/revolver/cmb,
+/obj/item/weapon/gun/revolver/cmb,
+/obj/item/weapon/gun/revolver/cmb,
+/obj/structure/closet/secure_closet/guncabinet/highpower,
+/turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Yn" = (
 /turf/open/floor/plating,
@@ -7364,7 +7346,6 @@
 /area/icy_caves/outpost/dorms)
 "Zr" = (
 /obj/structure/table/flipped,
-/obj/item/flash,
 /turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
@@ -7373,13 +7354,8 @@
 /turf/closed/ice/thin/corner,
 /area/icy_caves/caves/northern)
 "Zw" = (
-/obj/structure/closet/crate,
-/obj/item/weapon/gun/shotgun/pump/bolt,
-/obj/item/ammo_magazine/rifle/bolt,
-/obj/item/ammo_magazine/rifle/bolt,
-/obj/item/ammo_magazine/rifle/bolt,
-/obj/item/ammo_magazine/rifle/bolt,
-/obj/item/ammo_magazine/rifle/bolt,
+/obj/machinery/power/apc/drained,
+/obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "Zx" = (
@@ -19913,15 +19889,15 @@ ql
 HS
 HS
 AW
-Za
-Za
-Za
-Za
-XO
-XO
-XO
-XO
-Za
+HS
+HS
+HS
+HS
+HS
+HS
+HS
+HS
+HS
 AW
 HS
 HS
@@ -20070,12 +20046,12 @@ XO
 Za
 AW
 Za
+Za
 XO
 XO
 XO
 XO
-KE
-GY
+XO
 XO
 Za
 AW
@@ -20227,13 +20203,13 @@ Za
 AW
 Za
 XO
-AK
-GY
+XO
+XO
+XO
 KE
-Np
-NT
+GY
 XO
-XO
+Za
 AW
 HS
 XO
@@ -20383,12 +20359,12 @@ Za
 AW
 Za
 XO
+AK
+GY
+KE
+Np
+NT
 XO
-GZ
-KV
-Nq
-GZ
-OJ
 XO
 AW
 HS
@@ -20405,9 +20381,9 @@ Pd
 IJ
 Ik
 VK
-JH
-Ym
-LR
+Sp
+Sp
+SH
 VM
 Hm
 Fh
@@ -20538,13 +20514,13 @@ XO
 Za
 AW
 Za
-Za
 XO
 XO
-XO
-XO
-XO
-XO
+GZ
+KV
+Nq
+GZ
+OJ
 XO
 AW
 HS
@@ -20695,18 +20671,18 @@ Za
 AW
 Za
 Za
-Za
-Za
-Za
-Za
-Za
-Za
-Za
+XO
+XO
+XO
+XO
+XO
+XO
+XO
 AW
 HS
 HS
 VN
-GD
+Ie
 YR
 Jk
 tK
@@ -20722,7 +20698,7 @@ LU
 IH
 VM
 zm
-Ie
+LR
 Ie
 Lh
 VM
@@ -20861,8 +20837,8 @@ Za
 AW
 HS
 HS
-VQ
-Jz
+VM
+UQ
 Ie
 Ie
 LU
@@ -20878,8 +20854,8 @@ Ci
 Wt
 VM
 Zw
-pF
-Ku
+Ie
+Ie
 Et
 VM
 XO
@@ -21016,9 +20992,9 @@ Za
 Za
 AW
 HS
-XO
-VM
-UQ
+HS
+VN
+Ie
 YX
 Ie
 YX
@@ -21026,17 +21002,17 @@ Ie
 RX
 Zo
 Pd
-UQ
+GD
 RX
 wk
 Mt
 VQ
 Jl
 VM
-VM
-VM
-VM
-VM
+Ku
+Ym
+js
+Et
 VM
 XO
 XO
@@ -21180,7 +21156,7 @@ Zg
 Zg
 Ie
 bn
-bv
+Ve
 Bd
 Ve
 Rz
@@ -21189,11 +21165,11 @@ VM
 VM
 VM
 VM
-XO
-XO
-XO
-XO
-XO
+VM
+VM
+VM
+VM
+VM
 Za
 XO
 Yf
@@ -21336,10 +21312,10 @@ Rk
 PV
 VQ
 VQ
-VQ
-VQ
-VQ
-VQ
+pF
+Pd
+Jz
+JH
 Sk
 VM
 XO
