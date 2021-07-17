@@ -161,7 +161,6 @@
 						prob(1);/obj/item/motiondetector/scout,
 						prob(4);/obj/item/stack/sheet/metal/medium_stack,
 						prob(2);/obj/item/stack/sheet/metal/large_stack,
-						prob(2);/obj/item/stack/sheet/wood/large_stack,
 						prob(4);/obj/item/stack/sheet/plasteel/medium_stack,
 						prob(2);/obj/item/stack/sheet/plasteel/large_stack,
 						prob(5);/obj/item/clothing/under/marine/standard,
