@@ -157,13 +157,13 @@
 	new /obj/item/storage/pill_bottle/inaprovaline(src)
 	new /obj/item/storage/pill_bottle/dexalin(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
-	new /obj/item/storage/pill_bottle/packet/leporazine(src)
+	new /obj/item/storage/pill_bottle/packet/imidazoline(src)
+	new /obj/item/storage/pill_bottle/packet/alkysine(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/storage/syringe_case/autoinjector/combat(src)
 	new /obj/item/storage/syringe_case/autoinjector/internal(src)
-	new /obj/item/healthanalyzer(src)
 
 	/*
 * Syringe Case
@@ -299,7 +299,7 @@
 	name = "autoinjector case (combat)"
 	desc = "It's a portable medical case for storing autoinjectors. This one contains autoinjectors for combat"
 
-/obj/item/storage/syringe_case/internal/PopulateContents()
+/obj/item/storage/syringe_case/autoinjector/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
@@ -311,7 +311,7 @@
 	name = "autoinjector case (internal)"
 	desc = "It's a portable medical case for storing autoinjectors. This one contains autoinjectors for internal injury."
 
-/obj/item/storage/syringe_case/internal/PopulateContents()
+/obj/item/storage/syringe_case/autoinjector/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/autoinjector/quickclotplus(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/quickclotplus(src)
