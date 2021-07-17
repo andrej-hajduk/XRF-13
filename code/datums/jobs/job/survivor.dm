@@ -1,8 +1,8 @@
 /datum/job/survivor
 	title = "Colonist"
 	supervisors = "anyone who might rescue you"
-	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_NT_PMC_GREEN)
-	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_NT_PMC_GREEN)
+	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
+	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
 	display_order = JOB_DISPLAY_ORDER_SURVIVOR
 	skills_type = /datum/skills/civilian
 	outfit = /datum/outfit/job/survivor
@@ -90,9 +90,9 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
-			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/welding(C), SLOT_IN_BACKPACK)
-			C.equip_to_slot_or_del(new /obj/item/stack/sheet/metal(C, 40), SLOT_IN_BACKPACK)
-			C.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel(C, 15), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/welding/superior(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/stack/sheet/metal(C, 50), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel(C, 30), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/rugged(C), SLOT_HEAD)
 		if("Merchant Captain") //Captain of a civilian merchant, inspired by Firefly. Some unique gear and a lot of skills, but starts with mostly nothing
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/captain)
