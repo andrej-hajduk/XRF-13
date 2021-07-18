@@ -429,7 +429,7 @@
 					if(squad.name == squad_name)
 						selected = squad
 						break
-				
+
 				//First, remove any existing squad access and clear the card.
 				for(var/datum/squad/Q in SSjob.squads)
 					if(findtext(modify.assignment, Q.name)) //Found one!
