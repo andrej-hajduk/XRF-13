@@ -82,6 +82,11 @@
 	spawn_amount = 4
 
 
+/obj/structure/largecrate/kitten
+	name = "kitten crate"
+	icon_state = "lisacrate"
+	spawn_type = /mob/living/simple_animal/cat/kitten
+	spawn_amount = 1
 ///////////CM largecrates ///////////////////////
 
 
@@ -158,6 +163,7 @@
 						prob(2);/obj/item/clothing/tie/storage/white_vest/surgery,
 						prob(3);/obj/item/motiondetector,
 						prob(1);/obj/item/motiondetector/scout,
+						prob(1);/obj/structure/largecrate/kitten,
 						prob(4);/obj/item/stack/sheet/metal/medium_stack,
 						prob(2);/obj/item/stack/sheet/metal/large_stack,
 						prob(4);/obj/item/stack/sheet/plasteel/medium_stack,
