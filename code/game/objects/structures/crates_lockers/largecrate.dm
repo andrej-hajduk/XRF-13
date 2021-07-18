@@ -141,6 +141,7 @@
 						prob(5);/obj/item/analyzer,
 						prob(5);/obj/item/multitool,
 						prob(2);/obj/item/storage/bible,
+						prob(1);/obj/item/storage/bible/koran,
 						prob(1);/obj/item/storage/bible/booze,
 						prob(4);/obj/item/clothing/glasses/hud/health,
 						prob(3);/obj/item/clothing/glasses/hud/medgoggles,
