@@ -96,13 +96,22 @@
 	if(H.l_hand && H.r_hand)
 		return
 
-	var/obj/item/cat/C = new
-	C.name = name
-	C.desc = desc
-	C.icon_state = initial(icon_state)
-	C.cat = src
-	forceMove(C)
-	H.put_in_hands(C)
+	if(istype(src, /mob/living/simple_animal/cat/kitten))
+		var/obj/item/cat/kitten/C = new
+		C.name = name
+		C.desc = desc
+		C.icon_state = initial(icon_state)
+		C.cat = src
+		forceMove(C)
+		H.put_in_hands(C)
+	else
+		var/obj/item/cat/C = new
+		C.name = name
+		C.desc = desc
+		C.icon_state = initial(icon_state)
+		C.cat = src
+		forceMove(C)
+		H.put_in_hands(C)
 
 
 /obj/item/cat
@@ -113,6 +122,8 @@
 	var/mob/living/simple_animal/cat/cat
 	flags_equip_slot = ITEM_SLOT_HEAD
 
+/obj/item/cat/kitten
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/cat/Destroy()
 	if(cat)
@@ -132,7 +143,5 @@
 
 /obj/item/cat/dropped(mob/user)
 	. = ..()
-	if(loc == user)
-		return
-	qdel(src)
-
+	if(isturf(loc))
+		qdel(src)
