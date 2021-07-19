@@ -46,10 +46,6 @@
 	},
 /turf/closed/brock,
 /area/barren/cave/lz2)
-"an" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/cult/clock,
-/area/barren/misc/clocknuke)
 "ao" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
 	dir = 8
@@ -337,15 +333,6 @@
 /obj/item/lightstick/red/anchored,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"bJ" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
-"bL" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "bM" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
@@ -378,12 +365,6 @@
 	},
 /turf/open/lavaland/lava,
 /area/barren)
-"bW" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 8
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "bY" = (
 /obj/item/lightstick/red/anchored,
 /turf/open/floor/plating,
@@ -463,12 +444,6 @@
 /obj/item/trash/cigbutt,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"ct" = (
-/obj/effect/decal/remains/human,
-/turf/open/lavaland/lava/side{
-	dir = 1
-	},
-/area/barren)
 "cu" = (
 /obj/structure/sink,
 /turf/closed/wall,
@@ -512,7 +487,6 @@
 /obj/structure/bed/chair/dropship/pilot{
 	dir = 1
 	},
-/obj/effect/decal/remains/human,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/crashed)
 "cJ" = (
@@ -654,10 +628,6 @@
 /obj/structure/largecrate/supply/medicine/iv,
 /turf/open/floor,
 /area/barren/misc/genstorage)
-"dq" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
 "dr" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/closed/brock,
@@ -793,14 +763,7 @@
 /obj/item/ore/silver,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"dX" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/tile/dark2,
-/area/barren/civilian)
 "dY" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 8
-	},
 /turf/open/lavaland/basalt/glowing,
 /area/barren/cave/north)
 "dZ" = (
@@ -965,10 +928,6 @@
 /obj/structure/ore_box,
 /turf/open/lavaland/basalt,
 /area/barren/cave/west)
-"eI" = (
-/obj/effect/decal/remains/human,
-/turf/open/lavaland/basalt,
-/area/barren/misc/clocknuke)
 "eL" = (
 /obj/structure/barricade/guardrail,
 /obj/structure/barricade/guardrail{
@@ -1018,14 +977,8 @@
 /obj/item/ore/iron,
 /turf/open/lavaland/basalt,
 /area/barren/cave/southwest)
-"eU" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood,
-/turf/closed/wall,
-/area/barren/security)
 "eV" = (
 /obj/machinery/bodyscanner,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 10
 	},
@@ -1079,10 +1032,6 @@
 	},
 /turf/open/floor/prison/sterilewhite,
 /area/barren/civilian)
-"fp" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/mainship/sterile/dark,
-/area/barren/misc/alienstorage)
 "fs" = (
 /obj/effect/decal/remains/marauder,
 /turf/open/lavaland/basalt,
@@ -1091,10 +1040,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"fu" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/grimy,
-/area/barren/civilian)
 "fw" = (
 /turf/closed/wall,
 /area/barren/engie/engine)
@@ -1138,12 +1083,6 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/tile/dark2,
 /area/barren/engie/engine)
-"fH" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/human,
-/obj/item/clothing/head/hardhat/orange,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "fI" = (
 /obj/structure/barricade/metal{
 	dir = 4
@@ -1189,15 +1128,6 @@
 	dir = 1
 	},
 /area/barren/security)
-"fT" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood,
-/obj/machinery/power/geothermal,
-/obj/structure/cable,
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
 "fU" = (
 /obj/machinery/door/airlock/mainship/generic,
 /turf/open/floor/plating,
@@ -1328,12 +1258,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/barren/misc/eastarmory)
-"gx" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 10
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "gy" = (
 /obj/machinery/miner/damaged,
 /turf/open/lavaland/basalt,
@@ -1343,12 +1267,6 @@
 /obj/structure/paper_bin,
 /turf/open/floor/wood,
 /area/barren/security)
-"gA" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 5
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "gB" = (
 /obj/machinery/door/airlock/mainship/engineering/free_access{
 	dir = 2;
@@ -1444,9 +1362,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
 /turf/open/floor,
 /area/barren/misc/eastarmory)
 "gZ" = (
@@ -1461,10 +1376,6 @@
 /obj/machinery/computer/security/wooden_tv,
 /turf/closed/wall/r_wall,
 /area/barren/misc/ashshelter)
-"hc" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
 "hd" = (
 /turf/closed/wall,
 /area/barren/cave/west)
@@ -1563,10 +1474,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"hz" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "hA" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/closed/wall,
@@ -1797,7 +1704,6 @@
 /area/barren/cave/northwest)
 "iH" = (
 /obj/item/storage/firstaid,
-/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/marking,
 /area/barren/cave/central)
 "iI" = (
@@ -1890,21 +1796,10 @@
 /obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/plating,
 /area/barren/engie/three)
-"jh" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 9
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
 "ji" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/barren/misc/genstorage)
-"jj" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/plating/dmg3,
-/turf/open/floor/plating/dmg2,
-/area/barren/cave/central)
 "jk" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/colony/research,
@@ -1945,12 +1840,6 @@
 /obj/structure/barricade/metal,
 /turf/open/lavaland/basalt,
 /area/barren/cave/central)
-"jy" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "jz" = (
 /obj/item/toy/beach_ball,
 /turf/open/lavaland/basalt,
@@ -1971,10 +1860,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"jF" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/plating/dmg3,
-/area/barren/cave/central)
 "jG" = (
 /obj/item/tool/warning_cone,
 /turf/open/lavaland/basalt,
@@ -2068,10 +1953,6 @@
 /obj/machinery/button/door/open_only/landing_zone,
 /turf/open/floor/plating/plating_catwalk,
 /area/barren/cave/lz1)
-"kd" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor,
-/area/barren/civilian/workdorm)
 "kf" = (
 /obj/machinery/door/poddoor/mainship/indestructible{
 	dir = 2;
@@ -2317,10 +2198,6 @@
 "ld" = (
 /turf/open/floor/plating/dmg3,
 /area/barren/misc/crashed)
-"le" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/turf/open/floor/plating/mainship,
-/area/barren/misc/crashed)
 "lf" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/surgical_tray,
@@ -2403,23 +2280,6 @@
 /area/barren/misc/alienstorage)
 "lC" = (
 /obj/structure/xenoautopsy/tank/escaped,
-/turf/open/floor/plating/mainship,
-/area/barren/misc/crashed)
-"lE" = (
-/obj/effect/decal/cleanable/blood,
-/turf/closed/wall/r_wall,
-/area/barren/misc/alienstorage)
-"lF" = (
-/obj/effect/decal/cleanable/blood/writing,
-/obj/structure/cable,
-/turf/open/floor/tile/red/redtaupe{
-	dir = 4
-	},
-/area/barren/security)
-"lG" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/crashed)
 "lH" = (
@@ -2519,10 +2379,6 @@
 	dir = 5
 	},
 /area/barren/security)
-"mc" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/plating,
-/area/barren/cave/south)
 "md" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/skills,
@@ -2558,13 +2414,6 @@
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/shuttle/plating,
 /area/barren/security)
-"mk" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "ml" = (
 /obj/structure/bed/alien,
 /obj/item/bedsheet,
@@ -2585,7 +2434,6 @@
 /turf/open/lavaland/basalt,
 /area/barren/cave/north)
 "mr" = (
-/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/ash,
 /turf/open/lavaland/basalt,
 /area/barren/misc/clocknuke)
@@ -2599,8 +2447,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/toolbox,
@@ -2625,12 +2471,6 @@
 	dir = 8
 	},
 /area/barren)
-"mx" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 6
-	},
-/turf/open/floor,
-/area/barren/civilian/workdorm)
 "my" = (
 /obj/structure/cable,
 /obj/structure/cable,
@@ -2796,13 +2636,6 @@
 /obj/machinery/light,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/stationed)
-"np" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/floor,
-/area/barren/civilian)
 "nq" = (
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
@@ -3014,9 +2847,7 @@
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
 "oo" = (
-/obj/effect/decal/remains/human,
 /obj/item/clothing/head/hardhat/orange,
-/obj/effect/decal/cleanable/blood,
 /turf/open/lavaland/basalt,
 /area/barren/cave/central)
 "op" = (
@@ -3033,10 +2864,6 @@
 	},
 /turf/open/floor,
 /area/bigredv2/outside/general_offices)
-"os" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/grimy,
-/area/barren/civilian)
 "ot" = (
 /obj/structure/closet/walllocker/medical_wall,
 /turf/closed/wall/r_wall,
@@ -3056,10 +2883,6 @@
 	},
 /turf/open/lavaland/lava,
 /area/barren/cave/lz2)
-"oC" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "oG" = (
 /obj/structure/barricade/guardrail,
 /turf/open/lavaland/lava/corner{
@@ -3073,20 +2896,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/bigredv2/outside/general_offices)
-"oJ" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 10
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
-"oK" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 5
-	},
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "oL" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom,
 /turf/open/floor/freezer,
@@ -3223,20 +3032,11 @@
 /area/barren/security)
 "px" = (
 /obj/structure/bed/chair/office/light,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor,
 /area/bigredv2/outside/general_offices)
 "pA" = (
 /turf/closed/wall/mainship,
 /area/storage/testroom)
-"pB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "pE" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 4
@@ -3306,10 +3106,6 @@
 /obj/structure/curtain/open/shower,
 /turf/open/floor/plating/plating_catwalk,
 /area/barren/civilian)
-"pW" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "pX" = (
 /obj/structure/sign/double/barsign/carp{
 	dir = 1
@@ -3370,7 +3166,6 @@
 /area/prison/laundry)
 "qn" = (
 /obj/structure/door_assembly,
-/obj/effect/decal/cleanable/blood/writing,
 /turf/open/shuttle/blackfloor,
 /area/barren/misc/clocknuke)
 "qo" = (
@@ -3479,13 +3274,6 @@
 "qW" = (
 /turf/open/floor/freezer,
 /area/barren/medical/chemistry)
-"qX" = (
-/obj/effect/decal/cleanable/blood,
-/obj/structure/cable,
-/turf/open/floor/tile/red/redtaupe{
-	dir = 4
-	},
-/area/barren/security)
 "qY" = (
 /obj/machinery/floodlight/landing,
 /turf/open/floor/plating,
@@ -3493,12 +3281,6 @@
 "qZ" = (
 /turf/open/floor/vault,
 /area/prison/laundry)
-"ra" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 5
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "rb" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 1
@@ -3726,7 +3508,6 @@
 /area/barren/misc/crashed)
 "sn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/drip,
 /obj/structure/cable,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 1
@@ -3767,14 +3548,8 @@
 "sE" = (
 /turf/open/shuttle/blackfloor,
 /area/barren/misc/clocknuke)
-"sG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/wood,
-/area/barren/security)
 "sI" = (
 /obj/item/tool/kitchen/knife/ritual,
-/obj/effect/decal/cleanable/blood,
 /turf/open/shuttle/blackfloor,
 /area/barren/misc/clocknuke)
 "sJ" = (
@@ -3826,13 +3601,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/prison/bright_clean/two,
 /area/barren/security)
-"sV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 9
-	},
-/turf/open/floor,
-/area/bigredv2/outside/general_offices)
 "sW" = (
 /obj/structure/barricade/guardrail,
 /obj/structure/barricade/guardrail{
@@ -3886,11 +3654,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mainship/black/full,
 /area/barren/security)
-"tf" = (
-/obj/item/lightstick/red/anchored,
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "th" = (
 /obj/structure/table/reinforced,
 /obj/item/paper/clockresearch2,
@@ -3898,7 +3661,6 @@
 /area/barren/misc/clocknuke)
 "tj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/tile/blue/whiteblue,
 /area/barren/medical)
 "tk" = (
@@ -3979,10 +3741,6 @@
 /obj/structure/largecrate/random/barrel/white,
 /turf/open/floor,
 /area/barren/misc/genstorage)
-"tB" = (
-/obj/effect/decal/remains/human,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southeast)
 "tD" = (
 /obj/effect/landmark/start/job/xenomorph,
 /obj/effect/landmark/weed_node,
@@ -4001,10 +3759,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/lavaland/basalt,
 /area/barren/cave/northwest)
-"tG" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "tI" = (
 /obj/structure/table/mainship,
 /obj/item/taperecorder,
@@ -4019,12 +3773,6 @@
 /obj/structure/cable,
 /turf/open/lavaland/basalt,
 /area/barren/cave/southeast)
-"tK" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 8
-	},
-/turf/open/floor,
-/area/bigredv2/outside/general_offices)
 "tL" = (
 /obj/structure/cable,
 /turf/open/floor/grimy,
@@ -4053,10 +3801,6 @@
 	},
 /turf/open/floor/plating/ground/dirt,
 /area/barren/civilian)
-"tV" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/closed/wall/indestructible/mineral,
-/area/barren/misc/clocknuke)
 "tX" = (
 /obj/structure/largecrate/random/barrel,
 /turf/open/floor,
@@ -4180,14 +3924,7 @@
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"uE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/human,
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "uF" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor,
 /area/barren/civilian/workdorm)
 "uG" = (
@@ -4234,10 +3971,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/barren/civilian/workdorm)
-"uY" = (
-/obj/effect/decal/remains/human,
-/turf/closed/wall/indestructible/mineral,
-/area/barren/misc/clocknuke)
 "uZ" = (
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating,
@@ -4370,15 +4103,8 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/tile/red/full,
 /area/barren/security)
-"vK" = (
-/obj/structure/closet,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/wood,
-/area/barren/civilian)
 "vL" = (
 /obj/item/storage/backpack/cultpack,
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood,
 /turf/open/shuttle/blackfloor,
 /area/barren/misc/clocknuke)
 "vM" = (
@@ -4460,10 +4186,6 @@
 "wl" = (
 /turf/open/floor/plating/dmg3,
 /area/barren/cave/central)
-"wm" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/prison/sterilewhite,
-/area/barren/medical/research)
 "wn" = (
 /obj/structure/barricade/guardrail{
 	dir = 4;
@@ -4504,11 +4226,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/barren/misc/shack)
-"wy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/wood,
-/area/barren/civilian/cook)
 "wz" = (
 /obj/structure/barricade/guardrail{
 	dir = 8
@@ -4604,10 +4321,6 @@
 	},
 /turf/open/floor/tile/red/full,
 /area/barren/security)
-"wY" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "xa" = (
 /turf/open/floor/plating/dmg3,
 /turf/open/floor/plating/dmg2,
@@ -4616,7 +4329,6 @@
 /turf/open/floor/plating,
 /area/barren/cave/south)
 "xc" = (
-/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/ash,
 /turf/open/shuttle/blackfloor,
 /area/barren/misc/clocknuke)
@@ -4738,9 +4450,7 @@
 /turf/open/lavaland/basalt,
 /area/barren/cave/west)
 "xI" = (
-/obj/effect/decal/remains/human,
 /obj/item/clothing/head/hardhat/orange,
-/obj/effect/decal/cleanable/blood,
 /turf/open/lavaland/basalt,
 /area/barren/cave/northwest)
 "xM" = (
@@ -4770,7 +4480,6 @@
 /turf/open/floor/prison,
 /area/barren/security)
 "xW" = (
-/obj/effect/decal/cleanable/blood,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/miningcar,
@@ -4808,17 +4517,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/stationed)
-"yf" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/human,
-/turf/open/shuttle/blackfloor,
-/area/barren/misc/clocknuke)
-"yg" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/central)
 "yh" = (
 /turf/closed/wall/r_wall/unmeltable,
 /area/barren/misc/eastarmory)
@@ -4830,11 +4528,6 @@
 	},
 /turf/open/floor/plating,
 /area/barren/engie/one)
-"yk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/prison/bright_clean/two,
-/area/barren/security)
 "ym" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/lavaland/basalt,
@@ -4853,14 +4546,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/barren/misc/eastarmory)
-"yr" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/grimy,
-/area/barren/civilian/workdorm)
-"ys" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/prison/bright_clean/two,
-/area/barren/security)
 "yv" = (
 /obj/machinery/optable,
 /obj/machinery/power/apc,
@@ -4893,10 +4578,6 @@
 /obj/item/trash/cigbutt,
 /turf/open/floor/grimy,
 /area/barren/civilian/workdorm)
-"yE" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/lavaland/basalt,
-/area/barren/cave/northwest)
 "yH" = (
 /turf/closed/wall/r_wall,
 /area/barren/misc/eastarmory)
@@ -4938,11 +4619,6 @@
 /obj/machinery/sleeper,
 /turf/open/floor/tile/blue/whiteblue,
 /area/barren/medical)
-"yX" = (
-/obj/effect/decal/remains/human,
-/obj/structure/barricade/guardrail,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "yZ" = (
 /obj/effect/decal/woodsiding{
 	dir = 9
@@ -5197,10 +4873,8 @@
 /turf/open/floor/podhatch/floor,
 /area/barren/misc/stationed)
 "At" = (
-/obj/effect/decal/remains/human,
 /obj/effect/landmark/weapon_spawn/tier1_weapon_spawn,
 /obj/structure/cable,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/stationed)
 "Au" = (
@@ -5294,12 +4968,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/prison,
 /area/ai_monitored/storage/secure)
-"AY" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 6
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "Ba" = (
 /obj/effect/decal/siding{
 	dir = 5
@@ -5353,9 +5021,6 @@
 /turf/open/floor/wood,
 /area/barren/civilian/cook)
 "Br" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
 /turf/open/floor/tile/blue/whiteblue,
 /area/barren/medical)
 "Bs" = (
@@ -5388,7 +5053,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood,
 /obj/structure/barricade/guardrail{
 	dir = 4;
 	pixel_y = 7
@@ -5447,15 +5111,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/prison/bright_clean/two,
 /area/barren/security)
-"BO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 10
-	},
-/turf/open/floor/tile/blue/whitebluecorner{
-	dir = 8
-	},
-/area/barren/medical)
 "BQ" = (
 /obj/machinery/chem_dispenser/soda,
 /turf/closed/wall,
@@ -5470,12 +5125,6 @@
 /obj/structure/cable,
 /turf/open/lavaland/basalt,
 /area/barren/cave/central)
-"BU" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 9
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "BV" = (
 /obj/structure/table,
 /obj/structure/paper_bin,
@@ -5558,11 +5207,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/barren/civilian/workdorm)
-"Cj" = (
-/obj/item/tool/pickaxe,
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
 "Ck" = (
 /turf/open/lavaland/lava/corner{
 	dir = 1
@@ -5862,10 +5506,6 @@
 	name = "medical"
 	},
 /area/barren/medical)
-"DW" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/northeast)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
@@ -5903,10 +5543,6 @@
 /obj/structure/closet/firecloset,
 /turf/open/floor/marking,
 /area/barren/cave/central)
-"Ej" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/wood,
-/area/barren/civilian/cook)
 "En" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 4
@@ -5983,14 +5619,6 @@
 "EF" = (
 /turf/open/lavaland/basalt,
 /area/barren/cave/east)
-"EG" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/floor/tile/blue/whitebluecorner{
-	dir = 8
-	},
-/area/barren/medical)
 "EH" = (
 /obj/machinery/light{
 	dir = 1
@@ -6138,7 +5766,6 @@
 /area/barren/cave/lz2)
 "Fu" = (
 /obj/machinery/light,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/blue/whiteblue,
 /area/barren/medical)
 "Fv" = (
@@ -6221,13 +5848,6 @@
 "FO" = (
 /turf/open/floor/plating/asteroidfloor,
 /area/barren/cave/lz1)
-"FP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "FR" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/wood,
@@ -6552,13 +6172,8 @@
 /obj/structure/barricade/guardrail,
 /turf/open/lavaland/catwalk,
 /area/barren/cave/south)
-"HO" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/northwest)
 "HP" = (
 /obj/structure/bed/chair/office/light,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
 /area/barren/security)
 "HQ" = (
@@ -6645,11 +6260,6 @@
 /obj/effect/decal/warning_stripes/thin,
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"Ir" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood,
-/turf/closed/wall/r_wall,
-/area/barren/security)
 "Is" = (
 /obj/structure/cable,
 /turf/open/floor/tile/blue/whitebluecorner{
@@ -6705,7 +6315,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 8
 	},
@@ -6838,12 +6447,6 @@
 	},
 /turf/open/floor/freezer,
 /area/barren/civilian/cook)
-"Jq" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 1
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "Jr" = (
 /obj/structure/mirror,
 /turf/closed/wall,
@@ -6920,7 +6523,6 @@
 /area/ai_monitored/storage/secure)
 "JE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
 /obj/item/storage/pill_bottle,
 /turf/open/floor/tile/bar{
 	name = "medical"
@@ -6998,7 +6600,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark2,
 /area/bigredv2/outside/general_offices)
 "Ke" = (
@@ -7010,12 +6611,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
-"Kg" = (
-/obj/effect/decal/remains/human,
-/obj/item/clothing/head/hardhat/orange,
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "Ki" = (
 /obj/structure/sink/bathroom{
 	dir = 8
@@ -7170,14 +6765,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/barren/misc/eastarmory)
-"Lh" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
-"Lj" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "Lk" = (
 /obj/docking_port/stationary/marine_dropship/lz2,
 /turf/open/floor/tile/damaged/panel,
@@ -7211,11 +6798,6 @@
 /obj/item/reagent_containers/glass/beaker/noreact,
 /turf/open/floor/prison/sterilewhite,
 /area/barren/medical/research)
-"Lv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/prison/bright_clean/two,
-/area/barren/security)
 "Lx" = (
 /obj/structure/sign/poster,
 /turf/closed/wall,
@@ -7279,7 +6861,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	dir = 8
@@ -7349,12 +6930,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/grimy,
 /area/barren/civilian/workdorm)
-"Mj" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 9
-	},
-/turf/open/floor/plating,
-/area/barren/cave/south)
 "Ml" = (
 /obj/structure/table/mainship,
 /obj/effect/decal/cleanable/dirt,
@@ -7445,12 +7020,6 @@
 /obj/structure/sign/poster,
 /turf/closed/brock,
 /area/barren/cave/west)
-"MY" = (
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/tile/bar{
-	name = "medical"
-	},
-/area/barren/medical)
 "MZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
@@ -7486,12 +7055,6 @@
 /obj/structure/table,
 /turf/open/floor/plating/mainship,
 /area/barren/misc/stationed)
-"Nj" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "Nk" = (
 /obj/structure/table/mainship,
 /obj/item/deployable_camera,
@@ -7580,10 +7143,6 @@
 /obj/item/tool/kitchen/tray,
 /turf/open/floor/prison/kitchen,
 /area/barren/civilian/cook)
-"NE" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/grimy,
-/area/barren/civilian/workdorm)
 "NF" = (
 /obj/structure/sink/kitchen,
 /turf/open/floor/prison/kitchen,
@@ -7681,22 +7240,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/barren/misc/eastarmory)
-"Oh" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/tile/red,
-/area/barren/security)
 "Oi" = (
 /obj/structure/cargo_container/horizontal{
 	dir = 1
 	},
 /turf/open/floor,
 /area/barren/cave/lz1)
-"Om" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 6
-	},
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
 "Oo" = (
 /obj/structure/bed/chair/sofa/right,
 /obj/effect/decal/cleanable/dirt,
@@ -7809,10 +7358,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/bigredv2/outside/general_offices)
-"Pa" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/wood,
-/area/barren/civilian/cook)
 "Pb" = (
 /obj/machinery/light,
 /turf/open/floor,
@@ -7855,10 +7400,6 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/tile/red/redtaupe,
-/area/barren/security)
-"Pn" = (
-/obj/effect/decal/cleanable/blood,
-/turf/closed/wall,
 /area/barren/security)
 "Pp" = (
 /obj/structure/table/reinforced,
@@ -8035,12 +7576,6 @@
 "Qt" = (
 /turf/open/floor/plating,
 /area/barren/cave/west)
-"Qv" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/floor/tile/dark2,
-/area/barren/engie/engine)
 "Qx" = (
 /obj/machinery/door/airlock/vault,
 /turf/open/floor,
@@ -8133,11 +7668,6 @@
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/open/floor/freezer,
 /area/barren/civilian/cook)
-"QY" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor,
-/area/barren/cave/lz1)
 "Ra" = (
 /obj/structure/cable,
 /turf/open/floor/plating/dmg1,
@@ -8295,9 +7825,7 @@
 /turf/open/lavaland/basalt,
 /area/barren/cave/north)
 "RQ" = (
-/obj/effect/decal/remains/human,
 /obj/item/clothing/head/hardhat/orange,
-/obj/effect/decal/cleanable/blood,
 /obj/structure/fence,
 /turf/open/lavaland/basalt,
 /area/barren/cave/west)
@@ -8342,11 +7870,6 @@
 	},
 /turf/open/floor,
 /area/barren/cave/lz1)
-"Se" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor,
-/area/barren/civilian)
 "Sf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/raisins,
@@ -8364,10 +7887,6 @@
 "Sh" = (
 /turf/open/floor/prison/sterilewhite,
 /area/barren/civilian)
-"Si" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/east)
 "Sk" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating/mainship,
@@ -8417,16 +7936,6 @@
 	icon_state = "wood-broken6"
 	},
 /area/bigredv2/outside/general_offices)
-"SE" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/prison/kitchen,
-/area/barren/civilian/cook)
-"SH" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/floor/grimy,
-/area/barren/civilian/workdorm)
 "SL" = (
 /obj/item/ore/phoron,
 /turf/open/lavaland/basalt,
@@ -8439,12 +7948,6 @@
 	},
 /turf/open/lavaland/lava,
 /area/barren)
-"SN" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/floor/tile/red,
-/area/barren/security)
 "SO" = (
 /obj/structure/largecrate/random/case/small,
 /turf/open/floor/tile/dark,
@@ -8513,12 +8016,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor,
 /area/barren/civilian/workdorm)
-"To" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 10
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "Tp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/mainship/generic/bathroom,
@@ -8550,11 +8047,6 @@
 /obj/machinery/miner/damaged/platinum,
 /turf/open/lavaland/basalt,
 /area/barren/cave/south)
-"TC" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/structure/cable,
-/turf/open/floor/tile/dark2,
-/area/barren/misc/refinery)
 "TE" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
@@ -8566,13 +8058,6 @@
 	icon_state = "wood-broken4"
 	},
 /area/barren/civilian)
-"TF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 10
-	},
-/turf/open/floor/prison/bright_clean/two,
-/area/barren/security)
 "TH" = (
 /obj/machinery/light{
 	dir = 8
@@ -8619,11 +8104,6 @@
 	},
 /turf/open/lavaland/lava/lpiece,
 /area/barren)
-"TV" = (
-/obj/item/tool/pickaxe,
-/obj/effect/decal/cleanable/blood,
-/turf/open/lavaland/basalt,
-/area/barren/cave/west)
 "TW" = (
 /obj/item/toy/plush,
 /obj/structure/table/reinforced,
@@ -8647,13 +8127,6 @@
 "Ud" = (
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 10
-	},
-/area/barren/medical)
-"Uh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/tile/blue/whiteblue{
-	dir = 4
 	},
 /area/barren/medical)
 "Ul" = (
@@ -8913,10 +8386,6 @@
 	dir = 1
 	},
 /area/barren/medical/chemistry)
-"VG" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "VH" = (
 /obj/structure/cable,
 /turf/open/floor/vault,
@@ -9049,7 +8518,6 @@
 /area/barren/medical/research)
 "WC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing,
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/barren/medical)
 "WD" = (
@@ -9158,10 +8626,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor,
 /area/barren/civilian/workdorm)
-"Xj" = (
-/obj/effect/decal/remains/human,
-/turf/open/lavaland/basalt,
-/area/barren/cave/south)
 "Xk" = (
 /obj/structure/barricade/metal{
 	dir = 4
@@ -9276,13 +8740,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/open/floor/wood,
 /area/barren/security)
-"XZ" = (
-/obj/structure/bed/alien,
-/obj/item/bedsheet,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/wood,
-/area/barren/civilian/workdorm)
 "Yc" = (
 /obj/structure/closet/emcloset,
 /obj/effect/decal/cleanable/cobweb{
@@ -9313,19 +8770,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/barren/civilian/cook)
-"Yq" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 4
-	},
-/turf/open/lavaland/basalt,
-/area/barren/cave/southwest)
-"Ys" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/writing,
-/turf/open/floor/tile/red/redtaupe{
-	dir = 4
-	},
-/area/barren/security)
 "Yt" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/prison/sterilewhite,
@@ -9479,10 +8923,6 @@
 /turf/open/floor/tile/red/redtaupe{
 	dir = 1
 	},
-/area/barren/security)
-"Zs" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/mainship/black/full,
 /area/barren/security)
 "Zu" = (
 /obj/structure/cable,
@@ -19024,8 +18464,8 @@ HQ
 HQ
 HQ
 Vz
-Lh
-Cj
+Vz
+ub
 HQ
 dy
 Vz
@@ -20220,7 +19660,7 @@ QR
 rK
 rK
 rK
-eU
+GW
 GW
 Bi
 Bi
@@ -20265,7 +19705,7 @@ ZW
 ZW
 ZW
 eH
-Lj
+ZN
 ZW
 ZW
 Dt
@@ -20477,7 +19917,7 @@ QR
 rK
 rK
 rK
-Pn
+GW
 cR
 gd
 VN
@@ -20523,7 +19963,7 @@ ZW
 ZW
 AE
 ZN
-Kg
+gp
 ZW
 Dt
 TO
@@ -20778,7 +20218,7 @@ ZN
 ZN
 ZW
 ZW
-Kg
+gp
 ZN
 AE
 ZW
@@ -20818,8 +20258,8 @@ ZW
 ZW
 ZN
 ZN
-BU
-hc
+ZN
+Vz
 Vz
 Vz
 Vz
@@ -20997,7 +20437,7 @@ aw
 rY
 GW
 gh
-SN
+CW
 CW
 HJ
 Bi
@@ -21074,8 +20514,8 @@ ZW
 ZW
 ZN
 ZN
-tG
-AY
+ZN
+ZN
 Vz
 Vz
 Vz
@@ -21254,7 +20694,7 @@ GW
 GW
 rx
 wf
-SN
+CW
 CW
 vN
 Bi
@@ -21511,7 +20951,7 @@ TH
 TL
 GW
 Jb
-Oh
+CW
 CW
 SY
 FJ
@@ -21586,8 +21026,8 @@ ZN
 Lz
 ZN
 ZN
-BU
-tG
+ZN
+ZN
 ZN
 ZN
 Vz
@@ -21773,17 +21213,17 @@ vQ
 Qs
 hk
 hk
-qX
-lF
-Ys
+hk
+hk
+Wh
 Wh
 vF
 vF
 vF
 Sp
-ys
-yk
-TF
+Sp
+Gj
+Gj
 Fh
 Bi
 Sp
@@ -21842,8 +21282,8 @@ ZN
 ZN
 Lz
 Gn
-tG
-AY
+ZN
+ZN
 ZN
 ZN
 ZN
@@ -22028,7 +21468,7 @@ zI
 vQ
 CW
 zo
-Ir
+Bi
 Bi
 Bi
 mj
@@ -22044,7 +21484,7 @@ Sp
 ig
 sU
 Gj
-TF
+Gj
 Sp
 Bi
 rK
@@ -22097,7 +21537,7 @@ ZN
 ZN
 ZN
 ZN
-Lj
+ZN
 ZN
 AE
 ZN
@@ -22301,7 +21741,7 @@ Sp
 ig
 Bi
 Gj
-Lv
+Gj
 Gj
 Bi
 rK
@@ -22362,7 +21802,7 @@ ZN
 ZN
 ZW
 Vz
-hc
+Vz
 ub
 Vz
 Vz
@@ -22542,7 +21982,7 @@ mb
 Sf
 Ik
 Aq
-Pn
+GW
 rK
 rK
 QR
@@ -23336,7 +22776,7 @@ Bi
 rK
 rK
 RI
-HO
+QR
 ZN
 ZN
 ZN
@@ -23820,7 +23260,7 @@ rK
 rK
 GW
 iv
-sG
+Pc
 HP
 aC
 zN
@@ -24101,7 +23541,7 @@ su
 lQ
 AI
 aW
-Zs
+Hv
 re
 Bi
 rK
@@ -24158,7 +23598,7 @@ ZN
 ZN
 ZN
 ZN
-Lj
+ZN
 ZN
 Vz
 Vz
@@ -24170,7 +23610,7 @@ HQ
 HQ
 HQ
 HQ
-hc
+Vz
 Vz
 HQ
 HQ
@@ -24377,8 +23817,8 @@ ZN
 ZN
 ZN
 ZN
-Lj
-fH
+ZN
+gp
 ZW
 ZW
 ZW
@@ -24415,7 +23855,7 @@ SL
 ZN
 ZN
 ZN
-Nj
+ZN
 ZN
 Vz
 Vz
@@ -24427,7 +23867,7 @@ HQ
 HQ
 HQ
 HQ
-Yq
+Vz
 Vz
 dy
 HQ
@@ -24672,7 +24112,7 @@ ZW
 ZW
 eH
 ZN
-Nj
+ZN
 ZN
 Vz
 Vz
@@ -24929,7 +24369,7 @@ ZW
 ZW
 ZN
 ZN
-AY
+ZN
 ZN
 Vz
 HQ
@@ -25131,7 +24571,7 @@ Bi
 rK
 QR
 BS
-yE
+QR
 QR
 QR
 QR
@@ -25225,8 +24665,8 @@ nG
 yU
 HQ
 Vz
-jh
-Lh
+Vz
+Vz
 ub
 HQ
 HQ
@@ -25441,7 +24881,7 @@ ZW
 ZW
 ZW
 ZN
-Nj
+ZN
 ZN
 ZN
 ZN
@@ -25482,7 +24922,7 @@ Vz
 Vz
 Vz
 Vz
-hc
+Vz
 HQ
 HQ
 HQ
@@ -25659,7 +25099,7 @@ ZW
 ZW
 ZW
 AE
-Kg
+gp
 ZW
 ZW
 Dc
@@ -25698,7 +25138,7 @@ ZW
 ZW
 ZW
 Lz
-Nj
+ZN
 Lz
 Lz
 Lz
@@ -25955,7 +25395,7 @@ ZW
 ZW
 ZW
 ZN
-Nj
+ZN
 ZN
 ZN
 ZN
@@ -26451,9 +25891,9 @@ ZW
 ZW
 ZW
 ZW
-Kg
+gp
 ZN
-TV
+AE
 ZW
 ZW
 ZW
@@ -26597,7 +26037,7 @@ aI
 ad
 af
 bh
-an
+aj
 aj
 aj
 aj
@@ -26708,10 +26148,10 @@ ZW
 ZW
 ZW
 eH
-TV
+AE
 ZN
 ZN
-Kg
+gp
 ZW
 ZN
 ZN
@@ -26859,7 +26299,7 @@ aj
 aj
 db
 cx
-eI
+cx
 cx
 gP
 it
@@ -27623,7 +27063,7 @@ aI
 aI
 ad
 af
-an
+aj
 cx
 cx
 cx
@@ -27643,7 +27083,7 @@ ad
 aI
 ad
 qn
-tV
+ad
 sE
 sE
 mN
@@ -27698,7 +27138,7 @@ aZ
 aZ
 aZ
 aZ
-bL
+aZ
 aZ
 aZ
 aZ
@@ -27720,7 +27160,7 @@ DY
 HM
 Tf
 DY
-sV
+DY
 px
 Gt
 HM
@@ -27904,7 +27344,7 @@ ad
 sE
 sE
 sE
-yf
+sE
 mN
 ah
 ah
@@ -27953,10 +27393,10 @@ CY
 aZ
 aZ
 aZ
-bL
-bL
 aZ
-bL
+aZ
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -27977,7 +27417,7 @@ DY
 Zx
 xx
 DY
-tK
+IM
 IM
 Ap
 HM
@@ -28157,7 +27597,7 @@ ad
 aI
 ad
 rp
-uY
+ad
 ad
 wq
 sE
@@ -28307,7 +27747,7 @@ hj
 yv
 BG
 BG
-fp
+BG
 uj
 uj
 ZK
@@ -28564,7 +28004,7 @@ et
 bO
 BG
 BG
-fp
+BG
 lf
 uj
 ZK
@@ -28802,7 +28242,7 @@ dK
 dK
 WB
 EW
-wm
+dK
 dK
 YZ
 kO
@@ -29275,12 +28715,12 @@ ZW
 ZW
 ZW
 Dt
-ct
+US
 PO
 gp
 ZN
-Kg
-TV
+gp
+AE
 Qt
 Qt
 Qt
@@ -29337,7 +28777,7 @@ Ia
 BG
 BG
 mg
-lE
+uj
 ZK
 ZK
 Yy
@@ -29601,7 +29041,7 @@ Yy
 Yy
 Yy
 Yy
-oC
+Yy
 Yy
 Yy
 ZK
@@ -30259,7 +29699,7 @@ gC
 BH
 VP
 JV
-SE
+JV
 Cn
 YQ
 YQ
@@ -31064,7 +30504,7 @@ ZN
 ZN
 ZN
 ZN
-Lj
+ZN
 Lz
 ZN
 ZN
@@ -31115,7 +30555,7 @@ YZ
 kN
 kN
 WW
-wm
+dK
 dK
 Lu
 YZ
@@ -31319,10 +30759,10 @@ ZN
 Ix
 ZN
 ZN
-Lj
 ZN
 ZN
-Lj
+ZN
+ZN
 ZN
 ZN
 ZN
@@ -31577,7 +31017,7 @@ Ix
 Ix
 ZN
 ZN
-Lj
+ZN
 ZN
 Lz
 ZN
@@ -31832,8 +31272,8 @@ ZW
 ZW
 ZW
 Ix
-BU
-tG
+ZN
+ZN
 ZN
 ZN
 Lz
@@ -31884,7 +31324,7 @@ Yy
 ZK
 ZK
 ZK
-oC
+Yy
 Yy
 jP
 Yy
@@ -32066,7 +31506,7 @@ ts
 ts
 ts
 QF
-Pa
+Aj
 yw
 yw
 yw
@@ -32089,7 +31529,7 @@ ZW
 ZW
 Ix
 xG
-Nj
+ZN
 ZN
 ZN
 ZW
@@ -32346,7 +31786,7 @@ ZW
 Ix
 Ix
 ZN
-Nj
+ZN
 ZN
 ZN
 ZN
@@ -32356,8 +31796,8 @@ fw
 fE
 hw
 mI
-bJ
-bJ
+mI
+mI
 mI
 mI
 rv
@@ -32377,7 +31817,7 @@ bC
 iN
 Al
 AR
-TC
+uc
 LB
 JJ
 JJ
@@ -32603,7 +32043,7 @@ ZN
 Ix
 ZN
 ZN
-AY
+ZN
 ZN
 ZN
 ZN
@@ -32616,7 +32056,7 @@ aY
 ds
 fw
 qz
-dq
+aY
 eP
 aY
 wT
@@ -32810,7 +32250,7 @@ gg
 aZ
 aZ
 aZ
-bL
+aZ
 Et
 aZ
 aZ
@@ -33067,7 +32507,7 @@ aZ
 aZ
 aZ
 aZ
-bL
+aZ
 aZ
 aZ
 aZ
@@ -33325,7 +32765,7 @@ aZ
 aZ
 aZ
 aZ
-bL
+aZ
 aZ
 aZ
 aZ
@@ -33346,8 +32786,8 @@ yw
 yw
 yw
 Aj
-Ej
-wy
+Aj
+Ww
 Ww
 Aj
 Nf
@@ -34401,7 +33841,7 @@ ZN
 ZN
 Ix
 ZN
-Nj
+ZN
 ZN
 ZN
 ZW
@@ -34417,7 +33857,7 @@ iS
 aY
 aY
 UG
-dq
+aY
 aY
 aY
 aY
@@ -34638,7 +34078,7 @@ yd
 zb
 Pj
 hH
-os
+hH
 Pj
 aZ
 aZ
@@ -34658,7 +34098,7 @@ ZN
 ZN
 Ix
 ZN
-Nj
+ZN
 ZN
 ZN
 ZN
@@ -34674,7 +34114,7 @@ fw
 aY
 aY
 BC
-Qv
+aY
 aY
 fw
 fw
@@ -34714,7 +34154,7 @@ Yy
 Yy
 Yy
 Yy
-oC
+Yy
 Yy
 Yy
 Yy
@@ -34893,8 +34333,8 @@ Cf
 yd
 yd
 zb
-dX
-fu
+UD
+hH
 hH
 UD
 aZ
@@ -34915,7 +34355,7 @@ YL
 YL
 Eu
 Qb
-yg
+Qb
 Qb
 Qb
 Qb
@@ -34931,7 +34371,7 @@ fw
 aY
 aY
 eP
-Qv
+aY
 yM
 fw
 Bj
@@ -35172,7 +34612,7 @@ Qb
 Qb
 Eu
 Qb
-yg
+Qb
 Qb
 Qb
 Qb
@@ -35187,8 +34627,8 @@ WU
 fw
 qz
 aY
-fT
-Qv
+eP
+aY
 wT
 fw
 eQ
@@ -35205,7 +34645,7 @@ Qb
 Qb
 Qb
 ne
-uE
+ne
 ne
 YL
 oo
@@ -35445,7 +34885,7 @@ mI
 mI
 mI
 nA
-Om
+aY
 aY
 aY
 aY
@@ -35667,7 +35107,7 @@ iO
 iO
 yw
 cD
-vK
+ja
 gb
 aZ
 aZ
@@ -36241,7 +35681,7 @@ Qb
 Qb
 Yy
 Yy
-VG
+Yy
 Yy
 OR
 OR
@@ -36487,7 +35927,7 @@ iH
 NT
 qo
 RA
-jj
+xa
 bC
 bC
 bC
@@ -37260,13 +36700,13 @@ qo
 qo
 qo
 qo
-jF
+wl
 bC
 Qb
 Qb
 Qb
 Qb
-hz
+Qb
 Yy
 Yy
 ZK
@@ -37997,8 +37437,8 @@ DU
 ki
 jH
 ZT
-MY
-BO
+DF
+VQ
 jH
 Yl
 DU
@@ -38230,7 +37670,7 @@ qK
 yw
 My
 Dj
-np
+Dj
 eX
 eX
 Dj
@@ -38487,7 +37927,7 @@ VH
 yw
 sy
 eX
-Se
+Dj
 eX
 eX
 eX
@@ -38730,7 +38170,7 @@ al
 al
 aZ
 aZ
-bL
+aZ
 aZ
 aZ
 al
@@ -38820,9 +38260,9 @@ ZK
 ZK
 ZK
 xb
-Mj
-mc
-wY
+xb
+xb
+Yy
 Yy
 bH
 Yy
@@ -38987,8 +38427,8 @@ al
 al
 aZ
 aZ
-bL
-bL
+aZ
+aZ
 aZ
 al
 al
@@ -39060,7 +38500,7 @@ YL
 YL
 Qb
 Qb
-yg
+Qb
 YL
 YL
 YL
@@ -39245,7 +38685,7 @@ al
 aZ
 aZ
 aZ
-bW
+aZ
 aZ
 al
 al
@@ -39317,7 +38757,7 @@ YL
 YL
 lm
 lm
-yg
+Qb
 YL
 YL
 YL
@@ -39358,7 +38798,7 @@ cH
 FX
 Xc
 Dz
-le
+cn
 cn
 Ht
 TJ
@@ -39502,7 +38942,7 @@ aZ
 aZ
 aZ
 aZ
-bW
+aZ
 aZ
 aZ
 al
@@ -39544,7 +38984,7 @@ FF
 FF
 ZT
 DF
-EG
+ki
 Dr
 qv
 DU
@@ -39574,8 +39014,8 @@ YL
 YL
 Qb
 Qb
-ra
-oJ
+Qb
+Qb
 YL
 YL
 Qb
@@ -39795,14 +39235,14 @@ DU
 VQ
 qb
 Gm
-MY
 DF
 DF
 DF
 DF
 DF
-oK
-MY
+DF
+DF
+DF
 DF
 DF
 DF
@@ -39857,7 +39297,7 @@ Yy
 Yy
 Yy
 YS
-To
+Yy
 Yy
 Yy
 sS
@@ -39875,14 +39315,14 @@ kW
 dJ
 cn
 Uo
-lG
+Uo
 zG
 zG
 Xc
 Yy
 Yy
 Yy
-oC
+Yy
 Yy
 Yy
 ZK
@@ -40016,7 +39456,7 @@ aZ
 aZ
 aZ
 aZ
-gA
+aZ
 aZ
 aZ
 aZ
@@ -40048,10 +39488,10 @@ Qb
 DF
 yA
 DU
-FP
+DU
 WC
-pB
-Uh
+eY
+cf
 cf
 eZ
 cf
@@ -40114,7 +39554,7 @@ Yy
 Yy
 Rq
 Rq
-mk
+Rq
 Rq
 Rq
 yj
@@ -40371,7 +39811,7 @@ Yy
 Yy
 Rq
 Yy
-jy
+Yy
 Yy
 Yy
 sS
@@ -40628,7 +40068,7 @@ Yy
 Yy
 Rq
 Yy
-jy
+Yy
 Yy
 Yy
 sS
@@ -40870,8 +40310,8 @@ Yy
 OR
 OR
 OR
-wY
-tf
+Yy
+bH
 Yy
 Yy
 fb
@@ -40885,7 +40325,7 @@ Yy
 Yy
 Rq
 Yy
-oC
+Yy
 Yy
 Yy
 Yy
@@ -41416,7 +40856,7 @@ Yy
 Yy
 Yy
 Yy
-oC
+Yy
 Yy
 Yy
 Yy
@@ -41565,10 +41005,10 @@ al
 aZ
 aZ
 aZ
-Jq
-Jq
-Jq
-gx
+aZ
+aZ
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -41825,8 +41265,8 @@ aZ
 aZ
 aZ
 aZ
-gA
-pW
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -41931,7 +41371,7 @@ Yy
 Yy
 Yy
 Yy
-Xj
+Yy
 Yy
 Yy
 Yy
@@ -42087,8 +41527,8 @@ aZ
 aZ
 aZ
 aZ
-pW
-gx
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -42346,8 +41786,8 @@ OD
 OD
 OD
 OD
-DW
-DW
+OD
+OD
 OD
 OD
 OD
@@ -42603,7 +42043,7 @@ OD
 OD
 OD
 OD
-DW
+OD
 OD
 OD
 OD
@@ -42859,7 +42299,7 @@ OD
 OD
 OD
 OD
-DW
+OD
 OD
 OD
 OD
@@ -46282,7 +45722,7 @@ xX
 xX
 xX
 xb
-yX
+fb
 Gs
 as
 CS
@@ -46552,7 +45992,7 @@ ZK
 ZK
 Yy
 Yy
-Xj
+Yy
 ZK
 Yy
 Yy
@@ -48248,7 +47688,7 @@ Pw
 Pw
 uq
 kk
-QY
+Pw
 Pw
 eN
 AK
@@ -49886,7 +49326,7 @@ wj
 wj
 Jz
 wj
-tB
+wj
 wj
 ZS
 ZS
@@ -50111,7 +49551,7 @@ EF
 EF
 EF
 EF
-Si
+EF
 EF
 EF
 EF
@@ -50367,7 +49807,7 @@ EF
 EF
 EF
 EF
-Si
+EF
 EF
 EF
 EF
@@ -52422,7 +51862,7 @@ uX
 eO
 CV
 KR
-mx
+uF
 Cr
 EB
 EB
@@ -52678,7 +52118,7 @@ jr
 BW
 RB
 Cr
-kd
+uF
 rd
 Cr
 EB
@@ -53192,7 +52632,7 @@ EB
 Cr
 cB
 kE
-SH
+fV
 fV
 Cr
 EF
@@ -53450,7 +52890,7 @@ Cr
 JB
 fV
 fV
-yr
+fV
 Cr
 dH
 dH
@@ -53964,7 +53404,7 @@ dH
 ud
 CU
 fV
-NE
+fV
 Ex
 Vw
 jU
@@ -54738,7 +54178,7 @@ Mi
 CU
 lT
 wJ
-XZ
+oO
 Cr
 EB
 EB

@@ -214,7 +214,6 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/atmos)
 "ut" = (
-/obj/effect/decal/cleanable/blood/drip,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
@@ -366,7 +365,6 @@
 /area/lv624/lazarus/atmos)
 "DW" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
-/obj/effect/decal/cleanable/blood,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/atmos)
@@ -413,7 +411,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/drip,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/atmos)
@@ -522,7 +519,6 @@
 /area/lv624/lazarus/atmos)
 "QP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/decal/cleanable/blood/drip,
 /obj/structure/cable,
 /turf/open/floor/tile/dark/brown2{
 	dir = 1
@@ -542,7 +538,6 @@
 /area/lv624/lazarus/atmos)
 "RH" = (
 /obj/item/clothing/mask/gas,
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/atmos)
 "Sf" = (
@@ -563,7 +558,6 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/atmos)
 "Ub" = (
-/obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
