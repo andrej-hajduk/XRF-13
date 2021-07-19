@@ -139,8 +139,8 @@
 
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"You are a colonist who lives at this colony having either, through either luck or choice, missed the evacuation of the colony.
-Your job is to now survive until help arrives. You will have a number of skills and equipment, based on your previous job.
+	to_chat(M, {"You are a colonist who lives at this colony having either, through either luck or choice, missed the evacuation of the colony due to a detected strain of Xenos in the area.
+So far, there have been no attacks, but in the chaos of the evacuation there may have been looters or other opportunists who ransacked the colony. A marine force is approaching the area to restore order.
 Good luck."})
 
 /datum/outfit/job/survivor
