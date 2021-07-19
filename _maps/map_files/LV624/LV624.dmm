@@ -3554,7 +3554,6 @@
 	},
 /area/lv624/ground/compound/n)
 "aub" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/research)
 "auc" = (
@@ -4045,8 +4044,6 @@
 /obj/structure/sink{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/splatter/animated,
-/obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/freezer,
 /area/lv624/lazarus/research)
 "awJ" = (
@@ -4167,7 +4164,6 @@
 	},
 /area/lv624/ground/jungle6)
 "axe" = (
-/obj/machinery/vending/MarineMed/Blood,
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/lv624/lazarus/medbay)
 "axg" = (
@@ -4285,7 +4281,6 @@
 /area/lv624/lazarus/medbay)
 "axE" = (
 /obj/machinery/optable,
-/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/lv624/lazarus/medbay)
 "axF" = (
@@ -5588,7 +5583,6 @@
 	},
 /area/lv624/lazarus/research)
 "aFr" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
 	},
@@ -5702,14 +5696,12 @@
 	},
 /area/lv624/lazarus/research)
 "aFZ" = (
-/obj/effect/decal/cleanable/blood,
 /turf/closed/wall,
 /area/lv624/lazarus/research)
 "aGa" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
 	},
@@ -5780,7 +5772,6 @@
 	},
 /area/lv624/ground/jungle6)
 "aGx" = (
-/obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
 	},
@@ -6149,7 +6140,6 @@
 /turf/open/ground/grass,
 /area/lv624/ground/compound/ne)
 "aIY" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/plating/ground/dirtgrassborder{
 	dir = 4
 	},
@@ -6176,8 +6166,6 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/research)
 "aJm" = (
-/obj/item/clothing/mask/facehugger/dead,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/cable,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/research)
@@ -6219,7 +6207,6 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/research)
 "aJz" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/purple/whitepurplecorner{
 	dir = 4
 	},
@@ -6284,7 +6271,6 @@
 	},
 /area/lv624/lazarus/research)
 "aKg" = (
-/obj/item/clothing/mask/facehugger/dead,
 /obj/machinery/door/poddoor/mainship{
 	density = 0;
 	icon_state = "pdoor0";
@@ -6299,7 +6285,6 @@
 	},
 /area/lv624/lazarus/research)
 "aKh" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/plating,
 /area/lv624/lazarus/research)
 "aKj" = (
@@ -7009,8 +6994,6 @@
 /turf/open/floor/plating/ground/dirtgrassborder,
 /area/lv624/ground/jungle6)
 "aOo" = (
-/obj/item/clothing/mask/facehugger/dead,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
 	},
@@ -7331,7 +7314,6 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/c)
 "aPZ" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/c)
 "aQa" = (
@@ -7362,7 +7344,6 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aQj" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aQk" = (
@@ -7528,7 +7509,6 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aQW" = (
-/obj/effect/decal/cleanable/blood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -7641,7 +7621,6 @@
 /turf/open/floor/plating/ground/dirtgrassborder/corner,
 /area/lv624/ground/jungle9)
 "aRC" = (
-/obj/effect/decal/cleanable/blood,
 /obj/item/stack/sheet/wood,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
@@ -7654,7 +7633,6 @@
 /obj/structure/bed/chair/office/light{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aRF" = (
@@ -7915,7 +7893,6 @@
 /turf/closed/gm/dense,
 /area/lv624/lazarus/sleep_male)
 "aST" = (
-/obj/effect/decal/cleanable/blood,
 /obj/item/flashlight/lamp,
 /obj/structure/table,
 /turf/open/floor/tile/blue/taupebluecorner,
@@ -7927,7 +7904,6 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aSV" = (
-/obj/effect/decal/cleanable/blood,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -8194,7 +8170,6 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/freezer,
 /area/lv624/lazarus/toilet)
 "aUk" = (
@@ -8359,7 +8334,6 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/lv624/lazarus/quart)
 "aUX" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/whiteyellow/full,
 /area/lv624/lazarus/quart)
 "aUY" = (
@@ -9047,13 +9021,11 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "aYK" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 10
 	},
 /area/lv624/lazarus/main_hall)
 "aYL" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "aYM" = (
@@ -9165,7 +9137,6 @@
 	},
 /area/lv624/lazarus/main_hall)
 "aZC" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped{
 	dir = 8
 	},
@@ -9173,15 +9144,11 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "aZD" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/ammo_casing,
 /obj/item/ammo_magazine/revolver/cmb,
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "aZE" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/item/ammo_casing,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -9190,13 +9157,11 @@
 	},
 /area/lv624/lazarus/main_hall)
 "aZF" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/ammo_casing,
 /obj/item/attachable/flashlight,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "aZG" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped{
 	dir = 4
 	},
@@ -9299,7 +9264,6 @@
 	},
 /area/lv624/lazarus/main_hall)
 "ban" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -9307,7 +9271,6 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "bao" = (
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/item/ammo_casing,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -9318,7 +9281,6 @@
 	},
 /area/lv624/lazarus/main_hall)
 "bap" = (
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/item/ammo_casing,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -9335,7 +9297,6 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "bar" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/ammo_casing,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -9346,7 +9307,6 @@
 	},
 /area/lv624/lazarus/main_hall)
 "bas" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped{
 	dir = 4
 	},
@@ -9430,12 +9390,6 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "baB" = (
-/obj/effect/decal/cleanable/blood/tracks/footprints{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/tracks/footprints{
-	dir = 8
-	},
 /obj/structure/cable,
 /turf/open/floor/marking/warning{
 	dir = 8
@@ -9465,12 +9419,10 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "bbd" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
 "bbe" = (
 /obj/item/tool/crowbar,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped{
 	dir = 8
 	},
@@ -9480,12 +9432,10 @@
 	},
 /area/lv624/lazarus/main_hall)
 "bbf" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/ammo_casing,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "bbg" = (
-/obj/effect/decal/cleanable/blood,
 /obj/item/ammo_casing,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -9494,7 +9444,6 @@
 	},
 /area/lv624/lazarus/main_hall)
 "bbh" = (
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/item/ammo_casing,
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/main_hall)
@@ -9534,19 +9483,16 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "bbz" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 8
 	},
 /area/lv624/lazarus/main_hall)
 "bbA" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped,
 /obj/item/ammo_casing,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "bbB" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped,
 /obj/item/ammo_casing,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -9554,7 +9500,6 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
 "bbC" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/structure/table/reinforced/flipped,
 /obj/item/ammo_casing,
 /obj/item/ammo_magazine/smg/uzi/extended,
@@ -11147,14 +11092,12 @@
 /area/lv624/lazarus/captain)
 "blq" = (
 /obj/item/clothing/glasses/regular,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/hop)
 "blr" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/hop)
 "bls" = (
@@ -11302,11 +11245,9 @@
 /obj/item/bedsheet/rd,
 /obj/item/cane,
 /obj/structure/bed/fancy,
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/hop)
 "bma" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/hop)
 "bmb" = (
@@ -11745,7 +11686,6 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/hop)
 "bog" = (
-/obj/effect/decal/cleanable/blood/splatter,
 /obj/structure/barricade/wooden,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
@@ -12935,7 +12875,6 @@
 /turf/open/floor,
 /area/lv624/ground/compound/sw)
 "doR" = (
-/obj/effect/decal/cleanable/blood,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)
@@ -13549,7 +13488,6 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/kitchen)
 "fMS" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central3)
 "fOi" = (
@@ -14343,7 +14281,6 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
@@ -14952,7 +14889,6 @@
 /turf/open/floor/engine/cult,
 /area/lv624/ground/caves/west1)
 "mre" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/item/weapon/harpoon,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/river1)
@@ -15322,7 +15258,6 @@
 /turf/open/ground/grass,
 /area/shuttle/drop2/lz2)
 "nYl" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
 	},
@@ -16058,7 +15993,6 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/kitchen)
 "rry" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/hop)
@@ -16311,7 +16245,6 @@
 /turf/open/floor/tile/bar,
 /area/lv624/lazarus/canteen)
 "sHi" = (
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)
 "sHE" = (
@@ -16487,7 +16420,6 @@
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/lv624/lazarus/medbay)
 "tqW" = (
-/obj/effect/decal/cleanable/blood/drip,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)

@@ -360,8 +360,6 @@
 /area/lv624/lazarus/internal_affairs)
 "Jr" = (
 /obj/item/tool/crowbar,
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
 /turf/open/floor/tile/blue/whiteblue{
