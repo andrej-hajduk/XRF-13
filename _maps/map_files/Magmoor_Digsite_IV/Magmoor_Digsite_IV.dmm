@@ -662,6 +662,14 @@
 	dir = 4
 	},
 /area/magmoor/cave/northeast)
+"aLp" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/cult,
+/area/magmoor/cave/northwest)
+"aLA" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/ground/mars/random/cave,
+/area/magmoor/cave/north)
 "aLX" = (
 /obj/machinery/power/apc/drained{
 	dir = 4
@@ -1826,6 +1834,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/hydroponics/south)
 "bNb" = (
+/obj/machinery/mining/drill,
 /turf/open/floor/mainship/cargo,
 /area/magmoor/mining/garage)
 "bNn" = (
@@ -3644,6 +3653,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/structure/cable,
 /turf/open/floor/plating,
+/area/magmoor/cave/northwest)
+"dbg" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "dbo" = (
 /obj/structure/window/reinforced{
@@ -8064,6 +8077,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
+/obj/machinery/mining/drill,
 /turf/open/floor/mainship/mono,
 /area/magmoor/cargo/storage/south)
 "ggk" = (
@@ -11186,6 +11200,13 @@
 	},
 /turf/closed/mineral,
 /area/magmoor/compound/south)
+"iHF" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/door/poddoor/timed_late/containment/landing_zone{
+	dir = 2
+	},
+/turf/open/floor/plating/ground/concrete/lines,
+/area/magmoor/compound/south)
 "iHL" = (
 /turf/open/floor/tile/yellow{
 	dir = 9
@@ -14186,6 +14207,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/mainship/mono,
 /area/magmoor/civilian/arrival)
 "lan" = (
@@ -15514,6 +15536,10 @@
 	dir = 1
 	},
 /area/magmoor/cargo/storage/secure)
+"mdu" = (
+/obj/machinery/mining/drill,
+/turf/open/floor/mainship/cargo,
+/area/magmoor/cargo/storage/south)
 "mdJ" = (
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/mainship/silver{
@@ -16754,6 +16780,10 @@
 /obj/structure/cargo_container/ch_green,
 /turf/open/floor/mainship/cargo,
 /area/magmoor/landing/two)
+"ncL" = (
+/obj/machinery/mining/drill,
+/turf/open/floor/mainship/cargo,
+/area/magmoor/cargo/storage)
 "ncY" = (
 /obj/machinery/door/airlock/mainship/security/glass{
 	dir = 2;
@@ -18504,6 +18534,7 @@
 	},
 /area/magmoor/cargo/storage)
 "osr" = (
+/obj/machinery/mining/drill,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mainship/cargo,
 /area/magmoor/cargo/storage)
@@ -24486,6 +24517,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/sterile,
 /area/magmoor/medical/lobby)
+"sDw" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/mainship/mono,
+/area/magmoor/civilian/arrival)
 "sDx" = (
 /turf/open/lavaland/lava,
 /area/magmoor/cave/southwest)
@@ -25815,6 +25850,7 @@
 	},
 /area/magmoor/cave/northeast)
 "tyL" = (
+/obj/effect/decal/cleanable/blood/drip,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
 	},
@@ -28319,6 +28355,18 @@
 /obj/structure/barricade/guardrail,
 /turf/open/lavaland/lava/single/middle,
 /area/magmoor/compound/north)
+"vma" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/ground/concrete/lines{
+	dir = 1
+	},
+/area/magmoor/compound/south)
 "vmb" = (
 /obj/structure/table/mainship,
 /obj/item/tank/emergency_oxygen/engi{
@@ -29905,6 +29953,12 @@
 /obj/item/weapon/gun/revolver/cmb,
 /turf/open/floor/carpet,
 /area/magmoor/command/conference)
+"wnG" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/ground/concrete/lines{
+	dir = 4
+	},
+/area/magmoor/compound/south)
 "wnL" = (
 /turf/open/floor/mainship/green/corner{
 	dir = 4
@@ -42265,7 +42319,7 @@ afo
 ryj
 aum
 nqC
-nqC
+aLp
 nqC
 nqC
 qlL
@@ -42727,7 +42781,7 @@ pGg
 nqC
 nqC
 nqC
-nqC
+aLp
 nqC
 nqC
 nqC
@@ -44369,7 +44423,7 @@ pGg
 amw
 pGg
 pGg
-pGg
+dbg
 pGg
 nMN
 nMN
@@ -45074,7 +45128,7 @@ nMN
 nMN
 pGg
 pGg
-pGg
+dbg
 pGg
 pGg
 idU
@@ -45911,7 +45965,7 @@ saG
 sjg
 hPJ
 rgR
-jnc
+mdu
 sjg
 jnc
 nFp
@@ -45993,7 +46047,7 @@ urr
 urr
 urr
 aMD
-aMD
+aLA
 aMD
 aMD
 aMD
@@ -55017,7 +55071,7 @@ fZM
 xqG
 nMW
 nMW
-ivD
+vma
 iSn
 nMW
 rJy
@@ -55235,7 +55289,7 @@ xnf
 xnf
 lEx
 xnf
-xnf
+sDw
 xnf
 eVe
 mzE
@@ -55713,7 +55767,7 @@ slc
 ybo
 ybo
 ybo
-ybo
+wnG
 ybo
 ybo
 rLf
@@ -56410,7 +56464,7 @@ lEx
 wrQ
 slc
 ybo
-ybo
+wnG
 ybo
 ybo
 ybo
@@ -57115,7 +57169,7 @@ csX
 sMg
 nMW
 ivD
-iSn
+iHF
 dGo
 dFk
 pVi
@@ -57813,7 +57867,7 @@ csX
 csX
 sMg
 nMW
-ivD
+vma
 iSn
 dGo
 dFk
@@ -68886,7 +68940,7 @@ yff
 pky
 mfm
 mLu
-sgM
+ncL
 mMA
 nME
 mMA
