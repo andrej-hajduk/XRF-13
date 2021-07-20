@@ -2,20 +2,10 @@
 "aa" = (
 /turf/open/space/basic,
 /area/space)
-"ab" = (
-/obj/structure/closet/secure_closet/engineering_personal,
-/turf/open/floor/tile/dark/yellow2,
-/area/icy_caves/outpost/engineering)
 "ac" = (
 /obj/structure/cable,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
-"ad" = (
-/obj/structure/closet/secure_closet/security,
-/turf/open/floor/tile/dark/red2{
-	dir = 1
-	},
-/area/icy_caves/outpost/security)
 "ae" = (
 /obj/structure/xenoautopsy/tank/broken,
 /obj/item/alien_embryo,
@@ -2875,13 +2865,6 @@
 /obj/machinery/floodlight/landing,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/LZ1)
-"sc" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/tile/dark,
-/area/icy_caves/outpost/medbay)
 "sd" = (
 /obj/item/reagent_containers/glass/beaker/bluespace,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -3408,7 +3391,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/tile/dark/yellow2,
 /area/icy_caves/outpost/engineering)
 "vA" = (
@@ -3540,7 +3522,6 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/refinery)
 "wz" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -5801,10 +5782,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/south)
-"PU" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/tile/dark,
-/area/icy_caves/outpost/refinery)
 "PV" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -13706,7 +13683,7 @@ uq
 ba
 uq
 uq
-PU
+uq
 lE
 Gw
 XO
@@ -15879,7 +15856,7 @@ AW
 XO
 WY
 rx
-sc
+rW
 sq
 sz
 EH
@@ -20739,7 +20716,7 @@ Ie
 RX
 Zo
 Pd
-ad
+UQ
 RX
 wk
 Mt
@@ -21030,7 +21007,7 @@ rH
 si
 sv
 tm
-ab
+ol
 yC
 Bs
 aW

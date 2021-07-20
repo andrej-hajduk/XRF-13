@@ -1323,24 +1323,6 @@
 	dir = 9
 	},
 /area/ice_colony/surface/engineering)
-"afE" = (
-/obj/effect/decal/warning_stripes/thin{
-	dir = 4
-	},
-/obj/structure/largecrate/random,
-/turf/open/floor/tile/dark/brown2{
-	dir = 4
-	},
-/area/ice_colony/surface/hangar/alpha)
-"afF" = (
-/obj/effect/decal/warning_stripes/thin{
-	dir = 4
-	},
-/obj/structure/largecrate/random,
-/turf/open/floor/tile/dark/brown2{
-	dir = 4
-	},
-/area/ice_colony/surface/hangar/beta)
 "afG" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/item/circuitboard/apc,
@@ -1458,11 +1440,6 @@
 /obj/item/weapon/gun/pistol/highpower,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/engineering)
-"aga" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/largecrate/random,
-/turf/open/floor/tile/dark2,
-/area/ice_colony/surface/hangar/alpha)
 "agb" = (
 /obj/structure/table,
 /obj/machinery/power/apc/drained{
@@ -6458,12 +6435,6 @@
 "axW" = (
 /turf/open/floor/plating/warning,
 /area/ice_colony/surface/disposals)
-"axX" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/tile/dark2,
-/area/ice_colony/surface/dorms)
 "axY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -9684,11 +9655,6 @@
 	dir = 8
 	},
 /area/ice_colony/surface/storage_unit/power)
-"aIp" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/tile/dark2,
-/area/ice_colony/surface/dorms)
 "aIr" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
@@ -26033,7 +25999,6 @@
 	},
 /area/ice_colony/underground/security/armory)
 "bLb" = (
-/obj/effect/decal/cleanable/blood/gibs/body,
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 1;
 	on = 1
@@ -28630,14 +28595,6 @@
 /obj/structure/largecrate/random,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/east)
-"bTY" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/remains/human,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ice_colony/underground/maintenance/east)
 "bTZ" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/barricade/wooden,
@@ -29284,7 +29241,6 @@
 	pixel_x = 11;
 	pixel_y = 14
 	},
-/obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/tile/dark,
 /area/ice_colony/surface/excavationbarracks)
@@ -29780,15 +29736,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/south/excavation)
-"bYh" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/plating/ground/snow/layer0,
-/area/ice_colony/exterior/surface/valley/south/excavation)
-"bYi" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/effect/decal/cleanable/blood/xtracks,
-/turf/open/floor/plating/ground/snow/layer0,
-/area/ice_colony/exterior/surface/valley/south/excavation)
 "bYj" = (
 /obj/machinery/firealarm,
 /turf/open/floor/tile/dark/yellow2{
@@ -29849,7 +29796,6 @@
 "bYy" = (
 /obj/machinery/optable,
 /obj/structure/cable,
-/obj/effect/decal/cleanable/blood/gibs/body,
 /turf/open/floor/tile/white,
 /area/ice_colony/underground/medical/or)
 "bYz" = (
@@ -30584,11 +30530,6 @@
 /obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/command/checkpoint)
-"ccQ" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating,
-/area/ice_colony/exterior/underground/caves/open)
 "cdd" = (
 /obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
 /obj/structure/cable,
@@ -38992,7 +38933,7 @@ ber
 bdL
 bfs
 bfm
-bfn
+bfo
 bfo
 bfn
 bhV
@@ -39048,7 +38989,7 @@ bmU
 bbq
 hAN
 bbq
-ccQ
+hAN
 bIz
 bbq
 bmU
@@ -40021,7 +39962,7 @@ bdL
 bfs
 bfm
 bfn
-bfn
+bfo
 bfo
 bhY
 biy
@@ -57400,9 +57341,9 @@ apZ
 apZ
 ash
 aIL
-aIp
+arH
 aIL
-axX
+arH
 aqT
 arp
 arH
@@ -59106,7 +59047,7 @@ bEg
 bCJ
 bTX
 bCJ
-bTY
+bTV
 bTZ
 bTN
 bTB
@@ -63670,7 +63611,7 @@ bXA
 bXK
 bSv
 bbK
-bYh
+bbK
 bbK
 bbK
 bqP
@@ -63927,7 +63868,7 @@ bTq
 bXL
 bIf
 bYc
-bYi
+bYc
 bbK
 bbK
 bqP
@@ -67487,8 +67428,8 @@ aQx
 aPF
 aSh
 aPF
-afE
-afE
+aPF
+aPF
 aPF
 aPF
 aPF
@@ -70317,7 +70258,7 @@ aQz
 aSl
 aSX
 aQz
-aga
+aQz
 aQz
 aQz
 aQz
@@ -72370,10 +72311,10 @@ aQK
 aRA
 aRA
 aRA
-afF
 aRA
 aRA
-afF
+aRA
+aRA
 aRA
 aWD
 aRA

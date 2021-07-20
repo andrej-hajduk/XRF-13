@@ -5575,10 +5575,6 @@
 	dir = 9
 	},
 /area/barren/medical)
-"Et" = (
-/obj/effect/decal/remains/xeno,
-/turf/open/lavaland/basalt,
-/area/barren/cave/north)
 "Eu" = (
 /obj/structure/cable,
 /turf/open/lavaland/basalt,
@@ -32251,7 +32247,7 @@ aZ
 aZ
 aZ
 aZ
-Et
+aZ
 aZ
 aZ
 aZ
