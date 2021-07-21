@@ -1399,6 +1399,10 @@
 	dir = 8
 	},
 /area/icy_caves/caves/east)
+"hJ" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/turf/open/floor/tile/dark/yellow2,
+/area/icy_caves/outpost/engineering)
 "hO" = (
 /turf/closed/ice/thin/single,
 /area/icy_caves/caves/east)
@@ -3391,6 +3395,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/tile/dark/yellow2,
 /area/icy_caves/outpost/engineering)
 "vA" = (
@@ -6986,6 +6991,12 @@
 	dir = 4
 	},
 /turf/open/floor/tile/dark,
+/area/icy_caves/outpost/security)
+"YZ" = (
+/obj/structure/closet/secure_closet/security,
+/turf/open/floor/tile/dark/red2{
+	dir = 1
+	},
 /area/icy_caves/outpost/security)
 "Za" = (
 /turf/open/floor/plating/ground/snow/layer0,
@@ -20716,7 +20727,7 @@ Ie
 RX
 Zo
 Pd
-UQ
+YZ
 RX
 wk
 Mt
@@ -21007,7 +21018,7 @@ rH
 si
 sv
 tm
-ol
+hJ
 yC
 Bs
 aW
