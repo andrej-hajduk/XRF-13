@@ -550,7 +550,7 @@
 	log_admin("[key_name(usr)] changed the ship map to [VM.map_name].")
 	message_admins("[ADMIN_TPMONTY(usr)] changed the ship map to [VM.map_name].")
 
-
+/*
 /datum/admins/proc/panic_bunker()
 	set category = "Server"
 	set name = "Toggle Panic Bunker"
@@ -566,7 +566,7 @@
 
 	log_admin("[key_name(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
 	message_admins("[ADMIN_TPMONTY(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
-
+*/
 
 /datum/admins/proc/mode_check()
 	set category = "Server"

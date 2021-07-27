@@ -36,7 +36,6 @@
 /obj/item/weapon/gun/revolver/Initialize()
 	. = ..()
 	replace_cylinder(current_mag.current_rounds)
-	RegisterSignal(src, COMSIG_REVOLVER_AMMO_HIT_MOB, .proc/has_stagger_barrel)
 
 /obj/item/weapon/gun/revolver/examine_ammo_count(mob/user)
 	if(!current_mag)

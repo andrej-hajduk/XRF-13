@@ -40,7 +40,6 @@
 	range = 8 //Buffed range
 	/// How long till the lights go on again
 	duration = 2 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
-	cooldowntext = "<span class='notice'>We gather enough mental strength to flicker lights again.</span>"
 
 // ***************************************
 // *********** Gravity Crush
