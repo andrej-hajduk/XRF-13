@@ -21,6 +21,9 @@
 	var/faction = FACTION_TERRAGOV
 	COOLDOWN_DECLARE(next_fire)
 
+/obj/machinery/computer/supplydrop_console/rebel
+	faction = FACTION_TERRAGOV_REBEL
+
 /obj/machinery/computer/supplydrop_console/Initialize()
 	. = ..()
 	return INITIALIZE_HINT_LATELOAD
