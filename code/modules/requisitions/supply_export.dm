@@ -20,7 +20,7 @@
 
 /mob/living/carbon/human/supply_export(faction_selling)
 	switch(job.job_category)
-		if(JOB_CAT_ENGINEERING || JOB_CAT_MEDICAL || JOB_CAT_REQUISITIONS)
+		if(JOB_CAT_ENGINEERING || JOB_CAT_MEDICAL || JOB_CAT_REQUISITIONS || JOB_CAT_SERVICE)
 			. = 20
 		if(JOB_CAT_MARINE)
 			. = 30

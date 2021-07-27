@@ -7,6 +7,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_CAS = RADIO_TOKEN_CAS,
 	RADIO_CHANNEL_ALPHA = RADIO_TOKEN_ALPHA,
 	RADIO_CHANNEL_BRAVO = RADIO_TOKEN_BRAVO,
+	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	RADIO_CHANNEL_CHARLIE = RADIO_TOKEN_CHARLIE,
 	RADIO_CHANNEL_DELTA = RADIO_TOKEN_DELTA
 ))
@@ -376,6 +377,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "med_headset"
 	keyslot = /obj/item/encryptionkey/med
 
+/obj/item/radio/headset/mainship/serv
+	name = "service radio headset"
+	icon_state = "med_headset"
+	keyslot2 = /obj/item/encryptionkey/serv
+	frequency = FREQ_SERVICE
+
 /obj/item/radio/headset/mainship/doc/rebel
 	keyslot = /obj/item/encryptionkey/med/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
@@ -386,7 +393,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "cargo_headset"
 	keyslot = /obj/item/encryptionkey/req
 
-/obj/item/radio/headset/mainship/ct/rebel 
+/obj/item/radio/headset/mainship/ct/rebel
 	keyslot = /obj/item/encryptionkey/req/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
@@ -398,7 +405,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/mcom/rebel 
+/obj/item/radio/headset/mainship/mcom/rebel
 	keyslot = /obj/item/encryptionkey/mcom/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel

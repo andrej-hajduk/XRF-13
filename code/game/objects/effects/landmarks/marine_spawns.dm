@@ -42,6 +42,10 @@
 	icon_state = "MD"
 	job = /datum/job/terragov/medical/medicalofficer
 
+/obj/effect/landmark/start/job/janitor
+	icon_state = "Jan"
+	job = /datum/job/terragov/service/janitor
+
 /obj/effect/landmark/start/job/researcher
 	icon_state = "MD"
 	job = /datum/job/terragov/medical/researcher
