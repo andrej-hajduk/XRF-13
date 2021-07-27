@@ -438,6 +438,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0, "black"),
 	)
 
+/obj/machinery/marine_selector/clothes/engi/rebel
+	req_access = list(ACCESS_MARINE_ENGPREP_REBEL)
+	vendor_role = /datum/job/terragov/squad/engineer/rebel
+
 /obj/machinery/marine_selector/clothes/engi/alpha
 	squad_tag = "Alpha"
 	req_access = list(ACCESS_MARINE_ENGPREP, ACCESS_MARINE_ALPHA)
@@ -500,6 +504,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather/scarf = list(CAT_MAS, "Heat absorbent coif", 0, "black"),
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0, "black"),
 	)
+
+/obj/machinery/marine_selector/clothes/medic/rebel
+	req_access = list(ACCESS_MARINE_MEDPREP_REBEL)
+	vendor_role = /datum/job/terragov/squad/corpsman/rebel
 
 /obj/machinery/marine_selector/clothes/medic/alpha
 	squad_tag = "Alpha"
@@ -569,6 +577,11 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather/scarf = list(CAT_MAS, "Heat absorbent coif", 0, "black"),
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0, "black"),
 	)
+
+/obj/machinery/marine_selector/clothes/smartgun/rebel
+	req_access = list(ACCESS_MARINE_SMARTPREP_REBEL)
+	vendor_role = /datum/job/terragov/squad/smartgunner/rebel
+
 
 /obj/machinery/marine_selector/clothes/smartgun/alpha
 	squad_tag = "Alpha"
@@ -722,6 +735,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0, "black"),
 	)
 
+/obj/machinery/marine_selector/clothes/leader/rebel
+	req_access = list(ACCESS_MARINE_LEADER_REBEL)
+	vendor_role = /datum/job/terragov/squad/leader/rebel
+
 
 /obj/machinery/marine_selector/clothes/leader/alpha
 	squad_tag = "Alpha"
@@ -800,6 +817,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather/scarf = list(CAT_MAS, "Heat absorbent coif", 0, "black"),
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0, "black"),
 	)
+
+/obj/machinery/marine_selector/clothes/commander/rebel
+	req_access = list(ACCESS_MARINE_COMMANDER_REBEL)
+	vendor_role = /datum/job/terragov/command/fieldcommander/rebel
 
 /obj/machinery/marine_selector/clothes/synth
 	name = "M57 Synthetic Equipment Vendor"
@@ -925,6 +946,8 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/gas/tactical/coif = list(CAT_MAS, "Tactical coifed gas mask", 0,"black"),
 	)
 
+/obj/machinery/marine_selector/clothes/synth/rebel
+	vendor_role = /datum/job/terragov/silicon/synthetic/rebel
 
 ////////////////////// Gear ////////////////////////////////////////////////////////
 
@@ -991,6 +1014,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/attachable/heavy_barrel = list(CAT_ATT, "barrel charger", 0, "black"),
 	)
 
+/obj/machinery/marine_selector/gear/medic/rebel
+	vendor_role = /datum/job/terragov/squad/corpsman/rebel
+	req_access = list(ACCESS_MARINE_MEDPREP_REBEL)
+
 
 /obj/machinery/marine_selector/gear/engi
 	name = "NEXUS Automated Engineer Equipment Rack"
@@ -1031,6 +1058,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/attachable/stock/t19stock = list(CAT_ATT, "T-19 machine pistol stock", 0, "black"),
 	)
 
+/obj/machinery/marine_selector/gear/engi/rebel
+	vendor_role = /datum/job/terragov/squad/engineer/rebel
+	req_access = list(ACCESS_MARINE_ENGPREP_REBEL)
+
 
 /obj/machinery/marine_selector/gear/smartgun
 	name = "NEXUS Automated Smartgunner Equipment Rack"
@@ -1055,6 +1086,9 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/attachable/stock/t19stock = list(CAT_ATT, "T-19 machine pistol stock", 0, "black"),
 	)
 
+/obj/machinery/marine_selector/gear/smartgun/rebel
+	vendor_role = /datum/job/terragov/squad/smartgunner/rebel
+	req_access = list(ACCESS_MARINE_SMARTPREP_REBEL)
 
 //todo: move this to some sort of kit controller/datum
 //the global list of specialist sets that haven't been claimed yet.
@@ -1145,6 +1179,11 @@ GLOBAL_LIST_INIT(available_specialist_sets, list("Scout Set", "Sniper Set", "Dem
 		/obj/item/attachable/stock/t35stock = list(CAT_ATT, "T-35 stock", 0, "black"),
 		/obj/item/attachable/stock/t19stock = list(CAT_ATT, "T-19 machine pistol stock", 0, "black"),
 	)
+
+/obj/machinery/marine_selector/gear/leader/rebel
+	vendor_role = /datum/job/terragov/squad/leader/rebel
+	req_access = list(ACCESS_MARINE_LEADER_REBEL)
+
 
 /obj/effect/essentials_set
 	var/list/spawned_gear_list
