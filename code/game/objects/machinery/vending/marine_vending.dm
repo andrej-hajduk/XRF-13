@@ -637,6 +637,9 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/synaptizine_expired = 3,
 	)
 
+/obj/machinery/vending/MarineMed/rebel
+	req_one_access = ALL_MARINE_REBEL_ACCESS
+
 /obj/machinery/vending/MarineMed/Blood
 	name = "\improper MM Blood Dispenser"
 	desc = "Marine Med brand Blood Pack dispensery."
@@ -654,6 +657,9 @@
 		/obj/item/reagent_containers/blood/empty = 10,
 	)
 	contraband = list()
+
+/obj/machinery/vending/MarineMed/Blood/rebel
+	req_access = list(ACCESS_MARINE_MEDBAY_REBEL, ACCESS_MARINE_CHEMISTRY_REBEL)
 
 /obj/machinery/vending/MarineMed/Blood/build_inventory(list/productlist, category)
 	. = ..()

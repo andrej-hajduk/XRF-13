@@ -26,6 +26,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	dheight = 2
 	height = 5
 
+/obj/docking_port/stationary/supply/rebel
+	id = "supply_home_rebel"
+	roundstart_shuttle_specific_id = "supply_rebel"
+
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
 	id = "supply"
@@ -191,7 +195,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 /datum/export_report/New(_points, _export_name, _faction)
 	points = _points
-	export_name = _export_name
+	export_name = _export_name 
 	faction = _faction
 
 /obj/docking_port/mobile/supply/proc/sell()
@@ -227,6 +231,11 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	home_id = "supply_home_rebel"
 	faction = FACTION_TERRAGOV_REBEL
 
+/obj/item/supplytablet/rebel
+	req_access = list(ACCESS_MARINE_CARGO_REBEL)
+	shuttle_id = "supply_rebel"
+	home_id = "supply_home_rebel"
+
 /obj/item/supplytablet/interact(mob/user)
 	. = ..()
 	if(.)
@@ -260,6 +269,11 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	shuttle_id = "supply_rebel"
 	home_id = "supply_home_rebel"
 	faction = FACTION_TERRAGOV_REBEL
+
+/obj/machinery/computer/supplycomp/rebel
+	req_access = list(ACCESS_MARINE_CARGO_REBEL)
+	shuttle_id = "supply_rebel"
+	home_id = "supply_home_rebel"
 
 /obj/machinery/computer/supplycomp/interact(mob/user)
 	. = ..()
@@ -586,6 +600,9 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	icon_state = "request"
 	circuit = null
 	var/datum/supply_ui/requests/SU
+
+/obj/machinery/computer/ordercomp/rebel
+	req_access = list(ACCESS_IFF_MARINE_REBEL)
 
 /obj/machinery/computer/ordercomp/interact(mob/user)
 	. = ..()

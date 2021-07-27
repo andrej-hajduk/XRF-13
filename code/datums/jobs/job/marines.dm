@@ -123,7 +123,7 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
 	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
 	skills_type = /datum/skills/combat_engineer
-	display_order = JOB_DISPLAY_ORDER_SQUAD_ENGINEER
+	display_order = JOB_DISPLAY_ORDER_SUQAD_ENGINEER
 	outfit = /datum/outfit/job/marine/engineer
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(/datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM, /datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR)
@@ -159,6 +159,8 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	id = /obj/item/card/id/dogtag/engineer
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/marine/engineer/rebel
+	jobtype = /datum/job/terragov/squad/engineer/rebel
 
 /datum/outfit/job/marine/engineer/equipped
 	name = "Squad Engineer (Equipped)"
@@ -246,6 +248,8 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/corpsman
 
+/datum/outfit/job/marine/corpsman/rebel
+	jobtype = /datum/job/terragov/squad/corpsman/rebel
 /datum/outfit/job/marine/corpsman/equipped
 	name = "Squad Corpsman (Equipped)"
 
@@ -357,6 +361,9 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/satchel
+
+/datum/outfit/job/marine/smartgunner/rebel
+	jobtype = /datum/job/terragov/squad/smartgunner/rebel
 
 /datum/outfit/job/marine/smartgunner/equipped
 	name = "Squad Smartgunner (Equipped)"
@@ -478,6 +485,9 @@ You are also in charge of communicating with command and letting them know about
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/marine/leader/rebel
+	jobtype = /datum/job/terragov/squad/leader/rebel
+
 /datum/outfit/job/marine/leader/equipped
 	name = "Squad Leader (Equipped)"
 
@@ -565,3 +575,6 @@ You are also in charge of communicating with command and letting them know about
 	name = SQUAD_VATGROWN
 	jobtype = /datum/job/terragov/squad/vatgrown
 	id = /obj/item/card/id/dogtag
+
+/datum/outfit/job/marine/vatgrown/rebel
+	jobtype = /datum/job/terragov/squad/vatgrown/rebel

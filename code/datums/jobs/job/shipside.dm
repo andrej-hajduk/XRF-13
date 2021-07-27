@@ -347,6 +347,10 @@ If you are not piloting, there is an autopilot fallback for command, but don't l
 	l_store = /obj/item/hud_tablet/pilot
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/command/pilot/rebel
+	jobtype = /datum/job/terragov/command/pilot/rebel
+	ears = /obj/item/radio/headset/mainship/mcom/rebel
+
 
 /datum/job/terragov/engineering
 	job_category = JOB_CAT_ENGINEERING
@@ -701,6 +705,10 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 	l_store = /obj/item/storage/pouch/autoinjector/advanced/full
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/medical/professor/rebel
+	jobtype = /datum/job/terragov/medical/professor/rebel
+	ears = /obj/item/radio/headset/mainship/mcom/rebel
+
 /datum/outfit/job/medical/professor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	H.equip_to_slot_or_del(new /obj/item/tweezers, SLOT_IN_BACKPACK)
@@ -781,6 +789,9 @@ You are also an expert when it comes to medication and treatment. If you do not 
 	l_store = /obj/item/storage/pouch/autoinjector/advanced/full
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/medical/medicalofficer/rebel
+	jobtype = /datum/job/terragov/medical/medicalofficer/rebel
+	ears = /obj/item/radio/headset/mainship/doc/rebel
 
 /datum/outfit/job/medical/medicalofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -865,6 +876,9 @@ While the Corporate Liaison is not your boss, it would be wise to consult them o
 	l_store = /obj/item/storage/pouch/autoinjector/advanced/full
 	back = /obj/item/storage/backpack/marine/satchel
 
+/datum/outfit/job/medical/researcher/rebel
+	jobtype = /datum/job/terragov/medical/researcher/rebel
+	ears = /obj/item/radio/headset/mainship/doc/rebel
 
 /datum/job/terragov/civilian
 	job_category = JOB_CAT_CIVILIAN

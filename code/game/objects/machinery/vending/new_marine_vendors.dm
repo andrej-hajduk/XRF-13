@@ -644,6 +644,11 @@
 	req_access = list(ACCESS_MARINE_LEADER_REBEL)
 
 
+/obj/machinery/marine_selector/gear/leader/rebel
+	vendor_role = /datum/job/terragov/squad/leader/rebel
+	req_access = list(ACCESS_MARINE_LEADER_REBEL)
+
+
 /obj/effect/essentials_set
 	var/list/spawned_gear_list
 
