@@ -12509,18 +12509,10 @@
 /obj/effect/spawner/random/tool,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)
-<<<<<<< HEAD
-"cmQ" = (
-/obj/effect/decal/remains/xeno,
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/east1)
-=======
 "cmE" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
->>>>>>> master
 "cnu" = (
 /obj/structure/jungle/vines,
 /obj/effect/landmark/weed_node,
@@ -12574,18 +12566,6 @@
 /obj/machinery/computer/shuttle/shuttle_control/dropship/two,
 /turf/open/ground/grass,
 /area/lv624/lazarus/console)
-<<<<<<< HEAD
-"cHD" = (
-/obj/machinery/light,
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating,
-/area/lv624/lazarus/engineering)
-"cKI" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle3)
-=======
->>>>>>> master
 "cKV" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -12700,21 +12680,6 @@
 /obj/structure/largecrate/guns,
 /turf/open/floor,
 /area/lv624/ground/compound/sw)
-<<<<<<< HEAD
-"doQ" = (
-/obj/structure/closet/radiation,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/lv624/lazarus/engineering)
-"doR" = (
-/obj/effect/decal/cleanable/blood,
-/obj/structure/cable,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/compound/sw)
-=======
->>>>>>> master
 "dqc" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -13058,13 +13023,7 @@
 /obj/structure/largecrate/random/secure,
 /turf/open/floor,
 /area/lv624/ground/jungle4)
-<<<<<<< HEAD
-"eEv" = (
-/obj/effect/decal/cleanable/blood/oil,
-/obj/structure/cable,
-=======
 "eBP" = (
->>>>>>> master
 /turf/open/floor/plating/warning{
 	dir = 8
 	},
@@ -13371,19 +13330,6 @@
 /obj/effect/landmark/start/job/survivor,
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/kitchen)
-<<<<<<< HEAD
-"fMS" = (
-/obj/structure/cable,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
-	},
-/turf/open/floor/plating/warning{
-	dir = 1
-	},
-/area/lv624/lazarus/engineering)
-=======
->>>>>>> master
 "fOi" = (
 /obj/structure/jungle/vines,
 /turf/open/floor/plating/ground/dirtgrassborder/corner{
@@ -15896,17 +15842,6 @@
 "qPJ" = (
 /turf/open/floor/plating/platebot,
 /area/lv624/lazarus/engineering)
-<<<<<<< HEAD
-"qQd" = (
-/obj/structure/cable,
-/turf/open/floor/tile/dark,
-/area/lv624/lazarus/engineering)
-"qQW" = (
-/obj/effect/decal/remains/xeno,
-/turf/closed/wall/r_wall,
-/area/lv624/lazarus/engineering)
-=======
->>>>>>> master
 "qRv" = (
 /obj/machinery/light{
 	dir = 4
@@ -16461,23 +16396,6 @@
 	},
 /turf/open/floor/plating/platebotc,
 /area/lv624/lazarus/quartstorage)
-<<<<<<< HEAD
-"toh" = (
-/obj/machinery/light,
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/tile/purple/whitepurple{
-	dir = 5
-	},
-/area/lv624/lazarus/research)
-"tpg" = (
-/obj/structure/cable,
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/plating/warning{
-	dir = 1
-	},
-/area/lv624/lazarus/engineering)
-=======
->>>>>>> master
 "tqg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4;
@@ -31456,12 +31374,9 @@ acN
 acO
 acO
 acO
-<<<<<<< HEAD
-=======
 acO
 acO
 adh
->>>>>>> master
 acO
 alO
 dXE
@@ -31820,30 +31735,12 @@ acN
 acN
 acO
 acO
-<<<<<<< HEAD
-acO
-bjH
-blj
-rbB
-blj
-blj
-blj
-blj
-fMS
-tMP
-gFw
-oqt
-kEa
-wit
-bjH
-=======
 acN
 acN
 acN
 adh
 acO
 aeP
->>>>>>> master
 qaM
 gBk
 ajT
@@ -32006,10 +31903,7 @@ acO
 aeK
 cZd
 acN
-<<<<<<< HEAD
-=======
 acN
->>>>>>> master
 acO
 acO
 acO
@@ -32189,14 +32083,11 @@ acO
 aeK
 cZd
 acN
-<<<<<<< HEAD
-=======
 acN
 acN
 acN
 acN
 adh
->>>>>>> master
 acO
 nxQ
 acO
@@ -32377,12 +32268,9 @@ aeK
 cZd
 qaM
 acN
-<<<<<<< HEAD
-=======
 acN
 acN
 acN
->>>>>>> master
 acO
 acO
 qQW
@@ -32564,10 +32452,6 @@ qaM
 acN
 acO
 acO
-<<<<<<< HEAD
-bjH
-bjH
-=======
 acN
 acN
 alO
@@ -32579,7 +32463,6 @@ bmH
 bnP
 fPs
 dgb
->>>>>>> master
 blj
 xSy
 bjH
@@ -32757,18 +32640,6 @@ njV
 acN
 acO
 acO
-<<<<<<< HEAD
-bjH
-doQ
-fmt
-wit
-blo
-pkq
-pkq
-rWp
-yfP
-jEE
-=======
 acO
 gPc
 blj
@@ -32776,7 +32647,6 @@ xVe
 blj
 blj
 blj
->>>>>>> master
 blj
 wit
 bnV
@@ -32944,14 +32814,11 @@ aeK
 acN
 qaM
 cZd
-<<<<<<< HEAD
-=======
 acN
 acN
 acN
 acO
 acO
->>>>>>> master
 acO
 acO
 bjH
@@ -33133,19 +33000,10 @@ qaM
 acN
 oqF
 acO
-<<<<<<< HEAD
-bjH
-doQ
-wit
-wit
-blo
-xSy
-=======
 acO
 adh
 alO
 bkz
->>>>>>> master
 blj
 vTg
 wux
@@ -33317,16 +33175,12 @@ aeK
 acN
 acN
 acN
-<<<<<<< HEAD
-oqF
-=======
 cZd
 acN
 acN
 acO
 acO
 acO
->>>>>>> master
 acO
 bjH
 bjH
@@ -33689,11 +33543,8 @@ acO
 acO
 adh
 acO
-<<<<<<< HEAD
-=======
 acO
 acO
->>>>>>> master
 alO
 qYO
 blj
@@ -33868,13 +33719,8 @@ qaM
 qaM
 acN
 cZd
-<<<<<<< HEAD
-acO
-nxQ
-=======
 acN
 acN
->>>>>>> master
 acO
 acO
 acO
@@ -34053,10 +33899,7 @@ qaM
 acN
 cZd
 acN
-<<<<<<< HEAD
-=======
 acN
->>>>>>> master
 acO
 acO
 acO
