@@ -54,10 +54,6 @@
 "aaD" = (
 /turf/open/floor/engine/cult,
 /area/lv624/ground/caves/west2)
-"aaE" = (
-/obj/structure/largecrate/kitten,
-/turf/open/floor/tile/blue/whitebluecorner,
-/area/lv624/lazarus/medbay)
 "aaF" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/engine/cult,
@@ -9263,18 +9259,6 @@
 	},
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/main_hall)
-"baB" = (
-/obj/effect/decal/cleanable/blood/tracks/footprints{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/tracks/footprints{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/marking/warning{
-	dir = 8
-	},
-/area/shuttle/drop1/lz1)
 "baM" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/ground/grass/grass2,
@@ -12394,6 +12378,10 @@
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor,
 /area/lv624/ground/river2)
+"bQV" = (
+/obj/effect/landmark/xeno_turret_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/east1)
 "bRK" = (
 /turf/open/ground/coast/corner2{
 	dir = 4
@@ -12509,10 +12497,6 @@
 /obj/effect/spawner/random/tool,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/compound/sw)
-"cmE" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/west1)
 "cnu" = (
 /obj/structure/jungle/vines,
 /obj/effect/landmark/weed_node,
@@ -12566,6 +12550,11 @@
 /obj/machinery/computer/shuttle/shuttle_control/dropship/two,
 /turf/open/ground/grass,
 /area/lv624/lazarus/console)
+"cHD" = (
+/obj/machinery/light,
+/obj/effect/landmark/weed_node,
+/turf/open/floor/plating,
+/area/lv624/lazarus/engineering)
 "cKV" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -12680,6 +12669,13 @@
 /obj/structure/largecrate/guns,
 /turf/open/floor,
 /area/lv624/ground/compound/sw)
+"doQ" = (
+/obj/structure/closet/radiation,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/lv624/lazarus/engineering)
 "dqc" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -13023,7 +13019,9 @@
 /obj/structure/largecrate/random/secure,
 /turf/open/floor,
 /area/lv624/ground/jungle4)
-"eBP" = (
+"eEv" = (
+/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable,
 /turf/open/floor/plating/warning{
 	dir = 8
 	},
@@ -13330,6 +13328,16 @@
 /obj/effect/landmark/start/job/survivor,
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/kitchen)
+"fMS" = (
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/plating/warning{
+	dir = 1
+	},
+/area/lv624/lazarus/engineering)
 "fOi" = (
 /obj/structure/jungle/vines,
 /turf/open/floor/plating/ground/dirtgrassborder/corner{
@@ -13540,6 +13548,11 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/closed/wall/indestructible/mineral,
 /area/lv624/ground/sand1)
+"gyP" = (
+/obj/effect/landmark/weed_node,
+/obj/effect/landmark/xeno_turret_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/central3)
 "gzj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 8;
@@ -15842,6 +15855,10 @@
 "qPJ" = (
 /turf/open/floor/plating/platebot,
 /area/lv624/lazarus/engineering)
+"qQd" = (
+/obj/structure/cable,
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/engineering)
 "qRv" = (
 /obj/machinery/light{
 	dir = 4
@@ -16396,6 +16413,12 @@
 	},
 /turf/open/floor/plating/platebotc,
 /area/lv624/lazarus/quartstorage)
+"tpg" = (
+/obj/structure/cable,
+/turf/open/floor/plating/warning{
+	dir = 1
+	},
+/area/lv624/lazarus/engineering)
 "tqg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4;
@@ -16592,6 +16615,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
+"ujY" = (
+/obj/effect/landmark/xeno_turret_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/west1)
 "unj" = (
 /obj/effect/spawner/modularmap/lv624/domes,
 /turf/open/space/basic,
@@ -20076,7 +20103,7 @@ ozL
 aej
 aej
 aej
-aej
+etu
 aej
 aej
 aej
@@ -21011,7 +21038,7 @@ abb
 abb
 abb
 abc
-abc
+ujY
 abc
 abb
 abb
@@ -21876,7 +21903,7 @@ aej
 abc
 abc
 abc
-abc
+ujY
 abb
 abb
 abc
@@ -23858,7 +23885,7 @@ abd
 abc
 abc
 abd
-abc
+ujY
 abc
 abc
 abc
@@ -30304,7 +30331,7 @@ acN
 acN
 acO
 acO
-nxQ
+acO
 acO
 acO
 acO
@@ -30467,7 +30494,7 @@ acO
 acO
 acO
 acO
-adh
+gyP
 acO
 aeK
 acN
@@ -30883,7 +30910,7 @@ iRk
 dKI
 avV
 awH
-aaE
+awn
 abB
 axS
 ayt
@@ -31375,9 +31402,6 @@ acO
 acO
 acO
 acO
-acO
-adh
-acO
 alO
 dXE
 dgb
@@ -31735,12 +31759,21 @@ acN
 acN
 acO
 acO
-acN
-acN
-acN
-adh
 acO
-aeP
+bjH
+blj
+rbB
+blj
+blj
+blj
+blj
+fMS
+tMP
+gFw
+oqt
+kEa
+wit
+bjH
 qaM
 gBk
 ajT
@@ -31902,7 +31935,6 @@ acO
 acO
 aeK
 cZd
-acN
 acN
 acO
 acO
@@ -32083,13 +32115,8 @@ acO
 aeK
 cZd
 acN
-acN
-acN
-acN
-acN
-adh
 acO
-nxQ
+acO
 acO
 alO
 blS
@@ -32268,12 +32295,9 @@ aeK
 cZd
 qaM
 acN
-acN
-acN
-acN
 acO
 acO
-qQW
+bjH
 bjH
 rhQ
 bjH
@@ -32452,17 +32476,8 @@ qaM
 acN
 acO
 acO
-acN
-acN
-alO
-dXE
-dgb
-blP
-bmH
-bmH
-bnP
-fPs
-dgb
+bjH
+bjH
 blj
 xSy
 bjH
@@ -32640,13 +32655,16 @@ njV
 acN
 acO
 acO
-acO
-gPc
-blj
-xVe
-blj
-blj
-blj
+bjH
+doQ
+fmt
+wit
+blo
+pkq
+pkq
+rWp
+yfP
+jEE
 blj
 wit
 bnV
@@ -32814,11 +32832,6 @@ aeK
 acN
 qaM
 cZd
-acN
-acN
-acN
-acO
-acO
 acO
 acO
 bjH
@@ -33000,10 +33013,12 @@ qaM
 acN
 oqF
 acO
-acO
-adh
-alO
-bkz
+bjH
+doQ
+wit
+wit
+blo
+xSy
 blj
 vTg
 wux
@@ -33175,12 +33190,7 @@ aeK
 acN
 acN
 acN
-cZd
-acN
-acN
-acO
-acO
-acO
+oqF
 acO
 bjH
 bjH
@@ -33360,7 +33370,7 @@ acN
 acN
 acN
 oqF
-nxQ
+acO
 acO
 acO
 acO
@@ -33544,7 +33554,6 @@ acO
 adh
 acO
 acO
-acO
 alO
 qYO
 blj
@@ -33719,8 +33728,8 @@ qaM
 qaM
 acN
 cZd
-acN
-acN
+acO
+acO
 acO
 acO
 acO
@@ -33899,12 +33908,10 @@ qaM
 acN
 cZd
 acN
-acN
 acO
 acO
 acO
 acO
-nxQ
 alO
 dFh
 ohH
@@ -42404,7 +42411,7 @@ kGH
 aTn
 aTn
 aTn
-baB
+jij
 jij
 jij
 jij
@@ -44110,7 +44117,7 @@ cRa
 afr
 afn
 abi
-abi
+bQV
 abo
 afg
 afg
