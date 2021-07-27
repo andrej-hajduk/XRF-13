@@ -318,12 +318,9 @@
 	icon = 'icons/obj/doors/mainship/securedoor.dmi'
 	req_access = list(ACCESS_MARINE_BRIDGE)
 
-<<<<<<< HEAD
 /obj/machinery/door/airlock/mainship/secure/rebel
 	req_access = list(ACCESS_MARINE_BRIDGE_REBEL)
 
-=======
->>>>>>> master
 /obj/machinery/door/airlock/mainship/secure/free_access
 	req_access = null
 
@@ -469,12 +466,9 @@
 	icon = 'icons/obj/doors/mainship/medidoor.dmi'
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
-<<<<<<< HEAD
 /obj/machinery/door/airlock/mainship/research/rebel
 	req_access = list(ACCESS_MARINE_RESEARCH_REBEL)
 
-=======
->>>>>>> master
 /obj/machinery/door/airlock/mainship/research/free_access
 	req_access = null
 
@@ -577,17 +571,8 @@
 	opacity = FALSE
 	glass = TRUE
 
-<<<<<<< HEAD
 /obj/machinery/door/airlock/mainship/marine/general/sl/rebel
 	req_access = list(ACCESS_MARINE_LEADER_REBEL)
-=======
-/obj/machinery/door/airlock/mainship/marine/general/spec
-	name = "\improper Specialist Preparations"
-	icon = 'icons/obj/doors/mainship/prepdoor.dmi'
-	req_access = list(ACCESS_MARINE_SPECPREP)
-	opacity = FALSE
-	glass = TRUE
->>>>>>> master
 
 /obj/machinery/door/airlock/mainship/marine/general/smart
 	name = "\improper Smartgunner Preparations"

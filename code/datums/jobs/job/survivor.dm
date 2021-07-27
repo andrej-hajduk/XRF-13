@@ -119,7 +119,6 @@
 
 	switch(SSmapping.configs[GROUND_MAP].map_name)
 		if(MAP_PRISON_STATION)
-<<<<<<< HEAD
 			to_chat(M, span_notice("You are a survivor of the attack on Fiorina Orbital Penitentiary. You worked or lived on the prison station, and managed to avoid the alien attacks... until now."))
 		if(MAP_ICE_COLONY)
 			to_chat(M, span_notice("You are a survivor of the attack on the ice habitat. You worked or lived on the colony, and managed to avoid the alien attacks... until now."))
@@ -137,25 +136,6 @@
 			to_chat(M, span_notice("You are a survivor of the attack on the Magmoor Digsite IV. You worked or lived on the digsite, and managed to avoid the alien attacks... until now."))
 		else
 			to_chat(M, span_notice("Through a miracle you managed to survive the attack. But are you truly safe now?"))
-=======
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on Fiorina Orbital Penitentiary. You infiltrated on the prison station, and managed to avoid the chaos... until now.</span>")
-		if(MAP_ICE_COLONY)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the ice habitat. You infiltrated on the colony, and managed to avoid the anarchy... until now.</span>")
-		if(MAP_BIG_RED)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] for the colony. You infiltrated in the archaeology colony, and managed to avoid the downfall... until now.</span>")
-		if(MAP_LV_624)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the colony. You suspected something was wrong and tried to call for help, but it was too late...</span>")
-		if(MAP_ICY_CAVES)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the icy cave system. You infiltrated on the site, and managed to avoid the chaoss... until now.</span>")
-		if(MAP_BARRENQUILLA_MINING)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the facility. The site manager's greed caught up to him, and you're caught in the crossfire...</span>")
-		if(MAP_RESEARCH_OUTPOST)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the outpost. But you question yourself: are you truely safe now?</span>")
-		if(MAP_MAGMOOR_DIGSITE)
-			to_chat(M, "<span class='notice'>You are a [M.client.prefs.survivor] on the Magmoor Digsite IV. infiltrated on the digsite, and managed to avoid the anarchy... until now.</span>")
-		else
-			to_chat(M, "<span class='notice'>Through a miracle you managed to survive the chaos. But are you truly safe now?</span>")
->>>>>>> master
 
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()

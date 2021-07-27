@@ -126,8 +126,6 @@
 
 	ignore_weed_destruction = FALSE
 
-<<<<<<< HEAD
-=======
 
 //Carrier trap
 /obj/structure/xeno/trap
@@ -254,7 +252,6 @@
 		icon_state = "trap1"
 		to_chat(user, "<span class='xenonotice'>You place a facehugger in [src].</span>")
 
->>>>>>> master
 //Resin Doors
 /obj/structure/mineral_door/resin
 	name = "resin door"
@@ -638,8 +635,6 @@
 		return FALSE
 	Burst(FALSE)
 	return TRUE
-<<<<<<< HEAD
-=======
 /*
 TUNNEL
 */
@@ -875,7 +870,6 @@ TUNNEL
 	. = ..()
 	icon_state = "well[charges]"
 	set_light(charges , charges / 2, LIGHT_COLOR_GREEN)
->>>>>>> master
 
 /obj/effect/alien/egg/gas/attack_alien(mob/living/carbon/xenomorph/M, damage_amount = M.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
 	if(status != EGG_GROWN)

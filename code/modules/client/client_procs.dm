@@ -597,14 +597,9 @@
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
-<<<<<<< HEAD
 		if((minutes < living_recs) || (!living_recs && !client_is_in_db))
 			var/reject_message = "Failed Login: [key] - [client_is_in_db ? "":"New "]Account attempting to connect during panic bunker, but\
 			[living_recs ? "they do not have the required living time [minutes]/[living_recs]": "was rejected"]"
-=======
-		if(minutes < living_recs)
-			var/reject_message = "Failed Login: [key] - Account attempting to connect during panic bunker, but they do not have the required living time [minutes]/[living_recs]"
->>>>>>> master
 			log_access(reject_message)
 			message_admins(span_adminnotice("[reject_message]"))
 			var/message = CONFIG_GET(string/panic_bunker_message)
@@ -952,26 +947,14 @@ GLOBAL_VAR_INIT(automute_on, null)
 	var/warning = message_cache >= SPAM_TRIGGER_WARNING || (weight_cache > SPAM_TRIGGER_WEIGHT_WARNING && message_cache != 1)
 
 	if(mute)
-<<<<<<< HEAD
 		if(GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
 			to_chat(src, span_danger("You have exceeded the spam filter. An auto-mute was applied."))
-=======
-		if(!GLOB.automute_on || check_rights(R_ADMIN, FALSE))
-			to_chat(src, "<span class='danger'>You have exceeded the spam filter.</span>")
-		else
-			to_chat(src, "<span class='danger'>You have exceeded the spam filter. An auto-mute was applied.</span>")
->>>>>>> master
 			create_message("note", ckey(key), "SYSTEM", "Automuted due to spam. Last message: '[last_message]'", null, null, FALSE, TRUE, null, FALSE, "Minor")
 			mute(src, mute_type, TRUE)
 		return TRUE
 
-<<<<<<< HEAD
 	if(warning && GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
 		to_chat(src, span_danger("You are nearing the spam filter limit."))
-=======
-	if(warning && GLOB.automute_on)
-		to_chat(src, "<span class='danger'>You are nearing the spam filter limit.</span>")
->>>>>>> master
 
 /client/vv_edit_var(var_name, var_value)
 	switch(var_name)

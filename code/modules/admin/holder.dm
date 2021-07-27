@@ -363,18 +363,14 @@ GLOBAL_PROTECT(admin_verbs_asay)
 	/datum/admins/proc/reestablish_db_connection,
 	/datum/admins/proc/view_runtimes,
 	/datum/admins/proc/spatial_agent,
-<<<<<<< HEAD
 	/datum/admins/proc/set_xeno_stat_buffs,
 	/datum/admins/proc/check_bomb_impacts,
-	/client/proc/toggle_cdn
-=======
 	/client/proc/give_humans_genitals,
 #ifdef REFERENCE_TRACKING
 	/datum/admins/proc/view_refs,
 	/datum/admins/proc/view_del_failures,
 #endif
-	/datum/admins/proc/check_bomb_impacts
->>>>>>> master
+	/client/proc/toggle_cdn
 	)
 GLOBAL_LIST_INIT(admin_verbs_debug, world.AVdebug())
 GLOBAL_PROTECT(admin_verbs_debug)

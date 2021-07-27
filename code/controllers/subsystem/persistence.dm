@@ -40,20 +40,15 @@ SUBSYSTEM_DEF(persistence)
 ///Loads data at the start of the round
 /datum/controller/subsystem/persistence/Initialize()
 	LoadSeasonalItems()
-<<<<<<< HEAD
 	load_custom_loadouts_list()
-=======
 	LoadPanicBunker()
->>>>>>> master
 	return ..()
 
 ///Stores data at the end of the round
 /datum/controller/subsystem/persistence/proc/CollectData()
-<<<<<<< HEAD
+	SavePanicBunker()
 	save_custom_loadouts_list()
 	return
-=======
-	SavePanicBunker()
 
 /datum/controller/subsystem/persistence/proc/LoadPanicBunker()
 	var/bunker_path = file("data/bunker_passthrough.json")
@@ -70,7 +65,6 @@ SUBSYSTEM_DEF(persistence)
 	file_data["data"] = GLOB.bunker_passthrough
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
->>>>>>> master
 
 ///Loads the list of custom outfits names
 /datum/controller/subsystem/persistence/proc/load_custom_loadouts_list()

@@ -181,7 +181,8 @@
 			/obj/item/weapon/twohanded/spear/tactical = -1,
 			/obj/item/ammo_magazine/standard_smartmachinegun = 4,
 		),
-<<<<<<< HEAD
+
+/*
 		"Grenades" = list(
 			/obj/item/explosive/grenade/frag = 600,
 			/obj/item/explosive/grenade/frag/m15 = 30,
@@ -193,8 +194,7 @@
 			/obj/item/storage/box/m94 = 200,
 			/obj/item/storage/box/m94/cas = 30,
 		),
-=======
->>>>>>> master
+*/
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
 			/obj/item/attachable/compensator = -1,
@@ -220,7 +220,6 @@
 			/obj/item/attachable/standard_revolver_longbarrel = -1
 		),
 		"Boxes" = list(
-<<<<<<< HEAD
 		/obj/item/ammo_magazine/packet/p9mm = 100,
 		/obj/item/ammo_magazine/packet/acp = 100,
 		/obj/item/ammo_magazine/packet/magnum = 100,
@@ -228,7 +227,6 @@
 		/obj/item/ammo_magazine/packet/p10x26mm = 100,
 		/obj/item/ammo_magazine/packet/p10x27mm = 100,
 		/obj/item/ammo_magazine/packet/p492x34mm = 100,
-=======
 		/obj/item/ammo_magazine/box9mm = 100,
 		/obj/item/ammo_magazine/acp = 100,
 		/obj/item/ammo_magazine/acp/polymer = 100,
@@ -240,7 +238,6 @@
 		/obj/item/ammo_magazine/box10x26mm/polymer = 100,
 		/obj/item/ammo_magazine/box10x27mm = 100,
 		/obj/item/ammo_magazine/box10x27mm/polymer = 100,
->>>>>>> master
 		/obj/item/storage/box/visual/magazine = 30,
 		),
 		"Utility" = list(
@@ -360,24 +357,17 @@
 			/obj/item/ammo_magazine/shotgun/mbx900 = 2,
 			/obj/item/bodybag/tarp = 2,
 			/obj/item/explosive/plastique = 2,
-<<<<<<< HEAD
 			/obj/item/minerupgrade/automatic = 3,
-			/obj/item/clothing/suit/storage/marine/harness/boomvest = 20,
-=======
->>>>>>> master
 			/obj/item/radio/headset/mainship/marine/alpha = -1,
 			/obj/item/radio/headset/mainship/marine/bravo = -1,
 			/obj/item/radio/headset/mainship/marine/charlie = -1,
 			/obj/item/radio/headset/mainship/marine/delta = -1,
 		),
 		"Grenade Boxes" = list(
-<<<<<<< HEAD
 			/obj/item/storage/box/visual/grenade/frag = 2,
 			/obj/item/storage/box/visual/grenade/impact = 2,
 			/obj/item/storage/box/visual/grenade/incendiary = 2,
 			/obj/item/storage/box/visual/grenade/M15 = 2,
-=======
->>>>>>> master
 			/obj/item/storage/box/visual/grenade/drain = 1,
 			/obj/item/storage/box/visual/grenade/cloak = 1,
 		),
@@ -709,64 +699,8 @@
 	)
 	contraband = list(/obj/item/reagent_containers/blood/OMinus = 1)
 
-<<<<<<< HEAD
 /obj/machinery/vending/marine_medic/rebel
 	req_access = list(ACCESS_MARINE_MEDPREP_REBEL)
-=======
-/obj/machinery/vending/marine_special
-	name = "\improper TerraGovTech Specialist Vendor"
-	desc = "A marine specialist equipment vendor"
-	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
-	req_access = list(ACCESS_MARINE_SPECPREP)
-	icon_state = "specialist"
-	icon_deny = "specialist-deny"
-	wrenchable = FALSE
-	tokensupport = TOKEN_SPEC
-
-	products = list(
-		/obj/item/coin/marine/specialist = 1,
-		/obj/item/clothing/tie/storage/webbing = 1,
-		/obj/item/explosive/plastique = 2,
-		/obj/item/storage/pouch/magazine/large = 1,
-		/obj/item/storage/pouch/general/medium = 1,
-		/obj/item/clothing/mask/gas = 1,
-	)
-	contraband = list()
-	premium = list(
-		/obj/item/storage/box/spec/demolitionist = 1,
-		/obj/item/storage/box/spec/heavy_grenadier = 1,
-		/obj/item/storage/box/m42c_system = 1,
-		/obj/item/storage/box/m42c_system_Jungle = 1,
-		/obj/item/storage/box/spec/pyro = 1,
-		/obj/item/storage/box/spec/tracker = 1,
-	)
-	prices = list()
-
-
-/obj/machinery/vending/shared_vending/marine_special
-	name = "\improper TerraGovTech Specialist Vendor"
-	desc = "A marine specialist equipment vendor"
-	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
-	req_access = list(ACCESS_MARINE_SPECPREP)
-	icon_state = "specialist"
-	icon_deny = "specialist-deny"
-	wrenchable = FALSE
-	tokensupport = TOKEN_SPEC
-	isshared = TRUE
-
-	products = list(
-		/obj/item/storage/box/spec/demolitionist = 1,
-		/obj/item/storage/box/spec/heavy_grenadier = 1,
-		/obj/item/storage/box/spec/sniper = 1,
-		/obj/item/storage/box/spec/scout = 1,
-		/obj/item/storage/box/spec/pyro = 1,
-		/obj/item/storage/box/spec/tracker = 1,)
-	contraband = list()
-	premium = list()
-
-	prices = list()
-
->>>>>>> master
 
 /obj/machinery/vending/shared_vending/marine_engi
 	name = "\improper TerraGovTech Engineer System Vendor"

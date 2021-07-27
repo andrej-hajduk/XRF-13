@@ -342,7 +342,6 @@
 	desc = "You have accelerated natural healing."
 	icon_state = "healing_infusion"
 
-<<<<<<< HEAD
 //MUTE
 /datum/status_effect/mute
 	id = "mute"
@@ -368,8 +367,6 @@
 /datum/status_effect/mute/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_MUTED, TRAIT_STATUS_EFFECT(id))
 	return ..()
-
-=======
 
 //naughty stuff (still buggy)
 /datum/status_effect/breast_enlarger
@@ -470,4 +467,3 @@
 	owner.remove_movespeed_modifier(MOVESPEED_ID_PENIS_HYPERTROPHY)
 	owner.restore_blood()
 	return ..()
->>>>>>> master

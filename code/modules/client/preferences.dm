@@ -162,11 +162,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/obj/screen/map_view/screen_main
 	var/obj/screen/background/screen_bg
 
-<<<<<<< HEAD
 	/// If unique action will only act on the item in the active hand. If false, it will try to act on the item on the inactive hand as well in certain conditions.
 	var/unique_action_use_active_hand = TRUE
 
-=======
 	var/current_tab = 0
 	var/character_tab = 0
 
@@ -181,7 +179,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preview_pref = PREVIEW_PREF_JOB
 	var/datum/scream_type/pref_scream = new /datum/scream_type/human() //Scream type
 	var/scream_id
->>>>>>> master
 
 /datum/preferences/New(client/C)
 	if(!istype(C))
@@ -204,13 +201,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(!IsGuestKey(C.key))
 		load_path(C.ckey)
-<<<<<<< HEAD
 		loadout_manager = new
 		loadout_manager.loadouts_data = load_loadout_list()
-=======
 		if(!load_loadout_manager())
 			loadout_manager = new
->>>>>>> master
 		if(load_preferences() && load_character())
 			C.set_fullscreen(fullscreen_mode)
 			return

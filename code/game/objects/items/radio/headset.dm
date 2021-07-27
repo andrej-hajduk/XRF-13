@@ -247,11 +247,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/mainship/proc/add_minimap()
 	remove_minimap()
 	var/datum/action/minimap/mini = new minimap_type
-<<<<<<< HEAD
-=======
 	if(wearer.job?.job_flags & JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP) //We show to all marines if we have this flag, separated by faction
 		mini.marker_flags = hud_type == DATA_HUD_SQUAD_TERRAGOV
->>>>>>> master
 	mini.give_action(wearer)
 	INVOKE_NEXT_TICK(src, .proc/update_minimap_icon) //Mobs are spawned inside nullspace sometimes so this is to avoid that hijinks
 
@@ -401,7 +398,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = /obj/item/encryptionkey/req
 	keyslot2 = /obj/item/encryptionkey/engi
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/st/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/req/rebel
@@ -409,36 +405,28 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 /obj/item/radio/headset/mainship/doc
 	name = "medical radio headset"
 	icon_state = "med_headset"
 	keyslot = /obj/item/encryptionkey/med
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/doc/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/med/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 /obj/item/radio/headset/mainship/ct
 	name = "supply radio headset"
 	icon_state = "cargo_headset"
 	keyslot = /obj/item/encryptionkey/req
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/ct/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/req/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 /obj/item/radio/headset/mainship/mcom
 	name = "marine command radio headset"
 	icon_state = "com_headset_alt"
@@ -446,40 +434,31 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	use_command = TRUE
 	command = TRUE
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/mcom/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/mcom/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 /obj/item/radio/headset/mainship/mcom/silicon
 	name = "silicon radio"
 	keyslot = /obj/item/encryptionkey/mcom/ai
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/mcom/silicon/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/mcom/ai/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 /obj/item/radio/headset/mainship/marine
 	keyslot = /obj/item/encryptionkey/general
 
-<<<<<<< HEAD
 /obj/item/radio/headset/mainship/marine/rebel
 	frequency = FREQ_COMMON_REBEL
 	keyslot = /obj/item/encryptionkey/general/rebel
 	hud_type = DATA_HUD_SQUAD_REBEL
 	minimap_type = /datum/action/minimap/marine/rebel
 
-=======
->>>>>>> master
 
 /obj/item/radio/headset/mainship/marine/Initialize(mapload, datum/squad/squad, rank)
 	if(squad)

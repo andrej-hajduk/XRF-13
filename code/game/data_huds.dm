@@ -554,10 +554,5 @@
 	if(!gun.current_mag)
 		holder.icon_state = "plasma0"
 		return
-<<<<<<< HEAD
 	var/amount = round(gun.current_mag.current_rounds * 100 / gun.current_mag.max_rounds, 10)
-=======
-
-	var/amount = round(rounds * 100 / rounds_max, 10)
->>>>>>> master
 	holder.icon_state = "plasma[amount]"

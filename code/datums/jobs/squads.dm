@@ -61,7 +61,6 @@
 	access = list(ACCESS_MARINE_DELTA)
 	radio_freq = FREQ_DELTA
 
-<<<<<<< HEAD
 /datum/squad/alpha/rebel
 	id = ALPHA_SQUAD_REBEL
 	access = list(ACCESS_MARINE_ALPHA_REBEL)
@@ -130,8 +129,6 @@
 		REBEL_SQUAD_LEADER = 1,
 )
 
-=======
->>>>>>> master
 GLOBAL_LIST_EMPTY(glovemarkings)
 GLOBAL_LIST_EMPTY(armormarkings)
 GLOBAL_LIST_EMPTY(armormarkings_sl)

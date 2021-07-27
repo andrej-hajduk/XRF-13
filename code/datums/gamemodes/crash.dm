@@ -14,12 +14,8 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-<<<<<<< HEAD
-		/datum/job/xenomorph = FREE_XENO_AT_START
-=======
 		/datum/job/survivor = 1,
-		/datum/job/xenomorph = 1
->>>>>>> master
+		/datum/job/xenomorph = FREE_XENO_AT_START
 	)
 
 	// Round end conditions

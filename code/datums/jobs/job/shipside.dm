@@ -36,7 +36,6 @@
 	"}
 	minimap_icon = "captain"
 
-<<<<<<< HEAD
 /datum/job/terragov/command/captain/rebel
 	title = REBEL_CAPTAIN
 	faction = FACTION_TERRAGOV_REBEL
@@ -48,8 +47,6 @@
 		/datum/job/terragov/squad/smartgunner/rebel = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
-=======
->>>>>>> master
 
 /datum/job/terragov/command/captain/radio_help_message(mob/M)
 	. = ..()
@@ -77,13 +74,10 @@ Godspeed, captain! And remember, you are not above the law."})
 	l_store = /obj/item/hud_tablet/leadership
 	back = /obj/item/storage/backpack/marine/satchel
 
-<<<<<<< HEAD
 /datum/outfit/job/command/captain/rebel
 	jobtype = /datum/job/terragov/command/captain/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 
 /datum/job/terragov/command/captain/after_spawn(mob/living/new_mob, mob/user, latejoin)
 	. = ..()
@@ -130,7 +124,6 @@ Godspeed, captain! And remember, you are not above the law."})
 	"}
 	minimap_icon = "fieldcommander"
 
-<<<<<<< HEAD
 /datum/job/terragov/command/fieldcommander/rebel
 	title = REBEL_FIELD_COMMANDER
 	faction = FACTION_TERRAGOV_REBEL
@@ -143,8 +136,6 @@ Godspeed, captain! And remember, you are not above the law."})
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/command/fieldcommander/after_spawn(mob/living/L, mob/M, latejoin)
 	. = ..()
 	SSdirection.set_leader(TRACKING_ID_MARINE_COMMANDER, L)
@@ -191,13 +182,10 @@ Make the TGMC proud!"})
 	back = /obj/item/storage/backpack/marine/satchel
 	suit_store = /obj/item/storage/belt/gun/pistol/m4a3/fieldcommander/
 
-<<<<<<< HEAD
 /datum/outfit/job/command/fieldcommander/rebel
 	jobtype = /datum/job/terragov/command/fieldcommander/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 
 //Staff Officer
 /datum/job/terragov/command/staffofficer
@@ -228,7 +216,6 @@ Make the TGMC proud!"})
 
 	minimap_icon = "staffofficer"
 
-<<<<<<< HEAD
 /datum/job/terragov/command/staffofficer/rebel
 	title = REBEL_STAFF_OFFICER
 	faction = FACTION_TERRAGOV_REBEL
@@ -241,8 +228,6 @@ Make the TGMC proud!"})
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/command/staffofficer/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"Your job is to monitor the marines, man the CIC, and listen to your superior officers.
@@ -278,13 +263,10 @@ You are in charge of logistics and the overwatch system. You are also in line to
 	l_store = /obj/item/binoculars/tactical
 	back = /obj/item/storage/backpack/marine/satchel
 
-<<<<<<< HEAD
 /datum/outfit/job/command/staffofficer/rebel
 	jobtype = /datum/job/terragov/command/staffofficer/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 //Pilot Officer
 /datum/job/terragov/command/pilot
 	title = PILOT_OFFICER
@@ -311,7 +293,6 @@ You are in charge of logistics and the overwatch system. You are also in line to
 		<b>Duty</b>: Listen and coordinate your crew for the sole dropship you will use. Provide transport and close air support for the marines during the mission. Ensure no threats come aboard your dropship and by extension, the vessel which houses the crew.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/command/pilot/rebel
 	title = REBEL_PILOT_OFFICER
 	faction = FACTION_TERRAGOV_REBEL
@@ -324,8 +305,6 @@ You are in charge of logistics and the overwatch system. You are also in line to
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/command/pilot/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -405,7 +384,6 @@ If you are not piloting, there is an autopilot fallback for command, but don't l
 	"}
 	minimap_icon = "cse"
 
-<<<<<<< HEAD
 /datum/job/terragov/engineering/chief/rebel
 	title = REBEL_CHIEF_SHIP_ENGINEER
 	faction = FACTION_TERRAGOV_REBEL
@@ -418,8 +396,6 @@ If you are not piloting, there is an autopilot fallback for command, but don't l
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/engineering/chief/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -459,13 +435,10 @@ You are also next in the chain of command, should the bridge crew fall in the li
 	r_store = /obj/item/storage/pouch/electronics
 	back = /obj/item/storage/backpack/marine/satchel/tech
 
-<<<<<<< HEAD
 /datum/outfit/job/engineering/chief/rebel
 	jobtype = /datum/job/terragov/engineering/chief/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 //Ship Engineer
 /datum/job/terragov/engineering/tech
 	title = SHIP_TECH
@@ -492,7 +465,6 @@ You are also next in the chain of command, should the bridge crew fall in the li
 		<b>Duty</b>: Maintain the ship, be in charge of the engines. Be the secondary engineer to a forward operating base, prepare the shipside defenses if needed. Help the Pilot Officer in preparing the dropship.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/engineering/tech/rebel
 	title = REBEL_SHIP_TECH
 	faction = FACTION_TERRAGOV_REBEL
@@ -505,8 +477,6 @@ You are also next in the chain of command, should the bridge crew fall in the li
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/engineering/tech/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -547,13 +517,10 @@ requisitions line and later on to be ready to send supplies for marines who are 
 	r_store = /obj/item/storage/pouch/general/medium
 	back = /obj/item/storage/backpack/marine/engineerpack
 
-<<<<<<< HEAD
 /datum/outfit/job/engineering/tech/rebel
 	jobtype = /datum/job/terragov/engineering/tech/rebel
 	ears = /obj/item/radio/headset/mainship/st/rebel
 
-=======
->>>>>>> master
 /datum/job/terragov/requisitions
 	job_category = JOB_CAT_REQUISITIONS
 	selection_color = "#BAAFD9"
@@ -590,7 +557,6 @@ requisitions line and later on to be ready to send supplies for marines who are 
 		Requisition supplies to the battlefield. Ensure that the marines are reparing miners for more points. Supply the marines with deluxe equipment to ensure success.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/requisitions/officer/rebel
 	title = REBEL_REQUISITIONS_OFFICER
 	faction = FACTION_TERRAGOV_REBEL
@@ -603,8 +569,6 @@ requisitions line and later on to be ready to send supplies for marines who are 
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/requisitions/officer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -646,13 +610,10 @@ A happy ship is a well-functioning ship."})
 	r_store = /obj/item/storage/pouch/general/large
 	back = /obj/item/storage/backpack/marine/satchel
 
-<<<<<<< HEAD
 /datum/outfit/job/requisitions/officer/rebel
 	jobtype = /datum/job/terragov/requisitions/officer/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 /datum/job/terragov/medical
 	job_category = JOB_CAT_MEDICAL
 	selection_color = "#BBFFBB"
@@ -688,7 +649,6 @@ A happy ship is a well-functioning ship."})
 		<b>Duty</b>: Communicate and lead your fellow medical staff (if available), supervise the medical department. Coordinate and teach fellow medical staff and corpsmen what they’re doing for treating an injury. Be the sole doctor in the Canterbury.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/medical/professor/rebel
 	title = REBEL_CHIEF_MEDICAL_OFFICER
 	faction = FACTION_TERRAGOV_REBEL
@@ -701,8 +661,6 @@ A happy ship is a well-functioning ship."})
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 
 /datum/job/terragov/medical/professor/radio_help_message(mob/M)
 	. = ..()
@@ -773,7 +731,6 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a xenomorph larva. Develop superior healing medicines.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/medical/medicalofficer/rebel
 	title = REBEL_MEDICAL_DOCTOR
 	faction = FACTION_TERRAGOV_REBEL
@@ -786,8 +743,6 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 /datum/job/terragov/medical/medicalofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -858,7 +813,6 @@ You are also an expert when it comes to medication and treatment. If you do not 
 		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/medical/researcher/rebel
 	title = REBEL_MEDICAL_RESEARCHER
 	faction = FACTION_TERRAGOV_REBEL
@@ -871,8 +825,6 @@ You are also an expert when it comes to medication and treatment. If you do not 
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 
 /datum/job/terragov/medical/researcher/radio_help_message(mob/M)
 	. = ..()
@@ -999,7 +951,6 @@ Use your office fax machine to communicate with corporate headquarters or to acq
 		<b>Duty</b>: Support and assist in every department of the TerraGov Marine Corps, use your incredibly developed skills to help the marines during their missions. Serve your purpose.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/silicon/synthetic/rebel
 	title = REBEL_SYNTHETIC
 	faction = FACTION_TERRAGOV_REBEL
@@ -1009,8 +960,6 @@ Use your office fax machine to communicate with corporate headquarters or to acq
 		/datum/job/terragov/squad/smartgunner/rebel = SMARTIE_POINTS_REGULAR,
 	)
 
-=======
->>>>>>> master
 
 /datum/job/terragov/silicon/synthetic/get_special_name(client/preference_source)
 	return preference_source.prefs.synthetic_name
@@ -1061,13 +1010,10 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 	l_store = /obj/item/storage/pouch/general/medium
 	back = /obj/item/storage/backpack/marine/satchel
 
-<<<<<<< HEAD
 /datum/outfit/job/civilian/synthetic/rebel
 	jobtype = /datum/job/terragov/silicon/synthetic/rebel
 	ears = /obj/item/radio/headset/mainship/mcom/rebel
 
-=======
->>>>>>> master
 
 /datum/job/terragov/silicon/ai
 	title = SILICON_AI
@@ -1096,7 +1042,6 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 		<b>Duty</b>: Assist the crew whenever you’re needed, be the doorknob of the ship. Recon the areas for threats via cameras, report your findings to the crew at various communication channels. Follow your laws.
 	"}
 
-<<<<<<< HEAD
 /datum/job/terragov/silicon/ai/rebel
 	title = REBEL_SILICON_AI
 	faction = FACTION_TERRAGOV_REBEL
@@ -1107,8 +1052,6 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 	)
 
 
-=======
->>>>>>> master
 /datum/job/terragov/silicon/ai/get_special_name(client/preference_source)
 	return preference_source.prefs.ai_name
 
