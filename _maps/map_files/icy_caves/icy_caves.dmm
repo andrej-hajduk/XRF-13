@@ -4909,9 +4909,7 @@
 	pixel_x = 7;
 	pixel_y = 2
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small,
 /turf/open/floor/tile/dark/red2,
 /area/icy_caves/outpost/security)
 "IJ" = (

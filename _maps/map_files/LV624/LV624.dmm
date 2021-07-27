@@ -1363,6 +1363,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/light/small,
 /turf/open/floor/plating/warning{
 	dir = 6
 	},
@@ -7664,7 +7665,9 @@
 "aSo" = (
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
-/obj/machinery/light,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/sleep_male)
 "aSp" = (
@@ -7713,9 +7716,6 @@
 	},
 /area/lv624/lazarus/sleep_female)
 "aSu" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/structure/bed/chair/comfy/black,
 /turf/open/floor/tile/purple/taupepurple{
 	dir = 9
@@ -11127,7 +11127,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/closed/wall/r_wall,
 /area/lv624/lazarus/hop)
 "bmf" = (
 /obj/structure/largecrate/random,
@@ -12412,6 +12412,9 @@
 	pixel_y = 30
 	},
 /obj/structure/cable,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/lv624/lazarus/engineering)
 "bLL" = (
@@ -13188,6 +13191,14 @@
 /obj/effect/spawner/modularmap/lv624/hydroroad,
 /turf/open/space/basic,
 /area/lv624/ground/jungle9)
+"fko" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/tile/purple/taupepurple{
+	dir = 9
+	},
+/area/lv624/lazarus/sleep_female)
 "flw" = (
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/closed/mineral,
@@ -14480,6 +14491,15 @@
 	dir = 1
 	},
 /area/lv624/ground/jungle7)
+"lqT" = (
+/obj/effect/decal/warning_stripes/thin{
+	dir = 6
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/quartstorage)
 "lrO" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/fence,
@@ -15980,6 +16000,15 @@
 /obj/machinery/miner/damaged/platinum,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/sand5)
+"siH" = (
+/obj/structure/cable,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/warning{
+	dir = 4
+	},
+/area/lv624/lazarus/engineering)
 "sje" = (
 /obj/structure/jungle/vines/heavy,
 /obj/effect/landmark/weed_node,
@@ -16607,6 +16636,16 @@
 	},
 /turf/open/ground/grass,
 /area/shuttle/drop2/lz2)
+"vpm" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small,
+/turf/open/floor/plating/warning{
+	dir = 10
+	},
+/area/lv624/ground/filtration)
 "vqS" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/structure/disposalpipe/segment{
@@ -32039,7 +32078,7 @@ acN
 alO
 alO
 blj
-jex
+siH
 jex
 xSy
 jex
@@ -39393,7 +39432,7 @@ alH
 amf
 jzT
 tbQ
-abA
+vpm
 alS
 amw
 ajz
@@ -40521,7 +40560,7 @@ aMH
 eGR
 aPr
 afN
-aPr
+fko
 aSu
 aTj
 aTM
@@ -41409,7 +41448,7 @@ aCG
 azJ
 aDL
 aDL
-aFb
+lqT
 aFH
 aNI
 aON

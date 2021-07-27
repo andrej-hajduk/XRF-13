@@ -11006,6 +11006,9 @@
 /obj/item/reagent_containers/food/snacks/chips,
 /obj/item/reagent_containers/food/snacks/cookie,
 /obj/item/reagent_containers/food/snacks/donkpocket,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/tile/blue/whitebluefull,
 /area/bigredv2/outside/general_store)
 "aQI" = (
@@ -11060,12 +11063,16 @@
 /turf/open/floor/tile/yellow/full,
 /area/bigredv2/outside/general_store)
 "aQT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/open/floor,
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/candy,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/tile/blue/whitebluefull,
 /area/bigredv2/outside/general_store)
 "aQU" = (
 /obj/item/flashlight,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/tile/yellow/full,
 /area/bigredv2/outside/general_store)
 "aRj" = (
@@ -11604,11 +11611,17 @@
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /obj/item/reagent_containers/food/drinks/cans/aspen,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/tile/blue/whitebluefull,
 /area/bigredv2/outside/general_store)
 "aTP" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/flask/vacuumflask,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/tile/blue/whitebluefull,
 /area/bigredv2/outside/general_store)
 "aTQ" = (
@@ -19611,6 +19624,13 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
+"hPK" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/tile/blue/whitebluefull,
+/area/bigredv2/outside/general_store)
 "hTy" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -19912,6 +19932,10 @@
 	},
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/medical)
+"lcO" = (
+/obj/machinery/light,
+/turf/open/floor/tile/darkish,
+/area/bigredv2/outside/chapel)
 "len" = (
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/dmg1,
@@ -20208,6 +20232,11 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northwest)
+"nQT" = (
+/obj/structure/cable,
+/obj/machinery/light,
+/turf/open/floor/tile/darkish,
+/area/bigredv2/outside/chapel)
 "nRT" = (
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/west)
@@ -20997,6 +21026,12 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
+"uFO" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/tile/darkish,
+/area/bigredv2/outside/chapel)
 "uHG" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 2
@@ -21326,6 +21361,13 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
+"xLp" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/tile/blue/whitebluefull,
+/area/bigredv2/outside/general_store)
 "xNf" = (
 /obj/effect/landmark/xeno_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -25396,7 +25438,7 @@ aGr
 aHg
 aMz
 aMZ
-aNc
+bco
 aMz
 aQy
 aRE
@@ -26064,7 +26106,7 @@ aWe
 aMz
 adK
 fmM
-aNc
+bco
 aNc
 wFG
 yhx
@@ -28440,7 +28482,7 @@ aNi
 aNi
 aSz
 aNc
-aNc
+aRJ
 aNc
 aWj
 aWU
@@ -31257,7 +31299,7 @@ aMB
 aNl
 aOy
 aPy
-aPy
+aQT
 aRL
 aSE
 aTN
@@ -32993,7 +33035,7 @@ aMD
 aNl
 aOy
 aPD
-aQK
+hPK
 aPD
 aQK
 aTR
@@ -33427,7 +33469,7 @@ apv
 aNk
 aOy
 aPF
-aQK
+xLp
 aPF
 aPF
 aTS
@@ -34316,7 +34358,7 @@ aXK
 bdM
 bee
 bee
-blb
+bdi
 blb
 blb
 blb
@@ -35814,7 +35856,7 @@ apv
 aNs
 aNo
 aOB
-aQT
+aOB
 aRQ
 aQS
 aQS
@@ -54710,7 +54752,7 @@ baS
 bbF
 bao
 baS
-aZi
+lcO
 aZf
 bes
 bes
@@ -55361,7 +55403,7 @@ baT
 bbF
 bcl
 baT
-aZi
+lcO
 aZf
 bes
 bes
@@ -56012,7 +56054,7 @@ baU
 bbF
 bar
 baU
-dqo
+nQT
 aZf
 bes
 bes
@@ -56663,7 +56705,7 @@ baT
 bbF
 bap
 baT
-dqo
+nQT
 aZf
 bes
 bes
@@ -57311,7 +57353,7 @@ aZf
 aZi
 bau
 bau
-aZi
+uFO
 bau
 bau
 bdI
