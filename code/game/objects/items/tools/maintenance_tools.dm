@@ -337,19 +337,16 @@
 
 /obj/item/tool/weldingtool/experimental
 	name = "experimental blowtorch"
-	max_fuel = 40 //?
+	max_fuel = 40
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(/datum/material/metal = 70, /datum/material/glass = 120)
-	var/last_gen = 0
+	var/nextrefueltick = 0
 
-
-
-/obj/item/tool/weldingtool/experimental/proc/fuel_gen()//Proc to make the experimental welder generate fuel, optimized as fuck -Sieve
-	var/gen_amount = ((world.time-last_gen)/25)
-	reagents += (gen_amount)
-	if(reagents > max_fuel)
-		reagents = max_fuel
-
+/obj/item/tool/weldingtool/experimental/process()
+	..()
+	if(get_fuel() < max_fuel && nextrefueltick < world.time)
+		nextrefueltick = world.time + 10
+		reagents.add_reagent(/datum/reagent/fuel, 1)
 
 /obj/item/tool/crowbar
 	name = "crowbar"

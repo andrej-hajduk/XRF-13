@@ -40,6 +40,7 @@
 
 // --- Shotguns ---
 #define CALIBER_12G "12 gauge"
+#define CALIBER_8G "8 gauge"
 #define CALIBER_410 ".410 bore"
 
 // --- Snipers ---

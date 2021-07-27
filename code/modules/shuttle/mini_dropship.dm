@@ -169,7 +169,23 @@
 	s2.start()
 	damaged = TRUE
 	open_prompt = FALSE
+<<<<<<< HEAD
 	clean_ui_user()
+
+	if(fly_state == SHUTTLE_IN_ATMOSPHERE && last_valid_ground_port)
+		visible_message("Autopilot detects loss of helm control. INITIATING EMERGENCY LANDING!")
+		shuttle_port.callTime = SHUTTLE_LANDING_CALLTIME
+		next_fly_state = SHUTTLE_ON_GROUND
+		shuttle_port.set_mode(SHUTTLE_CALL)
+		SSshuttle.moveShuttleToDock(shuttleId, last_valid_ground_port, TRUE)
+		return
+
+	if(next_fly_state == SHUTTLE_IN_ATMOSPHERE)
+		shuttle_port.set_idle() // don't go up with a broken console, cencel spooling
+		visible_message("Autopilot detects loss of helm control. Halting take off!")
+=======
+	remove_eye_control(ui_user)
+>>>>>>> master
 
 	if(fly_state == SHUTTLE_IN_ATMOSPHERE && last_valid_ground_port)
 		visible_message("Autopilot detects loss of helm control. INITIATING EMERGENCY LANDING!")

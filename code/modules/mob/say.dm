@@ -8,14 +8,14 @@
 	say(message)
 
 
-/mob/verb/me_verb(message as text)
+/mob/verb/me_verb(message as message)
 	set name = "Me"
 	set category = "IC"
 
 	if(!message)
 		return
 
-	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	message = trim(sanitize(copytext_char(message, 1, MAX_EMOTE_MESSAGE_LEN)))
 
 	emote("me", EMOTE_VISIBLE, message, TRUE)
 

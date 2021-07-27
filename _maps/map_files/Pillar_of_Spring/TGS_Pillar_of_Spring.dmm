@@ -3171,12 +3171,15 @@
 	dir = 1
 	},
 /area/mainship/hallways/hangar)
+<<<<<<< HEAD
 "kL" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/squads/general)
+=======
+>>>>>>> master
 "kM" = (
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
@@ -4267,8 +4270,15 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/squads/req)
+<<<<<<< HEAD
 "oj" = (
 /obj/machinery/vending/armor_supply,
+=======
+"oi" = (
+/obj/machinery/light{
+	dir = 4
+	},
+>>>>>>> master
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "ok" = (
@@ -6711,7 +6721,10 @@
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/structure/supply_drop,
+=======
+>>>>>>> master
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "wl" = (
@@ -13801,6 +13814,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/numbertwobunks)
+<<<<<<< HEAD
+=======
+"Sq" = (
+/obj/structure/supply_drop,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
+>>>>>>> master
 "St" = (
 /obj/machinery/status_display,
 /turf/closed/wall/mainship,
@@ -13954,11 +13974,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/starboard_hallway)
-"SR" = (
-/obj/machinery/computer/supplydrop_console,
-/obj/structure/table/mainship,
-/turf/open/floor/mainship/mono,
-/area/mainship/squads/req)
 "ST" = (
 /obj/item/tool/mop,
 /obj/machinery/light/small{
@@ -14756,6 +14771,7 @@
 "VD" = (
 /turf/closed/wall/mainship,
 /area/mainship/hallways/stern_hallway)
+<<<<<<< HEAD
 "VE" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -14763,6 +14779,8 @@
 /obj/machinery/light,
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
+=======
+>>>>>>> master
 "VF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -14888,10 +14906,15 @@
 /turf/open/floor/wood,
 /area/mainship/medical/surgery_hallway)
 "Wc" = (
+<<<<<<< HEAD
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/vending/marine/shared,
+=======
+/obj/machinery/computer/supplydrop_console,
+/obj/structure/table/mainship,
+>>>>>>> master
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "Wd" = (
@@ -15311,10 +15334,13 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/engineering/upper_engineering)
+<<<<<<< HEAD
 "XD" = (
 /obj/machinery/holopad,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/aft_hallway)
+=======
+>>>>>>> master
 "XG" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -48003,10 +48029,18 @@ kM
 sz
 kM
 kM
+<<<<<<< HEAD
 kM
 kM
 kM
 sz
+=======
+Cv
+kM
+kM
+kM
+kM
+>>>>>>> master
 ol
 oq
 eh
@@ -48518,7 +48552,11 @@ kM
 kM
 kM
 kM
+<<<<<<< HEAD
 kM
+=======
+Sq
+>>>>>>> master
 kM
 kM
 Rl
@@ -48773,11 +48811,16 @@ nf
 UW
 ZR
 on
-SR
+kM
 wk
 Wc
+<<<<<<< HEAD
 JO
 oj
+=======
+kM
+oi
+>>>>>>> master
 ip
 Xn
 yZ

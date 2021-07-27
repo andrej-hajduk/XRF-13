@@ -91,30 +91,30 @@
 
 /obj/item/storage/pouch/survival
 	name = "survival pouch"
-	desc = "It can contain flashlights, a pill, a crowbar, metal sheets, and some bandages."
+	desc = "It can contain flashlight, pills, a crowbar, metal sheets, food, and some bandages."
 	icon_state = "survival"
 	storage_slots = 6
 	max_w_class = 3
 	can_hold = list(
 		/obj/item/flashlight,
-		/obj/item/reagent_containers/pill,
-		/obj/item/stack/medical/bruise_pack,
+		/obj/item/explosive/grenade/flare,
+		/obj/item/storage/pill_bottle/packet,
+		/obj/item/stack/medical,
 		/obj/item/stack/sheet/metal,
 		/obj/item/stack/sheet/plasteel,
-		/obj/item/tool/weldingtool,
+		/obj/item/storage/box/MRE,
+		/obj/item/reagent_containers/food/snacks/upp,
+		/obj/item/tool/crowbar,
 	)
 
 /obj/item/storage/pouch/survival/full/Initialize()
 	. = ..()
 	new /obj/item/flashlight(src)
-	new /obj/item/reagent_containers/pill/tramadol(src)
-	new /obj/item/stack/medical/bruise_pack(src, 3)
-	new /obj/item/stack/sheet/metal(src, 40)
-	new /obj/item/stack/sheet/plasteel(src, 15)
-	new /obj/item/tool/weldingtool(src)
-
-
-
+	new /obj/item/storage/pill_bottle/packet/emergency(src)
+	new /obj/item/stack/sheet/metal(src, 20)
+	new /obj/item/stack/sheet/plasteel(src, 5)
+	new /obj/item/reagent_containers/food/snacks/upp(src)
+	new /obj/item/tool/crowbar/red(src)
 
 /obj/item/storage/pouch/firstaid
 	name = "first-aid pouch"

@@ -86,7 +86,11 @@
 		return TRUE
 
 	if(obj_integrity <= (max_integrity - integrity_failure) * 0.2)
+<<<<<<< HEAD
 		to_chat(user, span_warning("[src] has sustained too much structural damage and needs more metal plates to be repaired."))
+=======
+		to_chat(user, "<span class='warning'>[src] has sustained too much structural damage and needs more metal plates to be repaired.</span>")
+>>>>>>> master
 		return TRUE
 
 	if(obj_integrity == max_integrity)
@@ -137,7 +141,11 @@
 	flags_equip_slot = ITEM_SLOT_BACK
 	max_integrity = 400
 	integrity_failure = 100
+<<<<<<< HEAD
 	soft_armor = list("melee" = 50, "bullet" = 50, "laser" = 0, "energy" = 100, "bomb" = 15, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 35)
+=======
+	soft_armor = list("melee" = 50, "bullet" = 50, "laser" = 0, "energy" = 100, "bomb" = 30, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 35)
+>>>>>>> master
 	hard_armor = list("melee" = 0, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	force = 20
 	slowdown = 0.5

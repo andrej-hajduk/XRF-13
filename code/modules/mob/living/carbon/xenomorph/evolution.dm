@@ -277,6 +277,10 @@
 		if(hive.living_xeno_queen) //Do another check after the tick.
 			to_chat(src, span_warning("There already is a Queen."))
 			return
+	if(new_caste_type == /mob/living/carbon/xenomorph/king)
+		if(length(hive.xenos_by_typepath[/mob/living/carbon/xenomorph/king])) //Do another check after the tick.
+			to_chat(src, "<span class='warning'>There already is a King.</span>")
+			return
 	else if(new_caste_type == /mob/living/carbon/xenomorph/shrike)
 		if(length(hive.xenos_by_typepath[/mob/living/carbon/xenomorph/shrike]))
 			to_chat(src, span_warning("There already is a Shrike."))

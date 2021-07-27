@@ -82,6 +82,7 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 /obj/machinery/computer/camera_advanced/overwatch/delta
 	name = "Delta Overwatch Console"
 
+<<<<<<< HEAD
 /obj/machinery/computer/camera_advanced/overwatch/rebel
 	faction = FACTION_TERRAGOV_REBEL
 	req_access = list(ACCESS_MARINE_BRIDGE_REBEL)
@@ -103,6 +104,8 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 /obj/machinery/computer/camera_advanced/overwatch/rebel/delta
 	name = "Delta Overwatch Console"
 
+=======
+>>>>>>> master
 
 /obj/machinery/computer/camera_advanced/overwatch/attackby(obj/item/I, mob/user, params)
 	return

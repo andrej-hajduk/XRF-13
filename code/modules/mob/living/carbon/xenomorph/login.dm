@@ -16,4 +16,7 @@
 		nicknumber = 0
 		generate_nicknumber()
 
+	if(client.prefs?.xeno_desc)
+		xeno_desc = client.prefs.xeno_desc
+
 	generate_name()

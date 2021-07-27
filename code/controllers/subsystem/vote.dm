@@ -37,6 +37,9 @@ SUBSYSTEM_DEF(vote)
 		SStgui.close_uis(src)
 		reset()
 
+/datum/controller/subsystem/vote/proc/autotransfer()
+	initiate_vote("restart", "the server")
+
 /// Stop the current vote and reset everything
 /datum/controller/subsystem/vote/proc/reset()
 	choices.Cut()
@@ -141,18 +144,7 @@ SUBSYSTEM_DEF(vote)
 				var/datum/map_config/VM = config.maplist[SHIP_MAP][.]
 				SSmapping.changemap(VM, SHIP_MAP)
 	if(restart)
-		var/active_admins = FALSE
-		for(var/client/C in GLOB.admins)
-			if(!C.is_afk() && check_rights_for(C, R_SERVER))
-				active_admins = TRUE
-				break
-		if(!active_admins)
-			// No delay in case the restart is due to lag
-			SSticker.Reboot("Restart vote successful.", "restart vote", 1)
-		else
-			to_chat(world, "<span style='boltnotice'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +SERVER, so it has been canceled. If you wish, you may restart the server.")
-
+		SSticker.force_ending = TRUE
 
 
 /// Register the vote of one player
@@ -197,6 +189,7 @@ SUBSYSTEM_DEF(vote)
 		reset()
 		switch(vote_type)
 			if("restart")
+				question = "End the round?"
 				choices.Add("Restart Round", "Continue Playing")
 			if("gamemode")
 				for(var/datum/game_mode/mode AS in config.votable_modes)
@@ -288,9 +281,11 @@ SUBSYSTEM_DEF(vote)
 
 ///Starts the automatic map vote at the end of each round
 /datum/controller/subsystem/vote/proc/automatic_vote()
-	initiate_vote("gamemode", null, TRUE)
-	addtimer(CALLBACK(src, .proc/initiate_vote, "shipmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
-	addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) * 2 + 6 SECONDS)
+	//initiate_vote("gamemode", null, TRUE)
+	//addtimer(CALLBACK(src, .proc/initiate_vote, "shipmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
+	//addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) * 2 + 6 SECONDS)
+	initiate_vote("shipmap", null, TRUE)
+	addtimer(CALLBACK(src, .proc/initiate_vote, "groundmap", null, TRUE), CONFIG_GET(number/vote_period) + 3 SECONDS)
 
 /datum/controller/subsystem/vote/ui_state()
 	return GLOB.always_state

@@ -51,10 +51,13 @@
 		if(!silent)
 			to_chat(X, span_warning("This creature has already been headbitten."))
 		return FALSE
+<<<<<<< HEAD
 	if(victim.chestburst)
 		if(!silent)
 			to_chat(X, span_warning("This creature has already served its purpose."))
 		return FALSE
+=======
+>>>>>>> master
 	if(X.issamexenohive(victim)) //checks if target and victim are in the same hive
 		if(!silent)
 			to_chat(X, span_warning("We can't bring ourselves to harm a fellow sister to this magnitude."))
@@ -950,16 +953,89 @@
 	if(!L)
 		return
 
-	if(!X.check_state())
-		return
-
 	var/msg = stripped_input("Message:", "Psychic Whisper")
 	if(!msg)
 		return
 
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic whisper")
+<<<<<<< HEAD
 	to_chat(L, span_alien("You hear a strange, alien voice in your head. <i>\"[msg]\"</i>"))
 	to_chat(X, span_xenonotice("We said: \"[msg]\" to [L]"))
+=======
+	to_chat(L, "<span class='alien'>You hear a strange, alien voice in your head. <i>\"[msg]\"</i></span>")
+	to_chat(X, "<span class='xenonotice'>We said: \"[msg]\" to [L]</span>")
+	for(var/_M in GLOB.observer_list) // it's the xeno's main method of communication, so it should be visible
+		var/mob/M = _M
+		if(!M.client)
+			continue
+		if(get_dist(M, X) > 7 || M.z != X.z) //they're out of range of normal hearing
+			if(!(M.client.prefs.toggles_chat & CHAT_GHOSTEARS))
+				continue
+		if((istype(M.remote_control, /mob/camera/aiEye) || isAI(M))) // Not sure why this is here really, but better safe than sorry
+			continue
+
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i></span>")
+		else
+			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[X] > [L]:</b> <i>\"[msg]\"</i></span>")
+
+
+// ***************************************
+// *********** Psychic Influence
+// ***************************************
+/datum/action/xeno_action/psychic_influence
+	name = "Psychic Influence"
+	action_icon_state = "psychic_whisper"
+	keybind_signal = COMSIG_XENOABILITY_PSYCHIC_INFLUENCE
+	use_state_flags = XACT_USE_LYING
+	target_flags = XABB_MOB_TARGET
+
+
+/datum/action/xeno_action/psychic_influence/action_activate()
+	var/mob/living/carbon/xenomorph/X = owner
+	var/list/target_list = list()
+	for(var/mob/living/possible_target in view(WORLD_VIEW, X))
+		if(possible_target == X || !possible_target.client) // Removed the Isxeno; time for some xeno on xeno psychic shenanigans ;
+			continue
+		target_list += possible_target
+
+	if(!length(target_list))
+		to_chat(X, "<span class='warning'>There's nobody nearby to influence.</span>")
+		return
+
+	var/mob/living/L = tgui_input_list(X, "Target", "Send a Psychic Influence to whom?", target_list)
+	if(!L)
+		return
+
+	if(!X.check_state())
+		return
+
+	var/msg = stripped_input("Message:", "Psychic Influence")
+	if(!msg)
+		return
+
+	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
+	to_chat(L, "<span class='alien'><i>[msg]</i></span>")
+	to_chat(X, "<span class='xenonotice'>We influenced: [msg] to [L]</span>")
+	for(var/_M in GLOB.observer_list) // it's the xeno's main method of S M U T, so it should be visible
+		var/mob/M = _M
+		if(M == L || M == X)
+			continue
+		if(M.stat != DEAD) //not dead, not important
+			continue
+		if(!M.client)
+			continue
+		if(get_dist(M, X) > 7 || M.z != X.z) //they're out of range of normal S M U T
+			if(!(M.client.prefs.toggles_chat & CHAT_GHOSTEARS))
+				continue
+		if((istype(M.remote_control, /mob/camera/aiEye) || isAI(M))) // Not sure why this is here really, but better S M U T than sorry
+			continue
+
+		if(check_other_rights(M.client, R_ADMIN, FALSE))
+			to_chat(M, "<span class='alien'>Psychic Influence: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i></span>")
+		else
+			to_chat(M, "<span class='alien'>Psychic Influence: <b>[X] > [L]:</b> <i>\"[msg]\"</i></span>")
+>>>>>>> master
 
 
 // ***************************************
@@ -1020,7 +1096,7 @@
 		if(!ishuman(thing))
 			continue
 		var/mob/living/turf_mob = thing
-		if(turf_mob.stat == DEAD && turf_mob.chestburst == 0)
+		if(turf_mob.stat == DEAD)
 			valid_mobs += turf_mob
 
 	if(length(valid_mobs) < required_mobs)
@@ -1036,8 +1112,6 @@
 	for(var/mob/living/to_use AS in valid_mobs)
 		if(moved_human_number >= required_mobs)
 			break
-		to_use.chestburst = 2
-		to_use.update_burst()
 		to_use.forceMove(hivesilo)
 		moved_human_number++
 
@@ -1115,7 +1189,7 @@
 /datum/action/xeno_action/activable/build_turret
 	name = "Secrete acid turret"
 	action_icon_state = "xeno_turret"
-	mechanics_text = "Creates a new xeno acid turret for 100 points"
+	mechanics_text = "Creates a new xeno acid turret for 150 points"
 	ability_name = "secrete acid turret"
 	plasma_cost = 150
 	cooldown_timer = 60 SECONDS
@@ -1177,15 +1251,43 @@
 	if(SSpoints.xeno_points_by_hive[X.hivenumber] < psych_cost)
 		to_chat(owner, span_xenowarning("Someone used all the psych points while we were building!"))
 		return fail_activate()
-
-	to_chat(owner, span_xenowarning("We build a new acid turret, spending 100 psychic points in the process"))
-	new /obj/structure/xeno/resin/xeno_turret(get_turf(A), X.hivenumber)
-
+	building_turret(A, X)
 	SSpoints.xeno_points_by_hive[X.hivenumber] -= psych_cost
+	succeed_activate()
+
+<<<<<<< HEAD
+	to_chat(owner, span_xenowarning("We build a new acid turret, spending 100 psychic points in the process"))
+=======
+/datum/action/xeno_action/activable/build_turret/proc/building_turret(atom/A, mob/living/carbon/xenomorph/X)
+	to_chat(owner, "<span class='xenowarning'>We build a new acid turret, spending [plasma_cost] psychic points in the process</span>")
+>>>>>>> master
+	new /obj/structure/xeno/resin/xeno_turret(get_turf(A), X.hivenumber)
 	log_game("[owner] built a turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
 	xeno_message("[X.name] has built a new turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
-	succeed_activate()
+/////////////////////////////////
+/// Build xeno larva jelly turret
+/////////////////////////////////
+
+/datum/action/xeno_action/activable/build_turret/jelly
+	name = "Secrete larva jelly turret"
+	action_icon_state = "xeno_turret"
+	mechanics_text = "Creates a new xeno larva jelly turret for 150 points"
+	ability_name = "secrete larva jelly turret"
+
+/datum/action/xeno_action/activable/build_turret/jelly/can_use_ability(atom/A, silent, override_flags, mob/living/carbon/xenomorph/X)
+	. = ..()
+	if(!.)
+		return FALSE
+	var/turf/T = get_turf(A)
+	if(!T.check_alien_construction(X, planned_building = /obj/structure/xeno/resin/xeno_turret/jelly))
+		return FALSE
+
+/datum/action/xeno_action/activable/build_turret/jelly/building_turret(atom/A, mob/living/carbon/xenomorph/X)
+	to_chat(owner, "<span class='xenowarning'>We build a new larva jelly turret, spending [plasma_cost] psychic points in the process</span>")
+	new /obj/structure/xeno/resin/xeno_turret/jelly(get_turf(A), X.hivenumber)
+	log_game("[owner] built a larva jelly turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
+	xeno_message("[X.name] has built a new larva jelly turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1329,7 +1431,6 @@
 	use_state_flags = XACT_USE_STAGGERED|XACT_USE_FORTIFIED|XACT_USE_CRESTED //can't use while staggered, defender fortified or crest down
 	keybind_signal = COMSIG_XENOABILITY_REGURGITATE
 	plasma_cost = 100
-	gamemode_flags = ABILITY_HUNT
 
 /datum/action/xeno_action/activable/devour/can_use_ability(atom/A, silent, override_flags)
 	. = ..()
@@ -1337,7 +1438,8 @@
 		return
 	var/mob/living/carbon/xenomorph/X = owner
 	if(LAZYLEN(X.stomach_contents)) //Only one thing in the stomach at a time, please
-		succeed_activate()
+		to_chat(owner, "<span class='warning'>Our stomach is already full!</span>")
+		return FALSE
 	if(!ishuman(A) || issynth(A))
 		to_chat(owner, span_warning("That wouldn't taste very good."))
 		return FALSE
@@ -1346,10 +1448,17 @@
 		return FALSE
 	if(!owner.Adjacent(victim)) //checks if owner next to target
 		return FALSE
+<<<<<<< HEAD
 	if(victim.stat != DEAD)
 		if(!silent)
 			to_chat(owner, span_warning("This creature is struggling too much for us to devour it."))
 		return FALSE
+=======
+	//if(victim.stat != DEAD)
+	//	if(!silent)
+	//		to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
+	//	return FALSE
+>>>>>>> master
 	if(victim.buckled)
 		if(!silent)
 			to_chat(owner, span_warning("[victim] is buckled to something."))

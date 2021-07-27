@@ -79,10 +79,10 @@
 #define SPAM_TRIGGER_WEIGHT_FORMULA(message) length(message) / 200
 #define SPAM_TRIGGER_WARNING 7	//Number of messages required per the time period before the spam-prevention will warn you
 #define SPAM_TRIGGER_AUTOMUTE 10	//Number of messages required per the time period before the spam-prevention will automute you
-#define SPAM_TRIGGER_WEIGHT_WARNING 2.5 //The weight required per the time period before the spam-prevention will warn you
-#define SPAM_TRIGGER_WEIGHT_AUTOMUTE 4 //The weight required per the time period before the spam-prevention will automute you
+#define SPAM_TRIGGER_WEIGHT_WARNING 5 //The weight required per the time period before the spam-prevention will warn you
+#define SPAM_TRIGGER_WEIGHT_AUTOMUTE 8 //The weight required per the time period before the spam-prevention will automute you
 
-#define MAX_LENGTH_REQ_REASON 250
+#define MAX_LENGTH_REQ_REASON 1000
 
 ///Max length of a keypress command before it's considered to be a forged packet/bogus command
 #define MAX_KEYPRESS_COMMANDLENGTH 16

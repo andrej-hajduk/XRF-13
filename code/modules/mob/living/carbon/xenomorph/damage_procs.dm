@@ -128,6 +128,8 @@
 			adjustBruteLoss(damage)
 		if(BURN)
 			adjustFireLoss(damage)
+		if(STAMINA)
+			adjustStaminaLoss(damage)
 
 	if(updating_health)
 		updatehealth()

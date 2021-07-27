@@ -53,7 +53,7 @@
 
 	triggering = TRUE
 	if(alert_observers)
-		if(!admin_approval("Event:[name]"))
+		if(!admin_approval("Event: [name]"))
 			triggering = FALSE
 			message_admins("An admin cancelled event [name].")
 			SSblackbox.record_feedback("tally", "event_admin_cancelled", 1, typepath)

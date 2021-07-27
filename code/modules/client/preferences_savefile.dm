@@ -132,7 +132,11 @@
 	READ_FILE(S["toggles_chat"], toggles_chat)
 	READ_FILE(S["toggles_sound"], toggles_sound)
 	READ_FILE(S["toggles_gameplay"], toggles_gameplay)
+<<<<<<< HEAD
 	READ_FILE(S["fullscreen_mode"], fullscreen_mode)
+=======
+	READ_FILE(S["toggles_lewd"], toggles_lewd)
+>>>>>>> master
 	READ_FILE(S["show_typing"], show_typing)
 	READ_FILE(S["ghost_hud"], ghost_hud)
 	READ_FILE(S["windowflashing"], windowflashing)
@@ -180,7 +184,11 @@
 	toggles_chat	= sanitize_integer(toggles_chat, NONE, MAX_BITFLAG, initial(toggles_chat))
 	toggles_sound	= sanitize_integer(toggles_sound, NONE, MAX_BITFLAG, initial(toggles_sound))
 	toggles_gameplay= sanitize_integer(toggles_gameplay, NONE, MAX_BITFLAG, initial(toggles_gameplay))
+<<<<<<< HEAD
 	fullscreen_mode = sanitize_integer(fullscreen_mode, FALSE, TRUE, initial(fullscreen_mode))
+=======
+	toggles_lewd = sanitize_integer(toggles_lewd, NONE, MAX_BITFLAG, initial(toggles_lewd))
+>>>>>>> master
 	show_typing		= sanitize_integer(show_typing, FALSE, TRUE, initial(show_typing))
 	ghost_hud 		= sanitize_integer(ghost_hud, NONE, MAX_BITFLAG, initial(ghost_hud))
 	windowflashing	= sanitize_integer(windowflashing, FALSE, TRUE, initial(windowflashing))
@@ -241,7 +249,11 @@
 	toggles_chat	= sanitize_integer(toggles_chat, NONE, MAX_BITFLAG, initial(toggles_chat))
 	toggles_sound	= sanitize_integer(toggles_sound, NONE, MAX_BITFLAG, initial(toggles_sound))
 	toggles_gameplay= sanitize_integer(toggles_gameplay, NONE, MAX_BITFLAG, initial(toggles_gameplay))
+<<<<<<< HEAD
 	fullscreen_mode = sanitize_integer(fullscreen_mode, FALSE, TRUE, initial(fullscreen_mode))
+=======
+	toggles_lewd = sanitize_integer(toggles_lewd, NONE, MAX_BITFLAG, initial(toggles_lewd))
+>>>>>>> master
 	show_typing		= sanitize_integer(show_typing, FALSE, TRUE, initial(show_typing))
 	ghost_hud 		= sanitize_integer(ghost_hud, NONE, MAX_BITFLAG, initial(ghost_hud))
 	windowflashing	= sanitize_integer(windowflashing, FALSE, TRUE, initial(windowflashing))
@@ -281,7 +293,11 @@
 	WRITE_FILE(S["toggles_chat"], toggles_chat)
 	WRITE_FILE(S["toggles_sound"], toggles_sound)
 	WRITE_FILE(S["toggles_gameplay"], toggles_gameplay)
+<<<<<<< HEAD
 	WRITE_FILE(S["fullscreen_mode"], fullscreen_mode)
+=======
+	WRITE_FILE(S["toggles_lewd"], toggles_lewd)
+>>>>>>> master
 	WRITE_FILE(S["show_typing"], show_typing)
 	WRITE_FILE(S["ghost_hud"], ghost_hud)
 	WRITE_FILE(S["windowflashing"], windowflashing)
@@ -385,18 +401,22 @@
 	READ_FILE(S["g_eyes"], g_eyes)
 	READ_FILE(S["b_eyes"], b_eyes)
 
-	READ_FILE(S["moth_wings"], moth_wings)
-
 	READ_FILE(S["citizenship"], citizenship)
 	READ_FILE(S["religion"], religion)
 	READ_FILE(S["nanotrasen_relation"], nanotrasen_relation)
+	READ_FILE(S["survivor"], survivor)
 
 	READ_FILE(S["med_record"], med_record)
 	READ_FILE(S["sec_record"], sec_record)
 	READ_FILE(S["gen_record"], gen_record)
 	READ_FILE(S["exploit_record"], exploit_record)
 	READ_FILE(S["flavor_text"], flavor_text)
+	READ_FILE(S["xeno_desc"], xeno_desc)
 
+	READ_FILE(S["features"], features)
+	READ_FILE(S["mutant_bodyparts"], mutant_bodyparts)
+	READ_FILE(S["body_markings"], body_markings)
+	READ_FILE(S["scream"], scream_id)
 
 	be_special		= sanitize_integer(be_special, NONE, MAX_BITFLAG, initial(be_special))
 
@@ -443,17 +463,17 @@
 	g_eyes			= sanitize_integer(g_eyes, 0, 255, initial(g_eyes))
 	b_eyes			= sanitize_integer(b_eyes, 0, 255, initial(b_eyes))
 
-	moth_wings		= sanitize_inlist(moth_wings, GLOB.moth_wings_list, initial(moth_wings))
-
 	citizenship		= sanitize_inlist(citizenship, CITIZENSHIP_CHOICES, initial(citizenship))
 	religion		= sanitize_inlist(religion, RELIGION_CHOICES, initial(religion))
 	nanotrasen_relation = sanitize_inlist(nanotrasen_relation, CORP_RELATIONS, initial(nanotrasen_relation))
+	survivor		= sanitize_inlist(survivor, SURVIVOR_TYPE, initial(survivor))
 
 	med_record		= sanitize_text(med_record, initial(med_record))
 	sec_record		= sanitize_text(sec_record, initial(sec_record))
 	gen_record		= sanitize_text(gen_record, initial(gen_record))
 	exploit_record	= sanitize_text(exploit_record, initial(exploit_record))
 	flavor_text		= sanitize_text(flavor_text, initial(flavor_text))
+	xeno_desc		= sanitize_text(xeno_desc, initial(xeno_desc))
 
 	if(!synthetic_name)
 		synthetic_name = "David"
@@ -463,6 +483,37 @@
 		ai_name = "ARES v3.2"
 	if(!real_name)
 		real_name = GLOB.namepool[/datum/namepool].get_random_name(gender)
+
+	features = SANITIZE_LIST(features)
+	//Validate features
+	for(var/key in MANDATORY_FEATURE_LIST)
+		if(!features[key])
+			features[key] = MANDATORY_FEATURE_LIST[key]
+
+	mutant_bodyparts = SANITIZE_LIST(mutant_bodyparts)
+	//Validate bodyparts
+	var/datum/species/current_species = GLOB.all_species[species]
+	for(var/key in current_species.default_mutant_bodyparts)
+		if(!mutant_bodyparts[key])
+			mutant_bodyparts[key] = GetDefaultMutantpart(current_species, key, features)
+		validate_color_keys_for_part(key)
+
+	//validating body markings
+	body_markings = SANITIZE_LIST(body_markings)
+	for(var/zone in body_markings)
+		for(var/name in body_markings[zone])
+			if(!(name in GLOB.body_markings_per_limb[zone]))
+				body_markings[zone] -= name
+
+	//Custom screams
+	if(scream_id)
+		var/new_type = GLOB.scream_types[scream_id]
+		if(new_type)
+			pref_scream = new new_type
+		else
+			pref_scream = new /datum/scream_type/human
+	else
+		pref_scream = new /datum/scream_type/human
 
 	return TRUE
 
@@ -526,17 +577,17 @@
 	g_eyes			= sanitize_integer(g_eyes, 0, 255, initial(g_eyes))
 	b_eyes			= sanitize_integer(b_eyes, 0, 255, initial(b_eyes))
 
-	moth_wings		= sanitize_inlist(moth_wings, GLOB.moth_wings_list, initial(moth_wings))
-
 	citizenship		= sanitize_inlist(citizenship, CITIZENSHIP_CHOICES, initial(citizenship))
 	religion		= sanitize_inlist(religion, RELIGION_CHOICES, initial(religion))
 	nanotrasen_relation = sanitize_inlist(nanotrasen_relation, CORP_RELATIONS, initial(nanotrasen_relation))
+	survivor		= sanitize_inlist(survivor, SURVIVOR_TYPE, initial(survivor))
 
 	med_record		= sanitize_text(med_record, initial(med_record))
 	sec_record		= sanitize_text(sec_record, initial(sec_record))
 	gen_record		= sanitize_text(gen_record, initial(gen_record))
 	exploit_record	= sanitize_text(exploit_record, initial(exploit_record))
 	flavor_text		= sanitize_text(flavor_text, initial(flavor_text))
+	xeno_desc		= sanitize_text(xeno_desc, initial(xeno_desc))
 
 	WRITE_FILE(S["be_special"], be_special)
 
@@ -581,17 +632,22 @@
 	WRITE_FILE(S["g_eyes"], g_eyes)
 	WRITE_FILE(S["b_eyes"], b_eyes)
 
-	WRITE_FILE(S["moth_wings"], moth_wings)
-
 	WRITE_FILE(S["citizenship"], citizenship)
 	WRITE_FILE(S["religion"], religion)
 	WRITE_FILE(S["nanotrasen_relation"], nanotrasen_relation)
+	WRITE_FILE(S["survivor"], survivor)
 
 	WRITE_FILE(S["med_record"], med_record)
 	WRITE_FILE(S["sec_record"], sec_record)
 	WRITE_FILE(S["gen_record"], gen_record)
 	WRITE_FILE(S["exploit_record"], exploit_record)
 	WRITE_FILE(S["flavor_text"], flavor_text)
+	WRITE_FILE(S["xeno_desc"], xeno_desc)
+
+	WRITE_FILE(S["features"], features)
+	WRITE_FILE(S["mutant_bodyparts"], mutant_bodyparts)
+	WRITE_FILE(S["body_markings"], body_markings)
+	WRITE_FILE(S["scream"], pref_scream.name)
 
 	return TRUE
 

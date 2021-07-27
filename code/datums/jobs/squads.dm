@@ -61,6 +61,7 @@
 	access = list(ACCESS_MARINE_DELTA)
 	radio_freq = FREQ_DELTA
 
+<<<<<<< HEAD
 /datum/squad/alpha/rebel
 	id = ALPHA_SQUAD_REBEL
 	access = list(ACCESS_MARINE_ALPHA_REBEL)
@@ -129,6 +130,8 @@
 		REBEL_SQUAD_LEADER = 1,
 )
 
+=======
+>>>>>>> master
 GLOBAL_LIST_EMPTY(glovemarkings)
 GLOBAL_LIST_EMPTY(armormarkings)
 GLOBAL_LIST_EMPTY(armormarkings_sl)
@@ -325,7 +328,7 @@ GLOBAL_LIST_EMPTY(helmetmarkings_sl)
 
 /datum/squad/proc/format_message(message, mob/living/carbon/human/sender)
 	var/nametext = ""
-	var/text = copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN)
+	var/text = sanitize(copytext_char(message, 1, MAX_MESSAGE_LEN))
 	if(ishuman(sender))
 		var/obj/item/card/id/ID = sender.get_idcard()
 		nametext = "[ID?.rank] [sender.name] transmits: "

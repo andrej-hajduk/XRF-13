@@ -109,7 +109,7 @@
 	if(!client)
 		return
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, 1, MAX_EMOTE_MESSAGE_LEN)
 
 	to_chat(src, msg)
 
@@ -118,7 +118,7 @@
 	if(!client)
 		return
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, 1, MAX_EMOTE_MESSAGE_LEN)
 
 	if(type)
 		if(type == EMOTE_VISIBLE && eye_blind) //Vision related
@@ -391,7 +391,50 @@
 	popup.set_content(dat)
 	popup.open()
 
+/mob/proc/erp_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
 
+/mob/proc/fondle_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/fingering_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/oral_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/mob/proc/thrust_menu(mob/user) //These procs need to exist, they don't do anything as far as I know
+	user.set_interaction(src)
+	var/dat = {"
+	<BR> Test!
+	<BR>"}
+	var/datum/browser/popup = new(user, "mob[REF(src)]", "<div align='center'>[src]</div>", 325, 500)
+	popup.set_content(dat)
+	popup.open()
 /mob/vv_get_dropdown()
 	. = ..()
 	. += "---"

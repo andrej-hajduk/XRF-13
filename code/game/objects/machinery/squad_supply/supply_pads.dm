@@ -9,9 +9,12 @@
 	layer = ABOVE_TURF_LAYER
 	/// The faction of this supply drop
 	var/faction = FACTION_TERRAGOV
+<<<<<<< HEAD
 
 /obj/structure/supply_drop/rebel
 	faction = FACTION_TERRAGOV_REBEL
+=======
+>>>>>>> master
 
 /obj/structure/supply_drop/Initialize()
 	. = ..()

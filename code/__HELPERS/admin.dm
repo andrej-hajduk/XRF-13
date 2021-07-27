@@ -15,7 +15,7 @@ params
 	admin_sound = sound played to each admin
 
 */
-/proc/admin_approval(admin_message = "", list/options = list("approve" = TRUE, "deny" = FALSE), default_option = "approve", delay = 60 SECONDS, client/user, user_message = "", rank_required = R_ADMIN, ignore_afk = FALSE, sound/admin_sound)
+/proc/admin_approval(admin_message = "", list/options = list("approve" = TRUE, "deny" = FALSE), default_option = "approve", delay = 60 SECONDS, client/user, user_message = "", rank_required = R_ADMIN, ignore_afk = FALSE, sound/admin_sound, message_discord = FALSE)
 	. = options[default_option]
 
 	if(!admin_message)
@@ -27,7 +27,7 @@ params
 		if((ignore_afk || !C.is_afk()) && check_other_rights(C, rank_required, FALSE))
 			active_admins.Add(C)
 
-	if(!length(active_admins)) // If no admin just return the default option
+	if(!length(active_admins) && message_discord) // If no admin just return the default option
 		log_admin("Admin Approval: '[admin_message]' was answered with [default_option] due to lack of online admin.")
 		send2tgs_adminless_only("Approval", "'[admin_message]' was answered with [default_option] due to lack of online admin")
 		return

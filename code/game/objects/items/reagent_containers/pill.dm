@@ -241,3 +241,8 @@
 	//pill_desc = "An ultrazine pill. A highly-potent, long-lasting combination CNS and muscle stimulant. Extremely addictive."
 	list_reagents = list(/datum/reagent/medicine/ultrazine = 5)
 	pill_id = 21
+
+/obj/item/reagent_containers/pill/emergency
+	pill_desc = "An emergency pill. Contains a number of advanced chemicals to treat and stabilize external injuries and pain."
+	list_reagents = list(/datum/reagent/medicine/meralyne = 5,/datum/reagent/medicine/dermaline = 5,/datum/reagent/medicine/hyronalin = 5,/datum/reagent/medicine/oxycodone = 5)
+	pill_id = 8

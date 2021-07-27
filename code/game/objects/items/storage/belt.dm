@@ -628,7 +628,7 @@
 		/obj/item/weapon/gun = 1,
 	)
 	storage_slots = 7
-	max_storage_space = 15
+	max_storage_space = 16
 	max_w_class = 3
 	///The gun it holds, used for referencing later so we can update the icon.
 	var/obj/item/weapon/gun/current_gun
@@ -850,6 +850,17 @@
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 	INVOKE_ASYNC(src, .proc/handle_item_insertion, new_gun)
+
+/obj/item/storage/belt/gun/mateba/polymer/full/Initialize()
+	. = ..()
+	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new /obj/item/ammo_magazine/revolver/mateba/polymer(src)
+	new_gun.on_enter_storage(src)
 
 /obj/item/storage/belt/gun/mateba/captain
 	icon_state = "c_mateba_holster"

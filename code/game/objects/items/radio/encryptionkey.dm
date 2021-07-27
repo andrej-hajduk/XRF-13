@@ -73,6 +73,7 @@
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_COMMON = TRUE)
 
+<<<<<<< HEAD
 /obj/item/encryptionkey/engi/rebel
 	channels = list(RADIO_CHANNEL_ENGINEERING_REBEL = TRUE,RADIO_CHANNEL_CAS_REBEL = TRUE, RADIO_CHANNEL_REQUISITIONS_REBEL = TRUE)
 
@@ -114,6 +115,8 @@
 	channels = list(RADIO_CHANNEL_COMMON_REBEL = TRUE)
 
 
+=======
+>>>>>>> master
 //ERT
 /obj/item/encryptionkey/dutch
 	name = "\improper Colonist encryption key"

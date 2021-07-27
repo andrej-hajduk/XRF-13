@@ -201,6 +201,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define ORGAN_BRAIN 5
 #define ORGAN_EYES 6
 #define ORGAN_APPENDIX 7
+#define ORGAN_PENIS 8
+#define ORGAN_WOMB 9
+#define ORGAN_VAGINA 10
+#define ORGAN_TESTICLES 11
+#define ORGAN_BREASTS 12
 
 ///////////////SURGERY DEFINES///////////////
 #define SPECIAL_SURGERY_INVALID "special_surgery_invalid"
@@ -373,45 +378,46 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 
 
 // Human Overlay Indexes
-#define HEADBITE_LAYER 30
-#define LASER_LAYER 29 //For sniper targeting laser
-#define MOTH_WINGS_LAYER 28
-#define MUTANTRACE_LAYER 27
-#define MUTATIONS_LAYER 26
-#define DAMAGE_LAYER 25
-#define UNIFORM_LAYER 24
-#define TAIL_LAYER 23 //bs12 specific. this hack is probably gonna come back to haunt me
-#define ID_LAYER 22
-#define SHOES_LAYER 21
-#define GLOVES_LAYER 20
-#define BELT_LAYER 19
-#define GLASSES_LAYER 18
-#define SUIT_LAYER 17 //Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_STORE_LAYER 16
-#define BACK_LAYER 15
-#define HAIR_LAYER 14 //TODO: make part of head layer?
-#define EARS_LAYER 13
-#define FACEMASK_LAYER 12
-#define GOGGLES_LAYER 11	//For putting Ballistic goggles and potentially other things above masks
-#define HEAD_LAYER 10
-#define COLLAR_LAYER 9
-#define HANDCUFF_LAYER 8
-#define L_HAND_LAYER 6
-#define R_HAND_LAYER 5
-#define BURST_LAYER 4 //Chestburst overlay
-#define OVERHEALTH_SHIELD_LAYER 3
-#define TARGETED_LAYER 2 //for target sprites when held at gun point, and holo cards.
-#define FIRE_LAYER 1 //If you're on fire
+#define HEADBITE_LAYER			32
+#define LASER_LAYER				31 //For sniper targeting laser27
+#define MUTATIONS_LAYER			30
+#define BODY_BEHIND_LAYER		29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER 		28
+#define BODY_MARKINGS_LAYER		27 //Yes having it seperate from bodyparts is gonna cause layer errors, but it's worth it
+#define BODY_ADJ_LAYER			26 //certain mutantrace features (snout, body markings) that must appear above the body parts
+#define DAMAGE_LAYER			25
+#define UNDERWEAR_LAYER			24
+#define UNIFORM_LAYER			23
+#define ID_LAYER				22
+#define SHOES_LAYER				21
+#define GLOVES_LAYER			20
+#define BELT_LAYER   			19
+#define GLASSES_LAYER			18
+#define SUIT_LAYER				17 //Possible make this an overlay of somethign required to wear a belt?
+#define SUIT_STORE_LAYER		16
+#define BACK_LAYER				15
+#define HAIR_LAYER				14 //TODO: make part of head layer?
+#define EARS_LAYER				13
+#define FACEMASK_LAYER			12
+#define GOGGLES_LAYER			11	//For putting Ballistic goggles and potentially other things above masks
+#define HEAD_LAYER				10
+#define COLLAR_LAYER			9
+#define HANDCUFF_LAYER			8
+#define L_HAND_LAYER			7
+#define R_HAND_LAYER			6
+#define BODY_FRONT_LAYER		5
+#define BURST_LAYER				4 //Chestburst overlay
+#define OVERHEALTH_SHIELD_LAYER	3
+#define TARGETED_LAYER			2 //for target sprites when held at gun point, and holo cards.
+#define FIRE_LAYER				1 //If you're on fire
 
-#define TOTAL_LAYERS 30
+#define TOTAL_LAYERS			32
 
-#define MOTH_WINGS_BEHIND_LAYER 1
+#define TOTAL_UNDERLAYS			0
 
-#define TOTAL_UNDERLAYS 1
+#define ANTI_CHAINSTUN_TICKS	2
 
-#define ANTI_CHAINSTUN_TICKS 2
-
-#define BASE_GRAB_SLOWDOWN 3 //Slowdown called by /mob/setGrabState(newstate) in mob.dm when grabbing a target aggressively.
+#define BASE_GRAB_SLOWDOWN		3 //Slowdown called by /mob/setGrabState(newstate) in mob.dm when grabbing a target aggressively.
 
 ///Stamina exhaustion
 
@@ -486,8 +492,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define CASTE_CAN_HOLD_JELLY (1<<15)//whether we can hold fireproof jelly in our hands
 #define CASTE_IS_STRONG (1<<16)//can tear open acided walls without being big
 #define CASTE_CAN_CORRUPT_GENERATOR (1<<17) //Can corrupt a generator
+<<<<<<< HEAD
 #define CASTE_IS_BUILDER (1<<18) //whether we are classified as a builder caste
 #define CAN_BECOME_KING (1<<19) //Can be choose to become a king
+=======
+>>>>>>> master
 
 //Charge-Crush
 #define CHARGE_OFF 0
@@ -650,10 +659,6 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define CHARLIE_SQUAD "charlie_squad"
 #define DELTA_SQUAD "delta_squad"
 
-#define ALPHA_SQUAD_REBEL "alpha_squad_rebel"
-#define BRAVO_SQUAD_REBEL "bravo_squad_rebel"
-#define CHARLIE_SQUAD_REBEL "charlie_squad_rebel"
-#define DELTA_SQUAD_REBEL "delta_squad_rebel"
 
 #define TYPING_INDICATOR_LIFETIME 3 SECONDS	//Grace period after which typing indicator disappears regardless of text in chatbar.
 

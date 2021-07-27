@@ -48,7 +48,7 @@
 	if(params && message_param)
 		msg = select_param(user, params)
 
-	msg = replace_pronoun(user, msg)
+	//msg = replace_pronoun(user, msg) // why is this a thing
 
 	if(!msg)
 		return

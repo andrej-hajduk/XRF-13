@@ -35,3 +35,9 @@
 	DISABLE_BITFIELD(cuffs.flags_item, BEING_REMOVED)
 
 	dropItemToGround(cuffs) //This will call UnEquip() > update_handcuffed() > UnregisterSignal()
+
+/obj/item/restraints/handcuffs/fake/kinky
+	name = "kinky handcuffs"
+	desc = "Fake handcuffs meant for erotic roleplay."
+	icon_state = "handcuffgag"
+	item_state = "kinkycuff"

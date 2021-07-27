@@ -29,7 +29,7 @@
 /mob/living/carbon/relaymove(mob/user, direction)
 	if(user.incapacitated(TRUE))
 		return
-	if(!chestburst && (status_flags & XENO_HOST) && isxenolarva(user))
+	if(!larva_birthing && (status_flags & XENO_HOST) && isxenolarva(user))
 		var/mob/living/carbon/xenomorph/larva/L = user
 		L.initiate_burst(src)
 

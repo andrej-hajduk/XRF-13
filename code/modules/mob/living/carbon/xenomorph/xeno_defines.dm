@@ -197,6 +197,7 @@
 	icon = 'icons/Xeno/1x1_Xenos.dmi'
 	icon_state = "Drone Walking"
 	speak_emote = list("hisses")
+	gender = FEMALE
 	melee_damage = 5 //Arbitrary damage value
 	attacktext = "claws"
 	attack_sound = null
@@ -237,6 +238,8 @@
 	var/amount_grown = 0
 	var/max_grown = 200
 	var/time_of_birth
+
+	var/xeno_desc = ""
 
 	var/list/stomach_contents
 

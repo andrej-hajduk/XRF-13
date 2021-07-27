@@ -1,7 +1,7 @@
 /datum/admins/proc/restart()
 	set category = "Server"
 	set name = "Restart"
-	set desc = "Restarts the server after a short pause."
+	set desc = "Restarts the server."
 
 	if(!check_rights(R_SERVER))
 		return
@@ -9,6 +9,7 @@
 	if(SSticker.admin_delay_notice && alert(usr, "Are you sure? An admin has already delayed the round end for the following reason: [SSticker.admin_delay_notice]", "Confirmation", "Yes", "No") != "Yes")
 		return
 
+<<<<<<< HEAD
 	if(alert("Restart the game world?", "Restart", "Yes", "No") != "Yes")
 		return
 
@@ -27,6 +28,9 @@
 
 	spawn(50)
 		world.Reboot(message)
+=======
+	SSticker.Reboot("AdminIntervention", 1)
+>>>>>>> master
 
 
 /datum/admins/proc/shutdown_server()
@@ -551,6 +555,7 @@
 	message_admins("[ADMIN_TPMONTY(usr)] changed the ship map to [VM.map_name].")
 
 
+<<<<<<< HEAD
 /datum/admins/proc/panic_bunker()
 	set category = "Server"
 	set name = "Toggle Panic Bunker"
@@ -568,6 +573,8 @@
 	message_admins("[ADMIN_TPMONTY(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
 
 
+=======
+>>>>>>> master
 /datum/admins/proc/mode_check()
 	set category = "Server"
 	set name = "Toggle Mode Check"

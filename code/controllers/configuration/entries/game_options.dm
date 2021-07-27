@@ -118,3 +118,18 @@
 	config_entry_value = 30 MINUTES
 	max_val = 30 MINUTES
 	min_val = 0
+
+/datum/config_entry/flag/account_age_restriction
+	config_entry_value = FALSE
+
+/datum/config_entry/number/account_age_restriction_years
+	config_entry_value = 0
+	min_val = 0
+
+/datum/config_entry/number/account_age_restriction_months
+	config_entry_value = 0
+	min_val = 0
+
+/datum/config_entry/number/account_age_restriction_days
+	config_entry_value = 0
+	min_val = 0

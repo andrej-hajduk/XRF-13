@@ -8,22 +8,23 @@ macro "default"
 		name = "SHIFT+UP"
 		command = ".winset :map.right-click=true"
 
+
 menu "menu"
-	elem
+	elem 
 		name = "&File"
 		command = ""
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Quick screenshot\tF2"
 		command = ".screenshot auto"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Save screenshot as...\tShift+F2"
 		command = ".screenshot"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = ""
 		command = ""
 		category = "&File"
@@ -33,16 +34,16 @@ menu "menu"
 		command = ".reconnect"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Quit\tAlt-F4"
 		command = ".quit"
 		category = "&File"
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Help"
 		command = ""
 		saved-params = "is-checked"
-	elem
+	elem 
 		name = "&Request Help\tF1"
 		command = "choosehelp"
 		category = "&Help"
@@ -125,27 +126,10 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
 		text-color = #ffffff
 		background-color = #000000
 		is-visible = false
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
 		saved-params = ""
-		on-size = ""
-		show-history = false
-		show-url = false
-		auto-format = false
-		use-title = false
-		on-show = ""
-		on-hide = ""
-
 
 window "mapwindow"
 	elem "mapwindow"
@@ -169,23 +153,27 @@ window "mapwindow"
 		right-click = true
 		saved-params = "icon-size"
 		zoom-mode = distort
-		style=".center { text-align: center; } .maptext { font-family: 'Small Fonts'; font-size: 7px; -dm-text-outline: 1px black; color: white; line-height: 1.1; } .command_headset { font-weight: bold; font-size: 8px; } .small, .italics { font-size: 6px; } .big, .reallybig, .extremelybig { font-size: 8px; } .yell { font-weight: bold; } .menutext { font-size: 11px; -dm-text-outline: 0.5px black; color: white; line-height: 1.1; } .menutitle { font-size: 14px; -dm-text-outline: 0.5px black; color: white; line-height: 1.1; }"
+		style = ".center { text-align: center; } .maptext { font-family: 'Small Fonts'; font-size: 7px; -dm-text-outline: 1px black; color: white; line-height: 1.1; } .command_headset { font-weight: bold; font-size: 8px; } .small, .italics { font-size: 6px; } .big, .reallybig, .extremelybig { font-size: 8px; } .yell { font-weight: bold; } .menutext { font-size: 11px; -dm-text-outline: 0.5px black; color: white; line-height: 1.1; } .menutitle { font-size: 14px; -dm-text-outline: 0.5px black; color: white; line-height: 1.1; }"
 
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 0,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		outer-size = 656x538
+		inner-size = 640x499
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -196,6 +184,7 @@ window "infowindow"
 		size = 94x20
 		anchor1 = 1,0
 		anchor2 = 16,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "changelog"
@@ -205,6 +194,7 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 16,0
 		anchor2 = 30,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Discord"
 		command = "discord"
@@ -214,6 +204,9 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 30,0
 		anchor2 = 44,0
+		font-style = "bold"
+		text-color = #ffffff
+		background-color = #ff0000
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "rules"
@@ -223,6 +216,7 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 44,0
 		anchor2 = 58,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -232,6 +226,7 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 58,0
 		anchor2 = 72,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
@@ -241,6 +236,7 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 72,0
 		anchor2 = 86,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -250,10 +246,10 @@ window "infowindow"
 		size = 90x20
 		anchor1 = 86,0
 		anchor2 = 100,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Webmap"
 		command = "webmap"
-
 
 window "outputwindow"
 	elem "outputwindow"
@@ -274,7 +270,6 @@ window "outputwindow"
 		is-visible = false
 		is-disabled = true
 		saved-params = ""
-		auto-format = false
 	elem "output"
 		type = OUTPUT
 		pos = 0,0
@@ -291,7 +286,6 @@ window "popupwindow"
 		size = 120x120
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
@@ -304,7 +298,6 @@ window "preferences_window"
 		size = 1280x1000
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
@@ -314,7 +307,6 @@ window "preferences_window"
 		size = 960x1000
 		anchor1 = 0,0
 		anchor2 = 75,100
-		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
@@ -324,7 +316,6 @@ window "preferences_window"
 		anchor2 = 100,100
 		right-click = true
 		saved-params = "zoom;letterbox;zoom-mode"
-
 
 window "statwindow"
 	elem "statwindow"
@@ -343,3 +334,4 @@ window "statwindow"
 		anchor2 = 100,100
 		is-default = true
 		saved-params = ""
+

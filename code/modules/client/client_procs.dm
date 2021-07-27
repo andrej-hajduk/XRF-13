@@ -98,7 +98,12 @@
 		if("usr")
 			hsrc = mob
 		if("prefs")
-			stack_trace("This code path is no longer valid, migrate this to new TGUI prefs")
+			if(inprefs)
+				return
+			inprefs = TRUE
+			. = prefs.process_link(usr, href_list)
+			inprefs = FALSE
+			return
 		if("vars")
 			return view_var_Topic(href, href_list, hsrc)
 		if("vote")
@@ -122,6 +127,16 @@
 
 	return ..()	//redirect to hsrc.Topic()
 
+// SKYRAT ADDITION - CKEY AGE
+/client/proc/get_ckey_creation()
+	var/list/http = world.Export("http://www.byond.com/members/[ckey]?format=text")
+	if("CONTENT" in http)
+		var/resp = file2text(http["CONTENT"])
+		var/j_pos = findtext(resp, "joined")
+		var/joined = splittext(copytext(resp, j_pos + 10, j_pos + 20), "-")
+		return convert_to_epoch(text2num(joined[3]), text2num(joined[2]), text2num(joined[1]))
+	else return -1
+// SKYRAT ADDITION END
 
 /client/New(TopicData)
 	var/tdata = TopicData //save this for later use
@@ -129,6 +144,8 @@
 
 	if(connection != "seeker" && connection != "web")	//Invalid connection type.
 		return null
+
+	check_age_verification()
 
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
@@ -211,6 +228,29 @@
 	// Initialize tgui panel
 	tgui_panel.initialize()
 
+	// SKYRAT EDIT ADDITION - ACCOUNT AGE RESTRICTION
+	if(CONFIG_GET(flag/account_age_restriction))
+		var/account_epoch = get_ckey_creation(ckey) // Epoch of account creation
+		var/today_epoch = (world.realtime / 10) + (30 * EPOCH_YEAR) // Epoch of today
+		var/diff_epoch = today_epoch - account_epoch // Epoch between creation and today
+		var/want_days = CONFIG_GET(number/account_age_restriction_days)
+		var/want_months = CONFIG_GET(number/account_age_restriction_months)
+		var/want_years = CONFIG_GET(number/account_age_restriction_years)
+		var/needed_epoch = convert_to_epoch(want_days, want_months, want_years, TRUE) // Epoch we need to clear the age requirement
+		if(diff_epoch - needed_epoch < 0)
+			var/want_string = ""
+			if(want_years)
+				want_string += "[want_years] years"
+			if(want_months)
+				want_string += ", [want_months] months"
+			if(want_days)
+				want_string += ", [want_days] days"
+			if(findtext(want_string, ",") == 1)
+				want_string = copytext(want_string, 2)
+			to_chat(src, "<span class='userdanger'>The server is only accepting accounts older than [want_string].</span>")
+			addtimer(CALLBACK(src, qdel(src), 2 SECONDS))
+			return
+	// SKYRAT EDIT END
 	if(byond_version < REQUIRED_CLIENT_MAJOR || (byond_build && byond_build < REQUIRED_CLIENT_MINOR))
 		//to_chat(src, span_userdanger("Your version of byond is severely out of date."))
 		to_chat(src, span_userdanger("TGMC now requires the first stable [REQUIRED_CLIENT_MAJOR] build, please update your client to [REQUIRED_CLIENT_MAJOR].[MIN_RECOMMENDED_CLIENT]."))
@@ -265,6 +305,16 @@
 		player_age = account_age
 	if(account_age >= 0 && account_age < nnpa)
 		message_admins("[key_name_admin(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age == 1 ? "" : "s")] old, created on [account_join_date].")
+
+	//SKYRAT CHANGE - account age lock, don't confuse with player age, admins and bunker passthrough allowed
+	var/connecting_admin = (GLOB.admin_datums[ckey] || GLOB.deadmins[ckey])
+	if(!connecting_admin && CONFIG_GET(flag/age_lock) && account_age >= 0 && account_age < CONFIG_GET(number/age_lock_days) && !(ckey in GLOB.bunker_passthrough))
+		to_chat_immediate(src, "<span class='userdanger'>Hey! We have currently enabled safety measures and your connection has been dropped due to your account being [account_age] days old.</span>")
+		to_chat_immediate(src, "<span class='userdanger'>Contact staff on our discord server if you wish to play.</span>")
+		message_admins("<span class='adminnotice'>[key_name(src)] logged in with their account being [account_age] days old. Connection rejected.</span>")
+		qdel(src)
+		return
+	//END OF SKYRAT CHANGE
 
 
 	get_message_output("watchlist entry", ckey)
@@ -489,7 +539,7 @@
 			screen |= O
 		O.appearance = MA
 		O.dir = D
-		O.screen_loc = "player_pref_map:[pos],1"
+		O.screen_loc = "character_preview_map:0,[pos]"
 
 
 /client/proc/clear_character_previews()
@@ -543,13 +593,18 @@
 		return
 	var/client_is_in_db = query_client_in_db.NextRow()
 	//If we aren't an admin, and the flag is set
-	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey])
+	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey] && !(ckey in GLOB.bunker_passthrough))
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
+<<<<<<< HEAD
 		if((minutes < living_recs) || (!living_recs && !client_is_in_db))
 			var/reject_message = "Failed Login: [key] - [client_is_in_db ? "":"New "]Account attempting to connect during panic bunker, but\
 			[living_recs ? "they do not have the required living time [minutes]/[living_recs]": "was rejected"]"
+=======
+		if(minutes < living_recs)
+			var/reject_message = "Failed Login: [key] - Account attempting to connect during panic bunker, but they do not have the required living time [minutes]/[living_recs]"
+>>>>>>> master
 			log_access(reject_message)
 			message_admins(span_adminnotice("[reject_message]"))
 			var/message = CONFIG_GET(string/panic_bunker_message)
@@ -581,6 +636,8 @@
 		if(!account_join_date)
 			account_join_date = "Error"
 			account_age = -1
+		else if(ckey in GLOB.bunker_passthrough)
+			GLOB.bunker_passthrough -= ckey
 	qdel(query_client_in_db)
 	var/datum/db_query/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",
@@ -631,6 +688,32 @@
 	if(new_player)
 		player_age = -1
 	. = player_age
+
+
+/client/proc/check_age_verification()
+	// If theres no DB, assume yes
+	if(!SSdbcore.IsConnected())
+		age_verification = TRUE
+		return TRUE
+
+	var/datum/db_query/query = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("age_verification")] WHERE ckey=:ckey AND consent=1", list(
+		"ckey" = ckey
+	))
+	if(!query.warn_execute())
+		qdel(query)
+		// If our query failed, just assume yes
+		age_verification = TRUE
+		return TRUE
+
+	// If we returned a row, they accepted
+	while(query.NextRow())
+		qdel(query)
+		age_verification = TRUE
+		return TRUE
+
+	qdel(query)
+	// If we are here, they have not accepted
+	return FALSE
 
 
 /client/proc/findJoinDate()
@@ -869,14 +952,26 @@ GLOBAL_VAR_INIT(automute_on, null)
 	var/warning = message_cache >= SPAM_TRIGGER_WARNING || (weight_cache > SPAM_TRIGGER_WEIGHT_WARNING && message_cache != 1)
 
 	if(mute)
+<<<<<<< HEAD
 		if(GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
 			to_chat(src, span_danger("You have exceeded the spam filter. An auto-mute was applied."))
+=======
+		if(!GLOB.automute_on || check_rights(R_ADMIN, FALSE))
+			to_chat(src, "<span class='danger'>You have exceeded the spam filter.</span>")
+		else
+			to_chat(src, "<span class='danger'>You have exceeded the spam filter. An auto-mute was applied.</span>")
+>>>>>>> master
 			create_message("note", ckey(key), "SYSTEM", "Automuted due to spam. Last message: '[last_message]'", null, null, FALSE, TRUE, null, FALSE, "Minor")
 			mute(src, mute_type, TRUE)
 		return TRUE
 
+<<<<<<< HEAD
 	if(warning && GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
 		to_chat(src, span_danger("You are nearing the spam filter limit."))
+=======
+	if(warning && GLOB.automute_on)
+		to_chat(src, "<span class='danger'>You are nearing the spam filter limit.</span>")
+>>>>>>> master
 
 /client/vv_edit_var(var_name, var_value)
 	switch(var_name)

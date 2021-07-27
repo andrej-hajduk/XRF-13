@@ -202,7 +202,7 @@ GLOBAL_VAR(restart_counter)
 	sleep(0)	//yes, 0, this'll let Reboot finish and prevent byond memes
 	qdel(src)	//shut it down
 
-/world/Reboot(ping)
+/world/Reboot(ping, force_dd_kill = FALSE)
 	if(ping)
 		// TODO: Replace the second arguments of send2chat with custom config tags. See __HELPERS/chat.dm
 		send2chat(CONFIG_GET(string/restart_message), "")
@@ -262,7 +262,7 @@ GLOBAL_VAR(restart_counter)
 					text2file("[++GLOB.restart_counter]", RESTART_COUNTER_PATH)
 					do_hard_reboot = FALSE
 
-		if(do_hard_reboot)
+		if(do_hard_reboot || force_dd_kill )
 			log_world("World rebooted at [time_stamp()]")
 			shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
 			TgsEndProcess()
@@ -301,20 +301,21 @@ GLOBAL_VAR(restart_counter)
 	// Current outputt should look like
 	/*
 	Something — Lost in space...	|	TerraGov Marine Corps — Sulaco
+	Something else					|	Server description
 	Map: Loading...					|	Map: Icy Caves
-	Mode: Lobby						|	Mode: Crash
 	Round time: 0:0					|	Round time: 4:54
 	*/
 	var/discord_url = CONFIG_GET(string/discordurl)
 	var/webmap_host = CONFIG_GET(string/webmap_host)
+	var/server_desc = CONFIG_GET(string/server_desc)
 	var/shipname = length(SSmapping?.configs) && SSmapping.configs[SHIP_MAP] ? SSmapping.configs[SHIP_MAP].map_name : "Lost in space..."
 	var/map_name = length(SSmapping.configs) && SSmapping.configs[GROUND_MAP] ? SSmapping.configs[GROUND_MAP].map_name : "Loading..."
 	var/ground_map_file = length(SSmapping.configs) && SSmapping.configs[GROUND_MAP] ? SSmapping.configs[GROUND_MAP].map_file : ""
 
 	var/new_status = ""
 	new_status += "<b><a href='[discord_url ? discord_url : "#"]'>[server_name] &#8212; [shipname]</a></b>"
+	new_status += "<br>[server_desc]"
 	new_status += "<br>Map: <a href='[webmap_host][ground_map_file]'><b>[map_name]</a></b>"
-	new_status += "<br>Mode: <b>[SSticker.mode ? SSticker.mode.name : "Lobby"]</b>"
 	new_status += "<br>Round time: <b>[gameTimestamp("hh:mm")]</b>"
 
 	// Finally set the new status

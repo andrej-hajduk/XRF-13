@@ -12,6 +12,7 @@
 		/turf/closed/wall/resin/regenerating/thick,
 		/obj/effect/alien/resin/sticky,
 		/obj/structure/mineral_door/resin/thick,
+		/obj/structure/bed/nest,
 	)
 
 /datum/action/xeno_action/activable/secrete_resin/hivelord/use_ability(atom/A)

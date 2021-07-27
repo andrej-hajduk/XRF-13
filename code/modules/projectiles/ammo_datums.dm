@@ -230,6 +230,20 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	accurate_range = 5
 	sundering = 1.65
 
+/datum/ammo/bullet/pistol/polymer
+	name = "pistol polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "pistol_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/pistol/polymer/on_hit_mob(mob/M, obj/projectile/P)
+	staggerstun(M, P, slowdown = 0.2)
+
 /datum/ammo/bullet/pistol/tiny
 	name = "light pistol bullet"
 	hud_state = "pistol_light"
@@ -286,6 +300,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	shrapnel_chance = 25
 	sundering = 2.15
 
+<<<<<<< HEAD
 /datum/ammo/bullet/pistol/superheavy
 	name = "high impact pistol bullet"
 	hud_state = "pistol_hollow"
@@ -295,6 +310,21 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 
 /datum/ammo/bullet/pistol/superheavy/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, stagger = 1, slowdown = 1, shake = 0)
+=======
+/datum/ammo/bullet/pistol/heavy/polymer
+	name = "heavy pistol polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "pistol_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/pistol/polymer/heavy/on_hit_mob(mob/M, obj/projectile/P)
+	staggerstun(M, P, slowdown = 0.4)
+>>>>>>> master
 
 /datum/ammo/bullet/pistol/incendiary
 	name = "incendiary pistol bullet"
@@ -343,11 +373,17 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state_empty = "revolver_empty"
 	handful_amount = 7
 	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+<<<<<<< HEAD
 	damage = 45
+=======
+	handful_amount = 7
+	damage = 40
+>>>>>>> master
 	penetration = 10
 	sundering = 3
 
 /datum/ammo/bullet/revolver/on_hit_mob(mob/M,obj/projectile/P)
+<<<<<<< HEAD
 	staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1)
 
 datum/ammo/bullet/revolver/tp44
@@ -359,6 +395,27 @@ datum/ammo/bullet/revolver/tp44
 		staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1, shake = 0)
 	else
 		staggerstun(M, P, slowdown = 0.5, shake = 0)
+=======
+	if(SEND_SIGNAL(P.shot_from, COMSIG_REVOLVER_AMMO_HIT_MOB))
+		staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1)
+	else
+		staggerstun(M, P, slowdown = 0.5)
+
+/datum/ammo/bullet/revolver/polymer
+	name = "revolver polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "revolver_pgr"
+	hud_state_empty = "revolver_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/revolver/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, stagger = 1, slowdown = 1)
+>>>>>>> master
 
 /datum/ammo/bullet/revolver/small
 	name = "small revolver bullet"
@@ -397,6 +454,23 @@ datum/ammo/bullet/revolver/tp44
 
 /datum/ammo/bullet/revolver/highimpact/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
+<<<<<<< HEAD
+=======
+
+/datum/ammo/bullet/revolver/highimpact/polymer
+	name = "high-impact polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "revolver_impact_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
+/datum/ammo/bullet/revolver/highimpact/polymer/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
+>>>>>>> master
 
 
 /datum/ammo/bullet/revolver/ricochet
@@ -463,6 +537,19 @@ datum/ammo/bullet/revolver/tp44
 	sundering = 0.5
 	penetration = 5
 
+/datum/ammo/bullet/smg/polymer
+	name = "submachinegun polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "smg_pgr"
+	hud_state_empty = "smg_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	penetration = 10
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/smg/ap
 	name = "armor-piercing submachinegun bullet"
 	hud_state = "smg_ap"
@@ -486,6 +573,18 @@ datum/ammo/bullet/revolver/tp44
 	penetration = 5
 	sundering = 0.5
 
+/datum/ammo/bullet/rifle/polymer
+	name = "rifle polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "rifle_pgr"
+	hud_state_empty = "rifle_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/ap
 	name = "armor-piercing rifle bullet"
 	hud_state = "rifle_ap"
@@ -500,6 +599,17 @@ datum/ammo/bullet/revolver/tp44
 	penetration = 10
 	sundering = 1
 
+/datum/ammo/bullet/rifle/hv/polymer
+	name = "high-velocity polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "hivelo_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/incendiary
 	name = "incendiary rifle bullet"
 	hud_state = "rifle_fire"
@@ -513,6 +623,17 @@ datum/ammo/bullet/revolver/tp44
 	hud_state = "rifle_heavy"
 	damage = 20
 	penetration = 10
+
+/datum/ammo/bullet/rifle/machinegun/polymer
+	name = "machinegun polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "rifle_heavy_pgr"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
 
 /datum/ammo/bullet/rifle/tx8
 	name = "A19 high velocity bullet"
@@ -568,6 +689,17 @@ datum/ammo/bullet/revolver/tp44
 	penetration = 15
 	sundering = 2
 
+/datum/ammo/bullet/rifle/standard_dmr/polymer
+	name = "marksman polymer gel round"
+	icon_state = "bullet_pgr"
+	handful_icon_state = "bullet_pgr"
+	hud_state = "hivelo_pgr"
+	hud_state_empty = "hivelo_empty"
+	damage_type = STAMINA
+	shrapnel_chance = 0
+	sundering = 0
+	bullet_color = COLOR_DISABLER_BLUE
+
 /datum/ammo/bullet/rifle/standard_dmr/incendiary
 	name = "incendiary marksman bullet"
 	hud_state = "hivelo_fire"
@@ -611,17 +743,25 @@ datum/ammo/bullet/revolver/tp44
 	hud_state = "shotgun_beanbag"
 	flags_ammo_behavior = AMMO_BALLISTIC
 	max_range = 15
+	damage = 80
+	damage_type = STAMINA
 	shrapnel_chance = 0
 	accuracy = 15
 
 /datum/ammo/bullet/shotgun/beanbag/on_hit_mob(mob/M, obj/projectile/P)
-	if(!M || M == P.firer)
-		return
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.species?.count_human) //no effect on synths
-			H.apply_effects(6,8)
-		shake_camera(H, 2, 1)
+		staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 2)
+
+/datum/ammo/bullet/shotgun/beanbag/large
+	name = "beanbag slug"
+	handful_icon_state = "beanbag slug"
+	icon_state = "beanbag"
+	hud_state = "shotgun_beanbag"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage = 130
+	accuracy = 20
+
+/datum/ammo/bullet/shotgun/beanbag/large/on_hit_mob(mob/M, obj/projectile/P)
+		staggerstun(M, P, weaken = 2, stagger = 2, knockback = 1, slowdown = 2)
 
 /datum/ammo/bullet/shotgun/incendiary
 	name = "incendiary slug"
@@ -1597,8 +1737,8 @@ datum/ammo/bullet/revolver/tp44
 */
 /datum/ammo/xeno
 	icon_state = "neurotoxin"
-	ping = "ping_x"
 	damage_type = TOX
+	ping = "ping_x"
 	flags_ammo_behavior = AMMO_XENO
 	var/added_spit_delay = 0 //used to make cooldown of the different spits vary.
 	var/spit_cost = 5
@@ -1865,7 +2005,6 @@ datum/ammo/bullet/revolver/tp44
 
 	drop_nade(T)
 
-
 /datum/ammo/xeno/acid/heavy/on_hit_turf(turf/T,obj/projectile/P)
 	if(!T)
 		T = get_turf(P)
@@ -1878,13 +2017,11 @@ datum/ammo/bullet/revolver/tp44
 /datum/ammo/xeno/acid/heavy/do_at_max_range(obj/projectile/P)
 	drop_nade(get_turf(P))
 
-
 /datum/ammo/xeno/acid/drop_nade(turf/T) //Leaves behind an acid pool; defaults to 1-3 seconds.
 	if(T.density)
 		return
 
 	new /obj/effect/xenomorph/spray(T, puddle_duration, puddle_acid_damage)
-
 
 ///For the Spitter's Scatterspit ability
 /datum/ammo/xeno/acid/heavy/scatter
@@ -1914,7 +2051,6 @@ datum/ammo/bullet/revolver/tp44
 ///Set up the list of reagents the spit transfers upon impact
 /datum/ammo/xeno/boiler_gas/proc/set_reagents()
 	spit_reagents = list(/datum/reagent/toxin/xeno_neurotoxin = reagent_transfer_amount)
-
 
 /datum/ammo/xeno/boiler_gas/on_hit_mob(mob/living/victim, obj/projectile/proj)
 	drop_nade(get_turf(proj), proj.firer)
@@ -1984,6 +2120,35 @@ datum/ammo/bullet/revolver/tp44
 
 /datum/ammo/xeno/boiler_gas/corrosive/set_smoke()
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/acid()
+
+/datum/ammo/xeno/larva_jelly
+	name = "blob of larvae jelly"
+	icon_state = "sticky"
+	flags_ammo_behavior = AMMO_XENO|AMMO_SKIPS_ALIENS|AMMO_EXPLOSIVE
+	var/danger_message = "<span class='danger'>A blob of larvae jelly lands with a splat!</span>"
+	accuracy_var_high = 10
+	max_range = 10
+	damage = 1
+	damage_type = STAMINA
+	penetration = 40
+	bullet_color = LIGHT_COLOR_PURPLE
+	reagent_transfer_amount = 5
+
+///Set up the list of reagents the spit transfers upon impact
+/datum/ammo/xeno/larva_jelly/proc/set_reagents()
+	spit_reagents = list(/datum/reagent/consumable/larvajelly = reagent_transfer_amount)
+
+/datum/ammo/xeno/larva_jelly/on_hit_mob(mob/living/victim, obj/projectile/proj)
+	if(!istype(victim) || victim.stat == DEAD || victim.issamexenohive(proj.firer))
+		return
+	if(!iscarbon(victim))
+		return
+	var/mob/living/carbon/carbon_victim = victim
+	set_reagents()
+	var/armor_block = (1 - carbon_victim.run_armor_check(BODY_ZONE_CHEST, armor_type) * 0.01) //Check the target's armor mod; default to chest
+	for(var/reagent_id in spit_reagents) //modify by armor
+		spit_reagents[reagent_id] *= armor_block
+	carbon_victim.reagents.add_reagent_list(spit_reagents) //transfer reagents
 
 /*
 //================================================

@@ -62,7 +62,7 @@
 
 	ai_sound = new_sound ? new_sound : 'sound/misc/interference.ogg' //Remember the sound we need to play.
 
-	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	message = trim(sanitize(copytext_char(message, 1, MAX_MESSAGE_LEN)))
 
 	var/datum/language/message_language = get_message_language(message)
 	if(message_language)

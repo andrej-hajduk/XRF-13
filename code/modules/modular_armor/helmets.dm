@@ -116,6 +116,7 @@
 
 /obj/item/helmet_module/antenna/toggle_module(mob/living/user, obj/item/clothing/head/modular/parent)
 	var/turf/location = get_turf(src)
+<<<<<<< HEAD
 	if(beacon_datum)
 		UnregisterSignal(beacon_datum, COMSIG_PARENT_QDELETING)
 		QDEL_NULL(beacon_datum)
@@ -131,6 +132,25 @@
 	beacon_datum = new /datum/supply_beacon(user.name, user.loc, user.faction, 1 MINUTES)
 	RegisterSignal(beacon_datum, COMSIG_PARENT_QDELETING, .proc/clean_beacon_datum)
 	user.show_message(span_notice("The [src] beeps and states, \"Your current coordinates were registered by the supply console. LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
+=======
+	playsound(user, 'sound/machines/twobeep.ogg', 60, 1)
+	if(beacon_datum)
+		UnregisterSignal(beacon_datum, COMSIG_PARENT_QDELETING)
+		beacon_datum.unregister()
+		beacon_datum = null
+		user.show_message("<span class='warning'>The [src] beeps and states, \"Your last position is no longer accessible by the supply console</span>", EMOTE_AUDIBLE, "<span class='notice'>The [src] vibrates but you can not hear it!</span>")
+		return
+	if(!is_ground_level(user.z))
+		to_chat(user, "<span class='warning'>You have to be on the planet to use this or it won't transmit.</span>")
+		return FALSE
+	var/area/A = get_area(user)
+	if(A && istype(A) && A.ceiling >= CEILING_METAL)
+		to_chat(user, "<span class='warning'>You have to be outside or under a glass ceiling to activate this.</span>")
+		return
+	beacon_datum = new /datum/supply_beacon(user.name, user.loc, user.faction, 1 MINUTES)
+	RegisterSignal(beacon_datum, COMSIG_PARENT_QDELETING, .proc/clean_beacon_datum)
+	user.show_message("<span class='notice'>The [src] beeps and states, \"Your current coordinates were registered by the supply console. LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\"</span>", EMOTE_AUDIBLE, "<span class='notice'>The [src] vibrates but you can not hear it!</span>")
+>>>>>>> master
 
 /// Signal handler to nullify beacon datum
 /obj/item/helmet_module/antenna/proc/clean_beacon_datum()

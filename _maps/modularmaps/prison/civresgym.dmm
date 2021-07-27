@@ -53,10 +53,6 @@
 	},
 /turf/open/floor/prison/bright_clean/two,
 /area/template_noop)
-"E" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/prison/bright_clean/two,
-/area/template_noop)
 "F" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/prison/bright_clean/two,
@@ -92,7 +88,7 @@
 
 (1,1,1) = {"
 N
-E
+a
 a
 a
 a

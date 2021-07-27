@@ -25,7 +25,7 @@
 //DRINKS
 
 /obj/item/reagent_containers/food/drinks/cans/cola
-	name = "\improper TGM Cola"
+	name = "\improper Boba Bola"
 	desc = "A can of artificial flavors, sweeteners, and coloring, at least it's carbonated. Canned by Nanotrasen."
 	icon_state = "tgm_cola"
 	center_of_mass = list("x"=16, "y"=10)
@@ -54,7 +54,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 
 /obj/item/reagent_containers/food/drinks/cans/space_mountain_wind
-	name = "\improper Space Mountain Wind"
+	name = "\improper Space Mount Drew"
 	desc = "Blows right through you like a space wind."
 	icon_state = "space_mountain_wind"
 	center_of_mass = list("x"=16, "y"=10)
@@ -68,8 +68,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
 
 /obj/item/reagent_containers/food/drinks/cans/dr_gibb
-	name = "\improper Dr. Gibb"
-	desc = "A delicious mixture of 42 different flavors of chemicals that you can't pronoounce."
+	name = "\improper Mr. Pepperoni"
+	desc = "The hell does 'Be a Pepperoni' mean?"
 	icon_state = "dr_gibb"
 	center_of_mass = list("x"=16, "y"=10)
 	list_reagents = list(/datum/reagent/consumable/drink/cold/dr_gibb = 30)
@@ -89,8 +89,8 @@
 	list_reagents = list(/datum/reagent/consumable/drink/cold/space_up = 30)
 
 /obj/item/reagent_containers/food/drinks/cans/lemon_lime
-	name = "lemon-lime"
-	desc = "You wanted ORANGE. It gave you Lemon Lime."
+	name = "\improper Lemon-Lemon"
+	desc = "You wanted ORANGE. It gave you Lemon Lemon."
 	icon_state = "lemon-lime"
 	center_of_mass = list("x"=16, "y"=10)
 	list_reagents = list(/datum/reagent/consumable/drink/cold/lemon_lime = 30)
@@ -103,7 +103,7 @@
 	list_reagents = list(/datum/reagent/consumable/drink/ = 30)
 
 /obj/item/reagent_containers/food/drinks/cans/grape_juice
-	name = "grape juice"
+	name = "\improper Grapel Juice"
 	desc = "A can of probably not grape juice."
 	icon_state = "purple_can"
 	center_of_mass = list("x"=16, "y"=10)
@@ -185,3 +185,10 @@
 	icon_state = "souto_diet_grape"
 	center_of_mass = list("x"=16, "y"=10)
 	list_reagents = list(/datum/reagent/consumable/drink/grapejuice = 25, /datum/reagent/water = 25)
+
+/obj/item/reagent_containers/food/drinks/cans/cola_milk
+	name = "\improper Conk Milk"
+	desc = "A can of carbonated water and... Milk? Alledgely pulled out of marine vending machines over many incidents."
+	icon_state = "milk_cola"
+	center_of_mass = list("x"=16, "y"=10)
+	list_reagents = list(/datum/reagent/consumable/drink/cold/space_cola = 15, /datum/reagent/consumable/drink/milk = 15)

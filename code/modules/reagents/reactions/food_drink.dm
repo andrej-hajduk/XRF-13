@@ -515,3 +515,4 @@
 	name = "Sui Dream"
 	results = list(/datum/reagent/consumable/ethanol/suidream = 4)
 	required_reagents = list(/datum/reagent/consumable/drink/cold/space_up = 2, /datum/reagent/consumable/ethanol/bluecuracao = 1, /datum/reagent/consumable/ethanol/melonliquor = 1)
+

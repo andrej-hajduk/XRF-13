@@ -767,10 +767,13 @@ TUNNEL
 		to_chat(user, span_notice("[victim] is not dead!"))
 		return
 
+<<<<<<< HEAD
 	if(victim.chestburst)
 		to_chat(user, span_notice("[victim] has already been exhausted to incubate a sister!"))
 		return
 
+=======
+>>>>>>> master
 	if(issynth(victim))
 		to_chat(user, span_notice("[victim] has no useful biomass for us."))
 		return
@@ -780,8 +783,6 @@ TUNNEL
 	if(!do_after(user, 20, FALSE, victim, BUSY_ICON_DANGER) || QDELETED(src))
 		return
 
-	victim.chestburst = 2 //So you can't reuse corpses if the silo is destroyed
-	victim.update_burst()
 	victim.forceMove(src)
 
 	shake(4 SECONDS)
@@ -917,9 +918,7 @@ TUNNEL
 		if(last_hostile)
 			set_last_hostile(null)
 		return
-	if(!TIMER_COOLDOWN_CHECK(src, COOLDOWN_XENO_TURRETS_ALERT))
-		associated_hive.xeno_message("Our [name] is attacking a nearby hostile [hostile] at [get_area(hostile)] (X: [hostile.x], Y: [hostile.y]).", "xenoannounce", 5, FALSE, hostile, 'sound/voice/alien_help1.ogg', FALSE, null, /obj/screen/arrow/turret_attacking_arrow)
-		TIMER_COOLDOWN_START(src, COOLDOWN_XENO_TURRETS_ALERT, 20 SECONDS)
+	turret_message()
 	if(hostile != last_hostile)
 		set_last_hostile(hostile)
 		SEND_SIGNAL(src, COMSIG_AUTOMATIC_SHOOTER_START_SHOOTING_AT)
@@ -1031,3 +1030,86 @@ TUNNEL
 	newshot.permutated += src
 	newshot.def_zone = pick(GLOB.base_miss_chance)
 	newshot.fire_at(hostile, src, null, ammo.max_range, ammo.shell_speed)
+
+/obj/structure/xeno/resin/xeno_turret/proc/turret_message()
+	if(!TIMER_COOLDOWN_CHECK(src, COOLDOWN_XENO_TURRETS_ALERT))
+		associated_hive.xeno_message("Our [name] is attacking a nearby hostile [hostile] at [get_area(hostile)] (X: [hostile.x], Y: [hostile.y]).", "xenoannounce", 5, FALSE, hostile, 'sound/voice/alien_help1.ogg', FALSE, null, /obj/screen/arrow/turret_attacking_arrow)
+		TIMER_COOLDOWN_START(src, COOLDOWN_XENO_TURRETS_ALERT, 50 SECONDS)
+
+//////////////////////
+///// xeno jell turret
+//////////////////////
+
+/obj/structure/xeno/resin/xeno_turret/jelly
+	icon = 'icons/Xeno/jelturret.dmi'
+	icon_state = "jel_turret"
+	name = "Growth jelly turret"
+	desc = "A menacing looking construct of resin, it seems to be alive. It fires larvae growth jelly, useful for breeding dens."
+	///Fire rate of the target in ticks
+	firerate = 20
+
+/obj/structure/xeno/resin/xeno_turret/jelly/Initialize(mapload, hivenumber = XENO_HIVE_NORMAL)
+	. = ..()
+	ammo = GLOB.ammo_list[/datum/ammo/xeno/larva_jelly]
+	set_light(2, 2, LIGHT_COLOR_PURPLE)
+
+/obj/structure/xeno/resin/xeno_turret/jelly/process()
+	//Turrets regen some HP, every 2 sec
+	. = ..()
+	if(!hostile || hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in hostile)
+		if(last_hostile)
+			set_last_hostile(null)
+
+/obj/structure/xeno/resin/xeno_turret/jelly/update_overlays()
+	. = ..()
+	if(obj_integrity <= max_integrity / 2)
+		. += image('icons/Xeno/jelturret.dmi', src, "+turret_damage")
+	if(CHECK_BITFIELD(resistance_flags, ON_FIRE))
+		. += image('icons/Xeno/jelturret.dmi', src, "+turret_on_fire")
+
+///Look for the closest human in range and in light of sight. If no human is in range, will look for xenos of other hives
+/obj/structure/xeno/resin/xeno_turret/jelly/get_target()
+	var/distance = range + 0.5 //we add 0.5 so if a potential target is at range, it is accepted by the system
+	var/buffer_distance
+	var/list/turf/path = list()
+	for (var/mob/living/nearby_hostile AS in potential_hostiles)
+		if(!nearby_hostile || nearby_hostile.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in nearby_hostile)
+			continue
+		buffer_distance = get_dist(nearby_hostile, src)
+		if (distance <= buffer_distance) //If we already found a target that's closer
+			continue
+		path = getline(src, nearby_hostile)
+		path -= get_turf(src)
+		if(!path.len) //Can't shoot if it's on the same turf
+			continue
+		var/blocked = FALSE
+		for(var/turf/T AS in path)
+			if(IS_OPAQUE_TURF(T) || T.density && T.throwpass == FALSE)
+				blocked = TRUE
+				break //LoF Broken; stop checking; we can't proceed further.
+
+			for(var/obj/machinery/MA in T)
+				if(MA.opacity || MA.density && MA.throwpass == FALSE)
+					blocked = TRUE
+					break //LoF Broken; stop checking; we can't proceed further.
+
+			for(var/obj/structure/S in T)
+				if(S.opacity || S.density && S.throwpass == FALSE )
+					blocked = TRUE
+					break //LoF Broken; stop checking; we can't proceed further.
+		if(!blocked)
+			distance = buffer_distance
+			. = nearby_hostile
+
+///Return TRUE if a possible target is near
+/obj/structure/xeno/resin/xeno_turret/jelly/scan()
+	potential_hostiles.Cut()
+	for (var/mob/living/carbon/human/nearby_human AS in cheap_get_humans_near(src, TURRET_SCAN_RANGE))
+		if(nearby_human.stat == DEAD || nearby_human.reagents.has_reagent(/datum/reagent/consumable/larvajelly) || !locate(/obj/item/alien_embryo) in nearby_human)
+			continue
+		potential_hostiles += nearby_human
+
+/obj/structure/xeno/resin/xeno_turret/jelly/turret_message()
+	if(!TIMER_COOLDOWN_CHECK(src, COOLDOWN_XENO_TURRETS_ALERT))
+		associated_hive.xeno_message("Our [name] is injecting a nearby impregnated host [hostile] at [get_area(hostile)] (X: [hostile.x], Y: [hostile.y]).", "xenoannounce", 5, FALSE, hostile, null, FALSE, null, /obj/screen/arrow/turret_attacking_arrow)
+		TIMER_COOLDOWN_START(src, COOLDOWN_XENO_TURRETS_ALERT, 50 SECONDS)

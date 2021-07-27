@@ -40,13 +40,37 @@ SUBSYSTEM_DEF(persistence)
 ///Loads data at the start of the round
 /datum/controller/subsystem/persistence/Initialize()
 	LoadSeasonalItems()
+<<<<<<< HEAD
 	load_custom_loadouts_list()
+=======
+	LoadPanicBunker()
+>>>>>>> master
 	return ..()
 
 ///Stores data at the end of the round
 /datum/controller/subsystem/persistence/proc/CollectData()
+<<<<<<< HEAD
 	save_custom_loadouts_list()
 	return
+=======
+	SavePanicBunker()
+
+/datum/controller/subsystem/persistence/proc/LoadPanicBunker()
+	var/bunker_path = file("data/bunker_passthrough.json")
+	if(fexists(bunker_path))
+		var/list/json = json_decode(file2text(bunker_path))
+		GLOB.bunker_passthrough = json["data"]
+		for(var/ckey in GLOB.bunker_passthrough)
+			if(daysSince(GLOB.bunker_passthrough[ckey]) >= CONFIG_GET(number/max_bunker_days))
+				GLOB.bunker_passthrough -= ckey
+
+/datum/controller/subsystem/persistence/proc/SavePanicBunker()
+	var/json_file = file("data/bunker_passthrough.json")
+	var/list/file_data = list()
+	file_data["data"] = GLOB.bunker_passthrough
+	fdel(json_file)
+	WRITE_FILE(json_file, json_encode(file_data))
+>>>>>>> master
 
 ///Loads the list of custom outfits names
 /datum/controller/subsystem/persistence/proc/load_custom_loadouts_list()
@@ -190,6 +214,7 @@ SUBSYSTEM_DEF(persistence)
 		/obj/item/weapon/gun/revolver/small = -1,
 		/obj/item/ammo_magazine/revolver/small = -1,
 		/obj/item/weapon/gun/revolver/m44 = -1,
+		/obj/item/ammo_magazine/revolver/polymer = -1,
 		/obj/item/ammo_magazine/revolver = -1,
 		)
 

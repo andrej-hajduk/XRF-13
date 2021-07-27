@@ -19,4 +19,9 @@
 
 	sight |= SEE_TURFS
 
-	client?.play_title_music()
+	if(!client.age_verification)
+		if(!verify_age())
+			return
+
+	if(client)
+		addtimer(CALLBACK(client, /client/.proc/play_title_music), 4 SECONDS)

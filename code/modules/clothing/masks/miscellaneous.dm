@@ -2,7 +2,7 @@
 	name = "muzzle"
 	desc = "To stop that awful noise."
 	icon_state = "muzzle"
-	item_state = "muzzle"
+	item_state = "muzzle" && "blindfold"
 	flags_inventory = COVERMOUTH
 	flags_armor_protection = NONE
 	w_class = WEIGHT_CLASS_SMALL
@@ -10,7 +10,9 @@
 
 //Monkeys can not take the muzzle off of themself! Call PETA!
 /obj/item/clothing/mask/muzzle/attack_paw(mob/living/carbon/human/user)
-	if (src == user.wear_mask)
+	if(iscarbon(user))
+		if (src == user.wear_mask)
+			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
 		return
 	return ..()
 

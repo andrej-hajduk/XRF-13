@@ -55,7 +55,10 @@
 			victim.internal_organs_by_name -= "brain"
 			victim.internal_organs -= brain
 			victim.headbitten = TRUE
+<<<<<<< HEAD
 			victim.chestburst = 2
+=======
+>>>>>>> master
 			victim.update_burst()
 			victim.update_headbite()
 			if(length(GLOB.xeno_resin_silos))

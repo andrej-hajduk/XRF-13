@@ -274,7 +274,10 @@
 #define COMSIG_GUN_BURST_SHOTS_TO_FIRE_MODIFIED "gun_burstamount_modified"
 #define COMSIG_GUN_BURST_SHOT_DELAY_MODIFIED "gun_burstdelay_modified"
 #define COMSIG_REVOLVER_AMMO_HIT_MOB "gun_revolver_ammo_hit"
+<<<<<<< HEAD
 	#define COMSIG_REVOLVER_AMMO_SNUBNOSE_BARREL (1<<0)
+=======
+>>>>>>> master
 
 // /obj/item/clothing signals
 #define COMSIG_SHOES_STEP_ACTION "shoes_step_action"			//from base of obj/item/clothing/shoes/proc/step_action(): ()
@@ -576,6 +579,7 @@
 #define COMSIG_XENOABILITY_SCREECH "xenoability_screech"
 #define COMSIG_XENOABILITY_WATCH_XENO "xenoability_watch_xeno"
 #define COMSIG_XENOABILITY_PSYCHIC_WHISPER "xenoability_psychic_whisper"
+#define COMSIG_XENOABILITY_PSYCHIC_INFLUENCE "xenoability_psychic_influence"
 #define COMSIG_XENOABILITY_TOGGLE_QUEEN_ZOOM "xenoability_toggle_queen_zoom"
 #define COMSIG_XENOABILITY_XENO_LEADERS "xenoability_xeno_leaders"
 #define COMSIG_XENOABILITY_QUEEN_HEAL "xenoability_queen_heal"

@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/time_left							//Pre-game timer
 	var/start_at
+	var/next_autotransfer = 0 // End of round vote timer
 
 	var/roundend_check_paused = FALSE
 
@@ -42,6 +43,10 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 
+<<<<<<< HEAD
+=======
+	GLOB.respawntime = CONFIG_GET(number/marine_respawn)
+>>>>>>> master
 	GLOB.xenorespawntime = CONFIG_GET(number/xeno_respawn)
 
 	var/all_music = CONFIG_GET(keyed_list/lobby_music)
@@ -102,13 +107,17 @@ SUBSYSTEM_DEF(ticker)
 			mode.process(wait * 0.1)
 			check_queue()
 
+			if(world.time > next_autotransfer)
+				SSvote.autotransfer()
+				next_autotransfer = world.time + CONFIG_GET(number/vote_autotransfer_interval)
+
 			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
 				current_state = GAME_STATE_FINISHED
 				GLOB.ooc_allowed = TRUE
 				GLOB.dooc_allowed = TRUE
 				mode.declare_completion(force_ending)
 				addtimer(CALLBACK(SSvote, /datum/controller/subsystem/vote/proc/automatic_vote), 2 SECONDS)
-				addtimer(CALLBACK(src, .proc/Reboot), CONFIG_GET(number/vote_period) * 3 + 9 SECONDS)
+				addtimer(CALLBACK(src, .proc/Reboot), CONFIG_GET(number/vote_period) * 2 + 9 SECONDS)
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
 
@@ -160,6 +169,9 @@ SUBSYSTEM_DEF(ticker)
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
+
+	// Sets the auto transfer vote to happen after the config duration
+	next_autotransfer = world.time + CONFIG_GET(number/vote_autotransfer_initial)
 
 	CHECK_TICK
 	PostSetup()
@@ -270,6 +282,22 @@ SUBSYSTEM_DEF(ticker)
 
 	if(usr && !check_rights(R_SERVER))
 		return
+
+	#ifndef UNIT_TESTS
+	if(usr)
+		if(world.TgsAvailable())
+			switch(tgui_input_list(usr, "Restart Type","Reboot World", list("Hardest (Kill DD)", "Hard", "Normal"), 1 MINUTES))
+				if("Hard")
+					to_chat(world, "<span class='boldnotice'>Killing World Hard</span>")
+					world.Reboot(FALSE)
+				if("Hardest (Kill DD)")
+					to_chat(world, "<span class='boldnotice'>Killing Dream Daemon</span>")
+					world.Reboot(FALSE, force_dd_kill = TRUE)
+				if("Cancel")
+					return
+		else if(tgui_alert(usr, "Are you sure?", "Restart", list("Yes", "Cancel"), 1 MINUTES) != "Yes")
+			return
+	#endif
 
 	if(istype(GLOB.tgs, /datum/tgs_api/v3210))
 		var/datum/tgs_api/v3210/API = GLOB.tgs

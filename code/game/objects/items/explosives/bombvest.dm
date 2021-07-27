@@ -32,7 +32,16 @@
 		to_chat(activator, "Due to the rigging of this device, it can only be detonated while worn.") //If you are going to use this, you have to accept death. No armor allowed.
 		return FALSE
 	if(istype(activator.l_hand, /obj/item/weapon/shield/riot) || istype(activator.r_hand, /obj/item/weapon/shield/riot) || istype(activator.back, /obj/item/weapon/shield/riot))
+<<<<<<< HEAD
 		to_chat(activator, span_warning("Your bulky shield prevents you from reaching the detonator!"))
+=======
+		to_chat(activator, "<span class='warning'>Your bulky shield prevents you from reaching the detonator!</span>")
+		return FALSE
+	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_BOMBVEST_SHIELD_DROP))
+		to_chat(activator, "<span class='warning'>You dropped a shield too recently to detonate, wait a few seconds!</span>")
+		return FALSE
+	if(!do_after(user, 3, TRUE, src, BUSY_ICON_DANGER, ignore_turf_checks = TRUE))
+>>>>>>> master
 		return FALSE
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_BOMBVEST_SHIELD_DROP))
 		to_chat(activator, span_warning("You dropped a shield too recently to detonate, wait a few seconds!"))

@@ -305,8 +305,16 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 
 	log_admin("[key_name(usr)] is debugging the [choice] list.")
 	message_admins("[ADMIN_TPMONTY(usr)] is debugging the [choice] list.")
-
-
+// SKYRAT EDIT ADDITION - RELOAD CONFIGS
+/datum/admins/proc/reload_configuration()
+	set category = "Debug"
+	set name = "Reload Configuration"
+	set desc = "Force config reload to world default"
+	if(!check_rights(R_DEBUG))
+		return
+	if(tgui_alert(usr, "Are you absolutely sure you want to reload the configuration from the default path on the disk, wiping any in-round modificatoins?", "Really reset?", list("No", "Yes")) == "Yes")
+		config.admin_reload()
+// SKYRAT EDIT END
 /datum/admins/proc/spawn_atom(object as text)
 	set category = "Debug"
 	set desc = "(atom path) Spawn an atom"
@@ -341,7 +349,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	set category = null
 	set name = "Delete"
 
-	if(!check_rights(R_DEBUG))
+	if(!check_rights(R_VAREDIT))
 		return
 
 	if(alert(src, "Are you sure you want to delete: [A]?", "Delete", "Yes", "No") != "Yes")

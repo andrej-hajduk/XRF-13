@@ -16,7 +16,6 @@
 	add_abilities()
 
 	create_reagents(1000)
-	gender = NEUTER
 
 	switch(stat)
 		if(CONSCIOUS)
@@ -58,7 +57,7 @@
 	if(!job) //It might be setup on spawn.
 		setup_job()
 
-	AddComponent(/datum/component/bump_attack)
+	//AddComponent(/datum/component/bump_attack)
 
 	ADD_TRAIT(src, TRAIT_BATONIMMUNE, TRAIT_XENO)
 	ADD_TRAIT(src, TRAIT_FLASHBANGIMMUNE, TRAIT_XENO)
@@ -81,6 +80,7 @@
 	plasma_stored = xeno_caste.plasma_max
 	maxHealth = xeno_caste.max_health * GLOB.xeno_stat_multiplicator_buff
 	health = maxHealth
+	stamina_limit = xeno_caste.max_health
 	setXenoCasteSpeed(xeno_caste.speed)
 	soft_armor = getArmor(arglist(xeno_caste.soft_armor))
 	hard_armor = getArmor(arglist(xeno_caste.hard_armor))
@@ -199,7 +199,8 @@
 	if(hivenumber != XENO_HIVE_NORMAL)
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 		to_chat(user, "It appears to belong to the [hive.prefix]hive")
-	return
+
+	to_chat(user, "<span class='info'>[xeno_desc]</span>")
 
 /mob/living/carbon/xenomorph/Destroy()
 	if(mind) mind.name = name //Grabs the name when the xeno is getting deleted, to reference through hive status later.
@@ -246,7 +247,8 @@
 	return ..()
 
 /mob/living/carbon/xenomorph/pull_response(mob/puller)
-	if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
+	return TRUE
+	/*if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
 		return TRUE
 	if(!ishuman(puller))
 		return TRUE
@@ -255,7 +257,7 @@
 	playsound(H.loc, 'sound/weapons/pierce.ogg', 25, 1)
 	H.visible_message(span_warning("[H] tried to pull [src] but instead gets a tail swipe to the head!"))
 	H.stop_pulling()
-	return FALSE
+	return FALSE*/
 
 /mob/living/carbon/xenomorph/resist_grab()
 	if(pulledby.grab_state)

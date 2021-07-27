@@ -43,6 +43,15 @@ CREATE TABLE IF NOT EXISTS `admin_ranks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
+-- Dumping structure for table feedback.age_verification
+CREATE TABLE IF NOT EXISTS `age_verification` (
+  `ckey` varchar(32) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `consent` bit(1) NOT NULL,
+  PRIMARY KEY (`ckey`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
 -- Dumping structure for table feedback.ban
 CREATE TABLE IF NOT EXISTS `ban` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,

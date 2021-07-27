@@ -123,3 +123,17 @@
 	desc = "Now you can be in the Deathsquad too!"
 	icon_state = "swat"
 	item_state = "swat"
+
+/obj/item/clothing/head/collectable/kitty
+	name = "collectable kitty ears"
+	desc = "The fur feels... a bit too realistic."
+	icon_state = "kitty"
+	item_state = "kitty"
+//	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/collectable/rabbitears
+	name = "collectable rabbit ears"
+	desc = "Not as lucky as the feet!"
+	icon_state = "bunny"
+	item_state = "bunny"
+//	dynamic_hair_suffix = ""

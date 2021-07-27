@@ -10,7 +10,7 @@
 
 /obj/item/storage/bible/koran
 	name = "koran"
-	icon_state = "koran"
+	icon_state = "tome"
 	deity_name = "Allah"
 
 /obj/item/storage/bible/booze
@@ -22,9 +22,9 @@
 	. = ..()
 	new /obj/item/reagent_containers/food/drinks/cans/beer(src)
 	new /obj/item/reagent_containers/food/drinks/cans/beer(src)
-	new /obj/item/spacecash(src)
-	new /obj/item/spacecash(src)
-	new /obj/item/spacecash(src)
+	new /obj/item/spacecash/c500(src)
+	new /obj/item/spacecash/c500(src)
+	new /obj/item/spacecash/c500(src)
 
 /obj/item/storage/bible/afterattack(atom/A, mob/user, proximity)
 	if(!proximity || !isliving(user))

@@ -306,7 +306,15 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		if(activate_attachment(user)) //success
 			playsound(user, activation_sound, 15, 1)
 	else
+<<<<<<< HEAD
 		to_chat(user, span_warning("[G] must be in our hands to do this."))
+=======
+		to_chat(user, "<span class='warning'>[G] must be in our hands to do this.</span>")
+
+/obj/item/attachable/hydro_cannon/ui_action_click(mob/living/user, datum/action/item_action/action, obj/item/weapon/gun/G)
+	if(G == user.get_active_held_item() || G == user.get_inactive_held_item())
+		G.unique_action(user)
+>>>>>>> master
 
 /obj/item/attachable/hydro_cannon/ui_action_click(mob/living/user, datum/action/item_action/action, obj/item/weapon/gun/G)
 	if(G == user.get_active_held_item() || G == user.get_inactive_held_item() || CHECK_BITFIELD(G.flags_item, IS_DEPLOYED))

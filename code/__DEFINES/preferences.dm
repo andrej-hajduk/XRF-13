@@ -93,12 +93,24 @@
 
 #define TOGGLES_GAMEPLAY_DEFAULT (RADIAL_MEDICAL|MIDDLESHIFTCLICKING)
 
+<<<<<<< HEAD
 #define CHARACTER_CUSTOMIZATION 1
 #define BACKGROUND_INFORMATION 2
 #define GEAR_CUSTOMIZATION 3
 #define JOB_PREFERENCES 4
 #define GAME_SETTINGS 5
 #define KEYBIND_SETTINGS 6
+=======
+#define ALLOW_HUGGER_ASS_TARGET (1<<0)
+#define ALLOW_HUGGER_GROIN_TARGET (1<<1)
+
+#define TOGGLES_LEWD_DEFAULT (NONE)
+
+
+#define HUGGER_TARGET_CHEST "throat"
+#define HUGGER_TARGET_GROIN "groin"
+#define HUGGER_TARGET_ASS "ass"
+>>>>>>> master
 
 #define CITIZENSHIP_CHOICES list(\
 	"TerraGov",\
@@ -115,6 +127,16 @@
 	"Opposed"\
 	)
 
+#define SURVIVOR_TYPE list(\
+	"Civilian",\
+	"Salesman",\
+	"Janitor",\
+	"Miner",\
+	"Militia",\
+	"Doctor",\
+	"Engineer",\
+	"Merchant Captain"\
+	)
 
 #define RELIGION_CHOICES list(\
 	"Christianity (Protestant)",\
@@ -166,3 +188,5 @@
 	"End of Round Deathmatch" = BE_DEATHMATCH,\
 	"Prefer Squad over Role" = BE_SQUAD_STRICT\
 	)
+
+#define MANDATORY_FEATURE_LIST list("mcolor" = "FFFFBB","mcolor2" = "FFFFBB","mcolor3" = "FFFFBB", "skin_color" = "FFEEDD")

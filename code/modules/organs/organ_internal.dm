@@ -27,6 +27,11 @@
 		return 0
 
 /datum/internal_organ/Destroy()
+	var/datum/limb/L = owner.get_limb(parent_limb)
+	if(L)
+		L.internal_organs -= src
+	owner.internal_organs -= src
+	owner.internal_organs_by_name -= name
 	owner = null
 	organ_holder = null
 	return ..()
@@ -66,6 +71,7 @@
 
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
+			H.internal_organs_by_name[name] = src
 			var/datum/limb/E = H.get_limb(parent_limb)
 			if(E.internal_organs == null)
 				E.internal_organs = list()

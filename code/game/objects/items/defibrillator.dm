@@ -264,7 +264,6 @@
 	user.visible_message(span_notice("[icon2html(src, viewers(user))] \The [src] beeps: Defibrillation successful."))
 	H.set_stat(UNCONSCIOUS)
 	H.emote("gasp")
-	H.chestburst = 0 //reset our chestburst state
 	H.regenerate_icons()
 	H.reload_fullscreens()
 	H.flash_act()

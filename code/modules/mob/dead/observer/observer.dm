@@ -238,7 +238,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
-		ghost.icon = H.stand_icon
+		ghost.icon = null
 		ghost.overlays = H.overlays_standing
 		ghost.underlays = H.underlays_standing
 	else
@@ -402,8 +402,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		if("Squad HUD")
 			ghost_squadhud = !ghost_squadhud
 			H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
-			ghost_squadhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-			H = GLOB.huds[DATA_HUD_SQUAD_REBEL]
 			ghost_squadhud ? H.add_hud_to(src) : H.remove_hud_from(src)
 			client.prefs.ghost_hud ^= GHOST_HUD_SQUAD
 			client.prefs.save_preferences()

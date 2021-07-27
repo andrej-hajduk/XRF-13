@@ -46,7 +46,7 @@
 	if(world.time < last_staminaloss_dmg + 3 SECONDS)
 		return
 	if(staminaloss > 0)
-		adjustStaminaLoss(-maxHealth * 0.2, TRUE, FALSE)
+		adjustStaminaLoss(-stamina_limit * 0.2, TRUE, FALSE)
 	else if(staminaloss > -max_stamina_buffer)
 		adjustStaminaLoss(-max_stamina_buffer * 0.08, TRUE, FALSE)
 

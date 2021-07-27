@@ -40,7 +40,7 @@
 	set hidden = TRUE
 
 	add_typing_indicator(TRUE)
-	var/message = input("", "Me \"text\"") as null|text
+	var/message = input("", "Me \"text\"") as null|message
 	remove_typing_indicator()
 
 	if(!message)

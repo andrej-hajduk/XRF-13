@@ -1,5 +1,5 @@
 import { useBackend, useLocalState } from '../../backend';
-import { Button, Section, TextArea, Box, Grid } from '../../components';
+import { Button, Section, TextArea, Box, Grid, Divider } from '../../components';
 
 export const BackgroundInformation = (props, context) => {
   const { act, data } = useBackend<BackgroundInformationData>(context);
@@ -10,6 +10,7 @@ export const BackgroundInformation = (props, context) => {
     gen_record,
     sec_record,
     exploit_record,
+    xeno_desc,
   } = data;
 
   const [characterDesc, setCharacterDesc] = useLocalState(
@@ -36,6 +37,11 @@ export const BackgroundInformation = (props, context) => {
     context,
     'exploitsDesc' + slot,
     exploit_record
+  );
+  const [xenoDesc, setXenoDesc] = useLocalState(
+    context,
+    'xenoDesc' + slot,
+    xeno_desc
   );
   return (
     <Section title="Background information">
@@ -168,6 +174,35 @@ export const BackgroundInformation = (props, context) => {
               maxLength={1024}
               value={exploitsDesc}
               onChange={(e, value) => setExploitsDesc(value)}
+            />
+          </Section>
+        </Grid.Column>
+      </Grid>
+      <Divider />
+      <Grid>
+        <Grid.Column>
+          <Section
+            title="Xenomorph Description"
+            buttons={
+              <Box>
+                <Button
+                  icon="save"
+                  disabled={xenoDesc === xeno_desc}
+                  onClick={() => act('xeno_desc', { xenoDesc })}>
+                  Save
+                </Button>
+                <Button
+                  icon="times"
+                  onClick={() => setXenoDesc(xeno_desc)}>
+                  Reset
+                </Button>
+              </Box>
+            }>
+            <TextArea
+              height="100px"
+              maxLength={1024}
+              value={xenoDesc}
+              onChange={(e, value) => setXenoDesc(value)}
             />
           </Section>
         </Grid.Column>

@@ -43,7 +43,14 @@
 
 #define STATUS_EFFECT_GUN_SKILL_SCATTER_DEBUFF /datum/status_effect/stacking/gun_skill/scatter/debuff // Decreases the scatter of the mob
 
+<<<<<<< HEAD
 #define STATUS_EFFECT_MUTED /datum/status_effect/mute //Mutes the affected mob
+=======
+
+#define STATUS_EFFECT_BREASTS_ENLARGEMENT /datum/status_effect/breast_enlarger //Applied slowdown due to the ominous bulk.
+
+#define STATUS_EFFECT_PENIS_ENLARGEMENT /datum/status_effect/penis_enlarger //More applied slowdown, just like the above.
+>>>>>>> master
 
 /////////////
 // NEUTRAL //

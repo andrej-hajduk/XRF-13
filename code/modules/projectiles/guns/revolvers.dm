@@ -36,7 +36,16 @@
 /obj/item/weapon/gun/revolver/Initialize()
 	. = ..()
 	replace_cylinder(current_mag.current_rounds)
+	RegisterSignal(src, COMSIG_REVOLVER_AMMO_HIT_MOB, .proc/has_stagger_barrel)
 
+<<<<<<< HEAD
+=======
+/obj/item/weapon/gun/revolver/proc/has_stagger_barrel()
+	SIGNAL_HANDLER
+	if(!attachable_allowed?.Find(/obj/item/attachable/standard_revolver_longbarrel) || attachments?.Find(ATTACHMENT_BARREL_MOD))
+		return TRUE // has barrel or is a revolver without the option
+
+>>>>>>> master
 /obj/item/weapon/gun/revolver/examine_ammo_count(mob/user)
 	if(!current_mag)
 		return
@@ -504,6 +513,10 @@
 	desc = "The Mateba is a powerful, fast-firing revolver that uses its own recoil to rotate the cylinders. This one appears to have had more love and care put into it. Uses .454 rounds."
 	icon_state = "mateba"
 	item_state = "mateba"
+
+/obj/item/weapon/gun/revolver/mateba/polymer
+	caliber = CALIBER_454
+	current_mag = /obj/item/ammo_magazine/internal/revolver/mateba/polymer
 
 //-------------------------------------------------------
 //MARSHALS REVOLVER

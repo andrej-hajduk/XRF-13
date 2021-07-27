@@ -362,6 +362,13 @@
 	message = "moans!"
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/carbon/human/moan/get_sound(mob/living/carbon/user)
+	if(user.gender == FEMALE)
+		return pick('sound/voice/sexymoan_female1.ogg','sound/voice/sexymoan_female2.ogg','sound/voice/sexymoan_female3.ogg','sound/voice/sexymoan_female4.ogg','sound/voice/sexymoan_female5.ogg','sound/voice/sexymoan_female6.ogg','sound/voice/sexymoan_female7.ogg',)
+	else
+		return pick('sound/voice/sexymoan_male1.ogg','sound/voice/sexymoan_male2.ogg','sound/voice/sexymoan_male3.ogg','sound/voice/sexymoan_male4.ogg','sound/voice/sexymoan_male5.ogg',)
+
+
 
 /datum/emote/living/carbon/human/laugh
 	key = "laugh"
@@ -445,7 +452,7 @@
 	message = "pouts."
 	emote_type = EMOTE_AUDIBLE
 
-
+/* scream moved to scream_emote
 /datum/emote/living/carbon/human/scream
 	key = "scream"
 	key_third_person = "screams"
@@ -468,7 +475,7 @@
 		return
 	var/image/scream = image('icons/mob/talk.dmi', user, icon_state = "scream")
 	user.add_emote_overlay(scream)
-
+*/
 
 /datum/emote/living/carbon/human/medic
 	key = "medic"

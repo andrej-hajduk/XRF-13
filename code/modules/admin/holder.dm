@@ -300,10 +300,15 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/datum/admins/proc/toggle_prayers,
 	/datum/admins/proc/mcdb,
 	/datum/admins/proc/check_fingerprints,
+	/datum/admins/proc/panic_bunker,
+	/client/proc/addbunkerbypass,
+	/client/proc/revokebunkerbypass,
 	/client/proc/private_message_panel,
 	/client/proc/private_message_context,
 	/client/proc/msay,
-	/client/proc/dsay
+	/client/proc/dsay,
+	/client/proc/marine_ooc,
+	/client/proc/xeno_ooc
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVadmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -344,12 +349,12 @@ GLOBAL_PROTECT(admin_verbs_asay)
 
 /world/proc/AVdebug()
 	return list(
+	/datum/admins/proc/reload_configuration, //SKYRAT EDIT - RELOAD CONFIG
 	/datum/admins/proc/proccall_advanced,
 	/datum/admins/proc/proccall_atom,
 	/datum/admins/proc/delete_all,
 	/datum/admins/proc/generate_powernets,
 	/datum/admins/proc/debug_mob_lists,
-	/datum/admins/proc/delete_atom,
 	/datum/admins/proc/restart_controller,
 	/datum/admins/proc/check_contents,
 	/datum/admins/proc/SDQL2_query,
@@ -358,9 +363,18 @@ GLOBAL_PROTECT(admin_verbs_asay)
 	/datum/admins/proc/reestablish_db_connection,
 	/datum/admins/proc/view_runtimes,
 	/datum/admins/proc/spatial_agent,
+<<<<<<< HEAD
 	/datum/admins/proc/set_xeno_stat_buffs,
 	/datum/admins/proc/check_bomb_impacts,
 	/client/proc/toggle_cdn
+=======
+	/client/proc/give_humans_genitals,
+#ifdef REFERENCE_TRACKING
+	/datum/admins/proc/view_refs,
+	/datum/admins/proc/view_del_failures,
+#endif
+	/datum/admins/proc/check_bomb_impacts
+>>>>>>> master
 	)
 GLOBAL_LIST_INIT(admin_verbs_debug, world.AVdebug())
 GLOBAL_PROTECT(admin_verbs_debug)
@@ -374,7 +388,8 @@ GLOBAL_PROTECT(admin_verbs_runtimes)
 
 /world/proc/AVvaredit()
 	return list(
-	/client/proc/debug_variables
+	/datum/admins/proc/delete_atom,
+	/client/proc/debug_variables,
 	)
 GLOBAL_LIST_INIT(admin_verbs_varedit, world.AVvaredit())
 GLOBAL_PROTECT(admin_verbs_varedit)
@@ -442,7 +457,6 @@ GLOBAL_PROTECT(admin_verbs_fun)
 	/datum/admins/proc/reload_admins,
 	/datum/admins/proc/change_ground_map,
 	/datum/admins/proc/change_ship_map,
-	/datum/admins/proc/panic_bunker,
 	/datum/admins/proc/mode_check,
 	/client/proc/toggle_cdn
 	)

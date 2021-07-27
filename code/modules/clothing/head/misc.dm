@@ -252,3 +252,10 @@
 	item_state = "tp_hood"
 	flags_inv_hide = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEALLHAIR
 	flags_armor_protection = HEAD|FACE|EYES
+
+/obj/item/clothing/head/maid
+	name = "maid headband"
+	desc = "Maid in China."
+	icon_state = "maid"
+	item_state = "maid"
+//	dynamic_hair_suffix = ""

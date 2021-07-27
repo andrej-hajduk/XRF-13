@@ -452,16 +452,13 @@
 /datum/atom_hud/squad
 	hud_icons = list(SQUAD_HUD_TERRAGOV, MACHINE_HEALTH_HUD, SENTRY_AMMO_HUD)
 
-/datum/atom_hud/squad_rebel
-	hud_icons = list(SQUAD_HUD_REBEL, MACHINE_HEALTH_HUD, SENTRY_AMMO_HUD)
-
 
 /mob/proc/hud_set_job(faction = FACTION_TERRAGOV)
 	return
 
 
 /mob/living/carbon/human/hud_set_job(faction = FACTION_TERRAGOV)
-	var/hud_type = faction == FACTION_TERRAGOV ? SQUAD_HUD_TERRAGOV : SQUAD_HUD_REBEL
+	var/hud_type = SQUAD_HUD_TERRAGOV
 	var/image/holder = hud_list[hud_type]
 	holder.icon_state = ""
 	holder.overlays.Cut()
@@ -557,5 +554,10 @@
 	if(!gun.current_mag)
 		holder.icon_state = "plasma0"
 		return
+<<<<<<< HEAD
 	var/amount = round(gun.current_mag.current_rounds * 100 / gun.current_mag.max_rounds, 10)
+=======
+
+	var/amount = round(rounds * 100 / rounds_max, 10)
+>>>>>>> master
 	holder.icon_state = "plasma[amount]"

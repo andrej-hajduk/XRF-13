@@ -693,6 +693,16 @@
 	spawn_number = 40
 	spawn_type = /obj/item/ammo_magazine/pistol/standard_pistol
 
+/obj/item/storage/box/visual/magazine/compact/standard_pistol/polymer/full
+	name = "TP-14 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of TP-14 PGR magazines."
+	closed_overlay = "mag_box_small_overlay_tp14_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/pistol/standard_pistol/polymer,
+	)
+	spawn_number = 40
+	spawn_type = /obj/item/ammo_magazine/pistol/standard_pistol/polymer
+
 /obj/item/storage/box/visual/magazine/compact/standard_heavypistol
 	name = "TP-23 magazine box"
 	desc = "A box specifically designed to hold a large amount of TP-23 magazines."
@@ -705,6 +715,16 @@
 	spawn_number = 40
 	spawn_type = /obj/item/ammo_magazine/pistol/standard_heavypistol
 
+/obj/item/storage/box/visual/magazine/compact/standard_heavypistol/polymer/full
+	name = "TP-23 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of TP-23 PGR magazines."
+	closed_overlay = "mag_box_small_overlay_tp23_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/pistol/standard_heavypistol/polymer,
+	)
+	spawn_number = 40
+	spawn_type = /obj/item/ammo_magazine/pistol/standard_heavypistol/polymer
+
 /obj/item/storage/box/visual/magazine/compact/standard_revolver
 	name = "TP-44 speedloader box"
 	desc = "A box specifically designed to hold a large amount of TP-44 speedloaders."
@@ -716,6 +736,16 @@
 /obj/item/storage/box/visual/magazine/compact/standard_revolver/full
 	spawn_number = 40
 	spawn_type = /obj/item/ammo_magazine/revolver/standard_revolver
+
+/obj/item/storage/box/visual/magazine/compact/standard_revolver/polymer/full
+	name = "TP-44 PGR speedloader box"
+	desc = "A box specifically designed to hold a large amount of TP-44 PGR speedloaders."
+	closed_overlay = "mag_box_small_overlay_tp44_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/revolver/standard_revolver/polymer,
+	)
+	spawn_number = 40
+	spawn_type = /obj/item/ammo_magazine/revolver/standard_revolver/polymer
 
 /obj/item/storage/box/visual/magazine/compact/standard_pocketpistol
 	name = "TP-17 magazine box"
@@ -767,6 +797,16 @@
 	spawn_number = 40
 	spawn_type = /obj/item/ammo_magazine/smg/standard_smg
 
+/obj/item/storage/box/visual/magazine/compact/standard_smg/polymer/full
+	name = "T-90 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of T-90 PGR magazines."
+	closed_overlay = "mag_box_small_overlay_t90_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/smg/standard_smg/polymer,
+	)
+	spawn_number = 40
+	spawn_type = /obj/item/ammo_magazine/smg/standard_smg/polymer
+
 /obj/item/storage/box/visual/magazine/compact/standard_machinepistol
 	name = "T-19 magazine box"
 	desc = "A box specifically designed to hold a large amount of T-19 magazines."
@@ -806,6 +846,17 @@
 	spawn_number = 30
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_assaultrifle
 
+/obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/polymer/full
+	name = "T-12 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of T-12 PGR magazines."
+	storage_slots = 30
+	closed_overlay = "mag_box_small_overlay_t12_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer,
+	)
+	spawn_number = 30
+	spawn_type = /obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer
+
 /obj/item/storage/box/visual/magazine/compact/standard_carbine
 	name = "T-18 magazine box"
 	desc = "A box specifically designed to hold a large amount of T-18 magazines."
@@ -819,6 +870,18 @@
 	spawn_number = 30
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_carbine
 
+/obj/item/storage/box/visual/magazine/compact/standard_carbine/polymer/full
+	name = "T-18 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of T-18 PGR magazines."
+	storage_slots = 30
+	closed_overlay = "mag_box_small_overlay_t18_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/rifle/standard_carbine,
+	)
+
+	spawn_number = 30
+	spawn_type = /obj/item/ammo_magazine/rifle/standard_carbine/polymer
+
 /obj/item/storage/box/visual/magazine/compact/tx11
 	name = "TX-11 magazine box"
 	desc = "A box specifically designed to hold a large amount of TX-11 magazines."
@@ -827,6 +890,17 @@
 	can_hold = list(
 		/obj/item/ammo_magazine/rifle/tx11,
 	)
+
+/obj/item/storage/box/visual/magazine/compact/tx11/polymer/full
+	name = "TX-11 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of TX-11 PGR magazines."
+	storage_slots = 30
+	closed_overlay = "mag_box_small_overlay_tx11_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/rifle/tx11/polymer,
+	)
+	spawn_number = 30
+	spawn_type = /obj/item/ammo_magazine/rifle/tx11/polymer
 
 /obj/item/storage/box/visual/magazine/compact/tx11/full
 	spawn_number = 30
@@ -899,6 +973,17 @@
 	spawn_number = 30
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_dmr
 
+/obj/item/storage/box/visual/magazine/compact/standard_dmr/polymer/full
+	name = "T-37 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of T-37 PGR magazines."
+	storage_slots = 30
+	closed_overlay = "mag_box_small_overlay_t37_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/rifle/standard_dmr/polymer,
+	)
+	spawn_number = 30
+	spawn_type = /obj/item/ammo_magazine/rifle/standard_dmr/polymer
+
 /obj/item/storage/box/visual/magazine/compact/standard_br
 	name = "T-64 magazine box"
 	desc = "A box specifically designed to hold a large amount of T-64 magazines."
@@ -965,6 +1050,17 @@
 /obj/item/storage/box/visual/magazine/compact/standard_gpmg/full
 	spawn_number = 30
 	spawn_type = /obj/item/ammo_magazine/standard_gpmg
+
+/obj/item/storage/box/visual/magazine/compact/standard_gpmg/polymer/full
+	name = "T-60 PGR magazine box"
+	desc = "A box specifically designed to hold a large amount of T-60 PGR box magazines."
+	storage_slots = 30
+	closed_overlay = "mag_box_small_overlay_t60_polymer"
+	can_hold = list(
+		/obj/item/ammo_magazine/standard_gpmg/polymer,
+	)
+	spawn_number = 30
+	spawn_type = /obj/item/ammo_magazine/standard_gpmg/polymer
 
 // --GRENADE BOXES--
 /obj/item/storage/box/visual/grenade

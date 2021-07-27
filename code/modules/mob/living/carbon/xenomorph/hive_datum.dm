@@ -5,7 +5,7 @@
 	var/mob/living/carbon/xenomorph/living_xeno_ruler
 	var/slashing_allowed = XENO_SLASHING_ALLOWED //This initial var allows the queen to turn on or off slashing. Slashing off means harm intent does much less damage.
 	var/xeno_queen_timer
-	var/xenos_per_queen = 8 //Minimum number of xenos to support a queen.
+	var/xenos_per_queen = 3 //Minimum number of xenos to support a queen.
 	var/hive_orders = "" //What orders should the hive have
 	var/color = null
 	var/prefix = ""
@@ -58,9 +58,11 @@
 
 /datum/hive_status/proc/post_add(mob/living/carbon/xenomorph/X)
 	X.color = color
+	X.grant_language(/datum/language/common, TRUE)
 
 /datum/hive_status/proc/post_removal(mob/living/carbon/xenomorph/X)
 	X.color = null
+	X.remove_language(/datum/language/common, TRUE)
 
 // for clean transfers between hives
 /mob/living/carbon/xenomorph/proc/transfer_to_hive(hivenumber)
@@ -485,7 +487,8 @@
 // *********** Xeno messaging
 // ***************************************
 /datum/hive_status/proc/can_xeno_message() // This is defined for per-hive overrides
-	return living_xeno_ruler
+	//return living_xeno_ruler
+	return TRUE
 
 /*
 
@@ -764,11 +767,11 @@ to_chat will check for valid clients itself already so no need to double check f
 // Make sure they can understand english
 /datum/hive_status/corrupted/post_add(mob/living/carbon/xenomorph/X)
 	. = ..()
-	X.grant_language(/datum/language/common)
+	//X.grant_language(/datum/language/common)
 
 /datum/hive_status/corrupted/post_removal(mob/living/carbon/xenomorph/X)
 	. = ..()
-	X.remove_language(/datum/language/common)
+	//X.remove_language(/datum/language/common)
 
 /datum/hive_status/corrupted/can_xeno_message()
 	return TRUE // can always talk in hivemind

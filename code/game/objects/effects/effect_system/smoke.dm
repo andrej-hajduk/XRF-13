@@ -305,6 +305,13 @@
 	color = "#C0FF94"
 	smoke_traits = SMOKE_XENO|SMOKE_XENO_TRANSVITOX|SMOKE_COUGH
 
+/obj/effect/particle_effect/smoke/xeno/crocin
+	alpha = 60
+	opacity = FALSE
+	smoke_can_spread_through = TRUE
+	color = "#FFADFF"
+	smoke_traits = SMOKE_XENO | SMOKE_XENO_CROCIN
+
 /////////////////////////////////////////////
 // Smoke spreads
 /////////////////////////////////////////////

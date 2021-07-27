@@ -275,3 +275,21 @@
 	name = "laughter"
 	results = list(/datum/reagent/consumable/laughter = 5)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/drink/banana = 1)
+
+/datum/chemical_reaction/phenol
+	name = "Phenol"
+	id = /datum/reagent/phenol
+	results = list(/datum/reagent/phenol = 3)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/chlorine = 1, /datum/reagent/oil = 1)
+
+/datum/chemical_reaction/acetone
+	name = "Acetone"
+	id = /datum/reagent/acetone
+	results = list(/datum/reagent/acetone = 3)
+	required_reagents = list(/datum/reagent/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/oxygen = 1)
+
+/datum/chemical_reaction/oil
+	name = "Oil"
+	id = /datum/reagent/oil
+	results = list(/datum/reagent/oil = 3)
+	required_reagents = list(/datum/reagent/fuel = 1, /datum/reagent/carbon = 1, /datum/reagent/hydrogen = 1)

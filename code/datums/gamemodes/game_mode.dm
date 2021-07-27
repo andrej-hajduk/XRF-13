@@ -165,7 +165,8 @@
 	//Collects persistence features
 	if(allow_persistence_save)
 		SSpersistence.CollectData()
-	end_of_round_deathmatch()
+	if(CONFIG_GET(flag/end_of_round_deathmatch))
+		end_of_round_deathmatch()
 	return TRUE
 
 

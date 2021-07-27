@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(department_radio_keys_rebel, list(
 		ic_blocked = TRUE
 
 	if(sanitize)
-		message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+		message = trim(sanitize(copytext_char(message, 1, MAX_MESSAGE_LEN)))
 
 	if(!message)
 		return

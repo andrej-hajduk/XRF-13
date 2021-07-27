@@ -15,14 +15,14 @@
 	speed = 0
 
 	// *** Plasma *** //
-	plasma_max = 900
-	plasma_gain = 40
+	plasma_max = 1000 //Bumped up
+	plasma_gain = 80 //Bumped up
 
 	// *** Health *** //
-	max_health = 500
+	max_health = 400 //Bumped down to T3 crusher levels, though rises up
 
 	// *** Evolution *** //
-	upgrade_threshold = 350
+	upgrade_threshold = 350 //Thematic
 
 	// *** Flags *** //
 	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
@@ -37,15 +37,20 @@
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
+		/datum/action/xeno_action/psychic_whisper,
+		/datum/action/xeno_action/psychic_influence,
 		/datum/action/xeno_action/activable/psydrain,
 		/datum/action/xeno_action/activable/headbite,
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/gravity_crush,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
 		/datum/action/xeno_action/toggle_pheromones,
+		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/rally_hive,
 	)
 
@@ -62,14 +67,14 @@
 	speed = -0.1
 
 	// *** Plasma *** //
-	plasma_max = 1000
-	plasma_gain = 50
+	plasma_max = 1200 //Bumped up
+	plasma_gain = 100 //Bump
 
 	// *** Health *** //
-	max_health = 600
+	max_health = 650
 
 	// *** Evolution *** //
-	upgrade_threshold = 500
+	upgrade_threshold = 850 //Thematic
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 55, "bomb" = XENO_BOMB_RESIST_3, "bio" = 50, "rad" = 50, "fire" = 100, "acid" = 50)
@@ -81,9 +86,11 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,
 	)
@@ -101,20 +108,20 @@
 	speed = -0.2
 
 	// *** Plasma *** //
-	plasma_max = 1100
-	plasma_gain = 60
+	plasma_max = 1600
+	plasma_gain = 120 //Faster
 
 	// *** Health *** //
-	max_health = 700
+	max_health = 750
 
 	// *** Evolution *** //
-	upgrade_threshold = 1000
+	upgrade_threshold = 1850 //Thematic
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = XENO_BOMB_RESIST_3, "bio" = 55, "rad" = 55, "fire" = 100, "acid" = 55)
 
 	// *** Pheromones *** //
-	aura_strength = 5
+	aura_strength = 5 //Weaker.
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
@@ -123,9 +130,11 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/psychic_summon,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,
@@ -143,14 +152,14 @@
 	speed = -0.3
 
 	// *** Plasma *** //
-	plasma_max = 1200
-	plasma_gain = 70
+	plasma_max = 2000
+	plasma_gain = 180
 
 	// *** Health *** //
-	max_health = 800
+	max_health = 900
 
 	// *** Evolution *** //
-	upgrade_threshold = 1000
+	upgrade_threshold = 800
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 65, "bullet" = 65, "laser" = 65, "energy" = 65, "bomb" = XENO_BOMB_RESIST_4, "bio" = 60, "rad" = 60, "fire" = 100, "acid" = 60)
@@ -159,7 +168,7 @@
 	spit_delay = 1.1 SECONDS
 
 	// *** Pheromones *** //
-	aura_strength = 6
+	aura_strength = 6.5 //Primordial king.
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
@@ -168,9 +177,11 @@
 		/datum/action/xeno_action/activable/devour,
 		/datum/action/xeno_action/activable/cocoon,
 		/datum/action/xeno_action/plant_weeds,
+		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
 		/datum/action/xeno_action/activable/gravity_crush,
+		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/psychic_summon,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/rally_hive,

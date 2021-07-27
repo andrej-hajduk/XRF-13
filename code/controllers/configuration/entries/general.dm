@@ -3,6 +3,8 @@ Basics, the most important.
 */
 /datum/config_entry/string/server_name	// The name used for the server almost universally.
 
+/datum/config_entry/string/server_desc // The description on the hub
+
 /datum/config_entry/string/serversqlname	// Short form of the previous used for the DB.
 
 /datum/config_entry/string/server // If you set this location, it sends you there instead of trying to reconnect.
@@ -73,6 +75,10 @@ Administrative related.
 
 /datum/config_entry/flag/log_looc
 
+/datum/config_entry/flag/log_xooc
+
+/datum/config_entry/flag/log_mooc
+
 /datum/config_entry/flag/log_access
 
 /datum/config_entry/flag/log_say
@@ -129,6 +135,8 @@ Administrative related.
 /datum/config_entry/flag/autooocmute
 
 /datum/config_entry/flag/looc_enabled
+
+/datum/config_entry/flag/end_of_round_deathmatch
 
 /datum/config_entry/number/lobby_countdown
 	config_entry_value = 180
@@ -214,6 +222,16 @@ Voting
 /datum/config_entry/number/maximum_clients_for_gamemode_vote
 	config_entry_value = 40
 	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/vote_autotransfer_initial
+	config_entry_value = 72000
+	integer = FALSE
+	min_val = 0
+
+/datum/config_entry/number/vote_autotransfer_interval
+	config_entry_value = 18000
+	integer = FALSE
 	min_val = 0
 
 /*
@@ -370,6 +388,10 @@ The default value assumes youtube-dl is in your system PATH
 
 /datum/config_entry/string/panic_bunker_message
 	config_entry_value = "Sorry but the server is currently not accepting connections from never before seen players."
+
+/datum/config_entry/number/max_bunker_days
+	config_entry_value = 7
+	min_val = 1
 
 /datum/config_entry/flag/check_randomizer
 

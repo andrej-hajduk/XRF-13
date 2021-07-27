@@ -14,6 +14,8 @@
 	var/health_threshold_dead = -100
 	/// Health at which a mob goes into crit
 	var/health_threshold_crit = 0
+		/// Stamina amount a mob has
+	var/stamina_limit = 200
 
 	/// %-reduction-based armor.
 	var/datum/armor/soft_armor
@@ -72,7 +74,7 @@
 	var/on_fire //The "Are we on fire?" var
 	var/fire_stacks = 0 //Tracks how many stacks of fire we have on, max is
 
-	var/chestburst = 0 // 0: normal, 1: bursting, 2: bursted.
+	var/larva_birthing = FALSE
 	var/headbitten = FALSE //false: normal, true: brain removed
 	var/metabolism_efficiency = 1 //more or less efficiency to metabolize helpful/harmful reagents and (TODO) regulate body temperature..
 

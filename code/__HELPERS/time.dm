@@ -59,6 +59,8 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 		wtime = world.time
 	return time2text(wtime - GLOB.timezoneOffset + (12 * 36000), format)
 
+/proc/daysSince(realtimev)
+	return round((world.realtime - realtimev) / (24 HOURS))
 
 //returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format
 /proc/SQLtime(timevar)

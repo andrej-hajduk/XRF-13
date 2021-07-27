@@ -45,6 +45,7 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 	"}
 	minimap_icon = "private"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/standard/rebel
 	title = REBEL_SQUAD_MARINE
 	faction = FACTION_TERRAGOV_REBEL
@@ -56,6 +57,8 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/standard/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
 	if(!ishuman(new_mob))
@@ -123,7 +126,7 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
 	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
 	skills_type = /datum/skills/combat_engineer
-	display_order = JOB_DISPLAY_ORDER_SUQAD_ENGINEER
+	display_order = JOB_DISPLAY_ORDER_SQUAD_ENGINEER
 	outfit = /datum/outfit/job/marine/engineer
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(/datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM, /datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR)
@@ -138,6 +141,7 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	"}
 	minimap_icon = "engi"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/engineer/rebel
 	title = REBEL_SQUAD_ENGINEER
 	faction = FACTION_TERRAGOV_REBEL
@@ -146,6 +150,8 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	minimal_access = list(ACCESS_MARINE_PREP_REBEL, ACCESS_MARINE_ENGPREP_REBEL, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP_REBEL, ACCESS_MARINE_REMOTEBUILD_REBEL, ACCESS_MARINE_ENGINEERING_REBEL)
 	jobworth = list(/datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/squad/smartgunner/rebel = SMARTIE_POINTS_MEDIUM, /datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/engineer/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"\nYou have the equipment and skill to build fortifications, reroute power lines, and bunker down.
@@ -159,8 +165,6 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	id = /obj/item/card/id/dogtag/engineer
 	back = /obj/item/storage/backpack/marine/satchel
 
-/datum/outfit/job/marine/engineer/rebel
-	jobtype = /datum/job/terragov/squad/engineer/rebel
 
 /datum/outfit/job/marine/engineer/equipped
 	name = "Squad Engineer (Equipped)"
@@ -228,6 +232,7 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	"}
 	minimap_icon = "medic"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/corpsman/rebel
 	title = REBEL_SQUAD_CORPSMAN
 	faction = FACTION_TERRAGOV_REBEL
@@ -236,6 +241,8 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	minimal_access = list(ACCESS_MARINE_PREP_REBEL, ACCESS_MARINE_MEDPREP_REBEL, ACCESS_MARINE_MEDBAY_REBEL, ACCESS_MARINE_DROPSHIP_REBEL)
 	jobworth = list(/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR, /datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/squad/smartgunner/rebel = SMARTIE_POINTS_MEDIUM)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/corpsman/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"\nYou must tend the wounds of your squad mates and make sure they are healthy and active.
@@ -248,8 +255,6 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/corpsman
 
-/datum/outfit/job/marine/corpsman/rebel
-	jobtype = /datum/job/terragov/squad/corpsman/rebel
 /datum/outfit/job/marine/corpsman/equipped
 	name = "Squad Corpsman (Equipped)"
 
@@ -328,6 +333,7 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	"}
 	minimap_icon = "smartgunner"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/smartgunner/rebel
 	title = REBEL_SQUAD_SMARTGUNNER
 	faction = FACTION_TERRAGOV_REBEL
@@ -335,6 +341,8 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	access = list(ACCESS_MARINE_PREP_REBEL, ACCESS_MARINE_SMARTPREP_REBEL)
 	minimal_access = list(ACCESS_MARINE_PREP_REBEL, ACCESS_MARINE_SMARTPREP_REBEL, ACCESS_MARINE_DROPSHIP_REBEL)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/smartgunner/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"\nYou are the smartgunner. Your job is to provide heavy weapons support."})
@@ -361,9 +369,6 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/satchel
-
-/datum/outfit/job/marine/smartgunner/rebel
-	jobtype = /datum/job/terragov/squad/smartgunner/rebel
 
 /datum/outfit/job/marine/smartgunner/equipped
 	name = "Squad Smartgunner (Equipped)"
@@ -461,6 +466,7 @@ You can serve a variety of roles, so choose carefully."})
 	"}
 	minimap_icon = "leader"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/leader/rebel
 	title = REBEL_SQUAD_LEADER
 	faction = FACTION_TERRAGOV_REBEL
@@ -472,6 +478,8 @@ You can serve a variety of roles, so choose carefully."})
 		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
 	)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/leader/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"\nYou are responsible for the men and women of your squad. Make sure they are on task, working together, and communicating.
@@ -484,9 +492,6 @@ You are also in charge of communicating with command and letting them know about
 
 	id = /obj/item/card/id/dogtag
 	back = /obj/item/storage/backpack/marine/satchel
-
-/datum/outfit/job/marine/leader/rebel
-	jobtype = /datum/job/terragov/squad/leader/rebel
 
 /datum/outfit/job/marine/leader/equipped
 	name = "Squad Leader (Equipped)"
@@ -561,6 +566,7 @@ You are also in charge of communicating with command and letting them know about
 	jobworth = list(/datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR)
 	minimap_icon = "private"
 
+<<<<<<< HEAD
 /datum/job/terragov/squad/vatgrown/rebel
 	faction = FACTION_TERRAGOV_REBEL
 	outfit = /datum/outfit/job/marine/vatgrown/rebel
@@ -568,6 +574,8 @@ You are also in charge of communicating with command and letting them know about
 	minimal_access = list(ACCESS_MARINE_PREP_REBEL, ACCESS_MARINE_DROPSHIP_REBEL)
 	jobworth = list(/datum/job/xenomorph = LARVA_POINTS_REGULAR, /datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR)
 
+=======
+>>>>>>> master
 /datum/job/terragov/squad/vatgrown/return_spawn_type(datum/preferences/prefs)
 	return /mob/living/carbon/human/species/vatgrown
 
@@ -575,6 +583,3 @@ You are also in charge of communicating with command and letting them know about
 	name = SQUAD_VATGROWN
 	jobtype = /datum/job/terragov/squad/vatgrown
 	id = /obj/item/card/id/dogtag
-
-/datum/outfit/job/marine/vatgrown/rebel
-	jobtype = /datum/job/terragov/squad/vatgrown/rebel

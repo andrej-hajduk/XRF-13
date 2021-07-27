@@ -17,9 +17,105 @@
 	return GLOB.always_state
 
 /datum/preferences/ui_data(mob/user)
+<<<<<<< HEAD
 	. = list()
 	.["tabIndex"] = tab_index
 	.["slot"] = default_slot
+=======
+	. = list(
+		"is_admin" = user.client?.holder ? TRUE : FALSE,
+		"slot" = default_slot,
+		"real_name" = real_name,
+		"random_name" = random_name,
+		"synthetic_name" = synthetic_name,
+		"synthetic_type" = synthetic_type,
+		"xeno_name" = xeno_name,
+		"ai_name" = ai_name,
+
+		"age" = age,
+		"gender" = gender,
+		"ethnicity" = ethnicity,
+		"species" = species || "Human", //Sometimes species is null on creation of random char
+		"body_type" = body_type,
+		"good_eyesight" = good_eyesight,
+		"h_style" = h_style,
+		"r_hair" = r_hair,
+		"g_hair" = g_hair,
+		"b_hair" = b_hair,
+		"grad_style" = grad_style,
+		"r_grad" = r_grad,
+		"g_grad" = g_grad,
+		"b_grad" = b_grad,
+		"f_style" = f_style,
+		"r_facial" = r_facial,
+		"g_facial" = g_facial,
+		"b_facial" = b_facial,
+		"r_eyes" = r_eyes,
+		"g_eyes" = g_eyes,
+		"b_eyes" = b_eyes,
+
+		"citizenship" = citizenship,
+		"religion" = religion,
+		"nanotrasen_relation" = nanotrasen_relation,
+
+		// Records
+		"flavor_text" = flavor_text,
+		"med_record" = med_record,
+		"gen_record" = gen_record,
+		"sec_record" = sec_record,
+		"exploit_record" = exploit_record,
+		"xeno_desc" = xeno_desc,
+
+		// Clothing
+		"undershirt" = undershirt,
+		"underwear" = underwear,
+		"backpack" = backpack,
+		"gear" = gear || list(),
+
+		// Job prefs
+		"job_preferences" = job_preferences,
+		"preferred_squad" = preferred_squad,
+		"alternate_option" = alternate_option,
+
+		"special_occupation" = be_special,
+
+		// Game prefs
+		"ui_style" = ui_style,
+		"ui_style_color" = ui_style_color,
+		"ui_style_alpha" = ui_style_alpha,
+		"windowflashing" = windowflashing,
+		"auto_fit_viewport" = auto_fit_viewport,
+		"focus_chat" = focus_chat,
+		"mute_xeno_health_alert_messages" = mute_xeno_health_alert_messages,
+		"tgui_fancy" = tgui_fancy,
+		"tgui_lock" = tgui_lock,
+		"clientfps" = clientfps,
+
+		"chat_on_map" = chat_on_map,
+		"max_chat_length" = max_chat_length,
+		"see_chat_non_mob" = see_chat_non_mob,
+		"see_rc_emotes" = see_rc_emotes,
+		"mute_others_combat_messages" = mute_others_combat_messages,
+		"mute_self_combat_messages" = mute_self_combat_messages,
+		"show_typing" = show_typing,
+
+		"tooltips" = tooltips,
+	)
+	.["key_bindings"] = list()
+	for(var/key in key_bindings)
+		for(var/kb_name in key_bindings[key])
+			.["key_bindings"][kb_name] += list(key)
+	
+	.["custom_emotes"] = list()
+	for(var/id in 1 to CUSTOM_EMOTE_SLOTS)
+		var/datum/custom_emote/emote = custom_emotes[id]
+		.["custom_emotes"]["Custom emote :[id]"] = list(
+			sentence = emote.message,
+			emote_type = (emote.spoken_emote ? "say" : "me"),
+			)
+
+	// Get save slot name
+>>>>>>> master
 	.["save_slot_names"] = list()
 	if(!path)
 		return
@@ -133,6 +229,7 @@
 					)
 
 /datum/preferences/ui_static_data(mob/user)
+<<<<<<< HEAD
 	. = list()
 	switch(tab_index)
 		if(CHARACTER_CUSTOMIZATION)
@@ -175,6 +272,62 @@
 				"Xenomorph when unrevivable" = BE_ALIEN_UNREVIVABLE,
 				"End of Round Deathmatch" = BE_DEATHMATCH,
 				"Prefer Squad over Role" = BE_SQUAD_STRICT
+=======
+	update_preview_icon()
+	. = list(
+		"all_species" = get_playable_species(),
+		"synth_types" = SYNTH_TYPES,
+		"bodytypes" = GLOB.body_types_list,
+		"ethnicities" = GLOB.ethnicities_list,
+		"citizenships" = CITIZENSHIP_CHOICES,
+		"religions" = RELIGION_CHOICES,
+		"corporate_relations" = CORP_RELATIONS,
+		"survivor" = SURVIVOR_TYPE,
+		"squads" = SELECTABLE_SQUADS,
+		"clothing" = list(
+			"underwear" = list(
+				"male" = GLOB.underwear_m,
+				"female" = GLOB.underwear_f,
+			),
+			"undershirt" = GLOB.undershirt_t,
+			"backpack" = GLOB.backpacklist,
+		),
+		"hairstyles" = GLOB.hair_styles_list,
+		"facialhair" = GLOB.facial_hair_styles_list,
+		"hairgradient" = GLOB.hair_gradients_list,
+		"genders" = list(
+			"NEUTER",
+			"MALE",
+			"FEMALE",
+			"PLURAL",
+		),
+		"validation" = list(
+			"age" = list("min" = AGE_MIN, "max" = AGE_MAX),
+		),
+		"overflow_job" = SSjob?.overflow_role?.title,
+		"ui_styles" = UI_STYLES,
+	)
+	.["gearsets"] = list()
+	for(var/g in GLOB.gear_datums)
+		var/datum/gear/gearset = GLOB.gear_datums[g]
+		.["gearsets"][gearset.display_name] = list(
+			"name" = gearset.display_name,
+			"cost" = gearset.cost,
+			"slot" = gearset.slot,
+		)
+
+	.["jobs"] = list()
+	for(var/datum/job/job AS in SSjob.joinable_occupations)
+		var/rank = job.title
+		.["jobs"][rank] = list(
+			"color" = job.selection_color,
+			"description" = job.html_description,
+			"banned" = is_banned_from(user.ckey, rank),
+			"playtime_req" = job.required_playtime_remaining(user.client),
+			"account_age_req" = !job.player_old_enough(user.client),
+			"flags" = list(
+				"bold" = (job.job_flags & JOB_FLAG_BOLD_NAME_ON_SELECTION) ? TRUE : FALSE
+>>>>>>> master
 			)
 		if(KEYBIND_SETTINGS)
 			.["all_keybindings"] = list()
@@ -421,10 +574,6 @@
 		if("grad_style")
 			var/list/valid_grads = list()
 			for(var/grad in GLOB.hair_gradients_list)
-				var/datum/sprite_accessory/S = GLOB.hair_gradients_list[grad]
-				if(!(species in S.species_allowed))
-					continue
-
 				valid_grads[grad] = GLOB.hair_gradients_list[grad]
 
 			var/choice = tgui_input_list(ui.user, "What hair grad style do you want?", "Hair grad style choice", valid_grads)
@@ -512,6 +661,12 @@
 			if(!new_record)
 				return
 			flavor_text = new_record
+
+		if("xeno_desc")
+			var/new_record = trim(html_encode(params["xenoDesc"]), MAX_MESSAGE_LEN)
+			if(!new_record)
+				return
+			xeno_desc = new_record
 
 		if("windowflashing")
 			windowflashing = !windowflashing

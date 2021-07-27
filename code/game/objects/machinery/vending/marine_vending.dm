@@ -53,12 +53,10 @@
 		/obj/item/ammo_magazine/rifle/tx15_flechette = 25,
 		/obj/item/weapon/gun/launcher/m92/standardmarine = 10,
 		/obj/item/weapon/gun/launcher/m81 = 15,
-		/obj/item/explosive/grenade/frag = 30,
 		/obj/item/attachable/bayonetknife = 20,
 		/obj/item/weapon/throwing_knife = 5,
 		/obj/item/storage/box/m94 = 5,
 		/obj/item/attachable/flashlight = 10,
-		/obj/item/explosive/grenade/mirage = 5,
 		/obj/item/weapon/powerfist = 3,
 	)
 	prices = list()
@@ -85,10 +83,13 @@
 	products = list(
 		"Rifles" = list(
 			/obj/item/weapon/gun/rifle/standard_assaultrifle = -1,
+			/obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_assaultrifle = -1,
 			/obj/item/weapon/gun/rifle/standard_carbine = -1,
+			/obj/item/ammo_magazine/rifle/standard_carbine/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_carbine = -1,
 			/obj/item/weapon/gun/rifle/tx11 = -1,
+			/obj/item/ammo_magazine/rifle/tx11/polymer = -1,
 			/obj/item/ammo_magazine/rifle/tx11 = -1,
 		),
 		"Energy Weapons" = list(
@@ -101,6 +102,7 @@
 		),
 		"SMGs" = list(
 			/obj/item/weapon/gun/smg/standard_smg = -1,
+			/obj/item/ammo_magazine/smg/standard_smg/polymer = -1,
 			/obj/item/ammo_magazine/smg/standard_smg = -1,
 			/obj/item/weapon/gun/smg/standard_machinepistol = -1,
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
@@ -110,8 +112,10 @@
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
+			/obj/item/ammo_magazine/rifle/standard_dmr/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_dmr = -1,
 			/obj/item/weapon/gun/rifle/standard_br = -1,
+			/obj/item/ammo_magazine/rifle/standard_br/polymer = -1,
 			/obj/item/ammo_magazine/rifle/standard_br = -1,
 			/obj/item/weapon/gun/rifle/chambered = -1,
 			/obj/item/ammo_magazine/rifle/chamberedrifle = -1,
@@ -124,7 +128,9 @@
 			/obj/item/weapon/gun/shotgun/pump/t35 = -1,
 			/obj/item/weapon/gun/shotgun/combat/standardmarine = -1,
 			/obj/item/weapon/gun/shotgun/pump/cmb = -1,
+			/obj/item/ammo_magazine/shotgun/beanbag/large = -1,
 			/obj/item/storage/belt/gun/ts34/full = -1,
+			/obj/item/ammo_magazine/shotgun/beanbag = -1,
 			/obj/item/ammo_magazine/shotgun = -1,
 			/obj/item/ammo_magazine/shotgun/buckshot = -1,
 			/obj/item/ammo_magazine/shotgun/flechette = -1,
@@ -136,14 +142,18 @@
 			/obj/item/weapon/gun/rifle/standard_lmg = -1,
 			/obj/item/ammo_magazine/standard_lmg = -1,
 			/obj/item/weapon/gun/rifle/standard_gpmg = -1,
+			/obj/item/ammo_magazine/standard_gpmg/polymer = -1,
 			/obj/item/ammo_magazine/standard_gpmg = -1,
 		),
 		"Sidearm" = list(
 			/obj/item/weapon/gun/pistol/standard_pistol = -1,
+			/obj/item/ammo_magazine/pistol/standard_pistol/polymer = -1,
 			/obj/item/ammo_magazine/pistol/standard_pistol = -1,
 			/obj/item/weapon/gun/pistol/standard_heavypistol = -1,
+			/obj/item/ammo_magazine/pistol/standard_heavypistol/polymer = -1,
 			/obj/item/ammo_magazine/pistol/standard_heavypistol = -1,
 			/obj/item/weapon/gun/revolver/standard_revolver = -1,
+			/obj/item/ammo_magazine/revolver/standard_revolver/polymer = -1,
 			/obj/item/ammo_magazine/revolver/standard_revolver = -1,
 			/obj/item/weapon/gun/pistol/standard_pocketpistol = -1,
 			/obj/item/ammo_magazine/pistol/standard_pocketpistol = -1,
@@ -171,6 +181,7 @@
 			/obj/item/weapon/twohanded/spear/tactical = -1,
 			/obj/item/ammo_magazine/standard_smartmachinegun = 4,
 		),
+<<<<<<< HEAD
 		"Grenades" = list(
 			/obj/item/explosive/grenade/frag = 600,
 			/obj/item/explosive/grenade/frag/m15 = 30,
@@ -182,6 +193,8 @@
 			/obj/item/storage/box/m94 = 200,
 			/obj/item/storage/box/m94/cas = 30,
 		),
+=======
+>>>>>>> master
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
 			/obj/item/attachable/compensator = -1,
@@ -204,10 +217,10 @@
 			/obj/item/attachable/stock/t35stock = -1,
 			/obj/item/attachable/attached_gun/flamer = -1,
 			/obj/item/attachable/attached_gun/shotgun = -1,
-			/obj/item/attachable/attached_gun/grenade = -1,
 			/obj/item/attachable/standard_revolver_longbarrel = -1
 		),
 		"Boxes" = list(
+<<<<<<< HEAD
 		/obj/item/ammo_magazine/packet/p9mm = 100,
 		/obj/item/ammo_magazine/packet/acp = 100,
 		/obj/item/ammo_magazine/packet/magnum = 100,
@@ -215,8 +228,20 @@
 		/obj/item/ammo_magazine/packet/p10x26mm = 100,
 		/obj/item/ammo_magazine/packet/p10x27mm = 100,
 		/obj/item/ammo_magazine/packet/p492x34mm = 100,
+=======
+		/obj/item/ammo_magazine/box9mm = 100,
+		/obj/item/ammo_magazine/acp = 100,
+		/obj/item/ammo_magazine/acp/polymer = 100,
+		/obj/item/ammo_magazine/magnum = 100,
+		/obj/item/ammo_magazine/magnum/polymer = 100,
+		/obj/item/ammo_magazine/box10x24mm = 100,
+		/obj/item/ammo_magazine/box10x24mm/polymer = 100,
+		/obj/item/ammo_magazine/box10x26mm = 100,
+		/obj/item/ammo_magazine/box10x26mm/polymer = 100,
+		/obj/item/ammo_magazine/box10x27mm = 100,
+		/obj/item/ammo_magazine/box10x27mm/polymer = 100,
+>>>>>>> master
 		/obj/item/storage/box/visual/magazine = 30,
-		/obj/item/storage/box/visual/grenade = 10,
 		),
 		"Utility" = list(
 		/obj/item/flashlight/combat = -1,
@@ -282,16 +307,6 @@
 			/obj/item/weapon/throwing_knife = -1,
 			/obj/item/ammo_magazine/standard_smartmachinegun = 4,
 		),
-		"Grenades" = list(
-			/obj/item/explosive/grenade/frag = 600,
-			/obj/item/explosive/grenade/frag/m15 = 50,
-			/obj/item/explosive/grenade/incendiary = 50,
-			/obj/item/explosive/grenade/cloakbomb = 50,
-			/obj/item/explosive/grenade/drainbomb = 10,
-			/obj/item/explosive/grenade/mirage = 100,
-			/obj/item/storage/box/m94 = 200,
-			/obj/item/storage/box/m94/cas = 30,
-		),
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
 			/obj/item/attachable/compensator = -1,
@@ -311,7 +326,6 @@
 			/obj/item/attachable/stock/t35stock = -1,
 			/obj/item/attachable/attached_gun/flamer = -1,
 			/obj/item/attachable/attached_gun/shotgun = -1,
-			/obj/item/attachable/attached_gun/grenade = -1,
 		),
 		"Boxes" = list(
 		/obj/item/ammo_magazine/packet/p9mm = 100,
@@ -322,7 +336,6 @@
 		/obj/item/ammo_magazine/packet/p10x27mm = 100,
 		/obj/item/ammo_magazine/packet/p492x34mm = 100,
 		/obj/item/storage/box/visual/magazine = 30,
-		/obj/item/storage/box/visual/grenade = 10,
 		),
 	)
 
@@ -347,18 +360,24 @@
 			/obj/item/ammo_magazine/shotgun/mbx900 = 2,
 			/obj/item/bodybag/tarp = 2,
 			/obj/item/explosive/plastique = 2,
+<<<<<<< HEAD
 			/obj/item/minerupgrade/automatic = 3,
 			/obj/item/clothing/suit/storage/marine/harness/boomvest = 20,
+=======
+>>>>>>> master
 			/obj/item/radio/headset/mainship/marine/alpha = -1,
 			/obj/item/radio/headset/mainship/marine/bravo = -1,
 			/obj/item/radio/headset/mainship/marine/charlie = -1,
 			/obj/item/radio/headset/mainship/marine/delta = -1,
 		),
 		"Grenade Boxes" = list(
+<<<<<<< HEAD
 			/obj/item/storage/box/visual/grenade/frag = 2,
 			/obj/item/storage/box/visual/grenade/impact = 2,
 			/obj/item/storage/box/visual/grenade/incendiary = 2,
 			/obj/item/storage/box/visual/grenade/M15 = 2,
+=======
+>>>>>>> master
 			/obj/item/storage/box/visual/grenade/drain = 1,
 			/obj/item/storage/box/visual/grenade/cloak = 1,
 		),
@@ -368,24 +387,33 @@
 			/obj/item/shotgunbox/buckshot = 1,
 			/obj/item/shotgunbox/flechette = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_pistol/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_pistol/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_heavypistol/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_heavypistol/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_revolver/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_revolver/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_pocketpistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/vp70/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/plasma_pistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_smg/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_smg/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_machinepistol/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_carbine/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_carbine/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx11/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/tx11/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/lasrifle/marine/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx15/flechette/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/tx15/slug/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_dmr/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_dmr/polymer/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_br/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/chamberedrifle/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_lmg/full = 1,
 			/obj/item/storage/box/visual/magazine/compact/standard_gpmg/full = 1,
+			/obj/item/storage/box/visual/magazine/compact/standard_gpmg/polymer/full = 1,
 		)
 	)
 
@@ -556,6 +584,7 @@
 					/obj/item/reagent_containers/food/snacks/mre_pack/xmas3 = 25)*/
 	contraband = list(
 		/obj/item/reagent_containers/food/drinks/flask/marine = 10,
+		/obj/item/reagent_containers/food/drinks/cans/cola_milk = -1, //yes
 					/obj/item/reagent_containers/food/snacks/mre_pack/meal5 = 15)
 	vend_delay = 15
 	//product_slogans = "Standard Issue Marine food!;It's good for you, and not the worst thing in the world.;Just fucking eat it.;"
@@ -618,9 +647,6 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/synaptizine_expired = 3,
 	)
 
-/obj/machinery/vending/MarineMed/rebel
-	req_one_access = ALL_MARINE_REBEL_ACCESS
-
 /obj/machinery/vending/MarineMed/Blood
 	name = "\improper MM Blood Dispenser"
 	desc = "Marine Med brand Blood Pack dispensery."
@@ -638,9 +664,6 @@
 		/obj/item/reagent_containers/blood/empty = 10,
 	)
 	contraband = list()
-
-/obj/machinery/vending/MarineMed/Blood/rebel
-	req_access = list(ACCESS_MARINE_MEDBAY_REBEL, ACCESS_MARINE_CHEMISTRY_REBEL)
 
 /obj/machinery/vending/MarineMed/Blood/build_inventory(list/productlist, category)
 	. = ..()
@@ -686,8 +709,64 @@
 	)
 	contraband = list(/obj/item/reagent_containers/blood/OMinus = 1)
 
+<<<<<<< HEAD
 /obj/machinery/vending/marine_medic/rebel
 	req_access = list(ACCESS_MARINE_MEDPREP_REBEL)
+=======
+/obj/machinery/vending/marine_special
+	name = "\improper TerraGovTech Specialist Vendor"
+	desc = "A marine specialist equipment vendor"
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_SPECPREP)
+	icon_state = "specialist"
+	icon_deny = "specialist-deny"
+	wrenchable = FALSE
+	tokensupport = TOKEN_SPEC
+
+	products = list(
+		/obj/item/coin/marine/specialist = 1,
+		/obj/item/clothing/tie/storage/webbing = 1,
+		/obj/item/explosive/plastique = 2,
+		/obj/item/storage/pouch/magazine/large = 1,
+		/obj/item/storage/pouch/general/medium = 1,
+		/obj/item/clothing/mask/gas = 1,
+	)
+	contraband = list()
+	premium = list(
+		/obj/item/storage/box/spec/demolitionist = 1,
+		/obj/item/storage/box/spec/heavy_grenadier = 1,
+		/obj/item/storage/box/m42c_system = 1,
+		/obj/item/storage/box/m42c_system_Jungle = 1,
+		/obj/item/storage/box/spec/pyro = 1,
+		/obj/item/storage/box/spec/tracker = 1,
+	)
+	prices = list()
+
+
+/obj/machinery/vending/shared_vending/marine_special
+	name = "\improper TerraGovTech Specialist Vendor"
+	desc = "A marine specialist equipment vendor"
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_SPECPREP)
+	icon_state = "specialist"
+	icon_deny = "specialist-deny"
+	wrenchable = FALSE
+	tokensupport = TOKEN_SPEC
+	isshared = TRUE
+
+	products = list(
+		/obj/item/storage/box/spec/demolitionist = 1,
+		/obj/item/storage/box/spec/heavy_grenadier = 1,
+		/obj/item/storage/box/spec/sniper = 1,
+		/obj/item/storage/box/spec/scout = 1,
+		/obj/item/storage/box/spec/pyro = 1,
+		/obj/item/storage/box/spec/tracker = 1,)
+	contraband = list()
+	premium = list()
+
+	prices = list()
+
+>>>>>>> master
 
 /obj/machinery/vending/shared_vending/marine_engi
 	name = "\improper TerraGovTech Engineer System Vendor"
@@ -878,7 +957,6 @@
 			/obj/item/storage/belt/marine = -1,
 			/obj/item/storage/belt/shotgun = -1,
 			/obj/item/storage/belt/shotgun/martini = -1,
-			/obj/item/storage/belt/grenade = -1,
 			/obj/item/storage/belt/knifepouch = -1,
 			/obj/item/belt_harness/marine = -1,
 			/obj/item/storage/belt/sparepouch = -1,
@@ -893,7 +971,6 @@
 			/obj/item/storage/pouch/magazine/pistol/large = -1,
 			/obj/item/storage/pouch/shotgun = -1,
 			/obj/item/storage/pouch/flare/full = -1,
-			/obj/item/storage/pouch/grenade = -1,
 			/obj/item/storage/pouch/explosive = -1,
 			/obj/item/storage/pouch/firstaid = -1,
 			/obj/item/storage/pouch/syringe = -1,

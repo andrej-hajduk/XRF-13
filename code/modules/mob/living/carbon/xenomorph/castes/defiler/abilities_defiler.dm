@@ -101,6 +101,7 @@
 	var/mob/living/carbon/xenomorph/Defiler/X = owner
 	set waitfor = FALSE
 	var/smoke_range = 2
+<<<<<<< HEAD
 	var/datum/effect_system/smoke_spread/xeno/gas
 
 	switch(X.selected_reagent)
@@ -113,6 +114,20 @@
 			gas = new /datum/effect_system/smoke_spread/xeno/transvitox(X)
 			smoke_range = 4
 
+=======
+	var/datum/effect_system/smoke_spread/xeno/neuro/medium/N = new(X)
+	N.strength = 1
+	if(X.selected_reagent == /datum/reagent/toxin/xeno_hemodile)
+		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/hemodile
+		smoke_range = 3
+	else if(X.selected_reagent == /datum/reagent/drug/aphrodisiac)
+		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/crocin
+		smoke_range = 3
+	else if(X.selected_reagent == /datum/reagent/toxin/xeno_transvitox)
+		N.smoke_type = /obj/effect/particle_effect/smoke/xeno/transvitox
+		N.strength = 0.75
+		smoke_range = 4
+>>>>>>> master
 	while(count)
 		if(X.stagger) //If we got staggered, return
 			to_chat(X, span_xenowarning("We try to emit toxins but are staggered!"))
