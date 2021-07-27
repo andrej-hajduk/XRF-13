@@ -25,11 +25,11 @@ type CharacterCustomizationData = {
 type BackgroundInformationData = {
   slot: number,
   flavor_text: string,
+  xeno_desc: string,
   med_record: string,
   gen_record: string,
   sec_record: string,
   exploit_record: string,
-<<<<<<< HEAD
 }
 
 type GameSettingData = {
@@ -43,9 +43,6 @@ type GearCustomizationData = {
   gearsets: PreferencesGearSets,
   gear: string[],
   clothing: PreferencesClothingTypeList,
-=======
-  xeno_desc: string,
->>>>>>> master
   underwear: number,
   undershirt: number,
   backpack: number,

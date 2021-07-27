@@ -31,13 +31,8 @@
 	set name = "rules"
 	set hidden = TRUE
 
-<<<<<<< HEAD
 	if(!CONFIG_GET(string/rulesurl))
 		to_chat(src, span_warning("The rules URL is not set in the server configuration."))
-=======
-	if(!config.rules)
-		to_chat(src, "<span class='warning'>The rules have not been set in the server configuration.</span>")
->>>>>>> master
 		return
 
 	var/output = "<div align='center'>"
