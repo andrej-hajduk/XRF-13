@@ -38,14 +38,6 @@
 	replace_cylinder(current_mag.current_rounds)
 	RegisterSignal(src, COMSIG_REVOLVER_AMMO_HIT_MOB, .proc/has_stagger_barrel)
 
-<<<<<<< HEAD
-=======
-/obj/item/weapon/gun/revolver/proc/has_stagger_barrel()
-	SIGNAL_HANDLER
-	if(!attachable_allowed?.Find(/obj/item/attachable/standard_revolver_longbarrel) || attachments?.Find(ATTACHMENT_BARREL_MOD))
-		return TRUE // has barrel or is a revolver without the option
-
->>>>>>> master
 /obj/item/weapon/gun/revolver/examine_ammo_count(mob/user)
 	if(!current_mag)
 		return

@@ -95,10 +95,6 @@
 
 #define FREQ_ELECTROPACK 1449
 #define FREQ_SIGNALER 1457  // the default for new signalers
-<<<<<<< HEAD
-=======
-#define FREQ_COMMON 1461
->>>>>>> master
 
 #define FREQ_CIV_GENERAL 1469
 

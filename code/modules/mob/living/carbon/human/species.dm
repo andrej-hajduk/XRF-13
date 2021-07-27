@@ -997,16 +997,8 @@
 
 	namepool = /datum/namepool/moth
 
-<<<<<<< HEAD
-/datum/species/moth/handle_fire(mob/living/carbon/human/H)
-	if(H.moth_wings != "Burnt Off" && H.bodytemperature >= 400 && H.fire_stacks > 0)
-		to_chat(H, span_danger("Your precious wings burn to a crisp!"))
-		H.moth_wings = "Burnt Off"
-		H.update_body()
-=======
 	joinable_roundstart = TRUE
 	gets_random_bodymarkings = TRUE
->>>>>>> master
 
 	default_mutant_bodyparts = list("wings" = ACC_RANDOM, "neck_fluff" = ACC_RANDOM, "moth_antennae" = ACC_RANDOM)
 

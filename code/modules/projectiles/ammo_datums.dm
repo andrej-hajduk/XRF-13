@@ -300,17 +300,6 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	shrapnel_chance = 25
 	sundering = 2.15
 
-<<<<<<< HEAD
-/datum/ammo/bullet/pistol/superheavy
-	name = "high impact pistol bullet"
-	hud_state = "pistol_hollow"
-	damage = 45
-	penetration = 15
-	sundering = 3.5
-
-/datum/ammo/bullet/pistol/superheavy/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, stagger = 1, slowdown = 1, shake = 0)
-=======
 /datum/ammo/bullet/pistol/heavy/polymer
 	name = "heavy pistol polymer gel round"
 	icon_state = "bullet_pgr"
@@ -324,7 +313,16 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 
 /datum/ammo/bullet/pistol/polymer/heavy/on_hit_mob(mob/M, obj/projectile/P)
 	staggerstun(M, P, slowdown = 0.4)
->>>>>>> master
+
+/datum/ammo/bullet/pistol/superheavy
+	name = "high impact pistol bullet"
+	hud_state = "pistol_hollow"
+	damage = 45
+	penetration = 15
+	sundering = 3.5
+
+/datum/ammo/bullet/pistol/superheavy/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, stagger = 1, slowdown = 1, shake = 0)
 
 /datum/ammo/bullet/pistol/incendiary
 	name = "incendiary pistol bullet"
@@ -373,17 +371,11 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	hud_state_empty = "revolver_empty"
 	handful_amount = 7
 	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
-<<<<<<< HEAD
 	damage = 45
-=======
-	handful_amount = 7
-	damage = 40
->>>>>>> master
 	penetration = 10
 	sundering = 3
 
 /datum/ammo/bullet/revolver/on_hit_mob(mob/M,obj/projectile/P)
-<<<<<<< HEAD
 	staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1)
 
 datum/ammo/bullet/revolver/tp44
@@ -395,11 +387,6 @@ datum/ammo/bullet/revolver/tp44
 		staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1, shake = 0)
 	else
 		staggerstun(M, P, slowdown = 0.5, shake = 0)
-=======
-	if(SEND_SIGNAL(P.shot_from, COMSIG_REVOLVER_AMMO_HIT_MOB))
-		staggerstun(M, P, stagger = 1, slowdown = 0.5, knockback = 1)
-	else
-		staggerstun(M, P, slowdown = 0.5)
 
 /datum/ammo/bullet/revolver/polymer
 	name = "revolver polymer gel round"
@@ -412,10 +399,6 @@ datum/ammo/bullet/revolver/tp44
 	shrapnel_chance = 0
 	sundering = 0
 	bullet_color = COLOR_DISABLER_BLUE
-
-/datum/ammo/bullet/revolver/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, stagger = 1, slowdown = 1)
->>>>>>> master
 
 /datum/ammo/bullet/revolver/small
 	name = "small revolver bullet"
@@ -454,8 +437,6 @@ datum/ammo/bullet/revolver/tp44
 
 /datum/ammo/bullet/revolver/highimpact/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
-<<<<<<< HEAD
-=======
 
 /datum/ammo/bullet/revolver/highimpact/polymer
 	name = "high-impact polymer gel round"
@@ -470,7 +451,6 @@ datum/ammo/bullet/revolver/tp44
 
 /datum/ammo/bullet/revolver/highimpact/polymer/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, weaken = 1, stagger = 1, slowdown = 1, knockback = 1, shake = 0.5)
->>>>>>> master
 
 
 /datum/ammo/bullet/revolver/ricochet

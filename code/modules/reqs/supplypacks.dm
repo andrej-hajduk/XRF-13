@@ -471,17 +471,15 @@ AMMO
 	cost = 3
 	available_against_xeno_only = TRUE
 
-<<<<<<< HEAD
 /datum/supply_packs/ammo/mateba_packet
 	name = "Mateba packet"
 	contains = list(/obj/item/ammo_magazine/packet/mateba)
 	cost = 12
-=======
+
 /datum/supply_packs/ammo/mateba/polymer
 	name = "Mateba PGR Speedloader"
 	contains = list(/obj/item/ammo_magazine/revolver/mateba/polymer)
 	cost = 3
->>>>>>> master
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/ammo/incendiaryslugs

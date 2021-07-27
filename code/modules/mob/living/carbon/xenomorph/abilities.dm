@@ -51,13 +51,6 @@
 		if(!silent)
 			to_chat(X, span_warning("This creature has already been headbitten."))
 		return FALSE
-<<<<<<< HEAD
-	if(victim.chestburst)
-		if(!silent)
-			to_chat(X, span_warning("This creature has already served its purpose."))
-		return FALSE
-=======
->>>>>>> master
 	if(X.issamexenohive(victim)) //checks if target and victim are in the same hive
 		if(!silent)
 			to_chat(X, span_warning("We can't bring ourselves to harm a fellow sister to this magnitude."))
@@ -958,12 +951,8 @@
 		return
 
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic whisper")
-<<<<<<< HEAD
 	to_chat(L, span_alien("You hear a strange, alien voice in your head. <i>\"[msg]\"</i>"))
 	to_chat(X, span_xenonotice("We said: \"[msg]\" to [L]"))
-=======
-	to_chat(L, "<span class='alien'>You hear a strange, alien voice in your head. <i>\"[msg]\"</i></span>")
-	to_chat(X, "<span class='xenonotice'>We said: \"[msg]\" to [L]</span>")
 	for(var/_M in GLOB.observer_list) // it's the xeno's main method of communication, so it should be visible
 		var/mob/M = _M
 		if(!M.client)
@@ -975,9 +964,9 @@
 			continue
 
 		if(check_other_rights(M.client, R_ADMIN, FALSE))
-			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i></span>")
+			to_chat(M, span_alien("Psychic Whisper: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i>"))
 		else
-			to_chat(M, "<span class='alien'>Psychic Whisper: <b>[X] > [L]:</b> <i>\"[msg]\"</i></span>")
+			to_chat(M, span_alien("Psychic Whisper: <b>[X] > [L]:</b> <i>\"[msg]\"</i>"))
 
 
 // ***************************************
@@ -1035,7 +1024,6 @@
 			to_chat(M, "<span class='alien'>Psychic Influence: <b>[ADMIN_LOOKUP(X)] > [ADMIN_LOOKUP(L)]:</b> <i>\"[msg]\"</i></span>")
 		else
 			to_chat(M, "<span class='alien'>Psychic Influence: <b>[X] > [L]:</b> <i>\"[msg]\"</i></span>")
->>>>>>> master
 
 
 // ***************************************
@@ -1255,12 +1243,8 @@
 	SSpoints.xeno_points_by_hive[X.hivenumber] -= psych_cost
 	succeed_activate()
 
-<<<<<<< HEAD
-	to_chat(owner, span_xenowarning("We build a new acid turret, spending 100 psychic points in the process"))
-=======
 /datum/action/xeno_action/activable/build_turret/proc/building_turret(atom/A, mob/living/carbon/xenomorph/X)
-	to_chat(owner, "<span class='xenowarning'>We build a new acid turret, spending [plasma_cost] psychic points in the process</span>")
->>>>>>> master
+	to_chat(owner, span_xenowarning("We build a new acid turret, spending [plasma_cost] psychic points in the process"))
 	new /obj/structure/xeno/resin/xeno_turret(get_turf(A), X.hivenumber)
 	log_game("[owner] built a turret in [AREACOORD(A)], spending [psych_cost] psy points in the process")
 	xeno_message("[X.name] has built a new turret at [get_area(A)]!", "xenoannounce", 5, X.hivenumber)
@@ -1448,17 +1432,10 @@
 		return FALSE
 	if(!owner.Adjacent(victim)) //checks if owner next to target
 		return FALSE
-<<<<<<< HEAD
-	if(victim.stat != DEAD)
-		if(!silent)
-			to_chat(owner, span_warning("This creature is struggling too much for us to devour it."))
-		return FALSE
-=======
 	//if(victim.stat != DEAD)
 	//	if(!silent)
-	//		to_chat(owner, "<span class='warning'>This creature is struggling too much for us to devour it.</span>")
+	//		to_chat(owner, span_warning("This creature is struggling too much for us to devour it."))
 	//	return FALSE
->>>>>>> master
 	if(victim.buckled)
 		if(!silent)
 			to_chat(owner, span_warning("[victim] is buckled to something."))

@@ -455,12 +455,6 @@
 					if (display_foot_right)
 						msg += "[span_warning("[t_He] has blood pooling around [t_his] <b>right boot</b>!")]\n"
 
-<<<<<<< HEAD
-	if(chestburst == 2)
-		msg += "[span_warning("<b>[t_He] has a giant hole in [t_his] chest!</b>")]\n"
-
-=======
->>>>>>> master
 	if(headbitten)
 		msg += "[span_warning("<b>[t_He] has a giant hole in [t_his] head!</b>")]\n"
 

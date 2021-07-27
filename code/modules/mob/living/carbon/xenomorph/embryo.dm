@@ -56,16 +56,7 @@
 		affected_mob = null
 		return PROCESS_KILL
 
-<<<<<<< HEAD
 	if(affected_mob.stat == DEAD)
-=======
-	if(affected_mob.stat == DEAD)//DEAD CODE TO BE REMOVED
-		if(ishuman(affected_mob))
-			if(!HAS_TRAIT(affected_mob, TRAIT_UNDEFIBBABLE))
-				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
-				L?.initiate_burst(affected_mob)
-				return PROCESS_KILL
->>>>>>> master
 		var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
 		L?.initiate_burst(affected_mob)
 		return PROCESS_KILL
@@ -115,23 +106,13 @@
 		if(4)
 			if(prob(1))
 				if(!affected_mob.IsUnconscious())
-<<<<<<< HEAD
 					affected_mob.visible_message(span_danger("\The [affected_mob] starts shaking uncontrollably!"), \
 												span_danger("You start shaking uncontrollably!"))
-					affected_mob.Unconscious(20 SECONDS)
-					affected_mob.jitter(105)
-					affected_mob.take_limb_damage(1)
-			if(prob(2))
-				to_chat(affected_mob, span_warning("[pick("Your chest hurts badly", "It becomes difficult to breathe", "Your heart starts beating rapidly, and each beat is painful")]."))
-=======
-					affected_mob.visible_message("<span class='danger'>\The [affected_mob] starts shaking uncontrollably!</span>", \
-												"<span class='danger'>You start shaking uncontrollably!</span>")
 					affected_mob.Unconscious(10 SECONDS)
 					affected_mob.jitter(105)
 					affected_mob.take_limb_damage(1)
 			if(prob(2))
-				to_chat(affected_mob, "<span class='warning'>[pick("You feel a lump in your throat", "It becomes difficult to breathe", "Your heart starts beating rapidly")].</span>")
->>>>>>> master
+				to_chat(affected_mob, span_warning("[pick("Your chest hurts badly", "It becomes difficult to breathe", "Your heart starts beating rapidly, and each beat is painful")]."))
 		if(5)
 			become_larva()
 		if(6)
@@ -179,22 +160,12 @@
 	if(victim.larva_birthing || loc != victim)
 		return
 
-<<<<<<< HEAD
-	victim.chestburst = 1
-	ADD_TRAIT(victim, TRAIT_PSY_DRAINED, TRAIT_PSY_DRAINED)
-	to_chat(src, span_danger("We start bursting out of [victim]'s chest!"))
-
-	victim.Unconscious(40 SECONDS)
-	victim.visible_message(span_danger("\The [victim] starts shaking uncontrollably!"), \
-								span_danger("You feel something ripping up your insides!"))
-=======
 	victim.larva_birthing = TRUE
-	to_chat(src, "<span class='danger'>We start slithering out of [victim]!</span>")
+	to_chat(src, span_danger("We start slithering out of [victim]!"))
 	var/obj/item/alien_embryo/birth_owner = locate() in victim
 
-	victim.visible_message("<span class='danger'>\The [victim] starts shaking uncontrollably!</span>", \
-								"<span class='danger'>You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!</span>")
->>>>>>> master
+	victim.visible_message(span_danger("\The [victim] starts shaking uncontrollably!"), \
+								span_danger("You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!"))
 	victim.jitter(300)
 
 	playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 25, TRUE)

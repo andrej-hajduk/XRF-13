@@ -101,8 +101,6 @@
 	max_rounds = 6
 	gun_type = /obj/item/weapon/gun/revolver/cmb
 
-<<<<<<< HEAD
-=======
 //a very literal box of ammunition.
 /obj/item/ammo_magazine/magnum
 	name = "packet of .44 magnum"
@@ -142,7 +140,6 @@
 	current_rounds = 42
 	max_rounds = 42
 	icon_state_mini = "ammo_packet"
->>>>>>> master
 
 //INTERNAL MAGAZINES
 

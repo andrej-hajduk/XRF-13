@@ -767,13 +767,6 @@ TUNNEL
 		to_chat(user, span_notice("[victim] is not dead!"))
 		return
 
-<<<<<<< HEAD
-	if(victim.chestburst)
-		to_chat(user, span_notice("[victim] has already been exhausted to incubate a sister!"))
-		return
-
-=======
->>>>>>> master
 	if(issynth(victim))
 		to_chat(user, span_notice("[victim] has no useful biomass for us."))
 		return

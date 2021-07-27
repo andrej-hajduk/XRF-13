@@ -6,30 +6,17 @@
 	name = "Nightfall"
 	action_icon_state = "nightfall"
 	ability_name = "Nightfall"
-<<<<<<< HEAD
 	mechanics_text = "Shut down all electrical lights nearby for 10 seconds."
 	cooldown_timer = 45 SECONDS
 	plasma_cost = 100
 	keybind_signal = COMSIG_XENOABILITY_NIGHTFALL
 	/// How far nightfall will have an effect
 	var/range = 12
-=======
-	mechanics_text = "Shut down all electrical lights for five seconds."
-	cooldown_timer = 15 SECONDS //Nightfall buff
-	plasma_cost = 150 //Doubled. Expensive.
-	/// How far nightfall will have an effect
-	var/range = 15 //Buffed range
->>>>>>> master
 	/// How long till the lights go on again
 	var/duration = 13 SECONDS // 2 Seconds of downtime, enough to make lights consistently flicker
-	var/cooldowntext = "<span class='notice'>We gather enough mental strength to shut down lights again.</span>"
 
 /datum/action/xeno_action/activable/nightfall/on_cooldown_finish()
-<<<<<<< HEAD
 	to_chat(owner, span_notice("We gather enough mental strength to shut down lights again."))
-=======
-	to_chat(owner, cooldowntext)
->>>>>>> master
 	return ..()
 
 /datum/action/xeno_action/activable/nightfall/use_ability()
@@ -63,29 +50,18 @@
 /datum/action/xeno_action/activable/gravity_crush
 	name = "Gravity Crush"
 	action_icon_state = "fortify"
-<<<<<<< HEAD
 	mechanics_text = "Increases the localized gravity in an area and crushes everything in it."
 	ability_name = "Gravity crush"
 	plasma_cost = 200
-=======
-	mechanics_text = "Increases the localized gravity in an area and crushes structures."
-	ability_name = "Gravity Crush"
-	plasma_cost = 100
->>>>>>> master
 	cooldown_timer = 30 SECONDS
 	keybind_signal = COMSIG_XENOABILITY_GRAVITY_CRUSH
 	/// How far can we use gravity crush
 	var/king_crush_dist = 5
 	/// A list of all things that had a fliter applied
 	var/list/filters_applied = list()
-	var/cooldowntext = "<span class='warning'>Our psychic aura restores itself. We are ready to gravity crush again.</span>"
 
 /datum/action/xeno_action/activable/gravity_crush/on_cooldown_finish()
-<<<<<<< HEAD
 	to_chat(owner, span_warning("Our psychic aura restores itself. We are ready to gravity crush again."))
-=======
-	to_chat(owner, cooldowntext)
->>>>>>> master
 	return ..()
 
 /datum/action/xeno_action/activable/gravity_crush/can_use_ability(atom/A, silent, override_flags)

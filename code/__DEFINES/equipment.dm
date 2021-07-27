@@ -59,7 +59,6 @@
 #define IMPEDE_JETPACK (1<<9)  //Reduce the range of jetpack
 #define DRAINS_XENO (1<<10)  //Enables the item to collect resource for chem_booster component
 #define CAN_BUMP_ATTACK (1<<11)	 //Item triggers bump attack
-<<<<<<< HEAD
 #define NO_VACUUM (1<<12) //Roomba won't eat this
 #define IS_DEPLOYABLE (1<<13) //Item can be deployed into a machine
 #define DEPLOY_ON_INITIALIZE (1<<14)
@@ -68,9 +67,6 @@
 #define DEPLOYED_NO_ROTATE  (1<<17) //Disables deployed item rotation abilities to rotate.
 #define DEPLOYED_WRENCH_DISASSEMBLE (1<<18) //If this is on an item, the item can only be disassembled using a wrench once deployed.
 
-=======
-#define NO_VACUUM (1<<12) //Cannot be vacuumed up by the roomba
->>>>>>> master
 //==========================================================================================
 
 //flags_inv_hide

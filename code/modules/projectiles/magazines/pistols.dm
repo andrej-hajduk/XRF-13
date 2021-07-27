@@ -12,8 +12,6 @@
 	default_ammo = /datum/ammo/bullet/pistol
 	gun_type = /obj/item/weapon/gun/pistol/standard_pistol
 
-<<<<<<< HEAD
-=======
 /obj/item/ammo_magazine/pistol/standard_pistol/polymer
 	name = "\improper TP-14 PGR magazine (9mm)"
 	desc = "A pistol magazine loaded with nonlethal polymer gel rounds."
@@ -47,7 +45,6 @@
 	default_ammo = /datum/ammo/bullet/pistol/polymer
 	icon_state_mini = "ammo_packet"
 
->>>>>>> master
 //-------------------------------------------------------
 //TX-7 Plasma Pistol
 /obj/item/ammo_magazine/pistol/plasma_pistol
@@ -111,8 +108,6 @@
 	max_rounds = 10
 	gun_type = /obj/item/weapon/gun/pistol/m1911
 
-<<<<<<< HEAD
-=======
 /obj/item/ammo_magazine/pistol/m1911/polymer
 	name = "\improper M1911 PGR magazine (.45)"
 	default_ammo = /datum/ammo/bullet/pistol/heavy/polymer
@@ -129,7 +124,6 @@
 	current_rounds = 50
 	max_rounds = 50
 	icon_state_mini = "ammo_packet"
->>>>>>> master
 
 /obj/item/ammo_magazine/acp/polymer
 	name = "packet of .45 ACP PGR"

@@ -54,11 +54,10 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 
 #define TICKS2DS(T) ((T) TICKS)
 
-<<<<<<< HEAD
 #define MS2DS(T) ((T) MILLISECONDS)
 
 #define DS2MS(T) ((T) * 100)
-=======
+
 // SKYRAT EDIT ADDITION - EPOCH
 #define EPOCH_DAY 86400
 #define EPOCH_MONTH 2629743
@@ -86,4 +85,3 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 	day *= EPOCH_DAY
 	return year + month + day
 // SKYRAT ADDITION END
->>>>>>> master

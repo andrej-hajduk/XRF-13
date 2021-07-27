@@ -91,8 +91,6 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_assaultrifle
 	icon_state_mini = "mag_rifle_big"
 
-<<<<<<< HEAD
-=======
 /obj/item/ammo_magazine/rifle/standard_assaultrifle/polymer
 	name = "\improper T-12 PGR magazine (10x24mm)"
 	desc = "A 10mm assault rifle magazine loaded with nonlethal polymer gel rounds."
@@ -127,7 +125,6 @@
 	max_rounds = 150
 	icon_state_mini = "ammo_packet"
 
->>>>>>> master
 //-------------------------------------------------------
 //T37 DMR
 
@@ -202,8 +199,6 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_br
 	icon_state_mini = "mag_rifle_big_red"
 
-<<<<<<< HEAD
-=======
 /obj/item/ammo_magazine/box10x27mm
 	name = "box of 10x27mm"
 	desc = "A box containing 100 rounds of 10x27mm caseless.."
@@ -226,7 +221,6 @@
 	max_rounds = 100
 	icon_state_mini = "ammo_packet"
 
->>>>>>> master
 //-------------------------------------------------------
 //M41A TRUE AND ORIGINAL
 
@@ -314,8 +308,6 @@
 	reload_delay = 3 SECONDS
 	icon_state_mini = "mag_gpmg"
 
-<<<<<<< HEAD
-=======
 /obj/item/ammo_magazine/standard_gpmg/polymer
 	name = "\improper T-60 GPMG PGR box magazine (10x26mm)"
 	desc = "A nonlethal polymer gel round drum magazine for the T-60 general purpose machinegun."
@@ -351,7 +343,6 @@
 	max_rounds = 100
 	icon_state_mini = "ammo_packet"
 
->>>>>>> master
 //-------------------------------------------------------
 //M412L1 HEAVY PULSE RIFLE
 

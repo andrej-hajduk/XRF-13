@@ -118,38 +118,4 @@
 			if("6:4", "6:3", "8:4", "8:3") //add current char again. RGB(A) -> RRGGBB(AA)
 				. += char
 
-<<<<<<< HEAD
 	return crunch + .
-=======
-	if(length_char(.) == desired_format)
-		return crunch + .
-	switch(format_input_ratio) //add or remove alpha channel depending on desired format.
-		if("3:8", "3:4", "6:4")
-			return crunch + copytext(., 1, desired_format+1)
-		if("4:6", "4:3", "8:3")
-			return crunch + . + ((desired_format == 4) ? "f" : "ff")
-		else //not a supported hex color format.
-			return default ? default : crunch + repeat_string(desired_format, "0")
-
-/**
- * Check if the value is of type loadout_manager, and with correct loadouts in its loadout list.
- * Also null out loadouts_data, seller and loadout vendor to make saving possible in a jatum
- */
-/proc/sanitize_loadout_manager(value)
-	var/datum/loadout_manager/manager
-	if(!istype(value, /datum/loadout_manager))
-		manager = new
-		return manager
-	manager = value
-	if(!islist(manager.loadouts_list))
-		manager = new
-		return manager
-	for(var/loadout in manager.loadouts_list)
-		if(!istype(loadout, /datum/loadout))
-			manager.loadouts_list -= loadout
-	manager.loadouts_data = null
-	manager.seller = null
-	manager.loadout_vendor = null
-	return manager
-
->>>>>>> master

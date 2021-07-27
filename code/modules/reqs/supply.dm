@@ -221,15 +221,12 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	/// Faction of the tablet
 	var/faction = FACTION_TERRAGOV
 
-<<<<<<< HEAD
 /obj/item/supplytablet/rebel
 	req_access = list(ACCESS_MARINE_CARGO_REBEL)
 	shuttle_id = "supply_rebel"
 	home_id = "supply_home_rebel"
 	faction = FACTION_TERRAGOV_REBEL
 
-=======
->>>>>>> master
 /obj/item/supplytablet/interact(mob/user)
 	. = ..()
 	if(.)
@@ -258,15 +255,12 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	/// Faction of the computer
 	var/faction = FACTION_TERRAGOV
 
-<<<<<<< HEAD
 /obj/machinery/computer/supplycomp/rebel
 	req_access = list(ACCESS_MARINE_CARGO_REBEL)
 	shuttle_id = "supply_rebel"
 	home_id = "supply_home_rebel"
 	faction = FACTION_TERRAGOV_REBEL
 
-=======
->>>>>>> master
 /obj/machinery/computer/supplycomp/interact(mob/user)
 	. = ..()
 	if(.)
@@ -592,10 +586,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	icon_state = "request"
 	circuit = null
 	var/datum/supply_ui/requests/SU
-<<<<<<< HEAD
-=======
-	req_access = list(ACCESS_IFF_MARINE)
->>>>>>> master
 
 /obj/machinery/computer/ordercomp/interact(mob/user)
 	. = ..()

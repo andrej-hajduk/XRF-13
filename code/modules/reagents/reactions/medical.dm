@@ -205,12 +205,12 @@
 	results = list(/datum/reagent/medicine/dylovene = 2)
 	required_reagents = list(/datum/reagent/virilyth = 1, /datum/reagent/medicine/dylovene = 1)
 
-<<<<<<< HEAD
+
 /datum/chemical_reaction/bihexajuline
 	name = "Bihexajuline"
 	results = list(/datum/reagent/medicine/bihexajuline = 5)
 	required_reagents = list(/datum/reagent/medicine/bicaridine = 2, /datum/reagent/consumable/drink/milk = 1, /datum/reagent/iron = 2)
-=======
+
 /datum/chemical_reaction/aphro
 	name = "crocin"
 	id = /datum/reagent/drug/aphrodisiac
@@ -238,4 +238,3 @@
 	results = list(/datum/reagent/drug/anaphrodisiacplus = 1)
 	required_reagents = list(/datum/reagent/drug/aphrodisiac = 5, /datum/reagent/acetone = 1)
 	mix_message = "The mixture thickens and heats up slighty..."
->>>>>>> master

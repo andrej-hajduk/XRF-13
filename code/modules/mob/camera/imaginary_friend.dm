@@ -123,11 +123,7 @@
 	xeno_mobhud = !xeno_mobhud
 	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_XENO_STATUS]
 	xeno_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-<<<<<<< HEAD
 	to_chat(src, span_notice("You have [xeno_mobhud ? "enabled" : "disabled"] the Xeno Status HUD."))
-=======
-	to_chat(src, "<span class='notice'>You have [xeno_mobhud ? "enabled" : "disabled"] the Xeno Status HUD.</span>")
->>>>>>> master
 
 /mob/camera/imaginary_friend/verb/toggle_human_mobhud()
 	set category = "Imaginary Friend"
@@ -138,13 +134,9 @@
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
 	H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-<<<<<<< HEAD
 	H = GLOB.huds[DATA_HUD_SQUAD_REBEL]
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
 	to_chat(src, span_notice("You have [med_squad_mobhud ? "enabled" : "disabled"] the Human Status HUD."))
-=======
-	to_chat(src, "<span class='notice'>You have [med_squad_mobhud ? "enabled" : "disabled"] the Human Status HUD.</span>")
->>>>>>> master
 
 /mob/camera/imaginary_friend/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language, ignore_spam = FALSE, forced)
 	if(!message)

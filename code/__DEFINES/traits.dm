@@ -88,12 +88,9 @@
 #define FORTIFY_TRAIT "fortify" //Defender fortify ability.
 #define TRAIT_STASIS	"stasis"//Subject to the stasis effect
 #define ENDURE_TRAIT "endure" //Ravager Endure ability.
-<<<<<<< HEAD
 #define RAGE_TRAIT "rage" //Ravager Rage ability.
 #define STEALTH_TRAIT "stealth" //From hunter stealth
-=======
 #define APHRO_TRAIT		"aphro"
->>>>>>> master
 
 //mob traits
 #define TRAIT_KNOCKEDOUT "knockedout" //Forces the user to stay unconscious.

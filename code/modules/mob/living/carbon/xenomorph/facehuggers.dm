@@ -498,15 +498,9 @@
 		return FALSE
 	var/mob/living/carbon/human/H = M
 
-<<<<<<< HEAD
-		if(!H.has_limb(HEAD))
-			visible_message(span_warning("[src] looks for a face to hug on [H], but finds none!"))
-			return FALSE
-=======
 	if(!H.has_limb(HEAD))
-		visible_message("<span class='warning'>[src] looks for a face to hug on [H], but finds none!</span>")
+		visible_message(span_warning("[src] looks for a face to hug on [H], but finds none!"))
 		return FALSE
->>>>>>> master
 
 	if(!H.w_uniform && attempt_lewd_attach(H))
 		H.equip_to_slot(src, SLOT_W_UNIFORM)
@@ -613,25 +607,18 @@
 
 	if(as_planned)
 		if(sterile || target.status_flags & XENO_HOST)
-<<<<<<< HEAD
-			target.visible_message(span_danger("[src] falls limp after violating [target]'s face!"))
-		else //Huggered but not impregnated, deal damage.
-			target.visible_message(span_danger("[src] frantically claws at [target]'s face before falling down!"),span_danger("[src] frantically claws at your face before falling down! Auugh!"))
-			target.apply_damage(15, BRUTE, "head", updating_health = TRUE)
-=======
 			var/flavor_text
 			switch(emerge_target)
 				if(HUGGER_TARGET_CHEST)
-					flavor_text = "<span class='danger'>[src] falls limp after violating [target]'s face with it's proboscis!</span>"
+					flavor_text = span_danger("[src] falls limp after violating [target]'s face with it's proboscis!")
 				if(HUGGER_TARGET_ASS)
-					flavor_text = "<span class='danger'>[src] falls limp after ramming it's proboscis into [target]'s ass!</span>"
+					flavor_text = span_danger("[src] falls limp after ramming it's proboscis into [target]'s ass!")
 				if(HUGGER_TARGET_GROIN)
-					flavor_text = "<span class='danger'>[src] falls limp after ramming it's proboscis into [target]'s [target.gender==MALE ? "cock" : "vagina"]!</span>"
+					flavor_text = span_danger("[src] falls limp after ramming it's proboscis into [target]'s [target.gender==MALE ? "cock" : "vagina"]!")
 			target.visible_message(flavor_text)
 		else //Huggered but not impregnated, deal damage.
-			target.visible_message("<span class='danger'>[src] frantically claws at [target]'s face before falling down!</span>","<span class='danger'>[src] frantically claws at your face before falling down! Auugh!</span>")
+			target.visible_message(span_danger("[src] frantically claws at [target]'s face before falling down!"),span_danger("[src] frantically claws at your face before falling down! Auugh!"))
 			target.apply_damage(10, BRUTE, "head", updating_health = TRUE)
->>>>>>> master
 
 
 /obj/item/clothing/mask/facehugger/proc/kill_hugger(melt_timer = 1 MINUTES)

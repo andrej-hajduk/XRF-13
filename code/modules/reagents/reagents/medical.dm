@@ -1153,7 +1153,6 @@
 	color = "#66801e"
 	taste_description = "piss"
 
-<<<<<<< HEAD
 /datum/reagent/medicine/bihexajuline
 	name = "Bihexajuline"
 	description = "Accelerates natural bone repair in a low temperature environment. Causes severe pain."
@@ -1184,7 +1183,7 @@
 			continue
 		limb_to_unfix.fracture()
 		break
-=======
+
 //aphrodisiac & anaphrodisiac
 
 /datum/reagent/drug/aphrodisiac
@@ -1301,4 +1300,3 @@ Pope_Wreckoning:
 		to_chat(L, "<span class='userlove'>You feel like you'll never feel aroused again...</span>")
 		ADD_TRAIT(L,TRAIT_NEVERBONER,APHRO_TRAIT)
 	..()
->>>>>>> master
