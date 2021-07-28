@@ -52,4 +52,4 @@
 		'sound/weather/acidrain/acidrain_mid.ogg'=1,
 	)
 	mid_length = 80
-	volume = 40
+	volume = 20
