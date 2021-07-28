@@ -11867,6 +11867,7 @@
 /obj/item/ammo_magazine/shotgun,
 /obj/item/ammo_magazine/shotgun/buckshot,
 /obj/item/ammo_magazine/shotgun/flechette,
+/obj/item/ammo_magazine/shotgun/beanbag/large,
 /turf/open/floor/plating/platebot,
 /area/lv624/lazarus/secure_storage)
 "bqe" = (
