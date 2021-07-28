@@ -51,6 +51,7 @@
 #define ADMIN_PP(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];playerpanel=[REF(user)]'>PP</a>)"
 #define ADMIN_VV(atom) "(<a href='?_src_=vars;[HrefToken(TRUE)];vars=[REF(atom)]'>VV</a>)"
 #define ADMIN_SM(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];subtlemessage=[REF(user)]'>SM</a>)"
+#define ADMIN_IF(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];imginaryfriend=[REF(user)]'>IF</a>)"
 #define ADMIN_TP(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];traitorpanel=[REF(user)]'>TP</a>)"
 #define ADMIN_KICK(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];kick=[REF(user)]'>KICK</a>)"
 #define ADMIN_SC(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];spawncookie=[REF(user)]'>SC</a>)"
@@ -75,7 +76,7 @@
 #define ROUNDSTART_LOGOUT_REPORT_TIME 10 MINUTES //Amount of time (in deciseconds) after the rounds starts, that the player disconnect report is issued.
 
 #define SPAM_TRIGGER_TIME_PERIOD 10 SECONDS //The time period for checking spammy messages
-#define SPAM_TRIGGER_WEIGHT_FORMULA(message) length(message) / 200
+#define SPAM_TRIGGER_WEIGHT_FORMULA(message) length(message) / 1000
 #define SPAM_TRIGGER_WARNING 7	//Number of messages required per the time period before the spam-prevention will warn you
 #define SPAM_TRIGGER_AUTOMUTE 10	//Number of messages required per the time period before the spam-prevention will automute you
 #define SPAM_TRIGGER_WEIGHT_WARNING 5 //The weight required per the time period before the spam-prevention will warn you

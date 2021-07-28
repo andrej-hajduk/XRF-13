@@ -11,9 +11,6 @@
 	// *** Melee Attacks *** //
 	melee_damage = 20
 
-	// *** Tackle *** //
-	tackle_damage = 25
-
 	// *** Speed *** //
 	speed = 0
 
@@ -28,7 +25,7 @@
 	upgrade_threshold = 350 //Thematic
 
 	// *** Flags *** //
-	caste_flags = CASTE_DECAY_PROOF
+	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = XENO_BOMB_RESIST_3, "bio" = 45, "rad" = 45, "fire" = 100, "acid" = 45)
@@ -36,7 +33,7 @@
 	// *** Pheromones *** //
 	aura_strength = 4
 
-
+	minimap_icon = "xenoking"
 
 	actions = list(
 		/datum/action/xeno_action/xeno_resting,
@@ -51,6 +48,7 @@
 		/datum/action/xeno_action/activable/gravity_crush_lesser,
 		/datum/action/xeno_action/activable/corrosive_acid/strong,
 		/datum/action/xeno_action/activable/nightfall,
+		/datum/action/xeno_action/activable/gravity_crush,
 		/datum/action/xeno_action/toggle_pheromones,
 		/datum/action/xeno_action/activable/nightfall/lesser,
 		/datum/action/xeno_action/activable/rally_hive,
@@ -64,9 +62,6 @@
 	caste_desc = "The biggest and baddest xeno, crackling with psychic energy."
 
 	upgrade = XENO_UPGRADE_ONE
-
-	// *** Tackle *** //
-	tackle_damage = 25
 
 	// *** Speed *** //
 	speed = -0.1
@@ -108,9 +103,6 @@
 
 	// *** Melee Attacks *** //
 	melee_damage = 23
-
-	// *** Tackle *** //
-	tackle_damage = 28
 
 	// *** Speed *** //
 	speed = -0.2
@@ -155,9 +147,6 @@
 
 	// *** Melee Attacks *** //
 	melee_damage = 23
-
-	// *** Tackle *** //
-	tackle_damage = 28
 
 	// *** Speed *** //
 	speed = -0.3

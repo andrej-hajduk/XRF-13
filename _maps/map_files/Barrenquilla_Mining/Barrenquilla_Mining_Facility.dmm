@@ -1447,7 +1447,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/barren/misc/ashshelter)
 "hu" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/lavaland/basalt,
 /area/barren/cave/west)
 "hv" = (
@@ -1861,7 +1861,7 @@
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
 "jG" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/lavaland/basalt,
 /area/barren/cave/central)
 "jH" = (
@@ -3514,7 +3514,7 @@
 	},
 /area/barren/medical)
 "sq" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
@@ -4674,7 +4674,7 @@
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
 "zn" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/floor/tile/dark,
 /area/barren/cave/lz2)
 "zo" = (
@@ -5120,7 +5120,7 @@
 /turf/open/lavaland/basalt,
 /area/barren/cave/northwest)
 "BT" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /obj/structure/lattice,
 /obj/structure/cable,
 /turf/open/lavaland/basalt,

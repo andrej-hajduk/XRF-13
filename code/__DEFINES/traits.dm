@@ -88,6 +88,8 @@
 #define FORTIFY_TRAIT "fortify" //Defender fortify ability.
 #define TRAIT_STASIS	"stasis"//Subject to the stasis effect
 #define ENDURE_TRAIT "endure" //Ravager Endure ability.
+#define RAGE_TRAIT "rage" //Ravager Rage ability.
+#define STEALTH_TRAIT "stealth" //From hunter stealth
 #define APHRO_TRAIT		"aphro"
 
 //mob traits
@@ -106,8 +108,10 @@
 #define TRAIT_UNDEFIBBABLE "undefibbable"//human can't be revived
 #define TRAIT_HEALING_INFUSION "healing_infusion"//greatly improves natural healing for xenos
 #define TRAIT_PSY_DRAINED "psy_drained"//mob was drained of life force by a xenos
-#define TRAIT_STAGGERIMMUNE		"stagger_immunity" //Immunity to stagger
-#define TRAIT_SLOWDOWNIMMUNE	"slowdown_immunity" //Immunity to slowdown
+#define TRAIT_STAGGERIMMUNE	"stagger_immunity" //Immunity to stagger
+#define TRAIT_SLOWDOWNIMMUNE "slowdown_immunity" //Immunity to slowdown
+#define TRAIT_MUTED "muted" //target is mute and can't speak
+#define TRAIT_TURRET_HIDDEN "turret_hidden" //target gets passed over by turrets choosing a victim
 
 //SR traits
 #define TRAIT_PERMABONER		"permanent_arousal"

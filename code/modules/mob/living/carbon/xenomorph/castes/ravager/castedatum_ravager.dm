@@ -12,15 +12,14 @@
 	melee_damage = 26
 	attack_delay = 7
 
-	// *** Tackle *** //
-	tackle_damage = 26
-
 	// *** Speed *** //
 	speed = -0.7
 
 	// *** Plasma *** //
 	plasma_max = 600
-	plasma_gain = 20
+	plasma_gain = 5
+	plasma_regen_limit = 0.5
+	plasma_icon_state = "fury"
 
 	// *** Health *** //
 	max_health = 290
@@ -31,7 +30,7 @@
 	deevolves_to = /mob/living/carbon/xenomorph/hunter
 
 	// *** Flags *** //
-	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
+	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_LEADER|CASTE_INNATE_PLASMA_REGEN|CAN_BECOME_KING
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 35, "bullet" = 40, "laser" = 30, "energy" = 30, "bomb" = XENO_BOMB_RESIST_1, "bio" = 30, "rad" = 30, "fire" = 50, "acid" = 30)
@@ -50,6 +49,7 @@
 		/datum/action/xeno_action/activable/charge,
 		/datum/action/xeno_action/activable/ravage,
 		/datum/action/xeno_action/endure,
+		/datum/action/xeno_action/rage,
 	)
 
 /datum/xeno_caste/ravager/young
@@ -63,15 +63,12 @@
 
 	upgrade = XENO_UPGRADE_ONE
 
-	// *** Tackle *** //
-	tackle_damage = 26
-
 	// *** Speed *** //
 	speed = -0.8
 
 	// *** Plasma *** //
 	plasma_max = 700 //Enables using either both abilities at once or one after another
-	plasma_gain = 30
+	plasma_gain = 5
 
 	// *** Health *** //
 	max_health = 310
@@ -91,15 +88,13 @@
 	// *** Melee Attacks *** //
 	melee_damage = 32
 
-	// *** Tackle *** //
-	tackle_damage = 32
-
 	// *** Speed *** //
 	speed = -0.9
 
 	// *** Plasma *** //
 	plasma_max = 750
-	plasma_gain = 35
+	plasma_gain = 10
+	plasma_regen_limit = 0.6
 
 	// *** Health *** //
 	max_health = 330
@@ -119,15 +114,12 @@
 	// *** Melee Attacks *** //
 	melee_damage = 32
 
-	// *** Tackle *** //
-	tackle_damage = 32
-
 	// *** Speed *** //
 	speed = -1
 
 	// *** Plasma *** //
 	plasma_max = 800
-	plasma_gain = 40
+	plasma_gain = 15
 
 	// *** Health *** //
 	max_health = 350

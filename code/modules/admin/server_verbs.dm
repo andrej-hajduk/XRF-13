@@ -9,7 +9,24 @@
 	if(SSticker.admin_delay_notice && alert(usr, "Are you sure? An admin has already delayed the round end for the following reason: [SSticker.admin_delay_notice]", "Confirmation", "Yes", "No") != "Yes")
 		return
 
-	SSticker.Reboot("AdminIntervention", 1)
+	if(alert("Restart the game world?", "Restart", "Yes", "No") != "Yes")
+		return
+
+	var/message = FALSE
+	if(CONFIG_GET(string/restart_message))
+		switch(alert("Send the new round message?", "Message", "Yes", "No", "Cancel"))
+			if("Yes")
+				message = TRUE
+			if("Cancel")
+				return
+
+	to_chat(world, span_danger("Restarting world!</span> <span class='notice'>Initiated by: [usr.key]"))
+
+	log_admin("[key_name(usr)] initiated a restart.")
+	message_admins("[ADMIN_TPMONTY(usr)] initiated a restart.")
+
+	spawn(50)
+		world.Reboot(message)
 
 
 /datum/admins/proc/shutdown_server()
@@ -21,7 +38,7 @@
 	var/static/timeouts = list()
 	var/waitforroundend = FALSE
 	if(!CONFIG_GET(flag/allow_shutdown))
-		to_chat(usr, "<span class='danger'>This has not been enabled by the server operator.</span>")
+		to_chat(usr, span_danger("This has not been enabled by the server operator."))
 		return
 
 	if(!check_rights(R_SERVER))
@@ -36,7 +53,7 @@
 		return
 
 	if(timeouts[usr.ckey] && timeouts[usr.ckey] + 2 MINUTES > world.time)
-		to_chat(usr, "<span class='danger'>You must wait 2 minutes after your shutdown attempt is aborted before you can try again.</span>")
+		to_chat(usr, span_danger("You must wait 2 minutes after your shutdown attempt is aborted before you can try again."))
 		return
 
 	if(alert("Are you sure you want to shutdown the server? Only somebody with remote access to the server can turn it back on.", "Shutdown Server?", "Cancel", "Shutdown Server", "Cancel.") != "Shutdown Server")
@@ -48,7 +65,7 @@
 	else
 		var/required_state_message = "The server must be in either pre-game and the start must be delayed or already started with the end delayed to shutdown the server."
 		if((SSticker.current_state == GAME_STATE_PREGAME && SSticker.time_left > 0) || (SSticker.current_state != GAME_STATE_PREGAME && !SSticker.delay_end))
-			to_chat(usr, "<span class='danger'>[required_state_message] The round start/end is not delayed.</span>")
+			to_chat(usr, span_danger("[required_state_message] The round start/end is not delayed."))
 			return
 		if (SSticker.current_state == GAME_STATE_PLAYING || SSticker.current_state == GAME_STATE_SETTING_UP)
 			#ifdef TGS_V3_API
@@ -56,11 +73,11 @@
 				return
 			waitforroundend = TRUE
 			#else
-			to_chat(usr, "<span class='danger'>Restarting during the round requires the server toolkit. No server toolkit detected. Please end the round and try again.</span>")
+			to_chat(usr, span_danger("Restarting during the round requires the server toolkit. No server toolkit detected. Please end the round and try again."))
 			return
 			#endif
 
-	to_chat(usr, "<span class='danger'>Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds.</span>")
+	to_chat(usr, span_danger("Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds."))
 	message_admins("[ADMIN_TPMONTY(usr)] initiated the shutdown process. You may abort this by pressing the shutdown server button again.")
 	shuttingdown = usr.ckey
 
@@ -78,19 +95,19 @@
 		message_admins("[ADMIN_TPMONTY(usr)] decided against shutting down the server.")
 		shuttingdown = null
 		return
-	to_chat(world, "<span class='danger'>Server shutting down [waitforroundend ? "after this round" : "in 30 seconds!"]</span> <span class='notice'>Initiated by: [usr.key]</span>")
+	to_chat(world, span_danger("Server shutting down [waitforroundend ? "after this round" : "in 30 seconds!"]</span> <span class='notice'>Initiated by: [usr.key]"))
 	message_admins("[ADMIN_TPMONTY(usr)] is shutting down the server[waitforroundend ? " after this round" : ""]. You may abort this by pressing the shutdown server button again within 30 seconds.")
 
 	sleep(31 SECONDS) //to give the admins that final second to hit the confirm button on the cancel prompt.
 
 	if(!shuttingdown)
-		to_chat(world, "<span class='notice'>Server shutdown was aborted</span>")
+		to_chat(world, span_notice("Server shutdown was aborted"))
 		return
 
 	if(shuttingdown != usr.ckey) //somebody cancelled but then somebody started again.
 		return
 
-	to_chat(world, "<span class='danger'>Server shutting down[waitforroundend ? " after this round. " : ""].</span> <span class='notice'>Initiated by: [shuttingdown]</span>")
+	to_chat(world, span_danger("Server shutting down[waitforroundend ? " after this round. " : ""].</span> <span class='notice'>Initiated by: [shuttingdown]"))
 	log_admin("Server shutting down[waitforroundend ? " after this round" : ""]. Initiated by: [shuttingdown]")
 
 #ifdef TGS_V3_API
@@ -133,9 +150,9 @@
 	GLOB.ooc_allowed = !(GLOB.ooc_allowed)
 
 	if(GLOB.ooc_allowed)
-		to_chat(world, "<span class='boldnotice'>The OOC channel has been globally enabled!</span>")
+		to_chat(world, span_boldnotice("The OOC channel has been globally enabled!"))
 	else
-		to_chat(world, "<span class='boldnotice'>The OOC channel has been globally disabled!</span>")
+		to_chat(world, span_boldnotice("The OOC channel has been globally disabled!"))
 
 	log_admin("[key_name(usr)] [GLOB.ooc_allowed ? "enabled" : "disabled"] OOC.")
 	message_admins("[ADMIN_TPMONTY(usr)] [GLOB.ooc_allowed ? "enabled" : "disabled"] OOC.")
@@ -151,10 +168,10 @@
 
 	if(CONFIG_GET(flag/looc_enabled))
 		CONFIG_SET(flag/looc_enabled, FALSE)
-		to_chat(world, "<span class='boldnotice'>LOOC channel has been disabled!</span>")
+		to_chat(world, span_boldnotice("LOOC channel has been disabled!"))
 	else
 		CONFIG_SET(flag/looc_enabled, TRUE)
-		to_chat(world, "<span class='boldnotice'>LOOC channel has been enabled!</span>")
+		to_chat(world, span_boldnotice("LOOC channel has been enabled!"))
 
 
 	log_admin("[key_name(usr)] has [CONFIG_GET(flag/looc_enabled) ? "enabled" : "disabled"] LOOC.")
@@ -172,9 +189,9 @@
 	GLOB.dsay_allowed = !GLOB.dsay_allowed
 
 	if(GLOB.dsay_allowed)
-		to_chat(world, "<span class='boldnotice'>Deadchat has been globally enabled!</span>")
+		to_chat(world, span_boldnotice("Deadchat has been globally enabled!"))
 	else
-		to_chat(world, "<span class='boldnotice'>Deadchat has been globally disabled!</span>")
+		to_chat(world, span_boldnotice("Deadchat has been globally disabled!"))
 
 	log_admin("[key_name(usr)] [GLOB.dsay_allowed ? "enabled" : "disabled"] deadchat.")
 	message_admins("[ADMIN_TPMONTY(usr)] [GLOB.dsay_allowed ? "enabled" : "disabled"] deadchat.")
@@ -191,9 +208,9 @@
 	GLOB.dooc_allowed = !GLOB.dooc_allowed
 
 	if(GLOB.dooc_allowed)
-		to_chat(world, "<span class='boldnotice'>Dead player OOC has been globally enabled!</span>")
+		to_chat(world, span_boldnotice("Dead player OOC has been globally enabled!"))
 	else
-		to_chat(world, "<span class='boldnotice'>Dead player OOC has been globally disabled!</span>")
+		to_chat(world, span_boldnotice("Dead player OOC has been globally disabled!"))
 
 	log_admin("[key_name(usr)] [GLOB.dooc_allowed ? "enabled" : "disabled"] dead player OOC.")
 	message_admins("[ADMIN_TPMONTY(usr)] [GLOB.dooc_allowed ? "enabled" : "disabled"] dead player OOC.")
@@ -208,7 +225,7 @@
 		return
 
 	if(SSticker.current_state != GAME_STATE_STARTUP && SSticker.current_state != GAME_STATE_PREGAME)
-		to_chat(usr, "<span class='warning'>The round has already started.</span>")
+		to_chat(usr, span_warning("The round has already started."))
 		return
 
 	if(SSticker.start_immediately)
@@ -248,9 +265,9 @@
 	GLOB.enter_allowed = !GLOB.enter_allowed
 
 	if(GLOB.enter_allowed)
-		to_chat(world, "<span class='boldnotice'>New players may now join the game.</span>")
+		to_chat(world, span_boldnotice("New players may now join the game."))
 	else
-		to_chat(world, "<span class='boldnotice'>New players may no longer join the game.</span>")
+		to_chat(world, span_boldnotice("New players may no longer join the game."))
 
 	log_admin("[key_name(usr)] [GLOB.enter_allowed ? "enabled" : "disabled"] new player joining.")
 	message_admins("[ADMIN_TPMONTY(usr)] [GLOB.enter_allowed ? "enabled" : "disabled"] new player joining.")
@@ -267,9 +284,9 @@
 	GLOB.respawn_allowed = !GLOB.respawn_allowed
 
 	if(GLOB.respawn_allowed)
-		to_chat(world, "<span class='boldnotice'>You may now respawn.</span>")
+		to_chat(world, span_boldnotice("You may now respawn."))
 	else
-		to_chat(world, "<span class='boldnotice'>You may no longer respawn.</span>")
+		to_chat(world, span_boldnotice("You may no longer respawn."))
 
 	log_admin("[key_name(usr)] [GLOB.respawn_allowed ? "enabled" : "disabled"] respawning.")
 	message_admins("[ADMIN_TPMONTY(usr)] [GLOB.respawn_allowed ? "enabled" : "disabled"] respawning.")
@@ -286,10 +303,10 @@
 	if(time < 0)
 		return
 
-	GLOB.respawntime = time
+	SSticker.mode?.respawn_time = time
 
-	log_admin("[key_name(usr)] set the respawn time to [GLOB.respawntime * 0.1] seconds.")
-	message_admins("[ADMIN_TPMONTY(usr)] set the respawn time to [GLOB.respawntime * 0.1] seconds.")
+	log_admin("[key_name(usr)] set the respawn time to [SSticker.mode?.respawn_time * 0.1] seconds.")
+	message_admins("[ADMIN_TPMONTY(usr)] set the respawn time to [SSticker.mode?.respawn_time * 0.1] seconds.")
 
 
 /datum/admins/proc/set_xenorespawn_time(time as num)
@@ -358,11 +375,11 @@
 	newtime = newtime * 10
 	SSticker.SetTimeLeft(newtime)
 	if(newtime < 0)
-		to_chat(world, "<span class='boldnotice'>The game start has been delayed.</span>")
+		to_chat(world, span_boldnotice("The game start has been delayed."))
 		log_admin("[key_name(usr)] delayed the round start.")
 		message_admins("[ADMIN_TPMONTY(usr)] delayed the round start.")
 	else
-		to_chat(world, "<span class='boldnotice'>The game will start in [DisplayTimeText(newtime)].</span>")
+		to_chat(world, span_boldnotice("The game will start in [DisplayTimeText(newtime)]."))
 		log_admin("[key_name(usr)] set the pre-game delay to [DisplayTimeText(newtime)].")
 		message_admins("[ADMIN_TPMONTY(usr)] set the pre-game delay to [DisplayTimeText(newtime)].")
 
@@ -386,7 +403,7 @@
 		if(!reason)
 			return
 		if(SSticker.admin_delay_notice)
-			to_chat(usr, "<span class='warning'>Someone already delayed the round end meanwhile.</span>")
+			to_chat(usr, span_warning("Someone already delayed the round end meanwhile."))
 			return
 		SSticker.admin_delay_notice = reason
 
@@ -485,7 +502,7 @@
 
 	var/datum/map_config/VM = maprotatechoices[chosenmap]
 	if(!SSmapping.changemap(VM, GROUND_MAP))
-		to_chat(usr, "<span class='warning'>Failed to change the ground map.</span>")
+		to_chat(usr, span_warning("Failed to change the ground map."))
 		return
 
 	log_admin("[key_name(usr)] changed the map to [VM.map_name].")
@@ -527,12 +544,29 @@
 
 	var/datum/map_config/VM = maprotatechoices[chosenmap]
 	if(!SSmapping.changemap(VM, SHIP_MAP))
-		to_chat(usr, "<span class='warning'>Failed to change the ship map.</span>")
+		to_chat(usr, span_warning("Failed to change the ship map."))
 		return
 
 	log_admin("[key_name(usr)] changed the ship map to [VM.map_name].")
 	message_admins("[ADMIN_TPMONTY(usr)] changed the ship map to [VM.map_name].")
 
+/*
+/datum/admins/proc/panic_bunker()
+	set category = "Server"
+	set name = "Toggle Panic Bunker"
+
+	if(!check_rights(R_SERVER))
+		return
+
+	if(!CONFIG_GET(flag/sql_enabled))
+		to_chat(usr, span_adminnotice("The Database is not enabled!"))
+		return
+
+	CONFIG_SET(flag/panic_bunker, !CONFIG_GET(flag/panic_bunker))
+
+	log_admin("[key_name(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
+	message_admins("[ADMIN_TPMONTY(usr)] has [CONFIG_GET(flag/panic_bunker) ? "enabled" : "disabled"] the panic bunker.")
+*/
 
 /datum/admins/proc/mode_check()
 	set category = "Server"
@@ -561,7 +595,7 @@
 			message_admins("[key_name_admin(usr)] re-enabled the CDN asset transport")
 			log_admin("[key_name(usr)] re-enabled the CDN asset transport")
 		else
-			to_chat(usr, "<span class='adminnotice'>The CDN is not enabled!</span>")
+			to_chat(usr, span_adminnotice("The CDN is not enabled!"))
 			if (alert(usr, "The CDN asset transport is not enabled! If you having issues with assets you can also try disabling filename mutations.", "The CDN asset transport is not enabled!", "Try disabling filename mutations", "Nevermind") == "Try disabling filename mutations")
 				SSassets.transport.dont_mutate_filenames = !SSassets.transport.dont_mutate_filenames
 				message_admins("[key_name_admin(usr)] [(SSassets.transport.dont_mutate_filenames ? "disabled" : "re-enabled")] asset filename transforms")

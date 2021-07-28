@@ -40,7 +40,7 @@
 /obj/item/ammo_magazine/revolver/standard_revolver
 	name = "\improper TP-44 magnum speed loader (.44)"
 	desc = "A revolver speed loader."
-	default_ammo = /datum/ammo/bullet/revolver
+	default_ammo = /datum/ammo/bullet/revolver/tp44
 	flags_equip_slot = NONE
 	caliber = CALIBER_44
 	icon_state = "tp44"
@@ -69,7 +69,7 @@
 
 /obj/item/ammo_magazine/revolver/small
 	name = "\improper S&W speed loader (.357)"
-	default_ammo = /datum/ammo/bullet/revolver/small
+	default_ammo = /datum/ammo/bullet/revolver/ricochet/four
 	caliber = CALIBER_357
 	icon_state = "sw357"
 	max_rounds = 6
@@ -156,7 +156,7 @@
 
 /obj/item/ammo_magazine/internal/revolver/standard_revolver
 	caliber = CALIBER_44
-	default_ammo = /datum/ammo/bullet/revolver
+	default_ammo = /datum/ammo/bullet/revolver/tp44
 	max_rounds = 7
 	gun_type = /obj/item/weapon/gun/revolver/standard_revolver
 

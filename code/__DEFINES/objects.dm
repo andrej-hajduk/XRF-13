@@ -96,11 +96,10 @@ GLOBAL_LIST_INIT(restricted_camera_networks, list( //Those networks can only be 
 //flags_token & tokensupport
 //used for coins and vendors, restricting specific tokens to associated vendors.
 
-#define TOKEN_GENERAL 1
-#define TOKEN_MARINE 2
-#define TOKEN_ENGI 4
-#define TOKEN_SPEC 8
-#define TOKEN_ALL 15
+#define TOKEN_GENERAL (1<<1)
+#define TOKEN_MARINE (1<<2)
+#define TOKEN_ENGI (1<<3)
+#define TOKEN_ALL (1 << 4) -1
 
 //MEDEVAC DEFINES
 #define MEDEVAC_COOLDOWN 1500 //150 seconds or 2,5 minutes aka 2 minutes and 30 secs
@@ -246,6 +245,7 @@ GLOBAL_LIST_INIT(restricted_camera_networks, list( //Those networks can only be 
 #define CHECKS_PASSED 1
 #define STILL_ON_COOLDOWN 2
 #define NIGHTFALL_IMMUNE 3
+#define NO_LIGHT_STATE_CHANGE 4
 
 //Xeno turrets define
 #define TURRET_SCAN_RANGE 25

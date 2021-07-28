@@ -248,8 +248,9 @@
 /obj/item/ammo_magazine/rifle/ak47/extended
 	name = "\improper AK extended magazine (7.62x39mm)"
 	desc = "A 7.62x39mm Kalashnikov magazine, this one carries more rounds than the average magazine."
-	max_rounds = 60
+	icon_state = "ak47_ext"
 	bonus_overlay = "ak47_ex"
+	max_rounds = 60
 	icon_state_mini = "mag_rifle_big_yellow"
 
 
@@ -416,6 +417,21 @@
 	gun_type = /obj/item/weapon/gun/rifle/standard_smartmachinegun
 	reload_delay = 2.5 SECONDS
 	icon_state_mini = "mag_t29"
+
+//-------------------------------------------------------
+//T-25 THING
+
+/obj/item/ammo_magazine/rifle/standard_smartrifle
+	name = "\improper T-25 magazine (10x26mm)"
+	desc = "A 10mm assault rifle magazine."
+	caliber = CALIBER_10x26_CASELESS
+	icon_state = "t25"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo = /datum/ammo/bullet/smartgun/smartrifle
+	max_rounds = 50
+	gun_type = /obj/item/weapon/gun/rifle/standard_smartrifle
+	icon_state_mini = "mag_rifle"
+
 
 
 //-------------------------------------------------------

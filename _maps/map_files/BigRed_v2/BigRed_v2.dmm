@@ -1537,7 +1537,6 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/bigredv2/outside/marshal_office)
 "afR" = (
-/obj/machinery/deployable/barrier,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -1747,7 +1746,7 @@
 /area/bigredv2/outside/marshal_office)
 "agI" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/secure/eastleft,
+/obj/machinery/door/window/secure,
 /obj/item/weapon/shield/riot,
 /turf/open/floor/tile/vault{
 	dir = 8
@@ -2469,7 +2468,7 @@
 /area/bigredv2/outside/marshal_office)
 "ajF" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/secure/westright,
+/obj/machinery/door/window/secure/right,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -2853,7 +2852,9 @@
 "akQ" = (
 /obj/structure/table/reinforced,
 /obj/structure/cable,
-/obj/machinery/door/window/secure/southright,
+/obj/machinery/door/window/secure/right{
+	dir = 2
+	},
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -3713,7 +3714,7 @@
 /area/bigredv2/caves/lambda_lab)
 "anS" = (
 /obj/structure/cable,
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/floor/tile/white/warningstripe{
 	dir = 8
 	},
@@ -12657,7 +12658,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/cargo)
 "aZv" = (
-/obj/machinery/door/window/eastleft,
+/obj/machinery/door/window,
 /turf/open/floor,
 /area/bigredv2/outside/cargo)
 "aZw" = (
@@ -16695,7 +16696,7 @@
 	},
 /area/bigredv2/outside/s)
 "buL" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/outside/s)
 "buM" = (
@@ -19323,7 +19324,7 @@
 	},
 /area/bigredv2/outside/c)
 "fJR" = (
-/obj/item/tool/warning_cone,
+/obj/item/clothing/head/warning_cone,
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/se)
 "fLz" = (

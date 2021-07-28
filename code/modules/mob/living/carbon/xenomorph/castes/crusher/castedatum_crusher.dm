@@ -13,9 +13,6 @@
 	melee_damage = 21
 	attack_delay = 8
 
-	// *** Tackle *** //
-	tackle_damage = 26
-
 	// *** Speed *** //
 	speed = 0.1
 
@@ -32,7 +29,7 @@
 	deevolves_to = /mob/living/carbon/xenomorph/bull
 
 	// *** Flags *** //
-	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
+	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER|CAN_BECOME_KING
 
 	// *** Defense *** //
 	soft_armor = list("melee" = 70, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = XENO_BOMB_RESIST_3, "bio" = 80, "rad" = 80, "fire" = 60, "acid" = 80)
@@ -64,9 +61,6 @@
 
 	upgrade = XENO_UPGRADE_ONE
 
-	// *** Tackle *** //
-	tackle_damage = 26
-
 	// *** Speed *** //
 	speed = 0.1
 
@@ -96,9 +90,6 @@
 	// *** Melee Attacks *** //
 	melee_damage = 24
 
-	// *** Tackle *** //
-	tackle_damage = 30
-
 	// *** Speed *** //
 	speed = 0.1
 
@@ -127,9 +118,6 @@
 
 	// *** Melee Attacks *** //
 	melee_damage = 24
-
-	// *** Tackle *** //
-	tackle_damage = 30
 
 	// *** Speed *** //
 	speed = 0.1

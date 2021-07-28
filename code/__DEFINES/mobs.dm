@@ -73,9 +73,8 @@
 
 //disabilities
 #define BLIND (1<<0)
-#define MUTE (1<<1)
-#define DEAF (1<<2)
-#define NEARSIGHTED (1<<3)
+#define DEAF (1<<1)
+#define NEARSIGHTED (1<<2)
 //=================================================
 
 //mob/var/stat things
@@ -293,6 +292,9 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define FACIAL_CAUTERISE_MIN_DURATION 60
 #define FACIAL_CAUTERISE_MAX_DURATION 80
 
+#define SUTURE_MIN_DURATION 80
+#define SUTURE_MAX_DURATION 90
+
 #define LIMB_PRINTING_TIME 550
 #define LIMB_METAL_AMOUNT 125
 
@@ -430,7 +432,12 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 
 //Xeno Defines
 
+#define XENO_DEFAULT_VENT_ENTER_TIME 4.5 SECONDS //Standard time for a xeno to enter a vent.
+#define XENO_DEFAULT_VENT_EXIT_TIME 2 SECONDS //Standard time for a xeno to exit a vent.
 #define XENO_DEFAULT_ACID_PUDDLE_DAMAGE 14 //Standard damage dealt by acid puddles
+#define XENO_ACID_WELL_FILL_TIME 2 SECONDS //How long it takes to add a charge to an acid pool
+#define XENO_ACID_WELL_FILL_COST 200 //Cost in plasma to apply a charge to an acid pool
+#define XENO_ACID_WELL_MAX_CHARGES 5 //Maximum number of charges for the acid well
 
 #define HIVE_CAN_HIJACK (1<<0)
 
@@ -440,7 +447,7 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define XENO_DEADHUMAN_DRAG_SLOWDOWN 2
 #define XENO_EXPLOSION_RESIST_3_MODIFIER 0.25 //multiplies top level explosive damage by this amount.
 
-#define KING_SUMMON_TIMER_DURATION 10 MINUTES
+#define KING_SUMMON_TIMER_DURATION 5 MINUTES
 
 #define SPIT_UPGRADE_BONUS(Xenomorph) (( max(0,Xenomorph.upgrade_as_number()) * 0.15 )) //increase damage by 15% per upgrade level; compensates for the loss of insane attack speed.
 
@@ -487,6 +494,8 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define CASTE_CAN_HOLD_JELLY (1<<15)//whether we can hold fireproof jelly in our hands
 #define CASTE_IS_STRONG (1<<16)//can tear open acided walls without being big
 #define CASTE_CAN_CORRUPT_GENERATOR (1<<17) //Can corrupt a generator
+#define CASTE_IS_BUILDER (1<<18) //whether we are classified as a builder caste
+#define CAN_BECOME_KING (1<<19) //Can be choose to become a king
 
 //Charge-Crush
 #define CHARGE_OFF 0
@@ -518,6 +527,17 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define HUNTER_SNEAKATTACK_RUN_REDUCTION 0.2
 #define HUNTER_SNEAKATTACK_WALK_INCREASE 1
 #define HUNTER_SNEAKATTACK_MULTI_RECOVER_DELAY 10
+#define HUNTER_MARK_WINDUP 1 SECONDS //Windup of the Hunter's Mark
+#define HUNTER_PSYCHIC_TRACE_COOLDOWN 5 SECONDS //Cooldown of the Hunter's Psychic Trace, and duration of its arrow
+#define HUNTER_SILENCE_STAGGER_STACKS 1 //Silence imposes this many stagger stacks
+#define HUNTER_SILENCE_SENSORY_STACKS 6 //Silence imposes this many eyeblur, mute and deafen stacks.
+#define HUNTER_SILENCE_DURATION 10 SECONDS //Removes mute from the Hunter's Silence after this delay.
+#define HUNTER_SILENCE_RANGE 5 //Range in tiles of the Hunter's Silence.
+#define HUNTER_SILENCE_AOE 2 //AoE size of Silence in tiles
+#define HUNTER_SILENCE_WINDUP 0.5 SECONDS //Windup of the Hunter's Silence
+#define HUNTER_SILENCE_MULTIPLIER 1.5 //Multiplier of stacks vs Hunter's Mark targets
+#define HUNTER_SILENCE_WHIFF_COOLDOWN 3 SECONDS //If we fail to target anyone with Silence, partial cooldown to prevent spam.
+#define HUNTER_VENT_CRAWL_TIME 2 SECONDS //Hunters can enter vents fast
 
 //Ravager defines:
 #define RAV_CHARGESPEED 2
@@ -527,7 +547,15 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 
 #define RAVAGER_ENDURE_DURATION				10 SECONDS
 #define RAVAGER_ENDURE_DURATION_WARNING		0.7
-#define RAVAGER_ENDURE_HP_LIMIT				-200
+#define RAVAGER_ENDURE_HP_LIMIT				-150
+
+#define RAVAGER_RAGE_DURATION							10 SECONDS
+#define RAVAGER_RAGE_WARNING							0.7
+#define RAVAGER_RAGE_POWER_MULTIPLIER					0.5 //How much we multiply our % of missing HP by to determine Rage Power
+#define RAVAGER_RAGE_NEGATIVE_HP_POWER_MULTIPLIER		-0.0075 //How much we multiply our negative HP by to determine Rage Power
+#define RAVAGER_RAGE_MIN_HEALTH_THRESHOLD				0.5 //The maximum % of HP we can have to trigger Rage
+#define RAVAGER_RAGE_SUPER_RAGE_THRESHOLD				0.5 //The minimum amount of Rage Power we need to trigger the bonus Rage effects
+
 
 //crusher defines
 #define CRUSHER_STOMP_LOWER_DMG 40
@@ -539,7 +567,7 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 //carrier defines
 #define CARRIER_HUGGER_THROW_SPEED 2
 #define CARRIER_HUGGER_THROW_DISTANCE 5
-#define CARRIER_SLASH_HUGGER_DAMAGE 23
+#define CARRIER_SLASH_HUGGER_DAMAGE 25
 
 //Defiler defines
 #define DEFILER_GAS_CHANNEL_TIME 0.5 SECONDS
@@ -610,7 +638,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define WRAITH_BANISH_NONFRIENDLY_LIVING_MULTIPLIER 0.5
 #define WRAITH_BANISH_VERY_SHORT_MULTIPLIER 0.3
 
-#define WRAITH_TELEPORT_DEBUFF_STACKS 1 //Stagger and slow stacks applied to adjacent living hostiles before/after a teleport
+#define WRAITH_TELEPORT_DEBUFF_STAGGER_STACKS 2 //Stagger and slow stacks applied to adjacent living hostiles before/after a teleport
+#define WRAITH_TELEPORT_DEBUFF_SLOWDOWN_STACKS 3 //Stagger and slow stacks applied to adjacent living hostiles before/after a teleport
+
+//Larva defines
+#define LARVA_VENT_CRAWL_TIME 1 SECONDS //Larva can crawl into vents fast
 
 #define DEFILER_TRANSVITOX_CAP 180 //Max toxin damage transvitox will allow
 
