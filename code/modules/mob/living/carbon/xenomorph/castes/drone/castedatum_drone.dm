@@ -11,9 +11,6 @@
 	// *** Melee Attacks *** //
 	melee_damage = 16
 
-	// *** Tackle *** //
-	tackle_damage = 20
-
 	// *** Speed *** //
 	speed = -0.8
 	weeds_speed_mod = -0.1
@@ -39,7 +36,7 @@
 	)
 
 	// *** Flags *** //
-	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_EVOLUTION_ALLOWED|CASTE_CAN_HOLD_FACEHUGGERS|CASTE_CAN_VENT_CRAWL|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
+	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_EVOLUTION_ALLOWED|CASTE_CAN_HOLD_FACEHUGGERS|CASTE_CAN_VENT_CRAWL|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER|CASTE_IS_BUILDER|CAN_BECOME_KING
 
 	can_hold_eggs = CAN_HOLD_TWO_HANDS
 
@@ -79,9 +76,6 @@
 
 	upgrade = XENO_UPGRADE_ONE
 
-	// *** Tackle *** //
-	tackle_damage = 20
-
 	// *** Speed *** //
 	speed = -0.9
 
@@ -110,9 +104,6 @@
 	// *** Melee Attacks *** //
 	melee_damage = 20
 
-	// *** Tackle *** //
-	tackle_damage = 25
-
 	// *** Speed *** //
 	speed = -1.0
 
@@ -140,9 +131,6 @@
 
 	// *** Melee Attacks *** //
 	melee_damage = 20
-
-	// *** Tackle *** //
-	tackle_damage = 25
 
 	// *** Speed *** //
 	speed = -1.2

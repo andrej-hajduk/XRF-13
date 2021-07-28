@@ -10,6 +10,9 @@
 	/// The faction of this supply drop
 	var/faction = FACTION_TERRAGOV
 
+/obj/structure/supply_drop/rebel
+	faction = FACTION_TERRAGOV_REBEL
+
 /obj/structure/supply_drop/Initialize()
 	. = ..()
 	GLOB.supply_pad_list += src

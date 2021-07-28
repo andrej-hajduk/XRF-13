@@ -1,7 +1,7 @@
 /datum/game_mode/infestation/hunt
 	name = "Bug Hunt"
 	config_tag = "Hunt"
-	flags_round_type = MODE_INFESTATION|MODE_LZ_SHUTTERS|MODE_XENO_RULER|MODE_HIJACK_POSSIBLE
+	flags_round_type = MODE_INFESTATION|MODE_LZ_SHUTTERS|MODE_XENO_RULER|MODE_HIJACK_POSSIBLE|MODE_SILOABLE_BODIES
 	flags_landmarks = MODE_LANDMARK_SPAWN_XENO_TUNNELS|MODE_LANDMARK_SPAWN_MAP_ITEM
 	flags_xeno_abilities = ABILITY_HUNT
 	valid_job_types = list(
@@ -24,7 +24,7 @@
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/squad/standard = -1,
 		/datum/job/survivor = 1,
-		/datum/job/xenomorph = 2,
+		/datum/job/xenomorph = FREE_XENO_AT_START,
 		/datum/job/xenomorph/queen = 1
 	)
 
@@ -40,7 +40,7 @@
 	if(!.)
 		return
 	var/datum/job/scaled_job = SSjob.GetJobType(/datum/job/xenomorph) //Xenos
-	scaled_job.job_points_needed  = CONFIG_GET(number/hunt_larvapoints_required)
+	scaled_job.job_points_needed  = HUNT_LARVA_POINTS_NEEDED
 
 /datum/game_mode/infestation/hunt/orphan_hivemind_collapse()
 	if(round_finished)

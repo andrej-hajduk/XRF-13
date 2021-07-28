@@ -56,12 +56,7 @@
 		affected_mob = null
 		return PROCESS_KILL
 
-	if(affected_mob.stat == DEAD)//DEAD CODE TO BE REMOVED
-		if(ishuman(affected_mob))
-			if(!HAS_TRAIT(affected_mob, TRAIT_UNDEFIBBABLE))
-				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
-				L?.initiate_burst(affected_mob)
-				return PROCESS_KILL
+	if(affected_mob.stat == DEAD)
 		var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
 		L?.initiate_burst(affected_mob)
 		return PROCESS_KILL
@@ -98,12 +93,12 @@
 	switch(stage)
 		if(2)
 			if(prob(2))
-				to_chat(affected_mob, "<span class='warning'>[pick("Your chest hurts a little bit", "Your stomach hurts")].</span>")
+				to_chat(affected_mob, span_warning("[pick("Your chest hurts a little bit", "Your stomach hurts")]."))
 		if(3)
 			if(prob(2))
-				to_chat(affected_mob, "<span class='warning'>[pick("Your throat feels sore", "Mucous runs down the back of your throat")].</span>")
+				to_chat(affected_mob, span_warning("[pick("Your throat feels sore", "Mucous runs down the back of your throat")]."))
 			else if(prob(1))
-				to_chat(affected_mob, "<span class='warning'>Your muscles ache.</span>")
+				to_chat(affected_mob, span_warning("Your muscles ache."))
 				if(prob(20))
 					affected_mob.take_limb_damage(1)
 			else if(prob(2))
@@ -111,13 +106,13 @@
 		if(4)
 			if(prob(1))
 				if(!affected_mob.IsUnconscious())
-					affected_mob.visible_message("<span class='danger'>\The [affected_mob] starts shaking uncontrollably!</span>", \
-												"<span class='danger'>You start shaking uncontrollably!</span>")
+					affected_mob.visible_message(span_danger("\The [affected_mob] starts shaking uncontrollably!"), \
+												span_danger("You start shaking uncontrollably!"))
 					affected_mob.Unconscious(10 SECONDS)
 					affected_mob.jitter(105)
 					affected_mob.take_limb_damage(1)
 			if(prob(2))
-				to_chat(affected_mob, "<span class='warning'>[pick("You feel a lump in your throat", "It becomes difficult to breathe", "Your heart starts beating rapidly")].</span>")
+				to_chat(affected_mob, span_warning("[pick("Your chest hurts badly", "It becomes difficult to breathe", "Your heart starts beating rapidly, and each beat is painful")]."))
 		if(5)
 			become_larva()
 		if(6)
@@ -155,7 +150,7 @@
 	//If we have a candidate, transfer it over.
 	if(picked)
 		picked.mind.transfer_to(new_xeno, TRUE)
-		to_chat(new_xeno, "<span class='xenoannounce'>We are a xenomorph larva inside a host! Move to burst out of it!</span>")
+		to_chat(new_xeno, span_xenoannounce("We are a xenomorph larva inside a host! Move to burst out of it!"))
 		new_xeno << sound('sound/effects/xeno_newlarva.ogg')
 
 	stage = 6
@@ -166,11 +161,11 @@
 		return
 
 	victim.larva_birthing = TRUE
-	to_chat(src, "<span class='danger'>We start slithering out of [victim]!</span>")
+	to_chat(src, span_danger("We start slithering out of [victim]!"))
 	var/obj/item/alien_embryo/birth_owner = locate() in victim
 
-	victim.visible_message("<span class='danger'>\The [victim] starts shaking uncontrollably!</span>", \
-								"<span class='danger'>You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!</span>")
+	victim.visible_message(span_danger("\The [victim] starts shaking uncontrollably!"), \
+								span_danger("You feel something wiggling in your [birth_owner ? birth_owner.emerge_target : "throat"]!"))
 	victim.jitter(300)
 
 	playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 25, TRUE)
