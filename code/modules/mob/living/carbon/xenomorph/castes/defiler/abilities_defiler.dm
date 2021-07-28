@@ -1,6 +1,7 @@
 #define DEFILER_NEUROTOXIN "Neurotoxin"
 #define DEFILER_HEMODILE "Hemodile"
 #define DEFILER_TRANSVITOX "Transvitox"
+#define DEFILER_CROCIN "Crocin"
 
 // ***************************************
 // *********** Sting
@@ -113,7 +114,7 @@
 			gas = new /datum/effect_system/smoke_spread/xeno/transvitox(X)
 			smoke_range = 4
 		if(/datum/reagent/drug/aphrodisiac)
-			gas = new /obj/effect/particle_effect/smoke/xeno/crocin(X)
+			gas = new /datum/effect_system/smoke_spread/xeno/crocin(X)
 			smoke_range = 3
 
 	while(count)
@@ -188,6 +189,9 @@
 		if(/datum/reagent/toxin/xeno_transvitox)
 			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/transvitox
 			newegg.gas_size_bonus = 2
+		if(/datum/reagent/drug/aphrodisiac)
+			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/crocin
+			newegg.gas_size_bonus = 1
 	qdel(alien_egg)
 
 	GLOB.round_statistics.defiler_inject_egg_neurogas++
@@ -239,6 +243,7 @@
 			DEFILER_NEUROTOXIN = image('icons/mob/actions.dmi', icon_state = DEFILER_NEUROTOXIN),
 			DEFILER_HEMODILE = image('icons/mob/actions.dmi', icon_state = DEFILER_HEMODILE),
 			DEFILER_TRANSVITOX = image('icons/mob/actions.dmi', icon_state = DEFILER_TRANSVITOX),
+			DEFILER_CROCIN = image('icons/mob/actions.dmi', icon_state = DEFILER_CROCIN),
 			)
 	var/toxin_choice = show_radial_menu(owner, owner, defiler_toxin_images_list, radius = 48)
 	if(!toxin_choice)
@@ -331,3 +336,4 @@
 #undef DEFILER_NEUROTOXIN
 #undef DEFILER_HEMODILE
 #undef DEFILER_TRANSVITOX
+#undef DEFILER_CROCIN

@@ -363,6 +363,9 @@ datum/effect_system/smoke_spread/tactical
 	smoke_type = /obj/effect/particle_effect/smoke/xeno/transvitox
 	strength = 0.75
 
+/datum/effect_system/smoke_spread/xeno/crocin
+	smoke_type = /obj/effect/particle_effect/smoke/xeno/crocin
+
 /////////////////////////////////////////////
 // Chem smoke
 /////////////////////////////////////////////
