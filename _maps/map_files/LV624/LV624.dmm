@@ -9499,8 +9499,8 @@
 /area/lv624/lazarus/main_hall)
 "bcL" = (
 /obj/structure/rack,
-/obj/item/ammo_magazine/shotgun,
 /obj/item/weapon/gun/shotgun/pump/cmb,
+/obj/item/ammo_magazine/shotgun/beanbag/large,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/security)
 "bcM" = (
@@ -9547,7 +9547,7 @@
 "bcQ" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/gun/shotgun/pump/cmb,
-/obj/item/ammo_magazine/shotgun/buckshot,
+/obj/item/ammo_magazine/shotgun/beanbag/large,
 /turf/open/floor/tile/red/redtaupe,
 /area/lv624/lazarus/security)
 "bcS" = (
