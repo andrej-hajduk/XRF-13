@@ -493,6 +493,28 @@
 			M.show_inv(src)
 
 
+/mob/living/carbon/xenomorph/stripPanelUnequip(obj/item/I, mob/M, slot_to_process)
+	if(I.flags_item & ITEM_ABSTRACT)
+		return
+	if(I.flags_item & NODROP)
+		to_chat(src, span_warning("You can't remove \the [I.name], it appears to be stuck!"))
+		return
+	log_combat(src, M, "attempted to slash off [key_name(I)] ([slot_to_process])")
+
+	M.visible_message(span_danger("[src] tries to slash off [M]'s [I.name]."), \
+					span_userdanger("[src] tries to slash off [M]'s [I.name]."), null, 5)
+	if(do_mob(src, M, HUMAN_STRIP_DELAY, BUSY_ICON_HOSTILE))
+		if(Adjacent(M) && I && I == M.get_item_by_slot(slot_to_process))
+			M.dropItemToGround(I)
+			log_combat(src, M, "removed [key_name(I)] ([slot_to_process])")
+			if(isidcard(I))
+				message_admins("[ADMIN_TPMONTY(src)] took the [I] of [ADMIN_TPMONTY(M)].")
+
+	if(M)
+		if(interactee == M && Adjacent(M))
+			M.show_inv(src)
+
+
 /mob/living/carbon/human/stripPanelEquip(obj/item/I, mob/M, slot_to_process)
 	if(I && !(I.flags_item & ITEM_ABSTRACT))
 		if(I.flags_item & NODROP)

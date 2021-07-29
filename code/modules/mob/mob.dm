@@ -480,16 +480,13 @@
 	. = ..()
 	if(.)
 		return
-	if(!ismob(dropping) || isxeno(user) || isxeno(dropping))
+	if(!ismob(dropping))
 		return
 	// If not dragged onto myself or dragging my own sprite onto myself
 	if(user != src || dropping == user)
 		return
 	var/mob/dragged = dropping
 	dragged.show_inv(user)
-
-/mob/living/carbon/xenomorph/MouseDrop_T(atom/dropping, atom/user)
-	return
 
 
 /mob/living/start_pulling(atom/movable/AM, suppress_message = FALSE)
