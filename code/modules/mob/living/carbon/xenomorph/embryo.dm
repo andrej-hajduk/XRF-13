@@ -76,13 +76,13 @@
 		counter += 2.5 //Accelerates larval growth somewhat. You don't want this stuff in your body.
 
 	if(affected_mob.reagents.get_reagent_amount(/datum/reagent/consumable/larvajelly))
-		counter += 10 //Accelerates larval growth massively. Voluntarily drinking larval jelly while infected is straight-up suicide. Larva hits Stage 5 in exactly ONE minute.
+		counter += 5 //Accelerates larval growth massively. Voluntarily drinking larval jelly while infected is straight-up suicide. Larva hits Stage 5 in exactly ONE minute.
 
 	if(affected_mob.reagents.get_reagent_amount(/datum/reagent/medicine/larvaway))
 		counter -= 1 //Halves larval growth progress, for some tradeoffs. Larval toxin purges this
 
 
-	if(stage < 5 && counter >= 120)
+	if(stage < 5 && counter >= 1200)
 		counter = 0
 		stage++
 		log_combat(affected_mob, null, "had their embryo advance to stage [stage]")
@@ -206,6 +206,8 @@
 
 	if((locate(/obj/structure/bed/nest) in loc) && hive.living_xeno_queen?.z == loc.z)
 		burrow()
+	else
+		addtimer(CALLBACK(src, .proc/burrow), 5 MINUTES)
 
 
 /mob/living/proc/emote_burstscream()
