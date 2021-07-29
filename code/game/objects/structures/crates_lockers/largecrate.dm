@@ -105,7 +105,8 @@
 			break
 		num_things--
 		var/thing = pick(prob(3);/obj/item/storage/belt/utility/full,
-						prob(2);/obj/item/storage/belt/medical,
+						prob(1);/obj/item/storage/belt/medical,
+						prob(1);/obj/item/storage/belt/combatLifesaver/upp,
 						prob(1);/obj/item/storage/belt/combatLifesaver/som,
 						prob(5);/obj/item/storage/firstaid/regular,
 						prob(2);/obj/item/storage/firstaid/fire,
