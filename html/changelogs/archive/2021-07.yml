@@ -558,3 +558,21 @@
   Surrealaser:
   - balance: Defender can now charge from its Fortify stance when both Charge and
       Fortify are off cooldown.
+2021-07-29:
+  Alterist:
+  - bugfix: Theseus Aft Escape Pods have been properly installed, the engineers that
+      installed escape shuttles have been fired.
+  BraveMole:
+  - balance: Silo produces 18% more
+  Hekzder:
+  - rscadd: Adds a bundle to req for both Mimir Mark 2 modules that replaces the previously
+      separate Mimir Mark 2 modules.
+  - balance: Full Mimir Mark 2 set now costs 15 points, down from 17.
+  QualityVan:
+  - bugfix: Health analyzers should quit their nonsense now
+  Surrealaser:
+  - code_imp: Partial refactor of vent crawling. Snowflaking removed. Infrastructure
+      added for unique ventcrawl interactions, and custom ventcrawl parameters at
+      the caste level.
+  - balance: Hunters can now crawl into vents in 1 second down from 4.5 seconds.
+  - balance: Larva can now crawl into vents in 1 second down from 4.5 seconds.
