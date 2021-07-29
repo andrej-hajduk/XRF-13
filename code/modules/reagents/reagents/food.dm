@@ -416,6 +416,7 @@
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
 			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
+			H.lust += 2
 			for(var/g in genits)
 				var/datum/internal_organ/genital/G = g
 				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
@@ -434,6 +435,7 @@
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
 			var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE)
+			H.lust += 1
 			for(var/g in genits)
 				var/datum/internal_organ/genital/G = g
 				to_chat(L, "<span class='userlove'>[G.arousal_verb]!</span>")
