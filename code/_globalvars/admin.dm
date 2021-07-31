@@ -4,8 +4,8 @@ GLOBAL_VAR_INIT(dsay_allowed, TRUE)
 GLOBAL_VAR_INIT(enter_allowed, TRUE)
 GLOBAL_VAR_INIT(respawn_allowed, TRUE)
 
-GLOBAL_VAR_INIT(respawntime, 30 MINUTES)
-GLOBAL_VAR_INIT(xenorespawntime, 2 MINUTES)
+GLOBAL_VAR_INIT(respawntime, 5 MINUTES)
+GLOBAL_VAR_INIT(xenorespawntime, 5 MINUTES)
 GLOBAL_VAR_INIT(fileaccess_timer, 0)
 
 GLOBAL_VAR_INIT(custom_info, "")
