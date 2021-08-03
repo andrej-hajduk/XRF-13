@@ -13877,19 +13877,12 @@
 	dir = 2
 	},
 /turf/open/floor/plating/ground/dirt,
-<<<<<<< HEAD
 /area/shuttle/drop2/lz2)
 "hXh" = (
 /obj/structure/cargo_container{
 	dir = 4
 	},
 /turf/open/floor/marking/bot,
-=======
-/area/lv624/ground/jungle2)
-"ibX" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating/ground/dirt,
->>>>>>> master
 /area/lv624/ground/compound/sw)
 "igg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -13998,36 +13991,6 @@
 /obj/structure/jungle/vines,
 /turf/closed/gm/dense,
 /area/lv624/ground/jungle6)
-<<<<<<< HEAD
-=======
-"izt" = (
-/turf/open/floor/plating/ground/dirtgrassborder/corner2{
-	dir = 1
-	},
-/area/lv624/ground/jungle2)
-"iAL" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/marking/warning{
-	dir = 1
-	},
-/area/shuttle/drop2/lz2)
-"iBN" = (
-/obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
-/turf/closed/gm/dense,
-/area/lv624/ground/jungle6)
-"iCH" = (
-/obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
-	dir = 2
-	},
-/turf/closed/gm/dense,
-/area/lv624/ground/compound/sw)
-"iCK" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle9)
->>>>>>> master
 "iEQ" = (
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/marking/bot,
@@ -14160,15 +14123,7 @@
 "jcQ" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
-<<<<<<< HEAD
 /area/shuttle/drop2/lz2)
-=======
-/area/lv624/ground/southcargo)
-"jdC" = (
-/obj/effect/decal/remains/xeno,
-/turf/closed/wall/indestructible/mineral,
-/area/lv624/ground/sand8)
->>>>>>> master
 "jex" = (
 /obj/structure/cable,
 /turf/open/floor/plating/warning{
@@ -15191,17 +15146,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/security)
-<<<<<<< HEAD
 "nyr" = (
 /obj/machinery/miner/damaged,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/river1)
-=======
-"nxQ" = (
-/obj/effect/decal/remains/xeno,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/caves/central3)
->>>>>>> master
 "nzw" = (
 /obj/effect/decal/warning_stripes/thin{
 	dir = 8
@@ -16025,7 +15973,6 @@
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/engineering)
-<<<<<<< HEAD
 "qRv" = (
 /obj/machinery/light{
 	dir = 4
@@ -16035,8 +15982,6 @@
 	},
 /turf/open/floor,
 /area/shuttle/drop2/lz2)
-=======
->>>>>>> master
 "qSA" = (
 /obj/machinery/button/door/open_only/landing_zone,
 /obj/structure/window/reinforced,
@@ -20066,7 +20011,6 @@ are
 are
 are
 awZ
-<<<<<<< HEAD
 ayY
 avP
 avP
@@ -20108,49 +20052,6 @@ atj
 bch
 bcm
 bfM
-=======
-avL
-avL
-avL
-avL
-auH
-aFR
-nSO
-aVS
-gWo
-gWo
-elu
-aXb
-aMV
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-dVC
-mup
-sod
-hBa
-hBa
-iGV
-gWo
-odt
->>>>>>> master
 bnE
 bnE
 bph
@@ -21188,10 +21089,7 @@ avL
 sgU
 avO
 avL
-<<<<<<< HEAD
 avL
-=======
->>>>>>> master
 unC
 dxb
 wFS
@@ -22633,7 +22531,6 @@ avw
 aCp
 axR
 axR
-<<<<<<< HEAD
 aPO
 bmr
 aSJ
@@ -22643,19 +22540,6 @@ bmr
 fbX
 lZj
 lTs
-=======
-axR
-axR
-wNe
-wNe
-kKQ
-wNe
-wNe
-ecb
-gWo
-kVK
-yhh
->>>>>>> master
 lTs
 lTs
 hgD
@@ -32596,10 +32480,7 @@ qaM
 acN
 acO
 acO
-<<<<<<< HEAD
 bjH
-=======
->>>>>>> master
 bjH
 bjH
 rhQ

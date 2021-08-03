@@ -285,22 +285,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/cargo)
-<<<<<<< HEAD
-=======
-"bG" = (
-/obj/docking_port/stationary/crashmode,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/outpost/yard/central)
-"bI" = (
-/obj/effect/landmark/corpsespawner/scientist{
-	corpseback = null;
-	corpseshoes = /obj/item/clothing/shoes/black;
-	corpseuniform = /obj/item/clothing/under/colonist;
-	name = "Colonist Chang Lin"
-	},
-/turf/open/floor/plating/ground/mars/random/dirt,
-/area/outpost/caves/south_east)
->>>>>>> master
 "bL" = (
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/floor/tile/dark,
@@ -637,20 +621,6 @@
 	dir = 5
 	},
 /area/outpost/hallway/south_west)
-<<<<<<< HEAD
-=======
-"dP" = (
-/obj/docking_port/stationary/crashmode,
-/turf/open/floor/plating/asteroidfloor,
-/area/outpost/arrivals)
-"dQ" = (
-/obj/effect/decal/cleanable/blood/writing{
-	dir = 1
-	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/outpost/caves/north_east)
->>>>>>> master
 "dR" = (
 /turf/closed/mineral/bigred,
 /area/outpost/caves/west)
@@ -5245,19 +5215,6 @@
 	dir = 1
 	},
 /area/outpost/arrivals)
-<<<<<<< HEAD
-=======
-"Dj" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/tile/dark,
-/area/outpost/science)
-"Dk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/mars/cavetodirt{
-	dir = 5
-	},
-/area/outpost/caves/north_west)
->>>>>>> master
 "Dl" = (
 /obj/structure/closet/toolcloset,
 /obj/effect/decal/cleanable/dirt,
@@ -38207,13 +38164,8 @@ Xi
 ZQ
 Ar
 xg
-<<<<<<< HEAD
 xg
 xg
-=======
-xB
-uo
->>>>>>> master
 xg
 xg
 xg
