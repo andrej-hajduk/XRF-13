@@ -71,7 +71,7 @@ export const Uplink = (props, context) => {
       )}
       <Window.Content scrollable>
         <Section
-          title={"Select an item - "+credits+" Dollars"}
+          title={"Select an item - "+credits+"$"}
           buttons={
             <Button
               icon="power-off"
