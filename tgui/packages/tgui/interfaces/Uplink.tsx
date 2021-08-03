@@ -169,7 +169,7 @@ const ProductEntry = (props: VendingProductEntryProps, context) => {
               'vend',
               { vend: prod_ref })}
             disabled={!stock}>
-			{price ? ('Buy (' + price + '$)') : ('Vend')}
+            {price ? ('Buy (' + price + '$)') : ('Vend')}
           </Button>
         </>
       }
