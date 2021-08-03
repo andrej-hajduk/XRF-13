@@ -1,3 +1,13 @@
+#define CAT_STANDARD 0
+#define MAKE_UPLINK_RECORD_DATA(record) list(\
+		"product_name" = record.product_name,\
+		"product_color" = record.display_color,\
+		"prod_price" = record.price,\
+		"prod_desc" = initial(record.product_path.desc),\
+		"ref" = REF(record),\
+		"tab" = record.tab,\
+	)
+
 /obj/item/uplink_tablet
 	name = "uplink tablet"
 	desc = "A basic skeleton of a mobile shop."
@@ -32,7 +42,7 @@
 	prices = null
 
 ///Builds a vending machine inventory from the given list into their records depending of category.
-/obj/item/uplink_tablet/proc/build_inventory(list/productlist, category = CAT_NORMAL)
+/obj/item/uplink_tablet/proc/build_inventory(list/productlist, category = CAT_STANDARD)
 	var/list/recordlist = product_records
 
 	for(var/entry in productlist)
@@ -110,7 +120,7 @@
 	for(var/datum/vending_product/R AS in product_records)
 		if(R.tab && !(R.tab in .["tabs"]))
 			.["tabs"] += R.tab
-		.["displayed_records"] += list(MAKE_VENDING_RECORD_DATA(R))
+		.["displayed_records"] += list(MAKE_UPLINK_RECORD_DATA(R))
 
 /obj/item/uplink_tablet/ui_data(mob/user)
 	. = list()
@@ -125,7 +135,7 @@
 		.["price"][R.product_name] = R.price
 
 	if(currently_vending)
-		.["currently_vending"] = MAKE_VENDING_RECORD_DATA(currently_vending)
+		.["currently_vending"] = MAKE_UPLINK_RECORD_DATA(currently_vending)
 
 /obj/item/uplink_tablet/ui_act(action, list/params)
 	. = ..()
@@ -918,3 +928,6 @@
 			/obj/item/clothing/mask/gas/wolves = 1500,
 		),
 	)
+
+#undef CAT_STANDARD
+#undef MAKE_UPLINK_RECORD_DATA
