@@ -313,7 +313,7 @@
 	allowed = list(
 		/obj/item/weapon/gun,
 		/obj/item/flashlight,
-		/obj/item/storage/large_holster/machete,
+		/obj/item/storage/large_holster/blade,
 		/obj/item/weapon/claymore,
 		/obj/item/storage/belt/gun,
 		/obj/item/weapon/twohanded,
