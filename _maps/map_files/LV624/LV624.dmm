@@ -5272,7 +5272,6 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle7)
 "aDm" = (
-/obj/effect/landmark/start/job/survivor,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	on = 1
 	},
@@ -9476,8 +9475,8 @@
 /area/lv624/lazarus/main_hall)
 "bcL" = (
 /obj/structure/rack,
+/obj/item/ammo_magazine/shotgun,
 /obj/item/weapon/gun/shotgun/pump/cmb,
-/obj/item/ammo_magazine/shotgun/beanbag/large,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/security)
 "bcM" = (
@@ -9524,7 +9523,7 @@
 "bcQ" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/gun/shotgun/pump/cmb,
-/obj/item/ammo_magazine/shotgun/beanbag/large,
+/obj/item/ammo_magazine/shotgun/buckshot,
 /turf/open/floor/tile/red/redtaupe,
 /area/lv624/lazarus/security)
 "bcS" = (
@@ -11847,7 +11846,6 @@
 /obj/item/ammo_magazine/shotgun,
 /obj/item/ammo_magazine/shotgun/buckshot,
 /obj/item/ammo_magazine/shotgun/flechette,
-/obj/item/ammo_magazine/shotgun/beanbag/large,
 /turf/open/floor/plating/platebot,
 /area/lv624/lazarus/secure_storage)
 "bqe" = (
@@ -13877,13 +13875,7 @@
 	dir = 2
 	},
 /turf/open/floor/plating/ground/dirt,
-/area/shuttle/drop2/lz2)
-"hXh" = (
-/obj/structure/cargo_container{
-	dir = 4
-	},
-/turf/open/floor/marking/bot,
-/area/lv624/ground/compound/sw)
+/area/lv624/ground/jungle2)
 "igg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -13991,6 +13983,29 @@
 /obj/structure/jungle/vines,
 /turf/closed/gm/dense,
 /area/lv624/ground/jungle6)
+"izt" = (
+/turf/open/floor/plating/ground/dirtgrassborder/corner2{
+	dir = 1
+	},
+/area/lv624/ground/jungle2)
+"iAL" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/marking/warning{
+	dir = 1
+	},
+/area/shuttle/drop2/lz2)
+"iBN" = (
+/obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
+/turf/closed/gm/dense,
+/area/lv624/ground/jungle6)
+"iCH" = (
+/obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
+	dir = 2
+	},
+/turf/closed/gm/dense,
+/area/lv624/ground/compound/sw)
 "iEQ" = (
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/marking/bot,
@@ -14123,7 +14138,7 @@
 "jcQ" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
-/area/shuttle/drop2/lz2)
+/area/lv624/ground/southcargo)
 "jex" = (
 /obj/structure/cable,
 /turf/open/floor/plating/warning{
@@ -15146,10 +15161,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/security)
-"nyr" = (
-/obj/machinery/miner/damaged,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/river1)
 "nzw" = (
 /obj/effect/decal/warning_stripes/thin{
 	dir = 8
@@ -15973,15 +15984,6 @@
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/engineering)
-"qRv" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/decal/warning_stripes/thick{
-	dir = 5
-	},
-/turf/open/floor,
-/area/shuttle/drop2/lz2)
 "qSA" = (
 /obj/machinery/button/door/open_only/landing_zone,
 /obj/structure/window/reinforced,
@@ -16681,10 +16683,6 @@
 	dir = 1
 	},
 /area/lv624/ground/jungle2)
-"tZv" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/river1)
 "ucK" = (
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/dirt,
@@ -19833,7 +19831,7 @@ are
 are
 awZ
 avL
-tZv
+avL
 gqX
 avL
 auH
@@ -20011,47 +20009,47 @@ are
 are
 are
 awZ
-ayY
-avP
-avP
-auG
-avd
-axb
-avd
-avd
-axQ
-axQ
-axQ
-vxp
-tCM
-pRD
-tCM
-lTs
-lTs
-hMA
-lTs
-pFf
-lTs
-hMA
-lTs
-pFf
-lTs
-hMA
-eVE
-nrr
-nrr
-ttY
-nrr
-doM
-nrr
-ttY
-pQg
-mZE
-slv
-atj
-bch
-bcm
-bfM
+avL
+avL
+avL
+avL
+auH
+aFR
+nSO
+aVS
+gWo
+gWo
+elu
+aXb
+aMV
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+dVC
+mup
+sod
+hBa
+hBa
+iGV
+gWo
+odt
 bnE
 bnE
 bph
@@ -21088,7 +21086,6 @@ avL
 avL
 sgU
 avO
-avL
 avL
 unC
 dxb
@@ -22178,7 +22175,7 @@ axR
 aPO
 bmr
 aSJ
-aRV
+aSJ
 dwG
 ecb
 gWo
@@ -22531,15 +22528,17 @@ avw
 aCp
 axR
 axR
-aPO
-bmr
-aSJ
-aSJ
-aSJ
-bmr
-fbX
-lZj
-lTs
+axR
+axR
+wNe
+wNe
+kKQ
+wNe
+wNe
+ecb
+gWo
+kVK
+yhh
 lTs
 lTs
 hgD
@@ -32480,7 +32479,6 @@ qaM
 acN
 acO
 acO
-bjH
 bjH
 bjH
 rhQ

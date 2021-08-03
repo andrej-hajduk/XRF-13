@@ -200,10 +200,6 @@
 	dir = 4
 	},
 /area/lv624/lazarus/internal_affairs)
-"sS" = (
-/obj/effect/landmark/start/job/survivor,
-/turf/open/floor/wood,
-/area/lv624/lazarus/internal_affairs)
 "tF" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
@@ -666,7 +662,7 @@ Hq
 Vu
 Hx
 CI
-sS
+CI
 it
 EF
 ky
