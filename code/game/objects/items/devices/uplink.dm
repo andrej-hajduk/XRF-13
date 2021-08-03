@@ -1,13 +1,3 @@
-#define CAT_NORMAL 0
-#define MAKE_VENDING_RECORD_DATA(record) list(\
-		"product_name" = record.product_name,\
-		"product_color" = record.display_color,\
-		"prod_price" = record.price,\
-		"prod_desc" = initial(record.product_path.desc),\
-		"ref" = REF(record),\
-		"tab" = record.tab,\
-	)
-
 /obj/item/uplink_tablet
 	name = "uplink tablet"
 	desc = "A basic skeleton of a mobile shop."
