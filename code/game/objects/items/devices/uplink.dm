@@ -928,6 +928,5 @@
 			/obj/item/clothing/mask/gas/wolves = 1500,
 		),
 	)
-
 #undef CAT_STANDARD
 #undef MAKE_UPLINK_RECORD_DATA
