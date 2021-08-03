@@ -11,7 +11,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	var/on = TRUE
-	var/frequency = FREQ_COMMON //common chat
+	var/frequency = FREQ_CIV_GENERAL //common chat
 	var/canhear_range = 3 // the range which mobs can hear this radio from
 
 	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.

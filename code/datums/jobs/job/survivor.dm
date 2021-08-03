@@ -105,7 +105,7 @@
 			C.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/c99(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
-			C.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/c99(C), SLOT_IN_BACKPACK)
+			C.equip_to_slot_or_del(new /obj/item/uplink_tablet/captain(C), SLOT_IN_BACKPACK)
 
 	C.equip_to_slot_or_del(new /obj/item/clothing/gloves/ruggedgloves(C), SLOT_GLOVES)
 	C.equip_to_slot_or_del(new /obj/item/storage/pouch/survival/full(C), SLOT_L_STORE)

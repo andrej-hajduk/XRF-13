@@ -62,12 +62,21 @@
 			new spawn_type(src)
 
 /obj/item/storage/box/survival
+	name = "survival kit"
+	desc = "A box that contains an emergency supply of oxygen."
+	icon_state = "marinebox"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/survival/Initialize(mapload, ...)
 	. = ..()
 	new /obj/item/clothing/mask/breath( src )
 	new /obj/item/tank/emergency_oxygen( src )
+
+/obj/item/storage/box/engineer
+	name = "survival kit"
+	desc = "A box that contains an emergency supply of oxygen."
+	icon_state = "marinebox"
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/engineer/Initialize(mapload, ...)
 	. = ..()

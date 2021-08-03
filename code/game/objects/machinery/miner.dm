@@ -113,6 +113,17 @@
 			to_chat(user, span_info("[src]'s module sockets seem bolted down."))
 			return FALSE
 		attempt_upgrade(upgrade,user)
+	if(istype(I, /obj/item/uplink_tablet) && stored_mineral)
+		var/obj/item/uplink_tablet/siphon = I
+		to_chat(user, span_info("You hook up [siphon] to the miner and begin transmitting coordinates."))
+		if(!do_after(user, 3 SECONDS, TRUE, src, BUSY_ICON_BUILD))
+			return FALSE
+		siphon.credits += mineral_value * stored_mineral * 10
+		do_sparks(5, TRUE, src)
+		playsound(loc,'sound/effects/phasein.ogg', 50, FALSE)
+		say("Ore shipment has been siphoned for [mineral_value * stored_mineral * 10] credits.")
+		stored_mineral = 0
+		start_processing()
 
 /obj/machinery/miner/welder_act(mob/living/user, obj/item/I)
 	. = ..()
