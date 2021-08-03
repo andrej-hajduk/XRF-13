@@ -174,8 +174,8 @@
 		return new R.product_path(get_turf(src))
 
 /obj/item/uplink_tablet/captain
-	name = "captains tablet"
-	desc = "This tablet lets a captain communicate with their ship in orbit. It can use bluespace technology to transfer resources to the ship, and recieve small packages in return."
+	name = "captains radio"
+	desc = "This radio lets a captain communicate with their ship in orbit. It can use bluespace technology to transfer resources to the ship, and recieve small packages in return."
 	products = list(
 		"Magazines" = list(
 			/obj/item/ammo_magazine/pistol/m1911 = -1,
