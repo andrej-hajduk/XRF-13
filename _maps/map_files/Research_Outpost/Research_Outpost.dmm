@@ -203,10 +203,6 @@
 	dir = 5
 	},
 /area/outpost/arrivals)
-"be" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/outpost/yard/west)
 "bg" = (
 /obj/structure/largecrate/random/secure,
 /turf/open/floor/tile/dark/brown2{
@@ -285,6 +281,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/cargo)
+"bG" = (
+/obj/docking_port/stationary/crashmode,
+/turf/open/floor/plating/ground/mars/random/sand,
+/area/outpost/yard/central)
 "bL" = (
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/floor/tile/dark,
@@ -621,6 +621,10 @@
 	dir = 5
 	},
 /area/outpost/hallway/south_west)
+"dP" = (
+/obj/docking_port/stationary/crashmode,
+/turf/open/floor/plating/asteroidfloor,
+/area/outpost/arrivals)
 "dR" = (
 /turf/closed/mineral/bigred,
 /area/outpost/caves/west)
@@ -3860,12 +3864,6 @@
 	dir = 8
 	},
 /area/outpost/cargo)
-"vi" = (
-/obj/effect/landmark/corpsespawner/colonist,
-/turf/open/floor/plating/ground/mars/cavetodirt{
-	dir = 5
-	},
-/area/outpost/caves/south)
 "vj" = (
 /turf/open/floor/plating/ground/mars/dirttosand,
 /area/outpost/caves/north)
@@ -5215,6 +5213,12 @@
 	dir = 1
 	},
 /area/outpost/arrivals)
+"Dk" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/mars/cavetodirt{
+	dir = 5
+	},
+/area/outpost/caves/north_west)
 "Dl" = (
 /obj/structure/closet/toolcloset,
 /obj/effect/decal/cleanable/dirt,
@@ -20613,7 +20617,7 @@ cc
 cc
 cc
 Qq
-be
+Jb
 Jb
 SH
 SH
@@ -28378,7 +28382,7 @@ Zc
 Zc
 gS
 gS
-vi
+LS
 hK
 hK
 Zc
@@ -38164,7 +38168,7 @@ Xi
 ZQ
 Ar
 xg
-xg
+xB
 xg
 xg
 xg
