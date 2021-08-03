@@ -478,15 +478,17 @@
 	var/stamina_loss_limit = L.maxHealth * 2
 	L.adjustStaminaLoss(min(power, max(0, stamina_loss_limit - L.staminaloss))) //If we're under our stamina_loss limit, apply the difference between our limit and current stamina damage or power, whichever's less
 
-/* Commented out because... this ended up being insane. Instant death on hug regardless past 2 stings unless they took combat stim
 	var/stamina_excess_damage = (L.staminaloss + power) - stamina_loss_limit
 	if(stamina_excess_damage > 0) //If we exceed maxHealth * 2 stamina damage, apply any excess as toxloss and oxyloss
+		L.Unconscious(stamina_excess_damage * 2) //Changes death to unconsciousness instead
+		/*
 		L.adjustToxLoss(stamina_excess_damage * 0.5)
 		L.adjustOxyLoss(stamina_excess_damage * 0.5)
 		L.Losebreath(2) //So the oxy loss actually means something.
+		*/
 
 	L.stuttering = max(L.stuttering, 1)
-*/
+
 	if(current_cycle < 21) //Additional effects at higher cycles
 		return ..()
 

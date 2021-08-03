@@ -480,16 +480,13 @@
 	. = ..()
 	if(.)
 		return
-	if(!ismob(dropping) || isxeno(user) || isxeno(dropping))
+	if(!ismob(dropping))
 		return
 	// If not dragged onto myself or dragging my own sprite onto myself
 	if(user != src || dropping == user)
 		return
 	var/mob/dragged = dropping
 	dragged.show_inv(user)
-
-/mob/living/carbon/xenomorph/MouseDrop_T(atom/dropping, atom/user)
-	return
 
 
 /mob/living/start_pulling(atom/movable/AM, suppress_message = FALSE)
@@ -723,23 +720,24 @@
 			end_of_conga = TRUE //Only mobs can continue the cycle.
 	var/area/new_area = get_area(destination)
 	for(var/atom/movable/AM in conga_line)
+		var/move_dir = get_dir(AM, destination)
 		var/oldLoc
 		if(AM.loc)
 			oldLoc = AM.loc
-			AM.loc.Exited(AM,destination)
+			AM.loc.Exited(AM, move_dir)
 		AM.loc = destination
-		AM.loc.Entered(AM,oldLoc)
+		AM.loc.Entered(AM, oldLoc)
 		var/area/old_area
 		if(oldLoc)
 			old_area = get_area(oldLoc)
 		if(new_area && old_area != new_area)
-			new_area.Entered(AM,oldLoc)
+			new_area.Entered(AM, oldLoc)
 		for(var/atom/movable/CR in destination)
 			if(CR in conga_line)
 				continue
 			CR.Crossed(AM)
 		if(oldLoc)
-			AM.Moved(oldLoc)
+			AM.Moved(oldLoc, move_dir)
 		var/mob/M = AM
 		if(istype(M))
 			M.reset_perspective(destination)

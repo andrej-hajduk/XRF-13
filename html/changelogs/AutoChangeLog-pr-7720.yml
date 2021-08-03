@@ -1,4 +1,4 @@
 author: "BraveMole"
 delete-after: True
 changes: 
-  - balance: "Silo produces 18% more"
+  - bugfix: "Fix slashing dead human lights"
