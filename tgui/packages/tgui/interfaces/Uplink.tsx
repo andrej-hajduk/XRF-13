@@ -216,8 +216,8 @@ const Products = (props, context) => {
                 ((showEmpty || !!stock[display_record.product_name]) && (
                   <ProductEntry
                     stock={stock[display_record.product_name]}
-                    price={price[display_record.product_name]}
-                    key={display_record.product_name}
+                    price={display_record.prod_price}
+                    key={display_record.ref}
                     product_color={display_record.product_color}
                     product_name={display_record.product_name}
                     prod_desc={display_record.prod_desc}

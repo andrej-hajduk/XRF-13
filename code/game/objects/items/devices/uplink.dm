@@ -116,23 +116,21 @@
 	.["vendor_name"] = name
 	.["displayed_records"] = list()
 	.["tabs"] = list()
+	.["price"] = list()
 
 	for(var/datum/vending_product/R AS in product_records)
 		if(R.tab && !(R.tab in .["tabs"]))
 			.["tabs"] += R.tab
+		.["price"][R.product_name] = R.price
 		.["displayed_records"] += list(MAKE_UPLINK_RECORD_DATA(R))
 
 /obj/item/uplink_tablet/ui_data(mob/user)
 	. = list()
 	.["stock"] = list()
-	.["price"] = list()
 	.["credits"] = credits
 
 	for(var/datum/vending_product/R AS in product_records)
 		.["stock"][R.product_name] = R.amount
-
-	for(var/datum/vending_product/R AS in product_records)
-		.["price"][R.product_name] = R.price
 
 	if(currently_vending)
 		.["currently_vending"] = MAKE_UPLINK_RECORD_DATA(currently_vending)
@@ -702,8 +700,8 @@
 			/obj/item/reagent_containers/glass/beaker/large = 100,
 		),
 		"Engineering" = list(
-			/obj/item/stack/sheet/metal/medium_stack = 500,
-			/obj/item/stack/sheet/metal/large_stack = 830,
+			/obj/item/stack/sheet/metal/medium_stack = 350,
+			/obj/item/stack/sheet/metal/large_stack = 700,
 			/obj/item/stack/sheet/plasteel/medium_stack = 1000,
 			/obj/item/stack/sheet/plasteel/large_stack = 1600,
 			/obj/item/stack/sheet/mineral/phoron/small_stack = 1000,
@@ -732,12 +730,12 @@
 			/obj/item/tool/crowbar = 200,
 			/obj/item/analyzer = 200,
 			/obj/item/multitool = 200,
-			/obj/item/clothing/head/welding = 100,
-			/obj/item/clothing/glasses/welding = 400,
-			/obj/item/storage/box/minisentry = 2500,
+			/obj/item/clothing/head/welding = 1000,
+			/obj/item/clothing/glasses/welding = 2000,
+			/obj/item/storage/box/minisentry = 3500,
 			/obj/item/tool/pickaxe/plasmacutter = 2500,
-			/obj/item/explosive/plastique = 1000,
-			/obj/item/quikdeploy/cade = 500,
+			/obj/item/explosive/plastique = 2000,
+			/obj/item/quikdeploy/cade = 800,
 			/obj/item/storage/briefcase/inflatable = 500,
 			/obj/item/storage/box/lights/mixed = 100,
 		),
