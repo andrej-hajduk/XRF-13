@@ -181,9 +181,9 @@
 	to_chat(usr, span_info("You start to requisition funds from your ship."))
 	if(!do_after(usr, 30 SECONDS, TRUE, src, BUSY_ICON_BUILD))
 		return FALSE
-	to_chat(usr, span_info("You gain 1000 brouzoufs."))
+	to_chat(usr, span_info("You gain 500 brouzoufs."))
 	playsound(src.loc,'sound/effects/CIC_order.ogg', 30, FALSE)
-	src.credits += 1000
+	src.credits += 500
 
 /obj/item/uplink_tablet/captain
 	name = "captains radio"
