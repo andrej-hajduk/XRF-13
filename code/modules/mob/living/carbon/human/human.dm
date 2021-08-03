@@ -42,8 +42,13 @@
 	RegisterSignal(src, COMSIG_KB_UNIQUEACTION, .proc/do_unique_action)
 	RegisterSignal(src, COMSIG_GRAB_SELF_ATTACK, .proc/fireman_carry_grabbed) // Fireman carry
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN)
+<<<<<<< HEAD
 	//AddComponent(/datum/component/bump_attack, FALSE, FALSE)
 	give_genitals()
+=======
+	AddComponent(/datum/component/bump_attack, FALSE, FALSE)
+	AddElement(/datum/element/ridable, /datum/component/riding/creature/human)
+>>>>>>> master
 
 /mob/living/carbon/human/proc/human_z_changed(datum/source, old_z, new_z)
 	SIGNAL_HANDLER
@@ -1131,7 +1136,6 @@
 /mob/living/carbon/human/buckle_mob(mob/living/buckling_mob, force = FALSE, check_loc = TRUE, lying_buckle = FALSE, hands_needed = 0, target_hands_needed = 0, silent)
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases
 		return FALSE
-	LoadComponent(/datum/component/riding/human)
 	return ..()
 
 
