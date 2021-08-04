@@ -156,8 +156,8 @@ const ProductEntry = (props: VendingProductEntryProps, context) => {
                 maxValue={stock}
                 ranges={{
                   good: [5, Infinity],
-                  average: [1, 5],
-                  bad: [0, 1],
+                  average: [2, 5],
+                  bad: [0, 2],
                 }}>{stock} left
               </ProgressBar>
             </Box>)}
