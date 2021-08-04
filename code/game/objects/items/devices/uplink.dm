@@ -339,6 +339,7 @@
 			/obj/item/stack/nanopaste = -1,
 			/obj/item/reagent_containers/hypospray/advanced/tricordrazine = -1,
 			/obj/item/reagent_containers/hypospray/advanced/combat = -1,
+			/obj/item/reagent_scanner/adv = -1,
 			/obj/item/reagent_containers/glass/beaker/large = -1,
 		),
 		"Engineering" = list(
@@ -460,6 +461,7 @@
 			/obj/item/hailer = -1,
 			/obj/item/flash = -1,
 			/obj/item/binoculars = -1,
+			/obj/item/binoculars/tactical/range = -1,
 			/obj/item/whistle = -1,
 			/obj/item/motiondetector = -1,
 			/obj/item/bodybag/tarp = -1,
@@ -773,6 +775,7 @@
 			/obj/item/stack/nanopaste = 1000,
 			/obj/item/reagent_containers/hypospray/advanced/tricordrazine = 500,
 			/obj/item/reagent_containers/hypospray/advanced/combat = 1500,
+			/obj/item/reagent_scanner/adv = 100,
 			/obj/item/reagent_containers/glass/beaker/large = 100,
 		),
 		"Engineering" = list(
@@ -893,7 +896,8 @@
 			/obj/item/weapon/baton = 1500,
 			/obj/item/hailer = 500,
 			/obj/item/flash = 1000,
-			/obj/item/binoculars = 2000,
+			/obj/item/binoculars = 1500,
+			/obj/item/binoculars/tactical/range = 2500,
 			/obj/item/whistle = 1000,
 			/obj/item/motiondetector = 2000,
 			/obj/item/bodybag/tarp = 3500,
