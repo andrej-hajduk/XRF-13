@@ -91,7 +91,7 @@
 
 /obj/item/storage/pouch/survival
 	name = "survival pouch"
-	desc = "It can contain flashlight, pills, a crowbar, metal sheets, food, and some bandages."
+	desc = "It can contain flashlight, pills, a crowbar, metal sheets, food, radio, and some bandages."
 	icon_state = "survival"
 	storage_slots = 6
 	max_w_class = 3
@@ -103,8 +103,10 @@
 		/obj/item/stack/sheet/metal,
 		/obj/item/stack/sheet/plasteel,
 		/obj/item/storage/box/MRE,
-		/obj/item/reagent_containers/food/snacks/upp,
+		/obj/item/reagent_containers/food/snacks,
 		/obj/item/tool/crowbar,
+		/obj/item/radio,
+		/obj/item/uplink_tablet,
 	)
 
 /obj/item/storage/pouch/survival/full/Initialize()
