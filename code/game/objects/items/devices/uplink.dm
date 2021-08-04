@@ -282,6 +282,7 @@
 			/obj/item/clothing/mask/gas/tactical = -1,
 			/obj/item/clothing/mask/gas/tactical/coif = -1,
 			/obj/item/clothing/mask/rebreather = -1,
+			/obj/item/clothing/mask/rebreather/scarf = -1,
 			/obj/item/storage/belt/marine/upp = -1,
 			/obj/item/storage/belt/marine/som = -1,
 			/obj/item/storage/belt/gun/korovin = -1,
