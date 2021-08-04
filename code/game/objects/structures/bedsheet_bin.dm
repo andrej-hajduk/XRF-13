@@ -73,8 +73,24 @@ LINEN BINS
 /obj/item/bedsheet/brown
 	icon_state = "sheetbrown"
 
-
-
+/obj/item/bedsheet/random/Initialize(mapload)
+	. = ..()
+	icon_state = pick(prob(4);"sheet",
+					prob(4);"sheetblue",
+					prob(4);"sheetgreen",
+					prob(4);"sheetorange",
+					prob(4);"sheetpurple",
+					prob(4);"sheetred",
+					prob(4);"sheetyellow",
+					prob(4);"sheetbrown",
+					prob(1);"sheetrainbow",
+					prob(1);"sheetmime",
+					prob(1);"sheetclown",
+					prob(1);"sheetcaptain",
+					prob(1);"sheetrd",
+					prob(1);"sheethos",
+					prob(1);"sheethop",
+					prob(1);"sheetce")
 
 /obj/structure/bedsheetbin
 	name = "linen bin"
