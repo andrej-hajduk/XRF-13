@@ -13,7 +13,6 @@
 	desc = "A basic skeleton of a mobile shop."
 	icon = 'icons/obj/items/radio.dmi'
 	icon_state = "radio"
-	flags_equip_slot = ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_SMALL
 
 	interaction_flags = INTERACT_MACHINE_TGUI
