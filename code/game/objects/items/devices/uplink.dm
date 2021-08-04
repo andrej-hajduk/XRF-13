@@ -33,6 +33,8 @@
 	var/list/product_records = list()
 	///Who owns this tablet
 	var/registered_name = null
+	///Is this tablet currently recieving funds
+	var/recieving_funds = FALSE
 
 /obj/item/uplink_tablet/Initialize(mapload)
 	. = ..()
@@ -175,14 +177,17 @@
 	set category = "Object"
 	set src in usr
 
-	if(!can_interact(usr))
+	if(!can_interact(usr) || recieving_funds == TRUE)
 		return FALSE
+	recieving_funds = TRUE
 	to_chat(usr, span_info("You start to requisition funds from your ship."))
 	if(!do_after(usr, 30 SECONDS, TRUE, src, BUSY_ICON_BUILD))
+		recieving_funds = FALSE
 		return FALSE
 	to_chat(usr, span_info("You gain 250 brouzoufs."))
 	playsound(src.loc,'sound/effects/CIC_order.ogg', 30, FALSE)
 	src.credits += 250
+	recieving_funds = FALSE
 
 /obj/item/uplink_tablet/captain
 	name = "captains radio"
