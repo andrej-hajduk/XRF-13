@@ -18,7 +18,7 @@
 
 	// *** Plasma *** //
 	plasma_max = 400
-	plasma_gain = 14
+	plasma_gain = 20
 
 	// *** Health *** //
 	max_health = 300
@@ -80,7 +80,7 @@
 
 	// *** Plasma *** //
 	plasma_max = 500
-	plasma_gain = 17
+	plasma_gain = 25
 
 	// *** Health *** //
 	max_health = 325
@@ -108,7 +108,7 @@
 
 	// *** Plasma *** //
 	plasma_max = 550
-	plasma_gain = 19
+	plasma_gain = 30
 
 	// *** Health *** //
 	max_health = 350
@@ -136,7 +136,7 @@
 
 	// *** Plasma *** //
 	plasma_max = 575
-	plasma_gain = 20
+	plasma_gain = 35
 
 	// *** Health *** //
 	max_health = 375
