@@ -18,6 +18,7 @@ export const Sentry = (props, context) => {
     manual_override,
     alerts_on,
     radial_mode,
+    power_mode,
   } = data;
   return (
     <Window
@@ -26,6 +27,17 @@ export const Sentry = (props, context) => {
       <Window.Content>
         <Section title={name}>
           <LabeledList>
+            <LabeledList.Item
+              buttons={
+                <Button
+                  selected={power_mode}
+                  onClick={() => act('toggle_power')}
+                  icon={power_mode ? "check" : "times"}>
+                  Power
+                </Button>
+              }
+              label="Power">
+            </LabeledList.Item>
             <LabeledList.Item
               label="Power Cell Status">
               <ProgressBar
