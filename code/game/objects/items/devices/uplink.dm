@@ -1061,7 +1061,7 @@
 			/obj/item/storage/box/visual/grenade/teargas = 2500,
 			/obj/item/storage/box/sentry = 6000,
 			/obj/item/unmanned_vehicle_remote = 5000,
-			/obj/item/portablecrate/lightuav = 7500,
+			/obj/item/portablecrate/lightuav = 10000,
 			/obj/item/encryptionkey/mcom = 7500,
 			/obj/item/clothing/under/marine/veteran/freelancer = 500,
 			/obj/item/clothing/suit/storage/faction/freelancer = 7500,
