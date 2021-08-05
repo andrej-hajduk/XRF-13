@@ -36,8 +36,7 @@ export const Sentry = (props, context) => {
                   Power
                 </Button>
               }
-              label="Power">
-            </LabeledList.Item>
+              label="Power" />
             <LabeledList.Item
               label="Power Cell Status">
               <ProgressBar
