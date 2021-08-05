@@ -192,6 +192,11 @@
 	spawn_type = /obj/machinery/portable_atmospherics/hydroponics
 	spawn_amount = 1
 
+/obj/item/portablecrate/lightuav
+	name = "light uav case"
+	spawn_type = /obj/vehicle/unmanned
+	spawn_amount = 1
+
 /obj/item/portablecrate/autoinjector
 	name = "auto-injector case"
 	desc = "A hefty wooden case. This one has handles for carrying. This one contains a shipment of emergency medicine."
