@@ -177,7 +177,8 @@
 		"safety_toggle" = CHECK_BITFIELD(gun.turret_flags, TURRET_SAFETY),
 		"manual_override" = operator,
 		"alerts_on" = CHECK_BITFIELD(gun.turret_flags, TURRET_ALERTS),
-		"radial_mode" = CHECK_BITFIELD(gun.turret_flags, TURRET_RADIAL)
+		"radial_mode" = CHECK_BITFIELD(gun.turret_flags, TURRET_RADIAL),
+		"power_mode" = CHECK_BITFIELD(gun.turret_flags, TURRET_ON)
 	)
 
 /obj/machinery/deployable/mounted/sentry/ui_act(action, list/params)
@@ -225,6 +226,15 @@
 			var/rad_msg = CHECK_BITFIELD(gun.turret_flags, TURRET_RADIAL) ? "activate" : "deactivate"
 			user.visible_message(span_notice("[user] [rad_msg]s [src]'s radial mode."), span_notice("You [rad_msg] [src]'s radial mode."))
 			say("Radial mode [rad_msg]d.")
+			update_static_data(user)
+			. = TRUE
+
+		if("toggle_power")
+			var/power = CHECK_BITFIELD(gun.turret_flags, TURRET_ON)
+			if(power)
+				set_on(FALSE)
+			if(!power)
+				set_on(TRUE)
 			update_static_data(user)
 			. = TRUE
 
