@@ -387,3 +387,10 @@
 /obj/machinery/chem_master/condimaster
 	name = "CondiMaster 3000"
 	condi = TRUE
+
+/obj/machinery/chem_master/portable
+	name = "ChemMaster 3000M"
+	wrenchable = TRUE
+/obj/machinery/chem_master/condimaster/portable
+	name = "CondiMaster 3000M"
+	wrenchable = TRUE

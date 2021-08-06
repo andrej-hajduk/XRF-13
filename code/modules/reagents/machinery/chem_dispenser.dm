@@ -376,3 +376,16 @@
 		/datum/reagent/consumable/drink/watermelonjuice,
 		/datum/reagent/consumable/drink/berryjuice,
 	)
+
+/obj/machinery/chem_dispenser/portable
+	name = "portable chem dispenser"
+	powerefficiency = 0.2
+	wrenchable = TRUE
+/obj/machinery/chem_dispenser/soda/portable
+	name = "portable soda fountain"
+	powerefficiency = 0.2
+	wrenchable = TRUE
+/obj/machinery/chem_dispenser/beer/portable
+	name = "portable booze dispenser"
+	powerefficiency = 0.2
+	wrenchable = TRUE
