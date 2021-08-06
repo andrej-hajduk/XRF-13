@@ -393,6 +393,7 @@
 			/obj/item/storage/box/lights/mixed = -1,
 			/obj/item/tool/shovel = -1,
 			/obj/item/tool/shovel/etool = -1,
+			/obj/item/tool/handheld_charger = -1,
 		),
 		"Rations" = list(
 			/obj/item/reagent_containers/food/snacks/upp = -1,
@@ -610,6 +611,7 @@
 			/obj/item/storage/box/visual/grenade/drain = 1,
 			/obj/item/storage/box/visual/grenade/razorburn = 1,
 			/obj/item/storage/box/visual/grenade/teargas = 1,
+			/obj/item/explosive/grenade/mirage = 5,
 			/obj/item/storage/box/sentry = 1,
 			/obj/item/unmanned_vehicle_remote = 1,
 			/obj/item/uav_turret = 1,
@@ -842,6 +844,7 @@
 			/obj/item/storage/box/lights/mixed = 100,
 			/obj/item/tool/shovel = 1000,
 			/obj/item/tool/shovel/etool = 1500,
+			/obj/item/tool/handheld_charger = 4000,
 		),
 		"Rations" = list(
 			/obj/item/reagent_containers/food/snacks/upp = 0,
@@ -1058,6 +1061,7 @@
 			/obj/item/storage/box/visual/grenade/drain = 2500,
 			/obj/item/storage/box/visual/grenade/razorburn = 2500,
 			/obj/item/storage/box/visual/grenade/teargas = 2500,
+			/obj/item/explosive/grenade/mirage = 100,
 			/obj/item/storage/box/sentry = 6000,
 			/obj/item/unmanned_vehicle_remote = 5000,
 			/obj/item/uav_turret = 5000,
