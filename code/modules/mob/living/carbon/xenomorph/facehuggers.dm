@@ -552,6 +552,8 @@
 
 /obj/item/clothing/mask/facehugger/proc/attempt_lewd_attach(mob/living/carbon/human/target)
 	. = FALSE
+	if(ismonkey(target))
+		return FALSE
 	var/attach_target = FALSE
 	if(target.client.prefs.preferred_hugger_target_area == HUGGER_TARGET_CHEST && !target.wear_mask)
 		return FALSE
@@ -560,8 +562,6 @@
 			attach_target = TRUE
 			break
 	if(!attach_target)
-		return FALSE
-	if(ismonkey(target))
 		return FALSE
 	visible_message("<span class='warning'>[src] latches onto [target]'s pelvis!</span>")
 	return TRUE
