@@ -15,19 +15,28 @@
 	switch(M.client.prefs.survivor)
 		if("Civilian") //Basically the damsel in distress role. Completely useless
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/colonist(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 		if("Salesman") //Similar to Civilian but different starting clothes
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/liaison_suit(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 		if("Janitor") //A civilian role that still gets some okay skills and cleaning supplies
 			C.skills = getSkillsType(/datum/skills/civilian/survivor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/galoshes(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/lightreplacer(C), SLOT_IN_BACKPACK)
@@ -43,7 +52,10 @@
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/miner)
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(C), SLOT_GLASSES)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/miner(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/tool/pickaxe/plasmacutter(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/analyzer(C), SLOT_IN_BACKPACK)
@@ -56,7 +68,10 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/corp(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rugged(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/ruggedboot(C), SLOT_SHOES)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/sec(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/security(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/sec(C), SLOT_BACK)
 			var/weapons = pick(SURVIVOR_WEAPONS)
 			var/obj/item/weapon/W = weapons[1]
 			var/obj/item/ammo_magazine/A = weapons[2]
@@ -76,7 +91,10 @@
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/doctor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/marine/corpsman/survivor(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/marine/corpsman/survivor(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/med(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/medkit/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/medical(C), SLOT_BELT)
@@ -91,7 +109,10 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(C), SLOT_GLASSES)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/engineer(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
@@ -103,7 +124,10 @@
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/captain)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/cap(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/formalcaptain(C), SLOT_HEAD)
