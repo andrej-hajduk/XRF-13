@@ -561,6 +561,8 @@
 			break
 	if(!attach_target)
 		return FALSE
+	if(ismonkey(target))
+		return FALSE
 	visible_message("<span class='warning'>[src] latches onto [target]'s pelvis!</span>")
 	return TRUE
 

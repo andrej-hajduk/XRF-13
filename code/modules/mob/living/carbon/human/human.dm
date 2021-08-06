@@ -44,7 +44,8 @@
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN)
 	//AddComponent(/datum/component/bump_attack, FALSE, FALSE)
 	AddElement(/datum/element/ridable, /datum/component/riding/creature/human)
-	give_genitals()
+	if(!ismonkey(src))
+		give_genitals()
 
 /mob/living/carbon/human/proc/human_z_changed(datum/source, old_z, new_z)
 	SIGNAL_HANDLER
