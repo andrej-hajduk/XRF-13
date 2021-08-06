@@ -292,6 +292,7 @@ You are in charge of logistics and the overwatch system. You are also in line to
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		<b>Duty</b>: Listen and coordinate your crew for the sole dropship you will use. Provide transport and close air support for the marines during the mission. Ensure no threats come aboard your dropship and by extension, the vessel which houses the crew.
 	"}
+	minimap_icon = "pilot"
 
 /datum/job/terragov/command/pilot/rebel
 	title = REBEL_PILOT_OFFICER
@@ -468,6 +469,7 @@ You are also next in the chain of command, should the bridge crew fall in the li
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		<b>Duty</b>: Maintain the ship, be in charge of the engines. Be the secondary engineer to a forward operating base, prepare the shipside defenses if needed. Help the Pilot Officer in preparing the dropship.
 	"}
+	minimap_icon = "private"
 
 /datum/job/terragov/engineering/tech/rebel
 	title = REBEL_SHIP_TECH
@@ -560,6 +562,7 @@ requisitions line and later on to be ready to send supplies for marines who are 
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		Requisition supplies to the battlefield. Ensure that the marines are reparing miners for more points. Supply the marines with deluxe equipment to ensure success.
 	"}
+	minimap_icon = "requisition"
 
 /datum/job/terragov/requisitions/officer/rebel
 	title = REBEL_REQUISITIONS_OFFICER
@@ -652,6 +655,7 @@ A happy ship is a well-functioning ship."})
 		<b>Gamemode Availability</b>: Crash, Distress<br /><br /><br />
 		<b>Duty</b>: Communicate and lead your fellow medical staff (if available), supervise the medical department. Coordinate and teach fellow medical staff and corpsmen what they’re doing for treating an injury. Be the sole doctor in the Canterbury.
 	"}
+	minimap_icon = "civilian"
 
 /datum/job/terragov/medical/professor/rebel
 	title = REBEL_CHIEF_MEDICAL_OFFICER
@@ -738,6 +742,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a xenomorph larva. Develop superior healing medicines.
 	"}
+	minimap_icon = "civilian"
 
 /datum/job/terragov/medical/medicalofficer/rebel
 	title = REBEL_MEDICAL_DOCTOR
@@ -823,6 +828,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
 	"}
+	minimap_icon = "civilian"
 
 /datum/job/terragov/medical/researcher/rebel
 	title = REBEL_MEDICAL_RESEARCHER
@@ -910,6 +916,7 @@ While the Corporate Liaison is not your boss, it would be wise to consult them o
 		<b>Gamemode Availability</b>: Distress<br /><br /><br />
 		<b>Duty</b>: Manage relations between Nanotrasen and TerraGov Marine Corps. Report your findings via faxes. Reply if you’re called.
 	"}
+	minimap_icon = "civilian"
 
 
 /datum/job/terragov/civilian/liaison/radio_help_message(mob/M)

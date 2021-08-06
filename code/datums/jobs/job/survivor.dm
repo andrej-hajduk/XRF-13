@@ -1,12 +1,12 @@
 /datum/job/survivor
 	title = "Colonist"
 	supervisors = "anyone who might rescue you"
-	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
-	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
+	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL)
+	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL)
 	display_order = JOB_DISPLAY_ORDER_SURVIVOR
 	skills_type = /datum/skills/civilian
 	outfit = /datum/outfit/job/survivor
-	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_LATEJOINABLE
+	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_LATEJOINABLE|JOB_FLAG_PROVIDES_BANK_ACCOUNT
 	faction = FACTION_TERRAGOV
 
 /datum/job/survivor/after_spawn(mob/living/carbon/C, mob/M, latejoin = FALSE)
@@ -67,6 +67,11 @@
 			C.equip_to_slot_or_del(new A(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(C), SLOT_HEAD)
+			C.equip_to_slot_or_del(new /obj/item/restraints/handcuffs(C), SLOT_IN_BACKPACK)
+			var/mob/living/carbon/human/H = C
+			var/obj/item/card/id/ID = H.wear_id
+			if(istype(ID))
+				ID.access += list(ACCESS_NT_PMC_GREEN)
 		if("Doctor") //Medical equipment, supplies, and skills to match
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/doctor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(C), SLOT_W_UNIFORM)
@@ -116,26 +121,6 @@
 		C.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather(C), SLOT_WEAR_MASK)
 		C.equip_to_slot_or_del(new /obj/item/clothing/shoes/snow(C), SLOT_SHOES)
 		C.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(C), SLOT_GLOVES)
-
-	switch(SSmapping.configs[GROUND_MAP].map_name)
-		if(MAP_PRISON_STATION)
-			to_chat(M, span_notice("You are a survivor of the attack on Fiorina Orbital Penitentiary. You worked or lived on the prison station, and managed to avoid the alien attacks... until now."))
-		if(MAP_ICE_COLONY)
-			to_chat(M, span_notice("You are a survivor of the attack on the ice habitat. You worked or lived on the colony, and managed to avoid the alien attacks... until now."))
-		if(MAP_BIG_RED)
-			to_chat(M, span_notice("You are a survivor of the attack on the colony. You worked or lived in the archaeology colony, and managed to avoid the alien attacks... until now."))
-		if(MAP_LV_624)
-			to_chat(M, span_notice("You are a survivor of the attack on the colony. You suspected something was wrong and tried to warn others, but it was too late..."))
-		if(MAP_ICY_CAVES)
-			to_chat(M, span_notice("You are a survivor of the attack on the icy cave system. You worked or lived on the site, and managed to avoid the alien attacks... until now."))
-		if(MAP_BARRENQUILLA_MINING)
-			to_chat(M, span_notice("You are a survivor of the attack on the facility. The site manager's greed caught up to him, and you're caught in the crossfire..."))
-		if(MAP_RESEARCH_OUTPOST)
-			to_chat(M, span_notice("You are a survivor of the attack on the outpost. But you question yourself: are you truely safe now?"))
-		if(MAP_MAGMOOR_DIGSITE)
-			to_chat(M, span_notice("You are a survivor of the attack on the Magmoor Digsite IV. You worked or lived on the digsite, and managed to avoid the alien attacks... until now."))
-		else
-			to_chat(M, span_notice("Through a miracle you managed to survive the attack. But are you truly safe now?"))
 
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()
