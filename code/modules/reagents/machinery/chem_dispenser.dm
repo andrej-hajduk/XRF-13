@@ -303,6 +303,19 @@
 	else if(istype(I, /obj/item/reagent_containers/glass))
 		to_chat(user, "Take the lid off [I] first.")
 
+	else if(iswrench(I))
+		if(!wrenchable)
+			return
+
+		if(!do_after(user, 20, TRUE, src, BUSY_ICON_BUILD))
+			return
+
+		playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
+		anchored = !anchored
+		if(anchored)
+			user.visible_message("[user] tightens the bolts securing \the [src] to the floor.", "You tighten the bolts securing \the [src] to the floor.")
+		else
+			user.visible_message("[user] unfastens the bolts securing \the [src] to the floor.", "You unfasten the bolts securing \the [src] to the floor.")
 
 /obj/machinery/chem_dispenser/soda
 	icon_state = "soda_dispenser"
@@ -376,3 +389,25 @@
 		/datum/reagent/consumable/drink/watermelonjuice,
 		/datum/reagent/consumable/drink/berryjuice,
 	)
+
+/obj/machinery/chem_dispenser/portable
+	name = "portable chem dispenser"
+	powerefficiency = 0.025
+	idle_power_usage = 20
+	active_power_usage = 125
+	wrenchable = TRUE
+	anchored = FALSE
+/obj/machinery/chem_dispenser/soda/portable
+	name = "portable soda fountain"
+	powerefficiency = 0.025
+	idle_power_usage = 20
+	active_power_usage = 125
+	wrenchable = TRUE
+	anchored = FALSE
+/obj/machinery/chem_dispenser/beer/portable
+	name = "portable booze dispenser"
+	powerefficiency = 0.025
+	idle_power_usage = 20
+	active_power_usage = 125
+	wrenchable = TRUE
+	anchored = FALSE

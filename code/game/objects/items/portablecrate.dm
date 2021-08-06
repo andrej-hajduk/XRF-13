@@ -192,6 +192,36 @@
 	spawn_type = /obj/machinery/portable_atmospherics/hydroponics
 	spawn_amount = 1
 
+/obj/item/portablecrate/chem_dispenser
+	name = "chem dispenser case"
+	spawn_type = /obj/machinery/chem_dispenser/portable
+	spawn_amount = 1
+
+/obj/item/portablecrate/soda_dispenser
+	name = "soda dispenser case"
+	spawn_type = /obj/machinery/chem_dispenser/soda/portable
+	spawn_amount = 1
+
+/obj/item/portablecrate/beer_dispenser
+	name = "beer dispenser case"
+	spawn_type = /obj/machinery/chem_dispenser/beer/portable
+	spawn_amount = 1
+
+/obj/item/portablecrate/chem_master
+	name = "chemmaster case"
+	spawn_type = /obj/machinery/chem_master/portable
+	spawn_amount = 1
+
+/obj/item/portablecrate/condimaster
+	name = "condimaster case"
+	spawn_type = /obj/machinery/chem_master/condimaster/portable
+	spawn_amount = 1
+
+/obj/item/portablecrate/reagentgrinder
+	name = "grinder case"
+	spawn_type = /obj/machinery/reagentgrinder
+	spawn_amount = 1
+
 /obj/item/portablecrate/lightuav
 	name = "light uav case"
 	spawn_type = /obj/vehicle/unmanned

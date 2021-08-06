@@ -1,12 +1,12 @@
 /datum/job/survivor
 	title = "Colonist"
 	supervisors = "anyone who might rescue you"
-	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
-	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL, ACCESS_NT_PMC_GREEN)
+	access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL)
+	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_MEDICAL)
 	display_order = JOB_DISPLAY_ORDER_SURVIVOR
 	skills_type = /datum/skills/civilian
 	outfit = /datum/outfit/job/survivor
-	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_LATEJOINABLE
+	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_NOHEADSET|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_LATEJOINABLE|JOB_FLAG_PROVIDES_BANK_ACCOUNT
 	faction = FACTION_TERRAGOV
 
 /datum/job/survivor/after_spawn(mob/living/carbon/C, mob/M, latejoin = FALSE)
@@ -15,19 +15,28 @@
 	switch(M.client.prefs.survivor)
 		if("Civilian") //Basically the damsel in distress role. Completely useless
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/colonist(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 		if("Salesman") //Similar to Civilian but different starting clothes
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/liaison_suit(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 		if("Janitor") //A civilian role that still gets some okay skills and cleaning supplies
 			C.skills = getSkillsType(/datum/skills/civilian/survivor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/galoshes(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/lightreplacer(C), SLOT_IN_BACKPACK)
@@ -43,7 +52,10 @@
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/miner)
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(C), SLOT_GLASSES)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/miner(C), SLOT_W_UNIFORM)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/tool/pickaxe/plasmacutter(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/analyzer(C), SLOT_IN_BACKPACK)
@@ -56,7 +68,10 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/corp(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rugged(C), SLOT_WEAR_SUIT)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/ruggedboot(C), SLOT_SHOES)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/sec(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/security(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/sec(C), SLOT_BACK)
 			var/weapons = pick(SURVIVOR_WEAPONS)
 			var/obj/item/weapon/W = weapons[1]
 			var/obj/item/ammo_magazine/A = weapons[2]
@@ -67,11 +82,19 @@
 			C.equip_to_slot_or_del(new A(C), SLOT_IN_BACKPACK)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(C), SLOT_HEAD)
+			C.equip_to_slot_or_del(new /obj/item/restraints/handcuffs(C), SLOT_IN_BACKPACK)
+			var/mob/living/carbon/human/H = C
+			var/obj/item/card/id/ID = H.wear_id
+			if(istype(ID))
+				ID.access += list(ACCESS_NT_PMC_GREEN)
 		if("Doctor") //Medical equipment, supplies, and skills to match
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/doctor)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/marine/corpsman/survivor(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/marine/corpsman/survivor(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/med(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/medkit/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/medical(C), SLOT_BELT)
@@ -86,7 +109,10 @@
 			C.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(C), SLOT_GLASSES)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/rank/engineer(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/hazardvest(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/industrial(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/eng(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full(C), SLOT_BELT)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
@@ -98,7 +124,10 @@
 			C.skills = getSkillsType(/datum/skills/civilian/survivor/captain)
 			C.equip_to_slot_or_del(new /obj/item/clothing/under/marine/commissar(C), SLOT_W_UNIFORM)
 			C.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(C), SLOT_WEAR_SUIT)
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
+			if(M.client.prefs.backpack == 2)
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/captain/civilian(C), SLOT_BACK)
+			else
+				C.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel/cap(C), SLOT_BACK)
 			C.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(C), SLOT_SHOES)
 			C.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(C), SLOT_R_STORE)
 			C.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/formalcaptain(C), SLOT_HEAD)
@@ -116,26 +145,6 @@
 		C.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather(C), SLOT_WEAR_MASK)
 		C.equip_to_slot_or_del(new /obj/item/clothing/shoes/snow(C), SLOT_SHOES)
 		C.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(C), SLOT_GLOVES)
-
-	switch(SSmapping.configs[GROUND_MAP].map_name)
-		if(MAP_PRISON_STATION)
-			to_chat(M, span_notice("You are a survivor of the attack on Fiorina Orbital Penitentiary. You worked or lived on the prison station, and managed to avoid the alien attacks... until now."))
-		if(MAP_ICE_COLONY)
-			to_chat(M, span_notice("You are a survivor of the attack on the ice habitat. You worked or lived on the colony, and managed to avoid the alien attacks... until now."))
-		if(MAP_BIG_RED)
-			to_chat(M, span_notice("You are a survivor of the attack on the colony. You worked or lived in the archaeology colony, and managed to avoid the alien attacks... until now."))
-		if(MAP_LV_624)
-			to_chat(M, span_notice("You are a survivor of the attack on the colony. You suspected something was wrong and tried to warn others, but it was too late..."))
-		if(MAP_ICY_CAVES)
-			to_chat(M, span_notice("You are a survivor of the attack on the icy cave system. You worked or lived on the site, and managed to avoid the alien attacks... until now."))
-		if(MAP_BARRENQUILLA_MINING)
-			to_chat(M, span_notice("You are a survivor of the attack on the facility. The site manager's greed caught up to him, and you're caught in the crossfire..."))
-		if(MAP_RESEARCH_OUTPOST)
-			to_chat(M, span_notice("You are a survivor of the attack on the outpost. But you question yourself: are you truely safe now?"))
-		if(MAP_MAGMOOR_DIGSITE)
-			to_chat(M, span_notice("You are a survivor of the attack on the Magmoor Digsite IV. You worked or lived on the digsite, and managed to avoid the alien attacks... until now."))
-		else
-			to_chat(M, span_notice("Through a miracle you managed to survive the attack. But are you truly safe now?"))
 
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()

@@ -71,6 +71,20 @@
 		to_chat(user, span_notice("You add the pill bottle into the dispenser slot!"))
 		updateUsrDialog()
 
+	else if(iswrench(I))
+		if(!wrenchable)
+			return
+
+		if(!do_after(user, 20, TRUE, src, BUSY_ICON_BUILD))
+			return
+
+		playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
+		anchored = !anchored
+		if(anchored)
+			user.visible_message("[user] tightens the bolts securing \the [src] to the floor.", "You tighten the bolts securing \the [src] to the floor.")
+		else
+			user.visible_message("[user] unfastens the bolts securing \the [src] to the floor.", "You unfasten the bolts securing \the [src] to the floor.")
+
 /obj/machinery/chem_master/proc/transfer_chemicals(obj/dest, obj/source, amount, reagent_id)
 	if(istype(source))
 		if(amount > 0 && source.reagents && amount <= source.reagents.maximum_volume)
@@ -387,3 +401,12 @@
 /obj/machinery/chem_master/condimaster
 	name = "CondiMaster 3000"
 	condi = TRUE
+
+/obj/machinery/chem_master/portable
+	name = "ChemMaster 3000M"
+	wrenchable = TRUE
+	anchored = FALSE
+/obj/machinery/chem_master/condimaster/portable
+	name = "CondiMaster 3000M"
+	wrenchable = TRUE
+	anchored = FALSE
