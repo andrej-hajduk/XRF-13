@@ -118,6 +118,8 @@
 		to_chat(user, span_info("You hook up [siphon] to the miner and begin transmitting coordinates."))
 		if(!do_after(user, 3 SECONDS, TRUE, src, BUSY_ICON_BUILD))
 			return FALSE
+		if(!stored_mineral)
+			return FALSE
 		siphon.credits += mineral_value * stored_mineral * 10
 		do_sparks(5, TRUE, src)
 		playsound(loc,'sound/effects/phasein.ogg', 50, FALSE)
