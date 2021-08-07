@@ -24,8 +24,6 @@
 
 	var/obj/item/cell/cell
 	var/charge_use = 5	//set this to adjust the amount of power the vehicle uses per move
-	///Temporary additional delay for the next move
-	var/next_move_slowdown = 0
 
 //-------------------------------------------
 // Standard procs
@@ -47,9 +45,9 @@
 	if(direction in GLOB.diagonals)
 		return FALSE
 
-	if(world.time < last_move_time + move_delay + next_move_slowdown)
+	if(world.time < last_move_time + move_delay)
 		return
-	next_move_slowdown = 0
+
 	if(powered)
 		if(!on)
 			to_chat(user, span_warning("Turn on the engine first."))
@@ -222,6 +220,7 @@
 
 /obj/vehicle/proc/RunOver(mob/living/carbon/human/H)
 	return		//write specifics for different vehicles
+
 
 /obj/vehicle/post_buckle_mob(mob/buckling_mob)
 	. = ..()
