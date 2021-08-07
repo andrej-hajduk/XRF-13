@@ -86,7 +86,6 @@
 	source = null
 
 /obj/item/clothing/mask/facehugger/Destroy()
-	. = ..()
 	deltimer(jumptimer)
 	deltimer(lifetimer)
 	remove_danger_overlay() //Remove the danger overlay
@@ -94,6 +93,7 @@
 	jumptimer = null
 	if(source)
 		clear_hugger_source()
+	return ..()
 
 /obj/item/clothing/mask/facehugger/update_icon()
 	if(stat == DEAD)
