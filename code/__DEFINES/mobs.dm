@@ -201,6 +201,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define ORGAN_TESTICLES 11
 #define ORGAN_BREASTS 12
 
+//Brain Damage defines
+#define BRAIN_DAMAGE_MILD 20
+#define BRAIN_DAMAGE_SEVERE 100
+#define BRAIN_DAMAGE_DEATH 200
+
 ///////////////SURGERY DEFINES///////////////
 #define SPECIAL_SURGERY_INVALID "special_surgery_invalid"
 
