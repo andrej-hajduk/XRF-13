@@ -114,11 +114,6 @@
 	max_val = 5 MINUTES
 	min_val = 0
 
-/datum/config_entry/number/xeno_respawn
-	config_entry_value = 5 MINUTES
-	max_val = 5 MINUTES
-	min_val = 0
-
 /datum/config_entry/flag/account_age_restriction
 	config_entry_value = FALSE
 
