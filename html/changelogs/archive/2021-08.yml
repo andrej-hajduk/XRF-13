@@ -188,3 +188,10 @@
   lovegreenstuff:
   - balance: Increased automag burst delay and scatter.
   - bugfix: bonus projectile math when shooting directly up.
+2021-08-08:
+  BraveMole:
+  - balance: Add mortars, sentries, and drop pods to civil war
+  - balance: Respawn is set to 5 minutes in HvH
+  Surrealaser:
+  - bugfix: Warrior Punch can target unacidable objects, but won't damage them.
+  - bugfix: Warrior Punch can now break cameras appropriately.
